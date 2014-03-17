@@ -1,0 +1,32 @@
+body {
+	font-family: Arial, Verdana;
+	font-size:14px;
+}
+.navegador {
+	width:140px;
+	border:1px dashed;
+	background-color:#E6E6FA;
+	padding: 4px 4px;
+}
+.codigo {
+	width:260px;
+	border:1px dashed;
+	background-color:#E6E6FA;
+	padding: 4px 4px;
+}
+#botoes{
+	float: left;
+}
+#cronometro{
+	margin: 0 auto;
+	width: 400px;
+	margin-bottom: 30px;
+
+}
+#flutuar{
+	float: left;
+}
+#voltas{
+	font-family: Arial, Verdana;
+	padding-bottom: 20px;
+}
