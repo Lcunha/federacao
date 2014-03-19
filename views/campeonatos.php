@@ -1,5 +1,5 @@
 ﻿<?php 
-include_once('C:/xampp/htdocs/fedHandebol/views/MainView.php');
+include_once('./view/MainView.php');
 $mainVW = new MainView();
 
 ?>
