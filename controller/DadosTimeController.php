@@ -1,7 +1,7 @@
 <?php
 /*
-  Name:    
-  Description:
+  Name: DadosTimeController.php    
+  Description: Updates the points earned by teams in each match held. 
  
  */
 
