@@ -3,11 +3,11 @@
   Name: TempoController.php   
   Description: List data from playtime in the table, performs a query, 
   delete, change and updates the weather data, inserts the goals achieved by each team the match lasting.
- 
  */
 
 include_once('./persistence/TempoDAO.php');
 include_once('./model/Tempo.php');
+
 class TempoController{
 
 	private $tempoDAO;
@@ -19,10 +19,11 @@ class TempoController{
 	public function _listarTodos(){
 		return $this->tempoDAO->listarTodos();
 	}
+        
 	public function _listarDadosParaTabela(){
 		$dadosTempo = new Tempo();
 		$arrayDadosTempo = $this->tempoDAO->listarTodos();
-		for($i=0;$i<count($arrayDadosTempo); $i++){
+		for($i=0; $i<count($arrayDadosTempo); $i++){
 			$dadosTempoTempo = $arrayDadosTempo[$i];
 			$arrayTr[] = "
 			<tr>
@@ -42,6 +43,7 @@ class TempoController{
 		}
 		return $arrayTr;
 	}
+        
 public function _consultarPorId($id){
 		$dadosTempo= new Tempo();
 		$dadosTempo=  $this->tempoDAO->consultarPorId($id);
@@ -58,31 +60,40 @@ public function _consultarPorId($id){
 	public function _consultarPorRelatorio($relatorio){
 		return $this->tempoDAO->consultarPorRelatorio($relatorio);
 	}
+        
 	public function _inserirTempo($idJogo){
 		return $this->tempoDAO->inserirTempo($idJogo);
 	}
-	public function _atualizar($idTempo,$idJogo,$tiro7Metros,$tempoTecnico,$placarTime1,$placarTime2,$tipo){
-		$dadosTempo = new Tempo();
-		$dadosTempo->__constructOverload($idTempo,$idJogo,$tiro7Metros,$tempoTecnico,$placarTime1,$placarTime2,$tipo);
+        
+	public function _atualizar($idTempo, $idJogo, $tiro7Metros, $tempoTecnico, $placarTime1, $placarTime2, $tipo){
+	
+                $dadosTempo = new Tempo();
+		$dadosTempo->__constructOverload($idTempo, $idJogo, $tiro7Metros, $tempoTecnico, $placarTime1, $placarTime2, $tipo);
 		$this->tempoDAO->atualizar($dadosDados);
 	}
-	public function _salvar($idTempo,$idJogo,$tiro7Metros,$tempoTecnico,$placarTime1,$placarTime2,$tipo){
+        
+	public function _salvar($idTempo, $idJogo, $tiro7Metros, $tempoTecnico, $placarTime1, $placarTime2, $tipo){
 		$dadosTempo= new Tempo();
-		$dadosTempo->__constructOverload(0,$idJogo,$tiro7Metros,$tempoTecnico,$placarTime1,$placarTime2,$tipo);
+		$dadosTempo->__constructOverload(0, $idJogo, $tiro7Metros, $tempoTecnico, $placarTime1, $placarTime2, $tipo);
 		$this->tempoDAO->inserir($dadosTempo);
 	}
+        
 	public function _excluir($id){
 		return $this->tempoDAO->excluir($id);
 	}
+        
 	public function _inserirGolTimeA($placarA,$seteMetros,$idTempo){
 		return $this->tempoDAO->inserirGolTimeA($placarA,$seteMetros,$idTempo);
 	}
+        
 	public function _inserirGolTimeB($placarB,$idTempoAtual){
 		return $this->tempoDAO->inserirGolTimeB($placarB,$idTempoAtual);
 	}
+        
 	public function _consultarUltimoRegistro(){
 		 $resultado = $this->tempoDAO->consultarUltimoRegistro();
 		 $idTempo = $resultado->Fields('id');
 		 return $idTempo;
 	}
+        
 }
