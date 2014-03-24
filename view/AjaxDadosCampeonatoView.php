@@ -1,4 +1,8 @@
 <?php
+/*
+Name: AjaxDadosCampeonatoView.php
+Description: View of championship data
+*/
 include_once('./controller/DadosTimeController.php');
 
 $timeA = isset( $_GET['idA'] ) ? $_GET['idA'] : null;
