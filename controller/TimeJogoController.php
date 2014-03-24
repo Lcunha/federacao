@@ -51,15 +51,15 @@ class TimeJogoController{
 		return $this->timeJogoDAO->inserir($timeJogo);
 	}
         
-	public function _atualizar($idJogo,$idTime){
+	public function _atualizar($idJogo, $idTime){
 		$dadosTimeJogo = new TimeJogo();
 		$dadosTimeJogo->__constructOverload($idJogo, $idTime);
 		$this->timeJogoDAO->atualizar($dadosTimeJogo);
 	}
         
-	public function _salvar($idJogoAtual,$idTime){
+	public function _salvar($idJogoAtual, $idTime){
 		$dadosTimeJogo = new TimeJogo();
-		$dadosTimeJogo->__constructOverload($idJogoAtual,$idTime);
+		$dadosTimeJogo->__constructOverload($idJogoAtual, $idTime);
 		$this->timeJogoDAO->inserir($dadosTimeJogo);
 	}
         
