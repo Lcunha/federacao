@@ -1,4 +1,10 @@
 <?php
+/*
+  Name:  
+  File description:
+ 
+ */
+
 include_once(__APP_PATH.'/persistence/JogadorDAO.php');
 include_once(__APP_PATH.'/model/Jogador.php');
 class JogadorController{

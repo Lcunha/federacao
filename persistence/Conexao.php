@@ -13,7 +13,7 @@ class Conexao{
 		$this->tipo_banco    = "mysql";
 		$this->servidor      = "localhost";
 		$this->usuario       = "root";
-		$this->senha         = "root";
+		$this->senha         = "";
 		$this->db            = "federacao_handebol";
 		$this->banco = NewADOConnection($this->tipo_banco);
 		$this->banco->dialect = 3;
