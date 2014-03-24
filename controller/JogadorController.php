@@ -1,7 +1,8 @@
 <?php
 /*
-  Name:  
-  Description:
+  Name: JogadorController.pho  
+  Description: Inserts players already registered in the table, organizes the players to form a team. 
+  Query performs inserts, updates, and deletes saved data from players.
  
  */
 

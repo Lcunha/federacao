@@ -1,7 +1,8 @@
 <?php
 /*
-  Name:  
-  Description:
+  Name: JogoController.php  
+  Description: Inserts the game data in the table can make change, 
+  delete and query besides enter and save data in the table.
  
  */
 
