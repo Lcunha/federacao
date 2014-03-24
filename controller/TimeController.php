@@ -1,7 +1,8 @@
 <?php
 /*
-  Name:  
-  Description:
+  Name: TimeController.php  
+  Description:Classe responsavel por inserir os dados do time e dos 
+  jogadores na tabela, realiza, consulta, exclui, e atualiza a tabela.
  
  */
 
