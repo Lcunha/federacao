@@ -1,7 +1,8 @@
 <?php
 /*
-  Name:  
-  Description:
+  Name:  DadosControle.php
+  Description:Class that performs the listing of teams 
+  and games already registered in the system in a table may exluir, edit, update and save.
  
  */
 
