@@ -1,7 +1,8 @@
 <?php
 /*
-  Name:  
-  Description:
+  Name: TecnicoController.php  
+  Description: Class responsible for inserting, deleting, 
+  changing a manager in addition to making an appointment for a technician already registered.
  
  */
 
