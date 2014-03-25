@@ -2,7 +2,6 @@
 /*
   Name: DadosTimeController.php    
   Description: Updates the points earned by teams in each match held. 
- 
  */
 
 include_once('./persistence/DadosTimeDAO.php');
