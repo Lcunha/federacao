@@ -3,7 +3,6 @@
   Name:  DadosControle.php
   Description:Class that performs the listing of teams 
   and games already registered in the system in a table may exluir, edit, update and save.
- 
  */
 
 include_once('./persistence/DadosDAO.php');
@@ -11,6 +10,7 @@ include_once('./model/Dados.php');
 include_once('./model/Jogador.php');
 include_once('./controller/JogadorController.php');
 include_once('./controller/TimeController.php');
+
 class DadosController{
 	
 	private $dadosDAO;

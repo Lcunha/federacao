@@ -3,12 +3,12 @@
   Name: ArbitroController.php  
   Description:Class that performs the listing of teams and games 
   already registered in the system in a table may exluir, edit, update and save.
- 
  */
 
 
 include_once(__APP_PATH.'/persistence/ArbitroDAO.php');
 include_once(__APP_PATH.'/model/Arbitro.php');
+
 class ArbitroController{
 	
 	private $arbitroDAO;
@@ -16,10 +16,11 @@ class ArbitroController{
 	public function __construct(){
 		$this->arbitroDAO = new ArbitroDAO();
 	}
+        
 	public function _listarArbitrosParaTabela(){
 		$dadosArbitro = new Arbitro();
 		$arrayDadosArbitro = $this->arbitroDAO->listarTodos();
-		for($i=0;$i<count($arrayDadosArbitro); $i++){
+		for($i=0; $i<count($arrayDadosArbitro); $i++){
 			$dadosArbitro = $arrayDadosArbitro[$i];
 			$arrayTr[] = "
 			<tr>
@@ -36,9 +37,11 @@ class ArbitroController{
 		}
 		return $arrayTr;
 	}
+        
 	public function _listarTodos(){
 		return $this->arbitroDAO->listarTodos();
 	}
+        
 	public function _consultarPorId($id){
 		$dadosArbitro = new Arbitro();
 		$dadosArbitro =  $this->arbitroDAO->consultarPorId($id);
@@ -48,25 +51,31 @@ class ArbitroController{
 		
 		return $arrayDados;
 	}
+        
 	public function _consultarPorNome($nome){
 		return $this->arbitroDAO->consultarPorNome($nome);
 	}
+        
 	public function _inserir(Arbitro $arbitro){
 		return $this->arbitroDAO->inserir($arbitro);
 	}
-	public function _atualizar($idArbitro,$nome,$telefone,$cpf){
+        
+	public function _atualizar($idArbitro, $nome, $telefone, $cpf){
 		$dadosArbitro = new Arbitro();
 		$dadosArbitro->__constructOverload($idArbitro, $nome, $telefone, $cpf);
 		$this->arbitroDAO->atualizar($dadosArbitro);
 	}
-	public function _salvar($nome, $telefone,$cpf){
+        
+	public function _salvar($nome, $telefone, $cpf){
 		$dadosArbitro = new Arbitro();
 		$dadosArbitro->__constructOverload(0, $nome, $telefone, $cpf);
 		$this->arbitroDAO->inserir($dadosArbitro);
 	}
+        
 	public function _excluir($id){
 		return $this->arbitroDAO->excluir($id);
 	}
+        
 	public function _contarRegistrosArbitro(){
 		return $this->arbitroDAO->contarRegistrosArbitro();
 	}
