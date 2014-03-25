@@ -3,7 +3,6 @@
   Name: TecnicoController.php  
   Description: Class responsible for inserting, deleting, 
   changing a manager in addition to making an appointment for a technician already registered.
- 
  */
 
 include_once(__APP_PATH.'/persistence/TecnicoDAO.php');
@@ -19,16 +18,18 @@ class TecnicoController{
 	public function _listarTecnicosParaSelect(){
 		$dadosTecnico = new Tecnico();
 		$arrayDadosTecnico = $this->tecnicoDAO->listarTodos();
-		for($i=0;$i<count($arrayDadosTecnico); $i++){
+		for($i=0; $i<count($arrayDadosTecnico); $i++){
 			$dadosTecnico = $arrayDadosTecnico[$i];
-			$arraySelect[] = "<option value=\"".$dadosTecnico->__getIdTecnico()."\">".$dadosTecnico->__getNome()."</option>";
+			$arraySelect[] = "<option value=\"".$dadosTecnico->__getIdTecnico()."\">"
+                        .$dadosTecnico->__getNome()."</option>";
 		}
 		return $arraySelect;
 	}
+        
 	public function _listarTecnicosParaTabela(){
 		$dadosTecnico = new Tecnico();
 		$arrayDadosTecnico = $this->tecnicoDAO->listarTodos();
-		for($i=0;$i<count($arrayDadosTecnico); $i++){
+		for($i=0; $i<count($arrayDadosTecnico); $i++){
 			$dadosTecnico = $arrayDadosTecnico[$i];
 			$arrayTr[] = " 
 			<tr>
@@ -45,6 +46,7 @@ class TecnicoController{
 		}
 		return $arrayTr;
 	}
+        
 public function _consultarPorId($id){
 		$dadosTecnico = new Tecnico();
 		$dadosTecnico =  $this->tecnicoDAO->consultarPorId($id);
@@ -54,23 +56,29 @@ public function _consultarPorId($id){
 		
 		return $arrayDados;
 	}
+        
 	public function _consultarPorNome($nome){
 		return $this->tecnicoDAO->consultarPorNome($nome);
 	}
-	public function _salvar($nome,$telefone,$cpf){
+        
+	public function _salvar($nome, $telefone, $cpf){
 		$dadosTecnico = new Tecnico();
 		$dadosTecnico->__constructOverload(0, $nome, $telefone, $cpf);
 		$this->tecnicoDAO->inserir($dadosTecnico);
 	}
+        
 	public function _atualizar($idTecnico,$nome,$telefone,$cpf){
 		$dadosTecnico = new Tecnico();
 		$dadosTecnico->__constructOverload($idTecnico, $nome, $telefone, $cpf);
 		$this->tecnicoDAO->atualizar($dadosTecnico);
 	}
+        
 	public function _excluir($id){
 		return $this->tecnicoDAO->excluir($id);
 	}
+        
 	public function _contarRegistrosTecnico(){
 		return $this->tecnicoDAO->contarRegistrosTecnico();
 	}
+        
 }
