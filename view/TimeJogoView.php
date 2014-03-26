@@ -1,4 +1,8 @@
 <?php
+/*
+Name: TimeJogoView.php
+Description: This view shows the game of the team.
+*/
 include_once (__APP_PATH.'/controller/TimeJogoController.php');
 
 class TimeJogoView{

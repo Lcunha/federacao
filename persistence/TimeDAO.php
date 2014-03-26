@@ -1,4 +1,9 @@
 <?php
+/*
+	Name: TimeDAO.php  
+	Description:Class data persistence with CRUD functions (create, read, update, delete) 
+	for handling the type Team, in the relevant table in mysql.
+ */
 include_once ('./model/Time.php');
 include_once ('./model/Tecnico.php');
 include_once ('./model/Jogador.php');

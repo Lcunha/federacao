@@ -1,4 +1,8 @@
 <?php
+/*
+Name: AjaxView.php
+Description: View of score.
+*/
 include_once('./controller/TempoController.php');
 
 $placarA= $_GET["placarA"];

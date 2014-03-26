@@ -3,7 +3,6 @@
   Name:  DadosControle.php
   Description:Class that performs the listing of teams 
   and games already registered in the system in a table may exluir, edit, update and save.
- 
  */
 
 include_once('./persistence/DadosDAO.php');
@@ -11,6 +10,7 @@ include_once('./model/Dados.php');
 include_once('./model/Jogador.php');
 include_once('./controller/JogadorController.php');
 include_once('./controller/TimeController.php');
+
 class DadosController{
 	
 	private $dadosDAO;
@@ -18,10 +18,11 @@ class DadosController{
 	public function __construct(){
 		$this->dadosDAO = new DadosDAO();
 	}
+        
 	public function _listarDadosParaTabela(){
 		$dadosDados = new Dados();
 		$arrayDados = $this->dadosDAO->listarTodos();
-		for($i=0;$i<count($arrayDados); $i++){
+		for($i=0; $i<count($arrayDados); $i++){
 			$dadosDados = $arrayDados[$i];
 			$arrayTr[] = "
 			<tr>
@@ -42,12 +43,14 @@ class DadosController{
 		}
 		return $arrayTr;
 	}
+        
 	public function _listarTodos(){
 		return $this->dadosDAO->listarTodos();
 	}
+        
 	public function _consultarPorId($id){
-		$dadosDados= new Dados();
-		$dadosDados=  $this->dadosDAO->consultarPorId($id);
+		$dadosDados = new Dados();
+		$dadosDados =  $this->dadosDAO->consultarPorId($id);
 		$arrayDados['advertencia'] = $dadosDados->__getAdvertencia();
 		$arrayDados['punicao'] = $dadosDados->__getPunicao();
 		$arrayDados['desqualificacao'] = $dadosDados->__getDesqualificacao();
@@ -55,11 +58,13 @@ class DadosController{
 		
 		return $arrayDados;
 	}
+        
 	public function _consultarPorRelatorio($relatorio){
 		$dadosDados = new Dados();
 		$dadosDados = $this->dadosDAO->consultarPorRelatorio($relatorio);
 		return $dadosDados;
 	}
+        
 	public function _inserir($idTempoInserido,$idTimeA,$idTimeB){
 		$dadosTimeA = new Dados();
 		$dadosTimeB = new Dados();
@@ -67,30 +72,35 @@ class DadosController{
 		$timeA = $timeCO->_listarTodosJogadores($idTimeA);
 		$timeB = $timeCO->_listarTodosJogadores($idTimeB);
 		
-		for($i=0;$i<count($timeA);$i++){
-			$dadosTimeA->__constructOverload(0,$timeA[$i]->__getIdJogador() , $idTempoInserido, 0,0,0,0,0);
+		for($i=0; $i<count($timeA); $i++){
+			$dadosTimeA->__constructOverload(0, $timeA[$i]->__getIdJogador() , $idTempoInserido, 0,0,0,0,0);
 			$this->dadosDAO->inserir($dadosTimeA);
 		}
-		for($i=0;$i<count($timeB);$i++){
-			$dadosTimeB->__constructOverload(0,$timeB[$i]->__getIdJogador() , $idTempoInserido, 0,0,0,0,0);
+		for($i=0; $i<count($timeB); $i++){
+			$dadosTimeB->__constructOverload(0, $timeB[$i]->__getIdJogador() , $idTempoInserido, 0,0,0,0,0);
 			$this->dadosDAO->inserir($dadosTimeB);
 		}
 	}
-	public function _atualizar($idDados,$idJogador,$idTempo,$advertencia,$punicao,$desqualificacao,$relatorio,$gol){
+        
+	public function _atualizar($idDados, $idJogador, $idTempo, $advertencia, $punicao, $desqualificacao, $relatorio, $gol){
 		$dadosDados = new Dados();
-		$dadosDados->__constructOverload($idDados,$idJogador,$idTempo,$advertencia,$punicao,$desqualificacao,$relatorio,$gol);
+		$dadosDados->__constructOverload($idDados, $idJogador, $idTempo, $advertencia, $punicao, $desqualificacao, 
+                $relatorio, $gol);
 		$this->dadosDAO->atualizar($dadosDados);
 	}
-	public function _atualizarDados($idJogador,$idTempo,$advertencia,$punicao,$desqualificacao,$relatorio,$gol){
+        
+	public function _atualizarDados($idJogador, $idTempo, $advertencia, $punicao, $desqualificacao, $relatorio, $gol){
 		$dadosDados = new Dados();
-		$dadosDados->__constructOverload(0,$idJogador,$idTempo,$advertencia,$punicao,$desqualificacao,$relatorio,$gol);
+		$dadosDados->__constructOverload(0, $idJogador, $idTempo, $advertencia, $punicao, $desqualificacao, $relatorio, $gol);
 		$this->dadosDAO->atualizarDados($dadosDados);
 	}
-	public function _salvar($idJogador,$idTempo,$advertencia,$punicao,$desqualificacao,$relatorio){
+        
+	public function _salvar($idJogador, $idTempo, $advertencia, $punicao, $desqualificacao, $relatorio){
 		$dadosDados= new Dados();
-		$dadosDados->__constructOverload(0,$idJogador,$idTempo,$advertencia,$punicao,$desqualificacao,$relatorio);
+		$dadosDados->__constructOverload(0,$idJogador, $idTempo, $advertencia, $punicao, $desqualificacao, $relatorio);
 		$this->dadosDAO->inserir($dadosDados);
 	}
+        
 	public function _excluir($id){
 		return $this->dadosDAO->excluir($id);
 	}

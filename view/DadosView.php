@@ -1,4 +1,8 @@
 <?php
+/*
+Name: DadosView.php
+Description: This view shows the data added by the user.
+*/
 include_once(__APP_PATH.'/controller/DadosController.php');
 
 class DadosView{

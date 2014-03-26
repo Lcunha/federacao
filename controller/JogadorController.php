@@ -3,30 +3,33 @@
   Name: JogadorController.pho  
   Description: Inserts players already registered in the table, organizes the players to form a team. 
   Query performs inserts, updates, and deletes saved data from players.
- 
  */
 
 include_once(__APP_PATH.'/persistence/JogadorDAO.php');
 include_once(__APP_PATH.'/model/Jogador.php');
+
 class JogadorController{
-	private $jogadorDAO;
+
+       private $jogadorDAO;
 	
 	public function __construct(){
 		$this->jogadorDAO = new JogadorDAO();
 	}
+        
 	public function _listarTecnicosParaSelect(){
 		$dadosJogador = new Jogador();
 		$arrayDadosJogador = $this->jogadorDAO->listarTodos();
-		for($i=0;$i<count($arrayDadosJogador); $i++){
+		for($i=0; $i<count($arrayDadosJogador); $i++){
 			$dadosJogador = $arrayDadosJogador[$i];
 			$arraySelect[] = "<option value=\"".$dadosJogador->__getIdJogador()."\">".$dadosJogador->__getNome()."</option>";
 		}
 		return $arraySelect;
 	}
+        
 	public function _listarJogadoresParaTabela(){
 		$dadosJogador = new Jogador();
 		$arrayDadosJogador = $this->jogadorDAO->listarTodos();
-		for($i=0;$i<count($arrayDadosJogador); $i++){
+		for($i=0; $i<count($arrayDadosJogador); $i++){
 			$dadosJogador = $arrayDadosJogador[$i];
 			$arrayTr[] = "
 			<tr>
@@ -46,18 +49,19 @@ class JogadorController{
 		
 		return $arrayTr;
 	}
-	public function _listarJogadoresParaSumulaTimeA($time,$idTempo){;
+        
+	public function _listarJogadoresParaSumulaTimeA($time, $idTempo){;
 		$idJogador[0] = -1;
 		$dadosJogador = new Jogador();
 		$arrayDadosJogador = $this->jogadorDAO->listarTodos();
-		for($i=0;$i<count($arrayDadosJogador); $i++){
+		for($i=0; $i<count($arrayDadosJogador); $i++){
 			$dadosJogador = $arrayDadosJogador[$i];
 			if($dadosJogador->__getIdTime() == $time){
 				$jogadorTime[] = $dadosJogador;
 			}
 		}
 		
-		for($i=0;$i<count($jogadorTime); $i++){
+		for($i=0; $i<count($jogadorTime); $i++){
 			$dadosJogadorTime = $jogadorTime[$i];
 			$arrayTr[] = "
 				
@@ -102,18 +106,19 @@ class JogadorController{
 		
 		return $arrayTr;	
 	}
-	public function _listarJogadoresParaSumulaTimeB($time,$idTempo){;
+        
+	public function _listarJogadoresParaSumulaTimeB($time, $idTempo){;
 	$idJogador[0] = -1;
 	$dadosJogador = new Jogador();
 	$arrayDadosJogador = $this->jogadorDAO->listarTodos();
-	for($i=0;$i<count($arrayDadosJogador); $i++){
+	for($i=0; $i<count($arrayDadosJogador); $i++){
 		$dadosJogador = $arrayDadosJogador[$i];
 		if($dadosJogador->__getIdTime() == $time){
 			$jogadorTime[] = $dadosJogador;
 		}
 	}
 	
-	for($i=0;$i<count($jogadorTime); $i++){
+	for($i=0; $i<count($jogadorTime); $i++){
 		$dadosJogadorTime = $jogadorTime[$i];
 		$arrayTr[] = "
 				
@@ -158,10 +163,12 @@ class JogadorController{
 	
 	return $arrayTr;
 	}
+        
 	public function _listarTodos(){
 		return $this->jogadorDAO->listarTodos();
 	}
-public function _consultarPorId($id){
+        
+       public function _consultarPorId($id){
 		$dadosJogador = new Jogador();
 		$dadosJogador =  $this->jogadorDAO->consultarPorId($id);
 		$arrayDados['nome'] = $dadosJogador->__getNome();
@@ -172,9 +179,11 @@ public function _consultarPorId($id){
 		
 		return $arrayDados;
 	}
+        
 	public function _consultarPorTime($idTime){
 		return $this->jogadorDAO->consultarPorTime($idTime);
 	}
+        
 	public function _consultarPorNome($nome){
 		$dadosJogador = new Jogador();
 		$dadosJogador =  $this->jogadorDAO->consultarPorNome($id);
@@ -185,25 +194,31 @@ public function _consultarPorId($id){
 		
 		return $arrayDados;
 	}
+        
 	public function _inserir(Jogador $jogador){
 		return $this->jogadorDAO->inserir($jogador);
 	}
-	public function _atualizar($idJogador,$idTime,$nome,$dataNascimento,$cpf,$numero){
+        
+	public function _atualizar($idJogador, $idTime, $nome, $dataNascimento, $cpf, $numero){
 		$dadosJogador = new Jogador();
-		$dadosJogador->__constructOverload($idJogador,$idTime,$nome,$dataNascimento,$cpf,$numero);
+		$dadosJogador->__constructOverload($idJogador, $idTime, $nome, $dataNascimento, $cpf, $numero);
 		$this->jogadorDAO->atualizar($dadosJogador);
 	}
-	public function _salvar($nome, $idTime,$dataNascimento,$cpf,$numero){
+        
+	public function _salvar($nome, $idTime, $dataNascimento, $cpf, $numero){
 		$dadosJogador = new Jogador();
-		$dadosJogador->__constructOverload(0,$idTime,$nome,$dataNascimento,$cpf,$numero);
+		$dadosJogador->__constructOverload(0, $idTime, $nome, $dataNascimento, $cpf, $numero);
 		$this->jogadorDAO->inserir($dadosJogador);
 	}
+        
 	public function _excluir($id){
 		return $this->jogadorDAO->excluir($id);
 	}
+        
 	public function _contarRegistrosJogador(){
 		return $this->jogadorDAO->contarRegistrosJogador();
 	}
+        
 	public function _listarArtilheiros(){
 		$arrayArtilheiro = $this->jogadorDAO->listarArtilheiros();
 		for($i=0;$i<count($arrayArtilheiro);$i++){
@@ -219,11 +234,12 @@ public function _consultarPorId($id){
 		}
 		return $arrayTr;
 	}
+        
 	public function _listarFearPlayers(){
 		$arrayFear = $this->jogadorDAO->listarFearPlayers();
-		for($i=0;$i<count($arrayFear);$i++){
-			$dadosFear= $arrayFear[$i];
-			$arrayTr[]= "
+		for($i=0; $i<count($arrayFear); $i++){
+			$dadosFear = $arrayFear[$i];
+			$arrayTr[] = "
 		
 			 				<tr>
 							     <th class=\"th-piqueno th-cor\">".$dadosFear['numero']."</th>

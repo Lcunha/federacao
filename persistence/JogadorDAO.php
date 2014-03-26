@@ -1,4 +1,9 @@
 <?php
+/*
+	Name: JogadorDAO.php  
+	Description:Class data persistence with CRUD functions (create, read, update, delete) 
+	for handling the type Player, in the relevant table in mysql.
+ */
 include_once (__APP_PATH.'/model/Jogador.php');
 include_once (__APP_PATH.'/model/Time.php');
 include_once (__APP_PATH.'/persistence/Conexao.php');

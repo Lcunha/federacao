@@ -3,13 +3,13 @@
   Name: TimeController.php  
   Description:Classe responsavel por inserir os dados do time e dos 
   jogadores na tabela, realiza, consulta, exclui, e atualiza a tabela.
- 
  */
 
 include_once(__APP_PATH.'/persistence/TimeDAO.php');
 include_once(__APP_PATH.'/persistence/DadosTimeDAO.php');
 include_once(__APP_PATH.'/model/Time.php');
 include_once(__APP_PATH.'/model/DadosTime.php');
+
 class TimeController{
 
 	private $timeDAO;
@@ -17,23 +17,27 @@ class TimeController{
 	public function __construct(){
 		$this->timeDAO = new TimeDAO();
 	}
+        
 	public function _listarTimesParaSelect(){
 		$dadosTime = new Time();
 		$arrayDadosTime = $this->timeDAO->listarTodos();
-		for($i=0;$i<count($arrayDadosTime); $i++){
+		for($i=0; $i<count($arrayDadosTime); $i++){
 			$dadosTime = $arrayDadosTime[$i];
-			$arraySelect[] = "<option value=\"".$dadosTime->__getIdTime()."\">".$dadosTime->__getNome()."</option>";
+			$arraySelect[] = "<option value=\"".$dadosTime->__getIdTime()."\">".$dadosTime->__getNome().
+                       "</option>";
 		}
 		print_r(lol);
 		return $arraySelect;
 	}
+        
 	public function _listarTodosJogadores($idTime){
 		return $this->timeDAO->listarTodosJogadores($idTime);
 	}
+        
 	public function _listarTimeParaTabela(){
 		$dadosTime = new Time();
 		$arrayDadosTime = $this->timeDAO->listarTodos();
-		for($i=0;$i<count($arrayDadosTime); $i++){
+		for($i=0; $i<count($arrayDadosTime); $i++){
 			$dadosTime = $arrayDadosTime[$i];
 			$arrayTr[] = "
 			<tr>
@@ -54,12 +58,15 @@ class TimeController{
 		}
 		return $arrayTr;
 	}
+        
 	public function _listarTodos(){
 		return $this->timeDAO->listarTodos();
 	}
+        
 	public function _listarTodoPorPontos(){
 		return $this->timeDAO->listarTodosPorPontos();
 	}
+        
 	public function _consultarPorId($id){
 		$dadosTime = new Time();
 		$dadosTime =  $this->timeDAO->consultarPorId($id);
@@ -74,39 +81,46 @@ class TimeController{
 		$arrayDados['pontos'] = $dadosTime->__getPontos();
 		return $arrayDados;
 	}
-	public function _consultarPorNome($nome){
+	
+        public function _consultarPorNome($nome){
 		return $this->timeDAO->consultarPorNome($nome);
 	}
+        
 	public function _salvar($idTecnico,$nome,$categoria,$endereco,$dataFundacao,$presidente,$telefone){
 		$dadosTime = new Time();
 		$dadosDadosTime = new DadosTime();
 		$dadosDadosTimeDAO = new DadosTimeDAO();
-		$dadosTime->__constructOverload(0, $idTecnico, $nome, $categoria, $endereco, $dataFundacao, $presidente, $telefone,0);
+		$dadosTime->__constructOverload(0, $idTecnico, $nome, $categoria, $endereco, $dataFundacao,
+                $presidente, $telefone,0);
 		$idTime = $this->timeDAO->inserir($dadosTime);
 		$dadosDadosTime->__constructOverload(0, $idTime,0,0,0,0,0,0,0);
 		return $dadosDadosTimeDAO->inserir($dadosDadosTime);
 	}
+        
 	public function _atualizar($id,$idTecnico, $nome, $categoria, $endereco, $dataFundacao, $presidente, $telefone){
 
 		$dadosTime = new Time();
-		$dadosTime->__constructOverload($id,$idTecnico, $nome, $categoria, $endereco, $dataFundacao, $presidente, $telefone,0);
+		$dadosTime->__constructOverload($id,$idTecnico, $nome, $categoria, $endereco, $dataFundacao, 
+                $presidente, $telefone,0);
 		$this->timeDAO->atualizar($dadosTime);
 	
 	}
 	public function _excluir($id){
 		return $this->timeDAO->excluir($id);
 	}
+        
 	public function _contarRegistrosTime(){
 		return $this->timeDAO->contarRegistrosTime();
 	}
+        
 	public function _listarTimesParaTabelaCampeonato(){
 		$dadosTime = new DadosTime();
 		$time = new TimeController();
 		$arrayDadosTime = $this->timeDAO->listarTodosPorPontos();
 		$tamanho = count($arrayDadosTime);
-		for($i=0;$i<$tamanho; $i++){
+		for($i=0; $i<$tamanho; $i++){
 			$dadosTime = $arrayDadosTime[$i];	
-			$pos=$i;
+			$pos = $i;
 			$pos++;
 			$var = $time->_consultarPorId($dadosTime->__getIdTime());
 			$nome = $var['nome'];

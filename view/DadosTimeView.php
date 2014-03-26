@@ -1,4 +1,8 @@
 <?php
+/*
+Name: DadosTimeView.php
+Description: This view shows the data of each team.
+*/
 include_once(__APP_PATH.'/controller/DadosTimeController.php');
 
 class DadosTimeView{

@@ -3,11 +3,11 @@
   Name: JogoController.php  
   Description: Inserts the game data in the table can make change, 
   delete and query besides enter and save data in the table.
- 
  */
 
 include_once(__APP_PATH.'/persistence/JogoDAO.php');
 include_once(__APP_PATH.'/model/Jogo.php');
+
 class JogoController{
 
 	private $jogoDAO;
@@ -15,10 +15,11 @@ class JogoController{
 	public function __construct(){
 		$this->jogoDAO = new JogoDAO();
 	}
+        
 	public function _listarJogosParaTabela(){
-		$dadosJogo= new Jogo();
+		$dadosJogo = new Jogo();
 		$arrayDadosJogo = $this->jogoDAO->listarTodos();
-		for($i=0;$i<count($arrayDadosJogo); $i++){
+		for($i=0; $i<count($arrayDadosJogo); $i++){
 			$dadosJogo = $arrayDadosJogo[$i];
 			$arrayTr[] = "
 			<tr>
@@ -38,12 +39,14 @@ class JogoController{
 		}
 		return $arrayTr;
 	}
+        
 	public function _listarTodos(){
 		return $this->jogoDAO->listarTodos();
 	}
+        
 	public function _consultarPorId($id){
 		$dadosJogo = new Jogo();
-		$dadosJogo=  $this->jogoDAO->consultarPorId($id);
+		$dadosJogo =  $this->jogoDAO->consultarPorId($id);
 		$arrayDados['espectadores'] = $dadosJogo->__getEspectadores();
 		$arrayDados['cidade'] = $dadosJogo->__getCidade();
 		$arrayDados['localizacao'] = $dadosJogo->__getLocalizacao();
@@ -53,24 +56,29 @@ class JogoController{
 		
 		return $arrayDados;
 	}
+        
 	public function _consultarPorDataJogo($dataJogo){
 		return $this->jogoDAO->consultarPorDataJogo($dataJogo);
 	}
-	public function _inserir($espectadores,$cidade,$localizacao,$data,$hora,$duracao,$total7Metros){
+        
+	public function _inserir($espectadores, $cidade, $localizacao, $data, $hora, $duracao, $total7Metros){
 		$dadosJogo = new Jogo();
-		$dadosJogo->__constructOverload(0,$espectadores,$cidade,$localizacao,$data,$hora,$duracao,$total7Metros);
+		$dadosJogo->__constructOverload(0, $espectadores, $cidade, $localizacao, $data, $hora, $duracao, $total7Metros);
 		return $this->jogoDAO->inserir($dadosJogo);
 	}
-	public function _atualizar($idJogo,$espectadores,$cidade,$localizacao,$dataJogo,$duracao){
+        
+	public function _atualizar($idJogo, $espectadores, $cidade, $localizacao, $dataJogo, $duracao){
 		$dadosJogo = new Jogo();
-		$dadosJogo->__constructOverload($idJogo,$espectadores,$cidade,$localizacao,$dataJogo,$duracao,$total7Metros);
+		$dadosJogo->__constructOverload($idJogo, $espectadores, $cidade, $localizacao, $dataJogo, $duracao, $total7Metros);
 		$this->jogoDAO->atualizar($dadosJogo);
 	}
-	public function _salvar($idTimeA,$idTimeB,$espectadores,$cidade,$localizacao,$data,$hora,$duracao){
+        
+	public function _salvar($idTimeA, $idTimeB, $espectadores, $cidade, $localizacao, $data, $hora, $duracao){
 		$dadosJogo = new Jogo();
-		$dadosJogo->__constructOverload($idTimeA,$idTimeB,0, $espectadores,$cidade,$localizacao,$data,$hora,$duracao);
+		$dadosJogo->__constructOverload($idTimeA, $idTimeB, 0, $espectadores, $cidade, $localizacao, $data, $hora, $duracao);
 		$this->jogoDAO->inserir($dadosJogo);
 	}
+        
 	public function _excluir($id){
 		return $this->jogoDAO->excluir($id);
 	}
