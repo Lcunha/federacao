@@ -1,4 +1,8 @@
 <?php
+/*
+Name: JogadorView.php
+Description: This view shows the options of the players.
+*/
 include_once(__APP_PATH.'/controller/JogadorController.php');
 include_once(__APP_PATH.'/controller/TimeController.php');
 
