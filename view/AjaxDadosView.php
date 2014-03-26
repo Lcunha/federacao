@@ -1,4 +1,8 @@
 <?php
+/*
+Name: AjaxDadosView.php
+Description: View of players data.
+*/
 include_once('./controller/DadosController.php');
 
 $jogadorId= $_GET["jogadorId"];
