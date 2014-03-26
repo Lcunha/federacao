@@ -5,6 +5,7 @@
    'idJogador','idTempo' 'advertencia', 'punicao', 'desqualificacao', 
    'relatorio' and 'gol'. 
  */
+
 class Dados{
 	
 	private $idDados;
