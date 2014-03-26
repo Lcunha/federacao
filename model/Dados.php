@@ -1,9 +1,10 @@
 <?php
-/* Name: Dados.php
-   Description: This is the class that contains the attributes, acessor methods 
-   and constructors about all game data. The data must contains 'idDados', 
-   'idJogador','idTempo' 'advertencia', 'punicao', 'desqualificacao', 
-   'relatorio' and 'gol'. 
+/* 
+  Name: Dados.php
+  Description: This is the class that contains the attributes, acessor methods 
+  and constructors about all game data. The data must contains 'idDados', 
+  'idJogador','idTempo' 'advertencia', 'punicao', 'desqualificacao', 
+  'relatorio' and 'gol'. 
  */
 
 class Dados{
