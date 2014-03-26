@@ -1,4 +1,11 @@
 <?php
+/* 
+  Name: Time.php
+  Description: This is the class that contains the attributes, accessor methods 
+  and constructors of a team. The team must contains 'idTime', 'idTecnico',  
+  'nome', 'categoria', 'endereco', 'dataFundacao', 'presidente', 'telefone' and 
+  'pontos'. 
+ */
 
 class Time
 {
