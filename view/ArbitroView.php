@@ -1,4 +1,8 @@
 <?php
+/*
+Name: ArbritoView.php
+Description: View of arbrito.
+*/
 include_once(__APP_PATH.'/controller/ArbitroController.php');
 
 class ArbitroView{
