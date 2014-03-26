@@ -1,8 +1,8 @@
 <?php
 /*
-  Name: JogoDAO.php  
-  Description:Class data persistence with CRUD functions (create, read, update, delete) 
-  for handling the type Game, in the relevant table in mysql.
+	Name: JogoDAO.php  
+	Description:Class data persistence with CRUD functions (create, read, update, delete) 
+	for handling the type Game, in the relevant table in mysql.
  */
 include_once (__APP_PATH.'/model/Jogo.php');
 include_once (__APP_PATH.'/persistence/Conexao.php');

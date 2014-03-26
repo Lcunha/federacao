@@ -1,8 +1,8 @@
 <?php
 /*
-  Name: TempoDAO.php  
-  Description:Class data persistence with CRUD functions (create, read, update, delete) 
-  for handling the type Time, in the relevant table in mysql.
+	Name: TempoDAO.php  
+	Description:Class data persistence with CRUD functions (create, read, update, delete) 
+	for handling the type Time, in the relevant table in mysql.
  */
 include_once ('./model/Tempo.php');
 include_once ('./model/Jogo.php');

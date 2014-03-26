@@ -1,8 +1,8 @@
 <?php
 /*
-  Name: DadosTimeDAO.php  
-  Description:Class data persistence with CRUD functions (create, read, update, delete) 
-  for handling the associative type Data_Team, in the relevant table (table associative) in mysql.
+	Name: DadosTimeDAO.php  
+	Description:Class data persistence with CRUD functions (create, read, update, delete) 
+	for handling the associative type Data_Team, in the relevant table (table associative) in mysql.
  */
 include_once ('./model/Arbitro.php');
 include_once ('./persistence/Conexao.php');

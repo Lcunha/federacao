@@ -1,8 +1,8 @@
 <?php
 /*
-  Name: TimeJogoDAO.php  
-  Description:Class data persistence with CRUD functions (create, read, update, delete) 
-  for handling the associative type Team_Game, in the relevant table (table associative) in mysql.
+	Name: TimeJogoDAO.php  
+	Description:Class data persistence with CRUD functions (create, read, update, delete) 
+	for handling the associative type Team_Game, in the relevant table (table associative) in mysql.
  */
 include_once (__APP_PATH.'/model/Time.php');
 include_once (__APP_PATH.'/model/Jogo.php');
