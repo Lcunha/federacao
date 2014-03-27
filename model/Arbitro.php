@@ -1,4 +1,10 @@
 <?php
+/*
+  Name: Arbitro.php
+  Description: This is the class that contains the attributes, acessor methods 
+  and constructors of a referee. A referee must contains 'idArbitro', 'nome',
+  'telefone' and 'cpf'.
+ */
 
 class Arbitro
 {

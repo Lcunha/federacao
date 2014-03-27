@@ -1,4 +1,11 @@
 <?php
+/* 
+  Name: Jogo.php
+  Description: This is the class that contains the attributes, acessor methods 
+  and constructors of the game. The game must contains 'idJogo', 'espectadores', 
+  'cidade', 'localizacao', 'data', 'hora', 'duracao and 'total7Metros'. 
+ */
+
 class Jogo{
 	
 	private $idJogo;
