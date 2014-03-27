@@ -12,14 +12,14 @@ class DadosTimeDAO{
 	private $conexao;
 	
 	/*
-		The method is reponsibility to instance the class.
+		The method is responsibility to instance the class.
 	*/
 	public function __construct(){
 		$this->conexao = new Conexao();
 	}
 
 	/*
-		The method is reponsibility by list all registers in database table.
+		The method is responsibility by list all registers in database table.
 	*/
 	public function listarTodos(){
 		$sql = "SELECT * FROM dados_campeonato";
@@ -33,7 +33,7 @@ class DadosTimeDAO{
 	}
 
 	/*
-		The method is reponsibility to insert data in database table.
+		The method is responsibility to insert data in database table.
 	*/
 	public function inserir(DadosTime $dadosDadosTime){
 		$sql = "INSERT INTO dados_campeonato(pontos,jogos,vitorias,empates,derrotas,gols,gols_levados,time_id_time) VALUES ('{$dadosDadosTime->__getPontos()}','{$dadosDadosTime->__getJogos()}','{$dadosDadosTime->__getVitorias()}','{$dadosDadosTime->__getEmpates()}','{$dadosDadosTime->__getDerrotas()}','{$dadosDadosTime->__getGols()}','{$dadosDadosTime->__getGolsLevados()}','{$dadosDadosTime->__getIdTime()}')";
@@ -41,7 +41,7 @@ class DadosTimeDAO{
 	}
 
 	/*
-		The method is reponsibility to consult in database table through of ID.
+		The method is responsibility to consult in database table through of ID.
 	*/
 	public function consultarPorId($id){
 		$sql = "SELECT * FROM dados_campeonato WHERE id_dados_campeonato= '{$id}'";
@@ -53,7 +53,7 @@ class DadosTimeDAO{
 	}
 
 	/*
-		The method is reponsibility to consult in database table through the ID of type Team.
+		The method is responsibility to consult in database table through the ID of type Team.
 	*/
 	public function consultarPorIdTime($id){
 		$sql = "SELECT * FROM dados_campeonato WHERE time_id_time= '{$id}'";
@@ -65,7 +65,7 @@ class DadosTimeDAO{
 	}
 
 	/*
-		The method is reponsibility to update data in database table.
+		The method is responsibility to update data in database table.
 	*/
 	public function atualizar(DadosTime $dadosDadosTime){
 		$sql = "UPDATE dados_campeonato SET pontos='{$dadosDadosTime->__getPontos()}', jogos='{$dadosDadosTime->__getJogos()}', vitorias='{$dadosDadosTime->__getVitorias()}', empates='{$dadosDadosTime->__getEmpates()}', derrotas='{$dadosDadosTime->__getDerrotas()}', gols='{$dadosDadosTime->__getGols()}', gols_levados='{$dadosDadosTime->__getGolsLevados()}' WHERE time_id_time='{$dadosDadosTime->__getIdTime()}' ";
@@ -73,7 +73,7 @@ class DadosTimeDAO{
 	}
 
 	/*
-		The method is reponsibility by to update of points and information data in database table.
+		The method is responsibility by to update of points and information data in database table.
 	*/
 	public function atualizarPontos($idTimeA,$idTimeB,$pontosTimeA,$pontosTimeB,$golsTimeA,$golsTimeB){
 		$timeA = new TimeDAO();
@@ -122,7 +122,7 @@ class DadosTimeDAO{
 	}
 
 	/*
-		The method is reponsibility by to delete data in database table.
+		The method is responsibility by to delete data in database table.
 	*/
 	public function excluir($id){
 		$sql = "DELETE FROM dados_campeonato WHERE id_dados_campeonato= '{$id}' ";
