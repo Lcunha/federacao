@@ -21,6 +21,10 @@ class TempoController {
         return $this->tempoDAO->listarTodos();
     }
 
+    /*
+      Function responsible for inserting the time, entering the score, team and game that is being done.
+     */
+
     public function _listarDadosParaTabela() {
         $dadosTempo = new Tempo();
         $arrayDadosTempo = $this->tempoDAO->listarTodos();
@@ -44,6 +48,10 @@ class TempoController {
         }
         return $arrayTr;
     }
+
+    /*
+      Function responsible for doing a query for a time from an id of a game.
+     */
 
     public function _consultarPorId($id) {
         $dadosTempo = new Tempo();
