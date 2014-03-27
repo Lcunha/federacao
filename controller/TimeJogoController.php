@@ -17,6 +17,10 @@ class TimeJogoController {
         $this->timeJogoDAO = new TimeJogoDAO();
     }
 
+    /*
+      Function we list all data of the games that are being played on the table grabbing data from teams in the game.
+     */
+
     public function _listarTimeJogoParaTabela() {
         $dadosTimeJogo = new TimeJogo();
         $arrayDadosTimeJogo = $this->timeJogoDAO->listarTodos();
@@ -52,11 +56,19 @@ class TimeJogoController {
         return $this->timeJogoDAO->inserir($timeJogo);
     }
 
+    /*
+      Function responsible for updating the game data.
+     */
+
     public function _atualizar($idJogo, $idTime) {
         $dadosTimeJogo = new TimeJogo();
         $dadosTimeJogo->__constructOverload($idJogo, $idTime);
         $this->timeJogoDAO->atualizar($dadosTimeJogo);
     }
+
+    /*
+      Function salver responsible for the data of the games that are being played.
+     */
 
     public function _salvar($idJogoAtual, $idTime) {
         $dadosTimeJogo = new TimeJogo();

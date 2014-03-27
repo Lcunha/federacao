@@ -19,6 +19,10 @@ class TimeController {
         $this->timeDAO = new TimeDAO();
     }
 
+    /*
+      Responsible function to list all data Team.
+     */
+
     public function _listarTimesParaSelect() {
         $dadosTime = new Time();
         $arrayDadosTime = $this->timeDAO->listarTodos();
@@ -34,6 +38,10 @@ class TimeController {
     public function _listarTodosJogadores($idTime) {
         return $this->timeDAO->listarTodosJogadores($idTime);
     }
+
+    /*
+      Function responsible for all data list of registered teams in the table.
+     */
 
     public function _listarTimeParaTabela() {
         $dadosTime = new Time();
@@ -52,8 +60,10 @@ class TimeController {
 					<td>" . $dadosTime->__getTelefone() . "</td>
 					<td>" . $dadosTime->__getPontos() . "</td>
           			<td>
-            			<a href=\"?pag=time&action=edit&id=" . $dadosTime->__getIdTime() . "\"><img src=\"./views/images/edit.png\" width=\"16\" height=\"16\" /></a>
-            			<a href=\"?pag=time&action=exclude&id=" . $dadosTime->__getIdTime() . "\"><img src=\"./views/images/delete.png\" width=\"16\" height=\"16\" /></a>
+            			<a href=\"?pag=time&action=edit&id=" . $dadosTime->__getIdTime() .
+                    "\"><img src=\"./views/images/edit.png\" width=\"16\" height=\"16\" /></a>
+            			<a href=\"?pag=time&action=exclude&id=" . $dadosTime->__getIdTime() .
+                    "\"><img src=\"./views/images/delete.png\" width=\"16\" height=\"16\" /></a>
           			</td>
 			</tr>";
         }
@@ -67,6 +77,10 @@ class TimeController {
     public function _listarTodoPorPontos() {
         return $this->timeDAO->listarTodosPorPontos();
     }
+
+    /*
+      Responsible role by querying a team using an id.
+     */
 
     public function _consultarPorId($id) {
         $dadosTime = new Time();
@@ -87,6 +101,10 @@ class TimeController {
         return $this->timeDAO->consultarPorNome($nome);
     }
 
+    /*
+      Function responsible for saving the data of a team.
+     */
+
     public function _salvar($idTecnico, $nome, $categoria, $endereco, $dataFundacao, $presidente, $telefone) {
         $dadosTime = new Time();
         $dadosDadosTime = new DadosTime();
@@ -96,6 +114,10 @@ class TimeController {
         $dadosDadosTime->__constructOverload(0, $idTime, 0, 0, 0, 0, 0, 0, 0);
         return $dadosDadosTimeDAO->inserir($dadosDadosTime);
     }
+
+    /*
+      Function responsible for updating the data of a team.
+     */
 
     public function _atualizar($id, $idTecnico, $nome, $categoria, $endereco, $dataFundacao, $presidente, $telefone) {
 
@@ -111,6 +133,12 @@ class TimeController {
     public function _contarRegistrosTime() {
         return $this->timeDAO->contarRegistrosTime();
     }
+
+    /*
+      Function responsible for the data list of teams to a championship.
+      Listing the balance in other matches played, points, games played, draws,
+      wins, and dorrotas amount of goals achieved.
+     */
 
     public function _listarTimesParaTabelaCampeonato() {
         $dadosTime = new DadosTime();
