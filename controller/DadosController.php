@@ -20,6 +20,9 @@ class DadosController{
 	}
         
 	public function _listarDadosParaTabela(){
+            /*
+             Function responsible for receiving all game data reported by the User System.
+             */
 		$dadosDados = new Dados();
 		$arrayDados = $this->dadosDAO->listarTodos();
 		for($i=0; $i<count($arrayDados); $i++){
@@ -49,6 +52,9 @@ class DadosController{
 	}
         
 	public function _consultarPorId($id){
+            /*
+             Makes a query data stored games from an id entered by the User.
+             */
 		$dadosDados = new Dados();
 		$dadosDados =  $this->dadosDAO->consultarPorId($id);
 		$arrayDados['advertencia'] = $dadosDados->__getAdvertencia();
@@ -60,12 +66,18 @@ class DadosController{
 	}
         
 	public function _consultarPorRelatorio($relatorio){
+            /*
+              Makes a query of reports of games already registered.
+             */
 		$dadosDados = new Dados();
 		$dadosDados = $this->dadosDAO->consultarPorRelatorio($relatorio);
 		return $dadosDados;
 	}
         
 	public function _inserir($idTempoInserido,$idTimeA,$idTimeB){
+            /*
+               Inserts the data team in a match.
+             */
 		$dadosTimeA = new Dados();
 		$dadosTimeB = new Dados();
 		$timeCO = new TimeController();
@@ -82,8 +94,14 @@ class DadosController{
 		}
 	}
         
-	public function _atualizar($idDados, $idJogador, $idTempo, $advertencia, $punicao, $desqualificacao, $relatorio, $gol){
-		$dadosDados = new Dados();
+	public function _atualizar($idDados, $idJogador, $idTempo, $advertencia,
+                $punicao, $desqualificacao, $relatorio, $gol){
+          /*
+              
+           
+           */           
+		
+                $dadosDados = new Dados();
 		$dadosDados->__constructOverload($idDados, $idJogador, $idTempo, $advertencia, $punicao, $desqualificacao, 
                 $relatorio, $gol);
 		$this->dadosDAO->atualizar($dadosDados);
