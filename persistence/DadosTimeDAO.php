@@ -11,9 +11,16 @@ include_once ('./persistence/TimeDAO.php');
 class DadosTimeDAO{
 	private $conexao;
 	
+	/*
+		The method is reponsibility to instance the class.
+	*/
 	public function __construct(){
 		$this->conexao = new Conexao();
 	}
+
+	/*
+		The method is reponsibility by list all registers in database table.
+	*/
 	public function listarTodos(){
 		$sql = "SELECT * FROM dados_campeonato";
 		$resultado = $this->conexao->banco->Execute($sql);
@@ -24,10 +31,18 @@ class DadosTimeDAO{
 		}
 		return $retornaDadosTime;
 	}
+
+	/*
+		The method is reponsibility to insert data in database table.
+	*/
 	public function inserir(DadosTime $dadosDadosTime){
 		$sql = "INSERT INTO dados_campeonato(pontos,jogos,vitorias,empates,derrotas,gols,gols_levados,time_id_time) VALUES ('{$dadosDadosTime->__getPontos()}','{$dadosDadosTime->__getJogos()}','{$dadosDadosTime->__getVitorias()}','{$dadosDadosTime->__getEmpates()}','{$dadosDadosTime->__getDerrotas()}','{$dadosDadosTime->__getGols()}','{$dadosDadosTime->__getGolsLevados()}','{$dadosDadosTime->__getIdTime()}')";
 		return $this->conexao->banco->Execute($sql);
 	}
+
+	/*
+		The method is reponsibility to consult in database table through of ID.
+	*/
 	public function consultarPorId($id){
 		$sql = "SELECT * FROM dados_campeonato WHERE id_dados_campeonato= '{$id}'";
 		$resultado = $this->conexao->banco->Execute($sql);
@@ -36,6 +51,10 @@ class DadosTimeDAO{
 		$dadosDadosTime->__constructOverload($registro->ID_DADOS_CAMPEONATO,$registro->TIME_ID_TIME,$registro->PONTOS,$registro->JOGOS,$registro->VITORIAS,$registro->EMPATES,$registro->DERROTAS,$registro->GOLS,$registro->GOLS_LEVADOS);
 		return $dadosDadosTime;
 	}
+
+	/*
+		The method is reponsibility to consult in database table through the ID of type Team.
+	*/
 	public function consultarPorIdTime($id){
 		$sql = "SELECT * FROM dados_campeonato WHERE time_id_time= '{$id}'";
 		$resultado = $this->conexao->banco->Execute($sql);
@@ -44,10 +63,18 @@ class DadosTimeDAO{
 		$dadosDadosTime->__constructOverload($registro->ID_DADOS_CAMPEONATO,$registro->TIME_ID_TIME,$registro->PONTOS,$registro->JOGOS,$registro->VITORIAS,$registro->EMPATES,$registro->DERROTAS,$registro->GOLS,$registro->GOLS_LEVADOS);
 		return $dadosDadosTime;
 	}
+
+	/*
+		The method is reponsibility to update data in database table.
+	*/
 	public function atualizar(DadosTime $dadosDadosTime){
 		$sql = "UPDATE dados_campeonato SET pontos='{$dadosDadosTime->__getPontos()}', jogos='{$dadosDadosTime->__getJogos()}', vitorias='{$dadosDadosTime->__getVitorias()}', empates='{$dadosDadosTime->__getEmpates()}', derrotas='{$dadosDadosTime->__getDerrotas()}', gols='{$dadosDadosTime->__getGols()}', gols_levados='{$dadosDadosTime->__getGolsLevados()}' WHERE time_id_time='{$dadosDadosTime->__getIdTime()}' ";
 		$this->conexao->banco->Execute($sql);
 	}
+
+	/*
+		The method is reponsibility by to update of points and information data in database table.
+	*/
 	public function atualizarPontos($idTimeA,$idTimeB,$pontosTimeA,$pontosTimeB,$golsTimeA,$golsTimeB){
 		$timeA = new TimeDAO();
 		$timeA = $this->consultarPorIdTime($idTimeA);
@@ -93,6 +120,10 @@ class DadosTimeDAO{
 		$this->conexao->banco->Execute($sqlA);
 		$this->conexao->banco->Execute($sqlB);
 	}
+
+	/*
+		The method is reponsibility by to delete data in database table.
+	*/
 	public function excluir($id){
 		$sql = "DELETE FROM dados_campeonato WHERE id_dados_campeonato= '{$id}' ";
 		$resultado = $this->conexao->banco->Execute($sql);

@@ -15,7 +15,9 @@ class Conexao{
 	private $senha;
 	private $db;
 
-	/* Construct method in class self, responsible for connection with database mysql */
+	/* 
+		Construct method in class self, responsible for connection with database mysql 
+	*/
 	public function __construct(){
 		$this->tipo_banco    = "mysql";
 		$this->servidor      = "localhost";
