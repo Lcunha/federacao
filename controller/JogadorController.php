@@ -202,6 +202,10 @@ class JogadorController {
         return $this->jogadorDAO->consultarPorTime($idTime);
     }
 
+    /*
+      Function that handles player data and makes the query their data using its name.
+     */
+
     public function _consultarPorNome($nome) {
         $dadosJogador = new Jogador();
         $dadosJogador = $this->jogadorDAO->consultarPorNome($id);
@@ -236,6 +240,10 @@ class JogadorController {
     public function _contarRegistrosJogador() {
         return $this->jogadorDAO->contarRegistrosJogador();
     }
+
+    /*
+      Function that query on all data Gunners players present in classes.
+     */
 
     public function _listarArtilheiros() {
         $arrayArtilheiro = $this->jogadorDAO->listarArtilheiros();
