@@ -75,12 +75,20 @@ class TempoController {
         return $this->tempoDAO->inserirTempo($idJogo);
     }
 
+    /*
+      Function responsible for updating the data of games.
+     */
+
     public function _atualizar($idTempo, $idJogo, $tiro7Metros, $tempoTecnico, $placarTime1, $placarTime2, $tipo) {
 
         $dadosTempo = new Tempo();
         $dadosTempo->__constructOverload($idTempo, $idJogo, $tiro7Metros, $tempoTecnico, $placarTime1, $placarTime2, $tipo);
         $this->tempoDAO->atualizar($dadosDados);
     }
+
+    /*
+      Function responsible for saving the data of time in the game.
+     */
 
     public function _salvar($idTempo, $idJogo, $tiro7Metros, $tempoTecnico, $placarTime1, $placarTime2, $tipo) {
         $dadosTempo = new Tempo();
@@ -99,6 +107,10 @@ class TempoController {
     public function _inserirGolTimeB($placarB, $idTempoAtual) {
         return $this->tempoDAO->inserirGolTimeB($placarB, $idTempoAtual);
     }
+
+    /*
+      Function responsible for consulting the last record of time was registered.
+     */
 
     public function _consultarUltimoRegistro() {
         $resultado = $this->tempoDAO->consultarUltimoRegistro();

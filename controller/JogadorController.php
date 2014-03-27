@@ -16,6 +16,10 @@ class JogadorController {
         $this->jogadorDAO = new JogadorDAO();
     }
 
+    /*
+      Responsible function to list all the data for the registered players to be selected.
+     */
+
     public function _listarTecnicosParaSelect() {
         $dadosJogador = new Jogador();
         $arrayDadosJogador = $this->jogadorDAO->listarTodos();
@@ -25,6 +29,10 @@ class JogadorController {
         }
         return $arraySelect;
     }
+
+    /*
+      Responsible function to list all player data in a table.
+     */
 
     public function _listarJogadoresParaTabela() {
         $dadosJogador = new Jogador();
@@ -50,8 +58,12 @@ class JogadorController {
         return $arrayTr;
     }
 
+    /*
+      Function responsible for taking all player data assembling a team.
+     */
+
     public function _listarJogadoresParaSumulaTimeA($time, $idTempo) {
-        ;
+
         $idJogador[0] = -1;
         $dadosJogador = new Jogador();
         $arrayDadosJogador = $this->jogadorDAO->listarTodos();
@@ -170,6 +182,10 @@ class JogadorController {
         return $this->jogadorDAO->listarTodos();
     }
 
+    /*
+      Performs query a player from a selected id.
+     */
+
     public function _consultarPorId($id) {
         $dadosJogador = new Jogador();
         $dadosJogador = $this->jogadorDAO->consultarPorId($id);
@@ -243,12 +259,12 @@ class JogadorController {
             $dadosFear = $arrayFear[$i];
             $arrayTr[] = "
 		
-			 				<tr>
-							     <th class=\"th-piqueno th-cor\">" . $dadosFear['numero'] . "</th>
-								 <th class=\"th-cor\">" . $dadosFear['nome'] . "</th>
-			                     <th class=\"th-cor\">" . $dadosFear['time'] . "</th>
-			                     <th class=\"th-piqueno th-cor\">" . $dadosFear['faltas'] . "</th>
-			                 </tr>";
+	           <tr>
+	     <th class=\"th-piqueno th-cor\">" . $dadosFear['numero'] . "</th>
+	 <th class=\"th-cor\">" . $dadosFear['nome'] . "</th>
+		    <th class=\"th-cor\">" . $dadosFear['time'] . "</th>
+		           <th class=\"th-piqueno th-cor\">" . $dadosFear['faltas'] . "</th>
+		       </tr>";
         }
         return $arrayTr;
     }
