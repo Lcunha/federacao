@@ -20,10 +20,11 @@ class DadosController {
         $this->dadosDAO = new DadosDAO();
     }
 
+    /*
+      Function responsible for receiving all game data reported by the User System.
+     */
+
     public function _listarDadosParaTabela() {
-        /*
-          Function responsible for receiving all game data reported by the User System.
-         */
         $dadosDados = new Dados();
         $arrayDados = $this->dadosDAO->listarTodos();
         for ($i = 0; $i < count($arrayDados); $i++) {
@@ -52,10 +53,11 @@ class DadosController {
         return $this->dadosDAO->listarTodos();
     }
 
+    /*
+      Makes a query data stored games from an id entered by the User.
+     */
+
     public function _consultarPorId($id) {
-        /*
-          Makes a query data stored games from an id entered by the User.
-         */
         $dadosDados = new Dados();
         $dadosDados = $this->dadosDAO->consultarPorId($id);
         $arrayDados['advertencia'] = $dadosDados->__getAdvertencia();
@@ -66,19 +68,21 @@ class DadosController {
         return $arrayDados;
     }
 
+    /*
+      Makes a query of reports of games already registered.
+     */
+
     public function _consultarPorRelatorio($relatorio) {
-        /*
-          Makes a query of reports of games already registered.
-         */
         $dadosDados = new Dados();
         $dadosDados = $this->dadosDAO->consultarPorRelatorio($relatorio);
         return $dadosDados;
     }
 
+    /*
+      Inserts the data team in a match.
+     */
+
     public function _inserir($idTempoInserido, $idTimeA, $idTimeB) {
-        /*
-          Inserts the data team in a match.
-         */
         $dadosTimeA = new Dados();
         $dadosTimeB = new Dados();
         $timeCO = new TimeController();
@@ -95,20 +99,21 @@ class DadosController {
         }
     }
 
+    /*
+      Responsible for updating the data of the games making the necessary changes to them.
+     */
+
     public function _atualizar($idDados, $idJogador, $idTempo, $advertencia, $punicao, $desqualificacao, $relatorio, $gol) {
-        /*
-          Responsible for updating the data of the games making the necessary changes to them.
-         */
         $dadosDados = new Dados();
         $dadosDados->__constructOverload($idDados, $idJogador, $idTempo, $advertencia, $punicao, $desqualificacao, $relatorio, $gol);
         $this->dadosDAO->atualizar($dadosDados);
     }
 
-    public function _atualizarDados($idJogador, $idTempo, $advertencia, $punicao, $desqualificacao, $relatorio, $gol) {
+    /*
+      Responsible for updating all the data matches.
+     */
 
-        /*
-          Responsible for updating all the data matches.
-         */
+    public function _atualizarDados($idJogador, $idTempo, $advertencia, $punicao, $desqualificacao, $relatorio, $gol) {
         $dadosDados = new Dados();
         $dadosDados->__constructOverload(0, $idJogador, $idTempo, $advertencia, $punicao, $desqualificacao, $relatorio, $gol);
         $this->dadosDAO->atualizarDados($dadosDados);
