@@ -13,6 +13,7 @@ class ArbitroDAO{
 	public function __construct(){
 		$this->conexao = new Conexao();
 	}
+
 	public function listarTodos(){
 		$sql = "SELECT * FROM arbitro";
 		$resultado = $this->conexao->banco->Execute($sql);
@@ -51,10 +52,12 @@ class ArbitroDAO{
 		$dadosDadosTime->__constructOverload($registro->ID_ARBITRO,$registro->NOME,$registro->CPF);
 		return $dadosArbitro;
 	}
+
 	public function excluir($id){
 		$sql = "DELETE FROM arbitro WHERE id_arbitro= '{$id}' ";
 		$resultado = $this->conexao->banco->Execute($sql);
 	}
+	
 	public function contarRegistrosArbitro(){
 		$sql = "SELECT COUNT(*) as contagem FROM arbitro";
 		$resultado = $this->conexao->banco->Execute($sql);
