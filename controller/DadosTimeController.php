@@ -34,19 +34,22 @@ class DadosTimeController {
         return $this->dadosTimeDAO->inserir($dadosTime);
     }
 
+    /*
+      Responsible for updating the data team.
+     */
+
     public function _atualizar($idDadosTime, $pontos, $jogos, $vitorias, $empates, $derrotas, $gols, $golsLevados) {
-        /*
-         Responsible for updating the data team.
-         */
         $dadosDadosTime = new DadosTime();
         $dadosDadosTime->__constructOverload(0, $idDadosTime, $pontos, $jogos, $vitorias, $empates, $derrotas, $gols, $golsLevados);
         $this->dadosTimeDAO->atualizar($dadosDadosTime);
     }
 
+    /*
+      Responsible for updating the scores of times in matches.
+     */
+
     public function _atualizarPontos($idTimeA, $idTimeB, $golsTimeA, $golsTimeB) {
-       /*
-        Responsible for updating the scores of times in matches.
-        */
+
         if ($golsTimeA > $golsTimeB) {
             $pontuacaoA = 3;
             $pontuacaoB = 0;

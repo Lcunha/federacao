@@ -51,7 +51,7 @@ class JogadorController {
     }
 
     public function _listarJogadoresParaSumulaTimeA($time, $idTempo) {
-;
+        ;
         $idJogador[0] = -1;
         $dadosJogador = new Jogador();
         $arrayDadosJogador = $this->jogadorDAO->listarTodos();
@@ -109,7 +109,7 @@ class JogadorController {
     }
 
     public function _listarJogadoresParaSumulaTimeB($time, $idTempo) {
-;
+        ;
         $idJogador[0] = -1;
         $dadosJogador = new Jogador();
         $arrayDadosJogador = $this->jogadorDAO->listarTodos();
