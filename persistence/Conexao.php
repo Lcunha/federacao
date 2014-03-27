@@ -2,7 +2,7 @@
 /*
 	Name: Conexao.php
 	Description: Class to connect to mysql database through ADODB library, 
-	this class contains all the sensitive information from the database
+	t this class contains all the sensitive information from the database
 */
 require_once('./libs/adodb/adodb.inc.php');
 
@@ -14,6 +14,8 @@ class Conexao{
 	private $usuario;
 	private $senha;
 	private $db;
+
+	/* Construct method in class self, responsible for connection with database mysql */
 	public function __construct(){
 		$this->tipo_banco    = "mysql";
 		$this->servidor      = "localhost";

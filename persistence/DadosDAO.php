@@ -10,9 +10,12 @@ include_once ('./persistence/Conexao.php');
 class DadosDAO{
 	private $conexao;
 
+	/* Construct method of class DataDAO*/
 	public function __construct(){
 		$this->conexao = new Conexao();
 	}
+	
+	/* Method is responsible for listing all datas in table database mysql. */
 	public function listarTodos(){
 		$sql = "SELECT * FROM dados";
 		$resultado = $this->conexao->banco->Execute($sql);
@@ -23,7 +26,7 @@ class DadosDAO{
 		}
 		return $retornaDados;
 	}
-
+	
 	public function inserir(Dados $dadosDados){
 		$sql = "INSERT INTO dados (jogador_id_jogador,tempo_id_tempo,advertencia,punicao,desqualificacao,relatorio,gol) VALUES ('{$dadosDados->__getIdJogador()}','{$dadosDados->__getIdTempo()}','{$dadosDados->__getAdvertencia()}','{$dadosDados->__getPunicao()}','{$dadosDados->__getDesqualificacao()}','{$dadosDados->__getRelatorio()}','{$dadosDados->__getGol()}')";
 		$this->conexao->banco->Execute($sql);
