@@ -48,7 +48,7 @@ class DadosDAO{
 	}
 
 	/* 
-		The method responsability update of data in database table. 
+		The method responsibility update of data in database table. 
 	*/
 	public function atualizarDados(Dados $dadosDados){
 		$sql = "UPDATE dados SET advertencia='{$dadosDados->__getAdvertencia()}', punicao='{$dadosDados->__getPunicao()}', desqualificacao='{$dadosDados->__getDesqualificacao()}', relatorio='{$dadosDados->__getRelatorio()}', gol='{$dadosDados->__getGol()}'
@@ -58,7 +58,7 @@ class DadosDAO{
 	}
 
 	/* 
-		The method responsability is consult in database table through of ID. 
+		The method responsibility is consult in database table through of ID. 
 	*/
 	public function consultarPorId($id){
 		$sql = "SELECT * FROM dados WHERE id_dados= '{$id}'";
@@ -70,7 +70,7 @@ class DadosDAO{
 	}
 
 	/*
-		The method reponsability is consult in database table through the ID of type Player. 
+		The method reponsibility is consult in database table through the ID of type Player. 
 	*/
 	public function consultarPorIdJogador($idJogador){
 		$sql = "SELECT * FROM dados WHERE jogador_id_jogador= '{$idJogador}'";
@@ -82,7 +82,7 @@ class DadosDAO{
 	}
 
 	/* 
-		The method responsability is consult in database table through the ID of type Time. 
+		The method responsibility is consult in database table through the ID of type Time. 
 	*/
 	public function consultarPorIdTempo($idTempo){
 		$sql = "SELECT * FROM dados WHERE tempo_id_tempo= '{$idTempo}'";
@@ -94,7 +94,7 @@ class DadosDAO{
 	}
 
 	/* 
-		The method responsability is consult in database table by report. 
+		The method responsibility is consult in database table by report. 
 	*/
 	public function consultarPorRelatorio($relatorio){
 		$sql = "SELECT * FROM dados WHERE relatorio= '{$relatorio}'";
@@ -106,7 +106,7 @@ class DadosDAO{
 	}
 
 	/* 
-		The method responsability is delete in database table through of ID. 
+		The method responsibility is delete in database table through of ID. 
 	*/
 	public function excluir($id){
 		$sql = "DELETE FROM dados WHERE id_dados= '{$id}' ";
