@@ -125,6 +125,9 @@ class TimeController {
         $dadosTime->__constructOverload($id, $idTecnico, $nome, $categoria, $endereco, $dataFundacao, $presidente, $telefone, 0);
         $this->timeDAO->atualizar($dadosTime);
     }
+    /*
+     Function responsible for deleting the data on time.
+     */
 
     public function _excluir($id) {
         return $this->timeDAO->excluir($id);

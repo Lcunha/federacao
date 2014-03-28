@@ -75,7 +75,9 @@ class TimeJogoController {
         $dadosTimeJogo->__constructOverload($idJogoAtual, $idTime);
         $this->timeJogoDAO->inserir($dadosTimeJogo);
     }
-
+/*
+     Function responsible for deleting the data on team playing.
+     */
     public function _excluir($id) {
         return $this->timeJogoDAO->excluir($id);
     }

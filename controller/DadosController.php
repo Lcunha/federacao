@@ -118,13 +118,19 @@ class DadosController {
         $dadosDados->__constructOverload(0, $idJogador, $idTempo, $advertencia, $punicao, $desqualificacao, $relatorio, $gol);
         $this->dadosDAO->atualizarDados($dadosDados);
     }
+      /*
+      Function responsible for saving the data of a new game already registered.
+     */
+
 
     public function _salvar($idJogador, $idTempo, $advertencia, $punicao, $desqualificacao, $relatorio) {
         $dadosDados = new Dados();
         $dadosDados->__constructOverload(0, $idJogador, $idTempo, $advertencia, $punicao, $desqualificacao, $relatorio);
         $this->dadosDAO->inserir($dadosDados);
     }
-
+   /*
+     Function responsible for deleting the data on game.
+     */
     public function _excluir($id) {
         return $this->dadosDAO->excluir($id);
     }

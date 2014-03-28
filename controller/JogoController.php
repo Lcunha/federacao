@@ -73,12 +73,19 @@ class JogoController {
         $dadosJogo->__constructOverload($idJogo, $espectadores, $cidade, $localizacao, $dataJogo, $duracao, $total7Metros);
         $this->jogoDAO->atualizar($dadosJogo);
     }
+      /*
+      Function responsible for saving the data of a new game already registered.
+     */
+
 
     public function _salvar($idTimeA, $idTimeB, $espectadores, $cidade, $localizacao, $data, $hora, $duracao) {
         $dadosJogo = new Jogo();
         $dadosJogo->__constructOverload($idTimeA, $idTimeB, 0, $espectadores, $cidade, $localizacao, $data, $hora, $duracao);
         $this->jogoDAO->inserir($dadosJogo);
     }
+    /*
+     Function responsible for deleting the data on game.
+     */
 
     public function _excluir($id) {
         return $this->jogoDAO->excluir($id);

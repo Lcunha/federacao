@@ -62,6 +62,9 @@ class TecnicoController {
     public function _consultarPorNome($nome) {
         return $this->tecnicoDAO->consultarPorNome($nome);
     }
+       /*
+      Function responsible for saving the data of a new techical already registered.
+     */
 
     public function _salvar($nome, $telefone, $cpf) {
         $dadosTecnico = new Tecnico();
@@ -74,7 +77,9 @@ class TecnicoController {
         $dadosTecnico->__constructOverload($idTecnico, $nome, $telefone, $cpf);
         $this->tecnicoDAO->atualizar($dadosTecnico);
     }
-
+    /*
+     Function responsible for deleting the data on technical.
+     */
     public function _excluir($id) {
         return $this->tecnicoDAO->excluir($id);
     }

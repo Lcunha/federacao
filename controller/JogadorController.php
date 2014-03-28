@@ -232,7 +232,9 @@ class JogadorController {
         $dadosJogador->__constructOverload(0, $idTime, $nome, $dataNascimento, $cpf, $numero);
         $this->jogadorDAO->inserir($dadosJogador);
     }
-
+    /*
+     Function responsible for deleting the data on game.
+     */
     public function _excluir($id) {
         return $this->jogadorDAO->excluir($id);
     }

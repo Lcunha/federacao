@@ -62,7 +62,9 @@ class DadosTimeController {
         }
         $this->dadosTimeDAO->atualizarPontos($idTimeA, $idTimeB, $pontuacaoA, $pontuacaoB, $golsTimeA, $golsTimeB);
     }
-
+/*
+     Function responsible for deleting the data on time.
+     */
     public function _excluir($id) {
         return $this->dadosTimeDAO->excluir($id);
     }

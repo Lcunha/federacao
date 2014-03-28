@@ -95,7 +95,9 @@ class TempoController {
         $dadosTempo->__constructOverload(0, $idJogo, $tiro7Metros, $tempoTecnico, $placarTime1, $placarTime2, $tipo);
         $this->tempoDAO->inserir($dadosTempo);
     }
-
+ /*
+     Function responsible for deleting the data on time.
+     */
     public function _excluir($id) {
         return $this->tempoDAO->excluir($id);
     }
