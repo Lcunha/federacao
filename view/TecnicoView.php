@@ -1,4 +1,5 @@
 <?php
+
 /*
     Name: TecnicoView.php
     Description: This view shows the data of the coach. It can also me used to change or delete it.

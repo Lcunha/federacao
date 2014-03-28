@@ -1,4 +1,5 @@
 <?php 
+
 /*
     Name: MainView.php
     Description: This is the main view. It shows the options that lead to the other views.

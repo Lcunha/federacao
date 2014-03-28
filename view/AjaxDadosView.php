@@ -1,4 +1,5 @@
 <?php
+
 /*
     Name: AjaxDadosView.php
     Description: View of players data.

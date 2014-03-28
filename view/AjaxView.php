@@ -1,4 +1,5 @@
 <?php
+
 /*
     Name: AjaxView.php
     Description: View of score.

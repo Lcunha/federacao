@@ -1,4 +1,5 @@
 <?php
+
 /*
     Name: JogadorView.php
     Description: This view shows the options of the players.

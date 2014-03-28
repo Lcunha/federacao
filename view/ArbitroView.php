@@ -1,4 +1,5 @@
 <?php
+
 /*
     Name: ArbritoView.php
     Description: View of arbrito.

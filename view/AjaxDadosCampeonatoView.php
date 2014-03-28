@@ -1,4 +1,5 @@
 <?php
+
 /*
     Name: AjaxDadosCampeonatoView.php
     Description: View of championship data.

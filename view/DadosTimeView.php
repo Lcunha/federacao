@@ -1,4 +1,5 @@
 <?php
+
 /*
     Name: DadosTimeView.php
     Description: This view shows the data of each team.
