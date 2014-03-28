@@ -34,8 +34,9 @@ class TimeDAO{
 		while($registro = $resultado->FetchNextObject()){
 			$dadosTime = new Time();
 			$dadosTime->__constructOverload($registro->ID_TIME, $registro->TECNICO_ID_TECNICO,
-											$registro->NOME,$registro->CATEGORIA, $registro->ENDERECO, 
-											$registro->DATA_FUNDACAO, $registro->PRESIDENTE, $registro->TELEFONE);
+											$registro->NOME,$registro->CATEGORIA, 
+											$registro->ENDERECO, $registro->DATA_FUNDACAO, 
+											$registro->PRESIDENTE, $registro->TELEFONE);
 			$retornaTime[] = $dadosTime;
 		}
 		return $retornaTime;
@@ -100,7 +101,8 @@ class TimeDAO{
 	public function atualizar(Time $dadosTime){
 		$sql = "UPDATE time 
 				SET tecnico_id_tecnico = '{$dadosTime->__getIdTecnico()}',
-					nome = '{$dadosTime->__getNome()}', categoria = '{$dadosTime->__getCategoria()}', 
+					nome = '{$dadosTime->__getNome()}', 
+					categoria = '{$dadosTime->__getCategoria()}', 
 					endereco = '{$dadosTime->__getEndereco()}', 
 					data_fundacao = '{$dadosTime->__getDataFundacao()}', 
 					presidente = '{$dadosTime->__getPresidente()}', 
@@ -119,8 +121,9 @@ class TimeDAO{
 		$registro = $resultado->FetchNextObject();
 		$dadosTime = new Time();
 		$dadosTime->__constructOverload($registro->ID_TIME, $registro->TECNICO_ID_TECNICO, 
-										$registro->NOME, $registro->CATEGORIA, $registro->ENDERECO, 
-										$registro->DATA_FUNDACAO, $registro->PRESIDENTE, $registro->TELEFONE);
+										$registro->NOME, $registro->CATEGORIA, 
+										$registro->ENDERECO, $registro->DATA_FUNDACAO, 
+										$registro->PRESIDENTE, $registro->TELEFONE);
 		return $dadosTime;
 	}
 	
@@ -133,8 +136,9 @@ class TimeDAO{
 		$registro = $resultado->FetchNextObject();
 		$dadosTime = new Time();
 		$dadosTime->__constructOverload($registro->ID_TIME, $registro->TECNICO_ID_TECNICO,
-										$registro->NOME, $registro->CATEGORIA, $registro->ENDERECO, 
-										$registro->DATA_FUNDACAO, $registro->PRESIDENTE, $registro->TELEFONE, 
+										$registro->NOME, $registro->CATEGORIA, 
+										$registro->ENDERECO, $registro->DATA_FUNDACAO, 
+										$registro->PRESIDENTE, $registro->TELEFONE, 
 										$registro->PONTOS);
 		return $dadosTime;
 	}
