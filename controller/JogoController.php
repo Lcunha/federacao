@@ -5,7 +5,6 @@
   Description: Inserts the game data in the table can make change,
   delete and query besides enter and save data in the table.
  */
-
 include_once(__APP_PATH . '/persistence/JogoDAO.php');
 include_once(__APP_PATH . '/model/Jogo.php');
 
@@ -16,6 +15,10 @@ class JogoController {
     public function __construct() {
         $this->jogoDAO = new JogoDAO();
     }
+
+    /*
+      Function responsible for listing the data of a game at a table.
+     */
 
     public function _listarJogosParaTabela() {
         $dadosJogo = new Jogo();
@@ -33,13 +36,19 @@ class JogoController {
 					<td>" . $dadosJogo->__getDuracao() . "</td>          			
           			<td>" . $dadosJogo->__getTotal7Metros() . "</td>		
 							<td>
-            			<a href=\"?pag=jogo&action=edit&id=" . $dadosJogo->__getIdJogo() . "\"><img src=\"./views/images/edit.png\" width=\"16\" height=\"16\" /></a>
-            			<a href=\"?pag=jogo&action=exclude&id=" . $dadosJogo->__getIdJogo() . "\"><img src=\"./views/images/delete.png\" width=\"16\" height=\"16\" /></a>
+            			<a href=\"?pag=jogo&action=edit&id=" . $dadosJogo->__getIdJogo() . "\"><img src=\".
+                                    /views/images/edit.png\" width=\"16\" height=\"16\" /></a>
+            			<a href=\"?pag=jogo&action=exclude&id=" . $dadosJogo->__getIdJogo() . "\"><img src=\".
+                                    /views/images/delete.png\" width=\"16\" height=\"16\" /></a>
           			</td>
 			</tr>";
         }
         return $arrayTr;
     }
+
+    /*
+      Function responsible for listing the data of a game.
+     */
 
     public function _listarTodos() {
         return $this->jogoDAO->listarTodos();
@@ -70,11 +79,19 @@ class JogoController {
         return $this->jogoDAO->consultarPorDataJogo($dataJogo);
     }
 
+    /*
+      Function responsible for entering data of a game.
+     */
+
     public function _inserir($espectadores, $cidade, $localizacao, $data, $hora, $duracao, $total7Metros) {
         $dadosJogo = new Jogo();
         $dadosJogo->__constructOverload(0, $espectadores, $cidade, $localizacao, $data, $hora, $duracao, $total7Metros);
         return $this->jogoDAO->inserir($dadosJogo);
     }
+
+    /*
+      Function responsible for updating the data of a game.
+     */
 
     public function _atualizar($idJogo, $espectadores, $cidade, $localizacao, $dataJogo, $duracao) {
         $dadosJogo = new Jogo();

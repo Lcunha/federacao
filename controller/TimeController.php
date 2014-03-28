@@ -35,6 +35,10 @@ class TimeController {
         return $arraySelect;
     }
 
+    /*
+      Function responsible for listing all players.
+     */
+
     public function _listarTodosJogadores($idTime) {
         return $this->timeDAO->listarTodosJogadores($idTime);
     }
@@ -104,6 +108,10 @@ class TimeController {
         $arrayDados['pontos'] = $dadosTime->__getPontos();
         return $arrayDados;
     }
+
+    /*
+      Function responsible for consulting by name.
+     */
 
     public function _consultarPorNome($nome) {
         return $this->timeDAO->consultarPorNome($nome);

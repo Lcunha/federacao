@@ -17,6 +17,10 @@ class TecnicoController {
         $this->tecnicoDAO = new TecnicoDAO();
     }
 
+    /*
+      Function responsible for selecting the technical data in the table.
+     */
+
     public function _listarTecnicosParaSelect() {
         $dadosTecnico = new Tecnico();
         $arrayDadosTecnico = $this->tecnicoDAO->listarTodos();
@@ -27,6 +31,10 @@ class TecnicoController {
         }
         return $arraySelect;
     }
+
+    /*
+      List the function responsible for the technical data in the table.
+     */
 
     public function _listarTecnicosParaTabela() {
         $dadosTecnico = new Tecnico();
@@ -48,9 +56,10 @@ class TecnicoController {
         }
         return $arrayTr;
     }
-     /*
-   Function responsible for performing a query by ID.
-   */
+
+    /*
+      Function responsible for performing a query by ID.
+     */
 
     public function _consultarPorId($id) {
         $dadosTecnico = new Tecnico();
@@ -61,13 +70,16 @@ class TecnicoController {
 
         return $arrayDados;
     }
-  /*
-   Function responsible for performing a query by name.
-   */
+
+    /*
+      Function responsible for performing a query by name.
+     */
+
     public function _consultarPorNome($nome) {
         return $this->tecnicoDAO->consultarPorNome($nome);
     }
-       /*
+
+    /*
       Function responsible for saving the data of a new techical already registered.
      */
 
@@ -77,17 +89,27 @@ class TecnicoController {
         $this->tecnicoDAO->inserir($dadosTecnico);
     }
 
+    /*
+      Function responsible for updating the data of technical.
+     */
+
     public function _atualizar($idTecnico, $nome, $telefone, $cpf) {
         $dadosTecnico = new Tecnico();
         $dadosTecnico->__constructOverload($idTecnico, $nome, $telefone, $cpf);
         $this->tecnicoDAO->atualizar($dadosTecnico);
     }
+
     /*
-     Function responsible for deleting the data on technical.
+      Function responsible for deleting the data on technical.
      */
+
     public function _excluir($id) {
         return $this->tecnicoDAO->excluir($id);
     }
+
+    /*
+      Function responsible for counting how many records technicians.
+     */
 
     public function _contarRegistrosTecnico() {
         return $this->tecnicoDAO->contarRegistrosTecnico();

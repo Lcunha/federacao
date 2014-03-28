@@ -17,6 +17,10 @@ class TempoController {
         $this->tempoDAO = new TempoDAO();
     }
 
+    /*
+      Function responsible for listing the data of time.
+     */
+
     public function _listarTodos() {
         return $this->tempoDAO->listarTodos();
     }
@@ -67,9 +71,17 @@ class TempoController {
         return $arrayDados;
     }
 
+    /*
+      Function responsible for doing a query for a time from an id of time report.
+     */
+
     public function _consultarPorRelatorio($relatorio) {
         return $this->tempoDAO->consultarPorRelatorio($relatorio);
     }
+
+    /*
+      Function responsible for inserting a time table.
+     */
 
     public function _inserirTempo($idJogo) {
         return $this->tempoDAO->inserirTempo($idJogo);
@@ -95,16 +107,26 @@ class TempoController {
         $dadosTempo->__constructOverload(0, $idJogo, $tiro7Metros, $tempoTecnico, $placarTime1, $placarTime2, $tipo);
         $this->tempoDAO->inserir($dadosTempo);
     }
- /*
-     Function responsible for deleting the data on time.
+
+    /*
+      Function responsible for deleting the data on time.
      */
+
     public function _excluir($id) {
         return $this->tempoDAO->excluir($id);
     }
 
+    /*
+      Function responsible for inserting a goal from team.
+     */
+
     public function _inserirGolTimeA($placarA, $seteMetros, $idTempo) {
         return $this->tempoDAO->inserirGolTimeA($placarA, $seteMetros, $idTempo);
     }
+
+    /*
+      Function responsible for inserting a goal from team.
+     */
 
     public function _inserirGolTimeB($placarB, $idTempoAtual) {
         return $this->tempoDAO->inserirGolTimeB($placarB, $idTempoAtual);
