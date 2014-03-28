@@ -49,6 +49,10 @@ class DadosController {
         return $arrayTr;
     }
 
+    /*
+      Function responsible for listing all data of a game.
+     */
+
     public function _listarTodos() {
         return $this->dadosDAO->listarTodos();
     }

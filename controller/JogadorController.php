@@ -120,6 +120,10 @@ class JogadorController {
         return $arrayTr;
     }
 
+    /*
+      Function responsible for taking all registered players already and simulate a team with them.
+     */
+
     public function _listarJogadoresParaSumulaTimeB($time, $idTempo) {
         ;
         $idJogador[0] = -1;
@@ -178,6 +182,10 @@ class JogadorController {
         return $arrayTr;
     }
 
+    /*
+      Function responsible for listing all players.
+     */
+
     public function _listarTodos() {
         return $this->jogadorDAO->listarTodos();
     }
@@ -198,6 +206,10 @@ class JogadorController {
         return $arrayDados;
     }
 
+    /*
+      Performs query a player from a selected team.
+     */
+
     public function _consultarPorTime($idTime) {
         return $this->jogadorDAO->consultarPorTime($idTime);
     }
@@ -217,9 +229,17 @@ class JogadorController {
         return $arrayDados;
     }
 
+    /*
+      Function responsible for inserting a new player.
+     */
+
     public function _inserir(Jogador $jogador) {
         return $this->jogadorDAO->inserir($jogador);
     }
+
+    /*
+      Function responsible for updating embed player.
+     */
 
     public function _atualizar($idJogador, $idTime, $nome, $dataNascimento, $cpf, $numero) {
         $dadosJogador = new Jogador();
@@ -227,17 +247,27 @@ class JogadorController {
         $this->jogadorDAO->atualizar($dadosJogador);
     }
 
+    /*
+      Function responsible for saving the data of a player.
+     */
+
     public function _salvar($nome, $idTime, $dataNascimento, $cpf, $numero) {
         $dadosJogador = new Jogador();
         $dadosJogador->__constructOverload(0, $idTime, $nome, $dataNascimento, $cpf, $numero);
         $this->jogadorDAO->inserir($dadosJogador);
     }
+
     /*
-     Function responsible for deleting the data on game.
+      Function responsible for deleting the data on game.
      */
+
     public function _excluir($id) {
         return $this->jogadorDAO->excluir($id);
     }
+
+    /*
+      Function responsible for counting the records on how many players were registered.
+     */
 
     public function _contarRegistrosJogador() {
         return $this->jogadorDAO->contarRegistrosJogador();
@@ -262,6 +292,10 @@ class JogadorController {
         }
         return $arrayTr;
     }
+
+    /*
+      Function that query on all data Gunners players present in classes.
+     */
 
     public function _listarFearPlayers() {
         $arrayFear = $this->jogadorDAO->listarFearPlayers();

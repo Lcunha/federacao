@@ -16,9 +16,17 @@ class DadosTimeController {
         $this->dadosTimeDAO = new DadosTimeDAO();
     }
 
+    /*
+      Function responsible for listing all data Team.
+     */
+
     public function _listarTodos() {
         return $this->dadosTimeDAO->listarTodos();
     }
+
+    /*
+      Function responsible for performing a query on a team by ID.
+     */
 
     public function _consultarPorId($id) {
         $dadosDadosTime = new DadosTime();
@@ -29,6 +37,10 @@ class DadosTimeController {
 
         return $arrayDados;
     }
+
+    /*
+      Function responsible for entering data of a team.
+     */
 
     public function _inserir(DadosTime $dadosTime) {
         return $this->dadosTimeDAO->inserir($dadosTime);
@@ -62,9 +74,11 @@ class DadosTimeController {
         }
         $this->dadosTimeDAO->atualizarPontos($idTimeA, $idTimeB, $pontuacaoA, $pontuacaoB, $golsTimeA, $golsTimeB);
     }
-/*
-     Function responsible for deleting the data on time.
+
+    /*
+      Function responsible for deleting the data on time.
      */
+
     public function _excluir($id) {
         return $this->dadosTimeDAO->excluir($id);
     }
