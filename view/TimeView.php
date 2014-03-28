@@ -1,7 +1,7 @@
 <?php
 /*
-Name: TimeView.php
-Description: This view shows the data of the teams. It can be used to change or delete them too.
+    Name: TimeView.php
+    Description: This view shows the data of the teams. It can be used to change or delete them too.
 */
 include_once (__APP_PATH.'/controller/TimeController.php');
 include_once (__APP_PATH.'/controller/TecnicoController.php');

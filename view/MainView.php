@@ -1,7 +1,7 @@
 <?php 
 /*
-Name: MainView.php
-Description: This is the main view. It shows the options that lead to the other views.
+    Name: MainView.php
+    Description: This is the main view. It shows the options that lead to the other views.
 */
 include_once(__APP_PATH.'/controller/TimeController.php');
 include_once(__APP_PATH.'/controller/JogadorController.php');

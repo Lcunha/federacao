@@ -1,7 +1,7 @@
 <?php
 /*
-Name: AjaxView.php
-Description: View of score.
+    Name: AjaxView.php
+    Description: View of score.
 */
 include_once('./controller/TempoController.php');
 

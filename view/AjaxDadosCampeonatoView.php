@@ -1,7 +1,7 @@
 <?php
 /*
-Name: AjaxDadosCampeonatoView.php
-Description: View of championship data.
+    Name: AjaxDadosCampeonatoView.php
+    Description: View of championship data.
 */
 include_once('./controller/DadosTimeController.php');
 

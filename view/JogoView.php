@@ -1,7 +1,7 @@
 <?php
 /*
-Name: JogoView.php
-Description: This view shows the data of each game.
+    Name: JogoView.php
+    Description: This view shows the data of each game.
 */
 include_once('./controller/JogoController.php');
 include_once('./controller/TempoController.php');
