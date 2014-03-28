@@ -19,7 +19,7 @@ class ArbitroController {
 
     /*
       Function responsible for taking the data registered by the referee system and store the information in a vector.
-    */
+     */
 
     public function _listarArbitrosParaTabela() {
         $dadosArbitro = new Arbitro();
@@ -52,7 +52,7 @@ class ArbitroController {
 
     /*
       Responsible for querying the data of a referee from the id function entered by User
-    */
+     */
 
     public function _consultarPorId($id) {
         $dadosArbitro = new Arbitro();
@@ -63,6 +63,10 @@ class ArbitroController {
 
         return $arrayDados;
     }
+
+    /*
+      Function responsible for performing a query by name.
+     */
 
     public function _consultarPorNome($nome) {
         return $this->arbitroDAO->consultarPorNome($nome);

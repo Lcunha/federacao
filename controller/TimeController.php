@@ -70,9 +70,17 @@ class TimeController {
         return $arrayTr;
     }
 
+    /*
+      Function responsible for listing all of the teams.
+     */
+
     public function _listarTodos() {
         return $this->timeDAO->listarTodos();
     }
+
+    /*
+      Function responsible for listing all of the teams points.
+     */
 
     public function _listarTodoPorPontos() {
         return $this->timeDAO->listarTodosPorPontos();
@@ -125,13 +133,18 @@ class TimeController {
         $dadosTime->__constructOverload($id, $idTecnico, $nome, $categoria, $endereco, $dataFundacao, $presidente, $telefone, 0);
         $this->timeDAO->atualizar($dadosTime);
     }
+
     /*
-     Function responsible for deleting the data on time.
+      Function responsible for deleting the data on time.
      */
 
     public function _excluir($id) {
         return $this->timeDAO->excluir($id);
     }
+
+    /*
+      Function responsible for counting the records of the teams.
+     */
 
     public function _contarRegistrosTime() {
         return $this->timeDAO->contarRegistrosTime();

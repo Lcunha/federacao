@@ -45,6 +45,10 @@ class JogoController {
         return $this->jogoDAO->listarTodos();
     }
 
+    /*
+      Function responsible for performing a query by ID.
+     */
+
     public function _consultarPorId($id) {
         $dadosJogo = new Jogo();
         $dadosJogo = $this->jogoDAO->consultarPorId($id);
@@ -57,6 +61,10 @@ class JogoController {
 
         return $arrayDados;
     }
+
+    /*
+      Function responsible for performing a query by date game.
+     */
 
     public function _consultarPorDataJogo($dataJogo) {
         return $this->jogoDAO->consultarPorDataJogo($dataJogo);
@@ -73,18 +81,19 @@ class JogoController {
         $dadosJogo->__constructOverload($idJogo, $espectadores, $cidade, $localizacao, $dataJogo, $duracao, $total7Metros);
         $this->jogoDAO->atualizar($dadosJogo);
     }
-      /*
+
+    /*
       Function responsible for saving the data of a new game already registered.
      */
-
 
     public function _salvar($idTimeA, $idTimeB, $espectadores, $cidade, $localizacao, $data, $hora, $duracao) {
         $dadosJogo = new Jogo();
         $dadosJogo->__constructOverload($idTimeA, $idTimeB, 0, $espectadores, $cidade, $localizacao, $data, $hora, $duracao);
         $this->jogoDAO->inserir($dadosJogo);
     }
+
     /*
-     Function responsible for deleting the data on game.
+      Function responsible for deleting the data on game.
      */
 
     public function _excluir($id) {

@@ -40,17 +40,33 @@ class TimeJogoController {
         return $arrayTr;
     }
 
+    /*
+      Function responsible for listing all games
+     */
+
     public function _listarTodos() {
         return $this->timeJogoDAO->listarTodos();
     }
+
+    /*
+      Function responsible for performing a query by team.
+     */
 
     public function _consultarPorTime($idTime) {
         return $this->timeJogoDAO->consultarPorTime($idTime);
     }
 
+    /*
+      Function responsible for performing a query by time.
+     */
+
     public function _consultarPorTempo($idTempo) {
         return $this->timeJogoDAO->consultarPorTempo($idTempo);
     }
+
+    /*
+      Function responsible for performing a query by game.
+     */
 
     public function _inserirTimeJogo(TimeJogo $timeJogo) {
         return $this->timeJogoDAO->inserir($timeJogo);
@@ -75,9 +91,11 @@ class TimeJogoController {
         $dadosTimeJogo->__constructOverload($idJogoAtual, $idTime);
         $this->timeJogoDAO->inserir($dadosTimeJogo);
     }
-/*
-     Function responsible for deleting the data on team playing.
+
+    /*
+      Function responsible for deleting the data on team playing.
      */
+
     public function _excluir($id) {
         return $this->timeJogoDAO->excluir($id);
     }

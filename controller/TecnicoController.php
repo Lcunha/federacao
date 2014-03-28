@@ -48,6 +48,9 @@ class TecnicoController {
         }
         return $arrayTr;
     }
+     /*
+   Function responsible for performing a query by ID.
+   */
 
     public function _consultarPorId($id) {
         $dadosTecnico = new Tecnico();
@@ -58,7 +61,9 @@ class TecnicoController {
 
         return $arrayDados;
     }
-
+  /*
+   Function responsible for performing a query by name.
+   */
     public function _consultarPorNome($nome) {
         return $this->tecnicoDAO->consultarPorNome($nome);
     }
