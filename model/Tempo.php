@@ -1,13 +1,12 @@
 <?php
 
 /* 
-  Name: Tempo.php
-  Description: This is the class that contains the attributes, accessor methods 
-  and constructors of the time, time spends in a game. The time must contains 
-  'idTempo', 'idJogo', 'tipo', 'advertencia', 'punicao', 'desqualificacao', 
-  'relatorio', 'tiro7Metros', 'tempoTecnico', 'placarTime1' and 'placarTime2'. 
+    Name: Tempo.php
+    Description: This is the class that contains the attributes, accessor methods 
+    and constructors of the time, time spends in a game. The time must contains 
+    'idTempo', 'idJogo', 'tipo', 'advertencia', 'punicao', 'desqualificacao', 
+    'relatorio', 'tiro7Metros', 'tempoTecnico', 'placarTime1' and 'placarTime2'. 
  */
-
 class Tempo{
 	private $idTempo;
 	private $idJogo;

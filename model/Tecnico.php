@@ -1,12 +1,11 @@
 <?php
 
 /* 
-  Name: Tecnico.php
-  Description: This is the class that contains the attributes, accessor methods 
-  and constructors of a coach. The coach must contains 'idTecnico', 'nome',
-  'telefone' and 'cpf'. 
+    Name: Tecnico.php
+    Description: This is the class that contains the attributes, accessor methods 
+    and constructors of a coach. The coach must contains 'idTecnico', 'nome',
+    'telefone' and 'cpf'. 
  */
-
 class Tecnico
 {
 	private $idTecnico;

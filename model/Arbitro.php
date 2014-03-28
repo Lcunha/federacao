@@ -1,12 +1,11 @@
 <?php
 
 /*
-  Name: Arbitro.php
-  Description: This is the class that contains the attributes, accessor methods 
-  and constructors of a referee. A referee must contains 'idArbitro', 'nome',
-  'telefone' and 'cpf'.
+    Name: Arbitro.php
+    Description: This is the class that contains the attributes, accessor methods 
+    and constructors of a referee. A referee must contains 'idArbitro', 'nome',
+    'telefone' and 'cpf'.
  */
-
 class Arbitro
 {
 	private $idArbitro;

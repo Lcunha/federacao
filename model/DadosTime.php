@@ -1,13 +1,12 @@
 <?php
 
 /* 
-  Name: DadosTime.php
-  Description: This is the class that contains the attributes, accessor methods 
-  and constructors about all team data. The team data must contains 
-  'idDadosTime', 'idTime', 'pontos', 'jogos', 'vitorias', 'empates', 'derrotas',
-  'gols' and 'golsLevados'. 
+    Name: DadosTime.php
+    Description: This is the class that contains the attributes, accessor methods 
+    and constructors about all team data. The team data must contains 
+    'idDadosTime', 'idTime', 'pontos', 'jogos', 'vitorias', 'empates', 'derrotas',
+    'gols' and 'golsLevados'. 
  */
-
 class DadosTime{
 	private $idDadosTime;
 	private $idTime;
