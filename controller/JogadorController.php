@@ -25,7 +25,8 @@ class JogadorController {
         $arrayDadosJogador = $this->jogadorDAO->listarTodos();
         for ($i = 0; $i < count($arrayDadosJogador); $i++) {
             $dadosJogador = $arrayDadosJogador[$i];
-            $arraySelect[] = "<option value=\"" . $dadosJogador->__getIdJogador() . "\">" . $dadosJogador->__getNome() . "</option>";
+            $arraySelect[] = "<option value=\"" . $dadosJogador->__getIdJogador() . "\">" . 
+            $dadosJogador->__getNome() . "</option>";
         }
         return $arraySelect;
     }
@@ -49,8 +50,10 @@ class JogadorController {
           			<td>" . $dadosJogador->__getCpf() . "</td>
           			<td>" . $dadosJogador->__getNumero() . "</td>
           			<td>
-            			<a href=\"?pag=jogador&action=edit&id=" . $dadosJogador->__getIdJogador() . "\"><img src=\"./views/images/edit.png\" width=\"16\" height=\"16\" /></a>
-            			<a href=\"?pag=jogador&action=exclude&id=" . $dadosJogador->__getIdJogador() . "\"><img src=\"./views/images/delete.png\" width=\"16\" height=\"16\" /></a>
+            			<a href=\"?pag=jogador&action=edit&id=" . $dadosJogador->__getIdJogador() . 
+                                "\"><img src=\"./views/images/edit.png\" width=\"16\" height=\"16\" /></a>
+            			<a href=\"?pag=jogador&action=exclude&id=" . $dadosJogador->__getIdJogador() . 
+                                "\"><img src=\"./views/images/delete.png\" width=\"16\" height=\"16\" /></a>
           			</td>
 			</tr>";
         }
@@ -87,8 +90,13 @@ class JogadorController {
 	            <script>var jogadorIdA$i = " . $dadosJogadorTime->__getIdJogador() . " </script>
 	            <th>
 	             	<script>var contGolTimeA$i = 0</script>
-		            <input id=\"acrescentaGolA$i\" class=\"but but-gol \" type=\"button\"  value=\"+\" onclick=\"contGolTimeA$i++;document.getElementById('golJogadorTimeA$i').innerHTML=contGolTimeA$i;timeGolsTimeA++;inserirGolTimeA(tempoAtual);persistirTempo(tempoAtual);persistirDados(jogadorIdA$i,contGolTimeA$i,contATimeA$i,contDoisMinutosTimeA$i,contDTimeA$i,contDRTimeA$i," . $idTempo . ");\">
-					<input id=\"decrementaGolA$i\" class=\"but but-retirarGol \" type=\"button\" value=\"-\" onclick=\"contGolTimeA$i--;timeGolsTimeA--;if(contGolTimeA$i<0){contGolTimeA$i++;timeGolsTimeA++;}document.getElementById('golJogadorTimeA$i').innerHTML=contGolTimeA$i;inserirGolTimeA(tempoAtual);persistirTempo(tempoAtual);persistirDados(jogadorIdA$i,contGolTimeA$i,contATimeA$i,contDoisMinutosTimeA$i,contDTimeA$i,contDRTimeA$i," . $idTempo . ");\">
+		            <input id=\"acrescentaGolA$i\" class=\"but but-gol \" type=\"button\"  
+                                value=\"+\" onclick=\"contGolTimeA$i++;document.getElementById('golJogadorTimeA$i').
+                                    innerHTML=contGolTimeA$i;timeGolsTimeA++;inserirGolTimeA(tempoAtual);persistirTempo
+                                        (tempoAtual);persistirDados(jogadorIdA$i,contGolTimeA$i,contATimeA$i,
+                                            contDoisMinutosTimeA$i,contDTimeA$i,contDRTimeA$i," . $idTempo . ");\">
+					<input id=\"decrementaGolA$i\" 
+                                           class=\"but but-retirarGol \" type=\"button\" value=\"-\" onclick=\"contGolTimeA$i--;timeGolsTimeA--;if(contGolTimeA$i<0){contGolTimeA$i++;timeGolsTimeA++;}document.getElementById('golJogadorTimeA$i').innerHTML=contGolTimeA$i;inserirGolTimeA(tempoAtual);persistirTempo(tempoAtual);persistirDados(jogadorIdA$i,contGolTimeA$i,contATimeA$i,contDoisMinutosTimeA$i,contDTimeA$i,contDRTimeA$i," . $idTempo . ");\">
 					
 					</th></th>
 		            <th class=\"tr\" id=\"jogadorATimeA$i\">0	

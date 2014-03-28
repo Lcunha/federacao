@@ -45,8 +45,10 @@ class TempoController {
           			<td>" . $dadosTempo->__getPlacarTime2() . "</td>
           			<td>" . $dadosTempo->__getTipo() . "</td>
           			<td>
-            			<a href=\"?pag=tempo&action=edit&id=" . $dadosTempo->__getIdTempo() . "\"><img src=\"./views/images/edit.png\" width=\"16\" height=\"16\" /></a>
-            			<a href=\"?pag=tempo&action=exclude&id=" . $dadosTempo->__getIdTempo() . "\"><img src=\"./views/images/delete.png\" width=\"16\" height=\"16\" /></a>
+            			<a href=\"?pag=tempo&action=edit&id=" . $dadosTempo->__getIdTempo() .
+                    "\"><img src=\"./views/images/edit.png\" width=\"16\" height=\"16\" /></a>
+            			<a href=\"?pag=tempo&action=exclude&id=" . $dadosTempo->__getIdTempo() . 
+                    "\"><img src=\"./views/images/delete.png\" width=\"16\" height=\"16\" /></a>
           			</td>
 			</tr>";
         }

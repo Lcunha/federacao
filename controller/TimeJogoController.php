@@ -32,8 +32,10 @@ class TimeJogoController {
 					<td>" . $dadosTimeJogo->__getIdJogo() . "</td>
           			<td>" . $dadosTimeJogo->__getIdTime() . "</td>
           			<td>
-            			<a href=\"?pag=timeJogo&action=edit&id=" . $dadosTimeJogo->__getTimeJogo() . "\"><img src=\"./views/images/edit.png\" width=\"16\" height=\"16\" /></a>
-            			<a href=\"?pag=timeJogo&action=exclude&id=" . $dadosTimeJogo->__getTimeJogo() . "\"><img src=\"./views/images/delete.png\" width=\"16\" height=\"16\" /></a>
+            			<a href=\"?pag=timeJogo&action=edit&id=" . $dadosTimeJogo->__getTimeJogo() .
+                                "\"><img src=\"./views/images/edit.png\" width=\"16\" height=\"16\" /></a>
+            			<a href=\"?pag=timeJogo&action=exclude&id=" . $dadosTimeJogo->__getTimeJogo() .
+                                "\"><img src=\"./views/images/delete.png\" width=\"16\" height=\"16\" /></a>
           			</td>
 			</tr>";
         }

@@ -138,7 +138,8 @@ class TimeController {
     public function _atualizar($id, $idTecnico, $nome, $categoria, $endereco, $dataFundacao, $presidente, $telefone) {
 
         $dadosTime = new Time();
-        $dadosTime->__constructOverload($id, $idTecnico, $nome, $categoria, $endereco, $dataFundacao, $presidente, $telefone, 0);
+        $dadosTime->__constructOverload($id, $idTecnico, $nome, $categoria, $endereco, $dataFundacao, $presidente, 
+        $telefone, 0);
         $this->timeDAO->atualizar($dadosTime);
     }
 
