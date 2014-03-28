@@ -1,4 +1,5 @@
 <?php
+
 /* 
   Name: Time.php
   Description: This is the class that contains the attributes, accessor methods 

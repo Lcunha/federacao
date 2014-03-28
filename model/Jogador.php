@@ -1,7 +1,8 @@
 <?php
+
 /* 
   Name: Jogador.php
-  Description: This is the class that contains the attributes, acessor methods 
+  Description: This is the class that contains the attributes, accessor methods 
   and constructors of a player. The player must contains 'idJogador', 'idTime', 
   'nome', 'dataNascimento', 'cpf' and 'numero'. 
  */

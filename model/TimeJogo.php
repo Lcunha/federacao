@@ -1,9 +1,10 @@
 <?php
+
 /* 
   Name: TimeJogo.php
   Description: This is the class that contains the attributes, accessor methods 
   and constructors of the team that is playing the game. The team in the game 
-  must contain 'idJogo' and 'idTime'. 
+  must contains 'idJogo' and 'idTime'. 
  */
 
 class TimeJogo{
