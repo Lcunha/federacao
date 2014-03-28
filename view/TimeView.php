@@ -31,9 +31,9 @@ class TimeView{
         */ 
 	public function atualizar($id){
 		$formulario = $_POST;
-		return $this->timeCO->_atualizar($id,$formulario['idTecnico'], 
+		return $this->timeCO->_atualizar($id, $formulario['idTecnico'], 
                 $formulario['nome'], $formulario['categoria'], 
-                $formulario['endereco'], $formulario['dataFundacao'], 
+                $formulario['endereco'], $formulario['dataFundacao'],  
                 $formulario['presidente'], $formulario['telefone']);
 	}
         /*

@@ -22,8 +22,8 @@ class DadosView{
         /*
             This function is responsible to add to the controller data.
         */
-	public function inserir($idTempoInserido,$idTimeA,$idTimeB){
-		return $this->dadosCO->_inserir($idTempoInserido,$idTimeA,
+	public function inserir($idTempoInserido, $idTimeA, $idTimeB){
+		return $this->dadosCO->_inserir($idTempoInserido,$idTimeA, 
                 $idTimeB);
 	}
         /*

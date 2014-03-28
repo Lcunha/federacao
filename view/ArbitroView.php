@@ -29,7 +29,7 @@ class ArbitroView{
         */
 	public function atualizar($id){
 		$formulario = $_POST;
-		return $this->arbitroCO->_atualizar($id,$formulario['nome'], 
+		return $this->arbitroCO->_atualizar($id, $formulario['nome'], 
                 $formulario['telefone'], $formulario['cpf']);
 	}
         /*

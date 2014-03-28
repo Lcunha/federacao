@@ -17,6 +17,6 @@ class TimeJogoView{
             This function is responsible to save the game.
         */ 
         public function salvar($idJogoAtual,$idTime){
-		$this->timeJogoCO->_salvar($idJogoAtual,$idTime);
+		$this->timeJogoCO->_salvar($idJogoAtual, $idTime);
 	}
 }

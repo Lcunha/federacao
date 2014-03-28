@@ -15,4 +15,4 @@ $idTempo = $_GET["idTempo"];
 
 $DadoCO = new DadosController();
 $DadoCO->_atualizarDados($jogadorId, $idTempo, $jogadorA, $jogadorP, $jogadorD,
-                         $jogadorR,$jogadorGol);
+                         $jogadorR, $jogadorGol);
