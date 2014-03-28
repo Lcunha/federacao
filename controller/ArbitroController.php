@@ -18,7 +18,8 @@ class ArbitroController {
     }
 
     /*
-      Function responsible for taking the data registered by the referee system and store the information in a vector.
+      Function responsible for taking the data registered by the referee system 
+      and store the information in a vector.
      */
 
     public function _listarArbitrosParaTabela() {
@@ -51,7 +52,8 @@ class ArbitroController {
     }
 
     /*
-      Responsible for querying the data of a referee from the id function entered by User
+      Responsible for querying the data of a referee from the id function 
+      entered by User
      */
 
     public function _consultarPorId($id) {
@@ -74,7 +76,8 @@ class ArbitroController {
 
     /*
       Responsible for calling the function of insertion of a new
-      arbitrator in the table by calling the function insert function in existing class ArbitroDAO.php
+      arbitrator in the table by calling the function insert function in 
+      existing class ArbitroDAO.php
      */
 
     public function _inserir(Arbitro $arbitro) {
@@ -92,7 +95,8 @@ class ArbitroController {
     }
 
     /*
-      Function responsible for saving the data of a new arbitrator already registered.
+      Function responsible for saving the data of a new arbitrator already 
+      registered.
      */
 
     public function _salvar($nome, $telefone, $cpf) {
@@ -110,7 +114,8 @@ class ArbitroController {
     }
 
     /*
-      Function responsible for telling how many arbitrators have already been registered.
+      Function responsible for telling how many arbitrators have already been 
+      registered.
      */
 
     public function _contarRegistrosArbitro() {

@@ -23,10 +23,12 @@ class DadosView{
             This function is responsible to add to the controller data.
         */
 	public function inserir($idTempoInserido,$idTimeA,$idTimeB){
-		return $this->dadosCO->_inserir($idTempoInserido,$idTimeA,$idTimeB);
+		return $this->dadosCO->_inserir($idTempoInserido,$idTimeA,
+                $idTimeB);
 	}
         /*
-            This function is responsible to update the controller data from the text received by the form.
+            This function is responsible to update the controller data from the 
+            text received by the form.
         */
 	public function atualizar($id){
 		$formulario = $_POST;

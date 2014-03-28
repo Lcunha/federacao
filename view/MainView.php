@@ -15,7 +15,8 @@ class MainView{
 	private $arbitroCO;
 	 
         /*
-            This function is responsible to instantiate the TimeController, JogadorController, TecnicoController and ArbitroController.
+            This function is responsible to instantiate the TimeController, 
+            JogadorController, TecnicoController and ArbitroController.
         */        
 	public function __construct(){
 		$this->timeCO = new TimeController();

@@ -13,7 +13,8 @@ class JogoView {
     private $tempoCO;
 
     /*
-      This function is responsible to instantiate the JogoController and TempoController.
+      This function is responsible to instantiate the JogoController and 
+      TempoController.
      */
     public function __construct() {
         $this->jogoCO = new JogoController();
@@ -38,14 +39,17 @@ class JogoView {
       This function is responsible to add a new game.
      */
     public function inserir() {
-        return $this->jogoCO->_inserir($_POST['espectadores'], $_POST['cidade'], $_POST['local'], $_POST['data'], $_POST['hora'], $_POST['duracao'], 0);
+        return $this->jogoCO->_inserir($_POST['espectadores'], $_POST['cidade'],
+        $_POST['local'], $_POST['data'], $_POST['hora'], $_POST['duracao'], 0);
     }
 
     /*
       This function is responsible to save game information received by form.
      */
     public function salvar() {
-        return $this->jogoCO->_salvar($_POST['idTimeA'], $_POST['idTimeB'], $_POST['espectadorez'], $_POST['cidade'], $_POST['local'], $_POST['data'], $_POST['hora'], $_POST['duracao']);
+        return $this->jogoCO->_salvar($_POST['idTimeA'], $_POST['idTimeB'], 
+        $_POST['espectadorez'], $_POST['cidade'], $_POST['local'], 
+        $_POST['data'], $_POST['hora'], $_POST['duracao']);
     }
 
     /*

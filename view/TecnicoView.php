@@ -18,7 +18,8 @@ class TecnicoView{
         */ 
 	public function salvar(){
 		$formulario = $_POST;
-		$this->tecnicoCO->_salvar($formulario['nome'], $formulario['telefone'], $formulario['cpf']);
+		$this->tecnicoCO->_salvar($formulario['nome'], 
+                $formulario['telefone'], $formulario['cpf']);
 		echo "Dados inseridos com sucesso";
 	}
         /*
@@ -26,7 +27,8 @@ class TecnicoView{
         */ 
 	public function atualizar($id){
 		$formulario = $_POST;
-		return $this->tecnicoCO->_atualizar($id,$formulario['nome'], $formulario['telefone'], $formulario['cpf']);
+		return $this->tecnicoCO->_atualizar($id,$formulario['nome'], 
+                $formulario['telefone'], $formulario['cpf']);
 	}
         /*
             This function is responsible to delete the coach.

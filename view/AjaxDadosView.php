@@ -14,4 +14,5 @@ $jogadorR= $_GET["jogadorR"];
 $idTempo = $_GET["idTempo"];
 
 $DadoCO = new DadosController();
-$DadoCO->_atualizarDados($jogadorId, $idTempo, $jogadorA, $jogadorP, $jogadorD, $jogadorR,$jogadorGol);
+$DadoCO->_atualizarDados($jogadorId, $idTempo, $jogadorA, $jogadorP, $jogadorD,
+                         $jogadorR,$jogadorGol);

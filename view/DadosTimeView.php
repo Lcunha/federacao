@@ -20,7 +20,8 @@ class DadosTimeView{
 		return $this->dadosTimeCO->listarTodos();
 	}
 	/*
-            This function is responsible to consult the data of the team by the id.
+            This function is responsible to consult the data of the team by the 
+            id.
         */
         public function consultarPorId($id){
 		return $this->dadosTimeCO->_consultarPorId($id);

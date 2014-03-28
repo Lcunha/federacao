@@ -1,7 +1,8 @@
 <?php
 /*
     Name: TimeView.php
-    Description: This view shows the data of the teams. It can be used to change or delete them too.
+    Description: This view shows the data of the teams. It can be used to change
+    or delete them too.
 */
 include_once (__APP_PATH.'/controller/TimeController.php');
 include_once (__APP_PATH.'/controller/TecnicoController.php');
@@ -18,15 +19,22 @@ class TimeView{
         */ 
 	public function salvar(){
 		$formulario = $_POST;
-		$this->timeCO->_salvar($formulario['idTecnico'], $formulario['nome'], $formulario['categoria'], $formulario['endereco'], $formulario['dataFundacao'], $formulario['presidente'], $formulario['telefone']);
+		$this->timeCO->_salvar($formulario['idTecnico'], 
+                $formulario['nome'], $formulario['categoria'], 
+                $formulario['endereco'], $formulario['dataFundacao'], 
+                $formulario['presidente'], $formulario['telefone']);
 		echo "Dados inseridos com sucesso";
 	}
         /*
-            This function is responsible to update the team information from the forms.
+            This function is responsible to update the team information from 
+            the forms.
         */ 
 	public function atualizar($id){
 		$formulario = $_POST;
-		return $this->timeCO->_atualizar($id,$formulario['idTecnico'], $formulario['nome'], $formulario['categoria'], $formulario['endereco'], $formulario['dataFundacao'], $formulario['presidente'], $formulario['telefone']);
+		return $this->timeCO->_atualizar($id,$formulario['idTecnico'], 
+                $formulario['nome'], $formulario['categoria'], 
+                $formulario['endereco'], $formulario['dataFundacao'], 
+                $formulario['presidente'], $formulario['telefone']);
 	}
         /*
             This function is responsible to delete a team.

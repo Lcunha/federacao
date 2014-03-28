@@ -15,11 +15,13 @@ class ArbitroView{
 		$this->arbitroCO = new ArbitroController();
 	}
         /*
-            This function is responsible to get the data typed on the forms and save them.
+            This function is responsible to get the data typed on the forms and 
+            save them.
         */
 	public function salvar(){
 		$formulario = $_POST;
-		$this->arbitroCO->_salvar($formulario['nome'], $formulario['telefone'], $formulario['cpf']);
+		$this->arbitroCO->_salvar($formulario['nome'], 
+                ['telefone'], $formulario['cpf']);
 		echo "Dados inseridos com sucesso";
 	}
         /*
@@ -27,7 +29,8 @@ class ArbitroView{
         */
 	public function atualizar($id){
 		$formulario = $_POST;
-		return $this->arbitroCO->_atualizar($id,$formulario['nome'], $formulario['telefone'], $formulario['cpf']);
+		return $this->arbitroCO->_atualizar($id,$formulario['nome'], 
+                $formulario['telefone'], $formulario['cpf']);
 	}
         /*
             This function is responsible to delete the arbitro.
