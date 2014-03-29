@@ -1,9 +1,9 @@
 <?php
 
 /*
-  Name: JogoController.php
-  Description: Inserts the game data in the table can make change,
-  delete and query besides enter and save data in the table.
+    Name: JogoController.php
+    Description: Inserts the game data in the table can make change,
+    delete and query besides enter and save data in the table.
  */
 include_once(__APP_PATH . '/persistence/JogoDAO.php');
 include_once(__APP_PATH . '/model/Jogo.php');
@@ -12,18 +12,17 @@ class JogoController {
 
     private $jogoDAO;
 
-    public function __construct() {
+    public function __construct(){
         $this->jogoDAO = new JogoDAO();
     }
 
     /*
-      Function responsible for listing the data of a game at a table.
-     */
-
-    public function _listarJogosParaTabela() {
+        Function responsible for listing the data of a game at a table.
+    */
+    public function _listarJogosParaTabela(){
         $dadosJogo = new Jogo();
         $arrayDadosJogo = $this->jogoDAO->listarTodos();
-        for ($i = 0; $i < count($arrayDadosJogo); $i++) {
+        for ($i = 0; $i < count($arrayDadosJogo); $i++){
             $dadosJogo = $arrayDadosJogo[$i];
             $arrayTr[] = "
 			<tr>
@@ -47,18 +46,16 @@ class JogoController {
     }
 
     /*
-      Function responsible for listing the data of a game.
-     */
-
-    public function _listarTodos() {
+        Function responsible for listing the data of a game.
+    */
+    public function _listarTodos(){
         return $this->jogoDAO->listarTodos();
     }
 
     /*
-      Function responsible for performing a query by ID.
-     */
-
-    public function _consultarPorId($id) {
+        Function responsible for performing a query by ID.
+    */
+    public function _consultarPorId($id){
         $dadosJogo = new Jogo();
         $dadosJogo = $this->jogoDAO->consultarPorId($id);
         $arrayDados['espectadores'] = $dadosJogo->__getEspectadores();
@@ -72,48 +69,43 @@ class JogoController {
     }
 
     /*
-      Function responsible for performing a query by date game.
-     */
-
-    public function _consultarPorDataJogo($dataJogo) {
+        Function responsible for performing a query by date game.
+    */
+    public function _consultarPorDataJogo($dataJogo){
         return $this->jogoDAO->consultarPorDataJogo($dataJogo);
     }
 
     /*
-      Function responsible for entering data of a game.
-     */
-
-    public function _inserir($espectadores, $cidade, $localizacao, $data, $hora, $duracao, $total7Metros) {
+        Function responsible for entering data of a game.
+    */
+    public function _inserir($espectadores, $cidade, $localizacao, $data, $hora, $duracao, $total7Metros){
         $dadosJogo = new Jogo();
         $dadosJogo->__constructOverload(0, $espectadores, $cidade, $localizacao, $data, $hora, $duracao, $total7Metros);
         return $this->jogoDAO->inserir($dadosJogo);
     }
 
     /*
-      Function responsible for updating the data of a game.
-     */
-
-    public function _atualizar($idJogo, $espectadores, $cidade, $localizacao, $dataJogo, $duracao) {
+        Function responsible for updating the data of a game.
+    */
+    public function _atualizar($idJogo, $espectadores, $cidade, $localizacao, $dataJogo, $duracao){
         $dadosJogo = new Jogo();
         $dadosJogo->__constructOverload($idJogo, $espectadores, $cidade, $localizacao, $dataJogo, $duracao, $total7Metros);
         $this->jogoDAO->atualizar($dadosJogo);
     }
 
     /*
-      Function responsible for saving the data of a new game already registered.
+        Function responsible for saving the data of a new game already registered.
      */
-
-    public function _salvar($idTimeA, $idTimeB, $espectadores, $cidade, $localizacao, $data, $hora, $duracao) {
+    public function _salvar($idTimeA, $idTimeB, $espectadores, $cidade, $localizacao, $data, $hora, $duracao){
         $dadosJogo = new Jogo();
         $dadosJogo->__constructOverload($idTimeA, $idTimeB, 0, $espectadores, $cidade, $localizacao, $data, $hora, $duracao);
         $this->jogoDAO->inserir($dadosJogo);
     }
 
     /*
-      Function responsible for deleting the data on game.
-     */
-
-    public function _excluir($id) {
+        Function responsible for deleting the data on game.
+    */
+    public function _excluir($id){
         return $this->jogoDAO->excluir($id);
     }
 

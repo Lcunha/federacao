@@ -1,10 +1,9 @@
 F<?php
 /*
-  Name: JogadorController.pho
-  Description: Inserts players already registered in the table, organizes the players to form a team.
-  Query performs inserts, updates, and deletes saved data from players.
+    Name: JogadorController.php.
+    Description: Inserts players already registered in the table, organizes the players to form a team.
+    Query performs inserts, updates, and deletes saved data from players.
  */
-
 include_once(__APP_PATH . '/persistence/JogadorDAO.php');
 include_once(__APP_PATH . '/model/Jogador.php');
 
@@ -12,15 +11,14 @@ class JogadorController {
 
     private $jogadorDAO;
 
-    public function __construct() {
+    public function __construct(){
         $this->jogadorDAO = new JogadorDAO();
     }
 
     /*
-      Responsible function to list all the data for the registered players to be selected.
-     */
-
-    public function _listarTecnicosParaSelect() {
+        Responsible function to list all the data for the registered players to be selected.
+    */
+    public function _listarTecnicosParaSelect(){
         $dadosJogador = new Jogador();
         $arrayDadosJogador = $this->jogadorDAO->listarTodos();
         for ($i = 0; $i < count($arrayDadosJogador); $i++) {
@@ -32,10 +30,9 @@ class JogadorController {
     }
 
     /*
-      Responsible function to list all player data in a table.
-     */
-
-    public function _listarJogadoresParaTabela() {
+        Responsible function to list all player data in a table.
+    */
+    public function _listarJogadoresParaTabela(){
         $dadosJogador = new Jogador();
         $arrayDadosJogador = $this->jogadorDAO->listarTodos();
         for ($i = 0; $i < count($arrayDadosJogador); $i++) {
@@ -62,22 +59,20 @@ class JogadorController {
     }
 
     /*
-      Function responsible for taking all player data assembling a team.
-     */
-
-    public function _listarJogadoresParaSumulaTimeA($time, $idTempo) {
-
+        Function responsible for taking all player data assembling a team.
+    */
+    public function _listarJogadoresParaSumulaTimeA($time, $idTempo){
         $idJogador[0] = -1;
         $dadosJogador = new Jogador();
         $arrayDadosJogador = $this->jogadorDAO->listarTodos();
-        for ($i = 0; $i < count($arrayDadosJogador); $i++) {
+        for ($i = 0; $i < count($arrayDadosJogador); $i++){
             $dadosJogador = $arrayDadosJogador[$i];
-            if ($dadosJogador->__getIdTime() == $time) {
+            if ($dadosJogador->__getIdTime() == $time){
                 $jogadorTime[] = $dadosJogador;
             }
         }
 
-        for ($i = 0; $i < count($jogadorTime); $i++) {
+        for ($i = 0; $i < count($jogadorTime); $i++){
             $dadosJogadorTime = $jogadorTime[$i];
             $arrayTr[] = "
 				
@@ -129,22 +124,20 @@ class JogadorController {
     }
 
     /*
-      Function responsible for taking all registered players already and simulate a team with them.
-     */
-
-    public function _listarJogadoresParaSumulaTimeB($time, $idTempo) {
-        ;
+        Function responsible for taking all registered players already and simulate a team with them.
+    */
+    public function _listarJogadoresParaSumulaTimeB($time, $idTempo){
         $idJogador[0] = -1;
         $dadosJogador = new Jogador();
         $arrayDadosJogador = $this->jogadorDAO->listarTodos();
-        for ($i = 0; $i < count($arrayDadosJogador); $i++) {
+        for ($i = 0; $i < count($arrayDadosJogador); $i++){
             $dadosJogador = $arrayDadosJogador[$i];
-            if ($dadosJogador->__getIdTime() == $time) {
+            if ($dadosJogador->__getIdTime() == $time){
                 $jogadorTime[] = $dadosJogador;
             }
         }
 
-        for ($i = 0; $i < count($jogadorTime); $i++) {
+        for ($i = 0; $i < count($jogadorTime); $i++){
             $dadosJogadorTime = $jogadorTime[$i];
             $arrayTr[] = "
 				
@@ -191,18 +184,16 @@ class JogadorController {
     }
 
     /*
-      Function responsible for listing all players.
-     */
-
-    public function _listarTodos() {
+        Function responsible for listing all players.
+    */
+    public function _listarTodos(){
         return $this->jogadorDAO->listarTodos();
     }
 
     /*
-      Performs query a player from a selected id.
-     */
-
-    public function _consultarPorId($id) {
+        Performs query a player from a selected id.
+    */
+    public function _consultarPorId($id){
         $dadosJogador = new Jogador();
         $dadosJogador = $this->jogadorDAO->consultarPorId($id);
         $arrayDados['nome'] = $dadosJogador->__getNome();
@@ -215,18 +206,16 @@ class JogadorController {
     }
 
     /*
-      Performs query a player from a selected team.
-     */
-
-    public function _consultarPorTime($idTime) {
+        Performs query a player from a selected team.
+    */
+    public function _consultarPorTime($idTime){
         return $this->jogadorDAO->consultarPorTime($idTime);
     }
 
     /*
-      Function that handles player data and makes the query their data using its name.
-     */
-
-    public function _consultarPorNome($nome) {
+        Function that handles player data and makes the query their data using its name.
+    */
+    public function _consultarPorNome($nome){
         $dadosJogador = new Jogador();
         $dadosJogador = $this->jogadorDAO->consultarPorNome($id);
         $arrayDados['idTime'] = $dadosJogador->__getIdTime();
@@ -238,56 +227,50 @@ class JogadorController {
     }
 
     /*
-      Function responsible for inserting a new player.
-     */
-
-    public function _inserir(Jogador $jogador) {
+        Function responsible for inserting a new player.
+    */
+    public function _inserir(Jogador $jogador){
         return $this->jogadorDAO->inserir($jogador);
     }
 
     /*
-      Function responsible for updating embed player.
-     */
-
-    public function _atualizar($idJogador, $idTime, $nome, $dataNascimento, $cpf, $numero) {
+        Function responsible for updating embed player.
+    */
+    public function _atualizar($idJogador, $idTime, $nome, $dataNascimento, $cpf, $numero){
         $dadosJogador = new Jogador();
         $dadosJogador->__constructOverload($idJogador, $idTime, $nome, $dataNascimento, $cpf, $numero);
         $this->jogadorDAO->atualizar($dadosJogador);
     }
 
     /*
-      Function responsible for saving the data of a player.
-     */
-
-    public function _salvar($nome, $idTime, $dataNascimento, $cpf, $numero) {
+        Function responsible for saving the data of a player.
+    */
+    public function _salvar($nome, $idTime, $dataNascimento, $cpf, $numero){
         $dadosJogador = new Jogador();
         $dadosJogador->__constructOverload(0, $idTime, $nome, $dataNascimento, $cpf, $numero);
         $this->jogadorDAO->inserir($dadosJogador);
     }
 
     /*
-      Function responsible for deleting the data on game.
-     */
-
-    public function _excluir($id) {
+        Function responsible for deleting the data on game.
+    */
+    public function _excluir($id){
         return $this->jogadorDAO->excluir($id);
     }
 
     /*
-      Function responsible for counting the records on how many players were registered.
-     */
-
-    public function _contarRegistrosJogador() {
+        Function responsible for counting the records on how many players were registered.
+    */
+    public function _contarRegistrosJogador(){
         return $this->jogadorDAO->contarRegistrosJogador();
     }
 
     /*
-      Function that query on all data Gunners players present in classes.
-     */
-
-    public function _listarArtilheiros() {
+        Function that query on all data Gunners players present in classes.
+    */
+    public function _listarArtilheiros(){
         $arrayArtilheiro = $this->jogadorDAO->listarArtilheiros();
-        for ($i = 0; $i < count($arrayArtilheiro); $i++) {
+        for ($i = 0; $i < count($arrayArtilheiro); $i++){
             $dadosArtilheiro = $arrayArtilheiro[$i];
             $arrayTr[] = "
 			
@@ -302,12 +285,11 @@ class JogadorController {
     }
 
     /*
-      Function that query on all data Gunners players present in classes.
-     */
-
-    public function _listarFearPlayers() {
+        Function that query on all data Gunners players present in classes.
+    */
+    public function _listarFearPlayers(){
         $arrayFear = $this->jogadorDAO->listarFearPlayers();
-        for ($i = 0; $i < count($arrayFear); $i++) {
+        for ($i = 0; $i < count($arrayFear); $i++){
             $dadosFear = $arrayFear[$i];
             $arrayTr[] = "
 		
