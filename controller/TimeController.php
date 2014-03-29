@@ -1,11 +1,10 @@
 <?php
 
 /*
-  Name: TimeController.php
-  Description:Classe responsavel por inserir os dados do time e dos
-  jogadores na tabela, realiza, consulta, exclui, e atualiza a tabela.
+    Name: TimeController.php
+    Description:Classe responsavel por inserir os dados do time e dos
+    jogadores na tabela, realiza, consulta, exclui, e atualiza a tabela.
  */
-
 include_once(__APP_PATH . '/persistence/TimeDAO.php');
 include_once(__APP_PATH . '/persistence/DadosTimeDAO.php');
 include_once(__APP_PATH . '/model/Time.php');
@@ -15,18 +14,17 @@ class TimeController {
 
     private $timeDAO;
 
-    public function __construct() {
+    public function __construct(){
         $this->timeDAO = new TimeDAO();
     }
 
     /*
-      Responsible function to list all data Team.
-     */
-
-    public function _listarTimesParaSelect() {
+        Responsible function to list all data Team.
+    */
+    public function _listarTimesParaSelect(){
         $dadosTime = new Time();
         $arrayDadosTime = $this->timeDAO->listarTodos();
-        for ($i = 0; $i < count($arrayDadosTime); $i++) {
+        for ($i = 0; $i < count($arrayDadosTime); $i++){
             $dadosTime = $arrayDadosTime[$i];
             $arraySelect[] = "<option value=\"" . $dadosTime->__getIdTime() . "\">" . $dadosTime->__getNome() .
                     "</option>";
@@ -36,21 +34,19 @@ class TimeController {
     }
 
     /*
-      Function responsible for listing all players.
-     */
-
-    public function _listarTodosJogadores($idTime) {
+        Function responsible for listing all players.
+    */
+    public function _listarTodosJogadores($idTime){
         return $this->timeDAO->listarTodosJogadores($idTime);
     }
 
     /*
-      Function responsible for all data list of registered teams in the table.
-     */
-
-    public function _listarTimeParaTabela() {
+        Function responsible for all data list of registered teams in the table.
+    */
+    public function _listarTimeParaTabela(){
         $dadosTime = new Time();
         $arrayDadosTime = $this->timeDAO->listarTodos();
-        for ($i = 0; $i < count($arrayDadosTime); $i++) {
+        for ($i = 0; $i < count($arrayDadosTime); $i++){
             $dadosTime = $arrayDadosTime[$i];
             $arrayTr[] = "
 			<tr>
@@ -75,26 +71,23 @@ class TimeController {
     }
 
     /*
-      Function responsible for listing all of the teams.
-     */
-
-    public function _listarTodos() {
+        Function responsible for listing all of the teams.
+    */
+    public function _listarTodos(){
         return $this->timeDAO->listarTodos();
     }
 
     /*
-      Function responsible for listing all of the teams points.
-     */
-
-    public function _listarTodoPorPontos() {
+        Function responsible for listing all of the teams points.
+    */
+    public function _listarTodoPorPontos(){
         return $this->timeDAO->listarTodosPorPontos();
     }
 
     /*
-      Responsible role by querying a team using an id.
-     */
-
-    public function _consultarPorId($id) {
+        Responsible role by querying a team using an id.
+    */
+    public function _consultarPorId($id){
         $dadosTime = new Time();
         $dadosTime = $this->timeDAO->consultarPorId($id);
         $arrayDados['idTecnico'] = $dadosTime->__getIdTecnico();
@@ -110,18 +103,16 @@ class TimeController {
     }
 
     /*
-      Function responsible for consulting by name.
-     */
-
-    public function _consultarPorNome($nome) {
+        Function responsible for consulting by name.
+    */
+    public function _consultarPorNome($nome){
         return $this->timeDAO->consultarPorNome($nome);
     }
 
     /*
-      Function responsible for saving the data of a team.
-     */
-
-    public function _salvar($idTecnico, $nome, $categoria, $endereco, $dataFundacao, $presidente, $telefone) {
+        Function responsible for saving the data of a team.
+    */
+    public function _salvar($idTecnico, $nome, $categoria, $endereco, $dataFundacao, $presidente, $telefone){
         $dadosTime = new Time();
         $dadosDadosTime = new DadosTime();
         $dadosDadosTimeDAO = new DadosTimeDAO();
@@ -132,10 +123,9 @@ class TimeController {
     }
 
     /*
-      Function responsible for updating the data of a team.
+        Function responsible for updating the data of a team.
      */
-
-    public function _atualizar($id, $idTecnico, $nome, $categoria, $endereco, $dataFundacao, $presidente, $telefone) {
+    public function _atualizar($id, $idTecnico, $nome, $categoria, $endereco, $dataFundacao, $presidente, $telefone){
 
         $dadosTime = new Time();
         $dadosTime->__constructOverload($id, $idTecnico, $nome, $categoria, $endereco, $dataFundacao, $presidente, 
@@ -144,42 +134,40 @@ class TimeController {
     }
 
     /*
-      Function responsible for deleting the data on time.
+        Function responsible for deleting the data on time.
      */
 
-    public function _excluir($id) {
+    public function _excluir($id){
         return $this->timeDAO->excluir($id);
     }
 
     /*
-      Function responsible for counting the records of the teams.
-     */
-
-    public function _contarRegistrosTime() {
+        Function responsible for counting the records of the teams.
+    */
+    public function _contarRegistrosTime(){
         return $this->timeDAO->contarRegistrosTime();
     }
 
     /*
-      Function responsible for the data list of teams to a championship.
-      Listing the balance in other matches played, points, games played, draws,
-      wins, and dorrotas amount of goals achieved.
-     */
-
-    public function _listarTimesParaTabelaCampeonato() {
+        Function responsible for the data list of teams to a championship.
+        Listing the balance in other matches played, points, games played, draws,
+        wins, and dorrotas amount of goals achieved.
+    */
+    public function _listarTimesParaTabelaCampeonato(){
         $dadosTime = new DadosTime();
         $time = new TimeController();
         $arrayDadosTime = $this->timeDAO->listarTodosPorPontos();
         $tamanho = count($arrayDadosTime);
-        for ($i = 0; $i < $tamanho; $i++) {
+        for ($i = 0; $i < $tamanho; $i++){
             $dadosTime = $arrayDadosTime[$i];
             $pos = $i;
             $pos++;
             $var = $time->_consultarPorId($dadosTime->__getIdTime());
             $nome = $var['nome'];
             $saldo = $dadosTime->__getGols() - $dadosTime->__getGolsLevados();
-            if ($dadosTime->__getJogos() != 0) {
+            if ($dadosTime->__getJogos() != 0){
                 $porcentagem = (int) ( 100 * ($dadosTime->__getVitorias()) / ($dadosTime->__getJogos()));
-            } else {
+            } else{
                 $porcentagem = 0;
             }
 
