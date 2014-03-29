@@ -117,8 +117,8 @@ class DadosDAO{
                                                  $registro->JOGADOR_ID_JOGADOR,
                                                  $registro->TEMPO_ID_TEMPO,
                                                  $registro->ADVERTENCIA, $registro->PUNICAO,
-                                                 $registro->DESQUALIFICACAO, $registro->RELATORIO
-                                                ,$registro->GOL);
+                                                 $registro->DESQUALIFICACAO, $registro->RELATORIO,
+                                                 $registro->GOL);
 		return $dadosDados;
 	}
 
