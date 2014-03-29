@@ -10,7 +10,7 @@ require_once('./libs/adodb/adodb.inc.php');
 
 class Conexao{
 	
-	public $banco;
+	public  $banco;
 	private $tipo_banco;
 	private $servidor;
 	private $usuario;
