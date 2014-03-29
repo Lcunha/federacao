@@ -1,9 +1,11 @@
 <?php
+
 /*
 	Name: Conexao.php
 	Description: Class to connect to mysql database through ADODB library, 
 	t this class contains all the sensitive information from the database
 */
+
 require_once('./libs/adodb/adodb.inc.php');
 
 class Conexao{
@@ -16,7 +18,7 @@ class Conexao{
 	private $db;
 
 	/* 
-		Construct method in class self, responsible for connection with database mysql 
+            Construct method in class self, responsible for connection with database mysql 
 	*/
 	public function __construct(){
 		$this->tipo_banco    = "mysql";
@@ -27,6 +29,6 @@ class Conexao{
 		$this->banco = NewADOConnection($this->tipo_banco);
 		$this->banco->dialect = 3;
 		$this->banco->debug = false;
-		$this->banco->Connect($this->servidor,$this->usuario,$this->senha,$this->db);
+		$this->banco->Connect($this->servidor, $this->usuario, $this->senha, $this->db);
 	}
 }
