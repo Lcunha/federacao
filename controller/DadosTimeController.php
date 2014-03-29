@@ -1,10 +1,9 @@
 <?php
 
 /*
-  Name: DadosTimeController.php
-  Description: Updates the points earned by teams in each match held.
+    Name: DadosTimeController.php
+    Description: Updates the points earned by teams in each match held.
  */
-
 include_once('./persistence/DadosTimeDAO.php');
 include_once('./model/DadosTime.php');
 
@@ -12,23 +11,21 @@ class DadosTimeController {
 
     private $dadosTimeDAO;
 
-    public function __construct() {
+    public function __construct(){
         $this->dadosTimeDAO = new DadosTimeDAO();
     }
 
     /*
-      Function responsible for listing all data Team.
-     */
-
-    public function _listarTodos() {
+        Function responsible for listing all data Team.
+    */
+    public function _listarTodos(){
         return $this->dadosTimeDAO->listarTodos();
     }
 
     /*
-      Function responsible for performing a query on a team by ID.
+        Function responsible for performing a query on a team by ID.
      */
-
-    public function _consultarPorId($id) {
+    public function _consultarPorId($id){
         $dadosDadosTime = new DadosTime();
         $dadosDadosTime = $this->dadosTimeDAO->consultarPorId($id);
         //$arrayDados['nome'] = $dadosArbitro->__getNome();
@@ -39,29 +36,26 @@ class DadosTimeController {
     }
 
     /*
-      Function responsible for entering data of a team.
+        Function responsible for entering data of a team.
      */
-
-    public function _inserir(DadosTime $dadosTime) {
+    public function _inserir(DadosTime $dadosTime){
         return $this->dadosTimeDAO->inserir($dadosTime);
     }
 
     /*
-      Responsible for updating the data team.
+        Responsible for updating the data team.
      */
-
-    public function _atualizar($idDadosTime, $pontos, $jogos, $vitorias, $empates, $derrotas, $gols, $golsLevados) {
+    public function _atualizar($idDadosTime, $pontos, $jogos, $vitorias, $empates, $derrotas, $gols, $golsLevados){
         $dadosDadosTime = new DadosTime();
-        $dadosDadosTime->__constructOverload(0, $idDadosTime, $pontos, $jogos, $vitorias, $empates, $derrotas, $gols, $golsLevados);
+        $dadosDadosTime->__constructOverload(0, $idDadosTime, $pontos, $jogos, $vitorias, 
+                                             $empates, $derrotas, $gols, $golsLevados);
         $this->dadosTimeDAO->atualizar($dadosDadosTime);
     }
 
     /*
-      Responsible for updating the scores of times in matches.
+        Responsible for updating the scores of times in matches.
      */
-
     public function _atualizarPontos($idTimeA, $idTimeB, $golsTimeA, $golsTimeB) {
-
         if ($golsTimeA > $golsTimeB) {
             $pontuacaoA = 3;
             $pontuacaoB = 0;
@@ -76,9 +70,8 @@ class DadosTimeController {
     }
 
     /*
-      Function responsible for deleting the data on time.
+        Function responsible for deleting the data on time.
      */
-
     public function _excluir($id) {
         return $this->dadosTimeDAO->excluir($id);
     }
