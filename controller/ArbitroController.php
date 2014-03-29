@@ -1,11 +1,10 @@
 <?php
 
 /*
-  Name: ArbitroController.php
-  Description:Class that performs the listing of teams and games
-  already registered in the system in a table may exluir, edit, update and save.
+    Name: ArbitroController.php
+    Description:Class that performs the listing of teams and games
+    already registered in the system in a table may exluir, edit, update and save.
  */
-
 include_once(__APP_PATH . '/persistence/ArbitroDAO.php');
 include_once(__APP_PATH . '/model/Arbitro.php');
 
@@ -13,19 +12,18 @@ class ArbitroController {
 
     private $arbitroDAO;
 
-    public function __construct() {
+    public function __construct(){
         $this->arbitroDAO = new ArbitroDAO();
     }
 
     /*
-      Function responsible for taking the data registered by the referee system 
-      and store the information in a vector.
+        Function responsible for taking the data registered by the referee system 
+        and store the information in a vector.
      */
-
-    public function _listarArbitrosParaTabela() {
+    public function _listarArbitrosParaTabela(){
         $dadosArbitro = new Arbitro();
         $arrayDadosArbitro = $this->arbitroDAO->listarTodos();
-        for ($i = 0; $i < count($arrayDadosArbitro); $i++) {
+        for ($i = 0; $i < count($arrayDadosArbitro); $i++){
             $dadosArbitro = $arrayDadosArbitro[$i];
             $arrayTr[] = "
 			<tr>
@@ -44,19 +42,17 @@ class ArbitroController {
     }
 
     /*
-      Responsible function to list all registered referees
+        Responsible function to list all registered referees
      */
-
-    public function _listarTodos() {
+    public function _listarTodos(){
         return $this->arbitroDAO->listarTodos();
     }
 
     /*
-      Responsible for querying the data of a referee from the id function 
-      entered by User
-     */
-
-    public function _consultarPorId($id) {
+        Responsible for querying the data of a referee from the id function 
+        entered by User
+    */
+    public function _consultarPorId($id){
         $dadosArbitro = new Arbitro();
         $dadosArbitro = $this->arbitroDAO->consultarPorId($id);
         $arrayDados['nome'] = $dadosArbitro->__getNome();
@@ -67,58 +63,52 @@ class ArbitroController {
     }
 
     /*
-      Function responsible for performing a query by name.
-     */
-
-    public function _consultarPorNome($nome) {
+        Function responsible for performing a query by name.
+    */
+    public function _consultarPorNome($nome){
         return $this->arbitroDAO->consultarPorNome($nome);
     }
 
     /*
-      Responsible for calling the function of insertion of a new
-      arbitrator in the table by calling the function insert function in 
-      existing class ArbitroDAO.php
+        Responsible for calling the function of insertion of a new
+        arbitrator in the table by calling the function insert function in 
+        existing class ArbitroDAO.php
      */
-
-    public function _inserir(Arbitro $arbitro) {
+    public function _inserir(Arbitro $arbitro){
         return $this->arbitroDAO->inserir($arbitro);
     }
 
     /*
-      Responsible function to modify data already a registered referee.
-     */
-
-    public function _atualizar($idArbitro, $nome, $telefone, $cpf) {
+        Responsible function to modify data already a registered referee.
+    */
+    public function _atualizar($idArbitro, $nome, $telefone, $cpf){
         $dadosArbitro = new Arbitro();
         $dadosArbitro->__constructOverload($idArbitro, $nome, $telefone, $cpf);
         $this->arbitroDAO->atualizar($dadosArbitro);
     }
 
     /*
-      Function responsible for saving the data of a new arbitrator already 
-      registered.
+        Function responsible for saving the data of a new arbitrator already 
+        registered.
      */
-
-    public function _salvar($nome, $telefone, $cpf) {
+    public function _salvar($nome, $telefone, $cpf){
         $dadosArbitro = new Arbitro();
         $dadosArbitro->__constructOverload(0, $nome, $telefone, $cpf);
         $this->arbitroDAO->inserir($dadosArbitro);
     }
 
     /*
-      Responsible function to delete data from an already registered referee.
-     */
-
-    public function _excluir($id) {
+        Responsible function to delete data from an already registered referee.
+    */
+    public function _excluir($id){
         return $this->arbitroDAO->excluir($id);
     }
 
     /*
-      Function responsible for telling how many arbitrators have already been 
-      registered.
+        Function responsible for telling how many arbitrators have already been 
+        registered.
      */
-
-    public function _contarRegistrosArbitro() {
+    public function _contarRegistrosArbitro(){
         return $this->arbitroDAO->contarRegistrosArbitro();
     }
 
