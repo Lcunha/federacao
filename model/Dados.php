@@ -150,5 +150,5 @@ class Dados{
 */
     public function __setGol($gol){
 	$this->gol = $gol;
-	}
+    }
 }
