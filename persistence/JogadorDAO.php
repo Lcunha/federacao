@@ -1,9 +1,11 @@
 <?php
+
 /*
-	Name: JogadorDAO.php  
-	Description:Class data persistence with CRUD functions (create, read, update, delete) 
-	for handling the type Player, in the relevant table in mysql.
+    Name: JogadorDAO.php  
+    Description:Class data persistence with CRUD functions (create, read, update, delete) 
+    for handling the type Player, in the relevant table in mysql.
  */
+
 include_once (__APP_PATH.'/model/Jogador.php');
 include_once (__APP_PATH.'/model/Time.php');
 include_once (__APP_PATH.'/persistence/Conexao.php');
@@ -12,89 +14,107 @@ class JogadorDAO{
 	private $conexao;
 	
 	/*
-		The method is responsibility to instance the class
+            The method is responsibility to instance the class
 	*/
 	public function __construct(){
 		$this->conexao = new Conexao();
 	}
 	
 	/*
-		The method is responsibility by list all registers in database table.
+            The method is responsibility by list all registers in database table.
 	*/
 	public function listarTodos(){
 		$sql = "SELECT * FROM jogador";
 		$resultado = $this->conexao->banco->Execute($sql);
 		while($registro = $resultado->FetchNextObject()){
 			$dadosJogador = new Jogador();
-			$dadosJogador->__constructOverload($registro->ID_JOGADOR,$registro->TIME_ID_TIME,$registro->NOME,$registro->DATA_NASCIMENTO,$registro->CPF,$registro->NUMERO);
+			$dadosJogador->__constructOverload($registro->ID_JOGADOR,
+                                                           $registro->TIME_ID_TIME,$registro->NOME,
+                                                           $registro->DATA_NASCIMENTO,
+                                                           $registro->CPF,$registro->NUMERO);
 			$retornaJogador[] = $dadosJogador;
 		}
 		return $retornaJogador;
 	}
 	
 	/*
-		The method is responsibility by to insert data in database table.
+            The method is responsibility by to insert data in database table.
 	*/
 	public function inserir(Jogador $dadosJogador){
-		$sql = "INSERT INTO jogador (time_id_time,nome,data_nascimento,cpf,numero) VALUES ('{$dadosJogador->__getNome()}','{$dadosJogador->__getIdTime()}','{$dadosJogador->__getDataNascimento()}','{$dadosJogador->__getCpf()}','{$dadosJogador->__getNumero()}')";
+		$sql = "INSERT INTO jogador (time_id_time, nome, data_nascimento, cpf, numero) 
+                        VALUES ('{$dadosJogador->__getNome()}','{$dadosJogador->__getIdTime()}',
+                                '{$dadosJogador->__getDataNascimento()}',
+                                '{$dadosJogador->__getCpf()}','{$dadosJogador->__getNumero()}')";
 		$this->conexao->banco->Execute($sql);
 	}
 	
 	/*
-		The method is responsibility by to update data in database table.
+            The method is responsibility by to update data in database table.
 	*/
 	public function atualizar(Jogador $dadosJogador){
-		$sql = "UPDATE jogador SET time_id_time='{$dadosJogador->__getIdTime()}',nome='{$dadosJogador->__getNome()}', data_nascimento='{$dadosJogador->__getDataNascimento()}', cpf='{$dadosJogador->__getCpf()}', numero='{$dadosJogador->__getNumero()}' WHERE id_jogador='{$dadosJogador->__getIdJogador()}' ";
+		$sql = "UPDATE jogador 
+                        SET time_id_time = '{$dadosJogador->__getIdTime()}',
+                            nome = '{$dadosJogador->__getNome()}', 
+                            data_nascimento = '{$dadosJogador->__getDataNascimento()}', 
+                            cpf = '{$dadosJogador->__getCpf()}', 
+                            numero = '{$dadosJogador->__getNumero()}' 
+                        WHERE id_jogador='{$dadosJogador->__getIdJogador()}' ";
 		$this->conexao->banco->Execute($sql);
 		return $dadosJogador;
 	}
 	
 	/*
-		The method is responsibility by to consult in database table through of ID.
+            The method is responsibility by to consult in database table through of ID.
 	*/
 	public function consultarPorId($id){
 		$sql = "SELECT * FROM jogador WHERE id_jogador = '{$id}'";
 		$resultado = $this->conexao->banco->Execute($sql);
 		$registro = $resultado->FetchNextObject();
 		$dadosJogador = new Jogador();
-		$dadosJogador->__constructOverload($registro->ID_JOGADOR,$registro->TIME_ID_TIME,$registro->NOME,$registro->DATA_NASCIMENTO,$registro->CPF,$registro->NUMERO);
+		$dadosJogador->__constructOverload($registro->ID_JOGADOR, $registro->TIME_ID_TIME,
+                                                   $registro->NOME, $registro->DATA_NASCIMENTO,
+                                                   $registro->CPF, $registro->NUMERO);
 		return $dadosJogador;
 	}
 	
 	/*
-		The method is responsibility by to consult in database table through of Name.
+            The method is responsibility by to consult in database table through of Name.
 	*/
 	public function consultarPorNome($nome){
-		$sql = "SELECT * FROM jogador WHERE nome= '{$nome}'";
+		$sql = "SELECT * FROM jogador WHERE nome = '{$nome}'";
 		$resultado = $this->conexao->banco->Execute($sql);
 		$registro = $resultado->FetchNextObject();
 		$dadosJogador = new Jogador();
-		$dadosJogador->__constructOverload($registro->ID_JOGADOR,$registro->TIME_ID_TIME,$registro->NOME,$registro->DATA_NASCIMENTO,$registro->CPF,$registro->NUMERO);
+		$dadosJogador->__constructOverload($registro->ID_JOGADOR, $registro->TIME_ID_TIME,
+                                                   $registro->NOME, $registro->DATA_NASCIMENTO,
+                                                   $registro->CPF, $registro->NUMERO);
 		return $dadosJogador;
 	}
 
 	/*
-		The method is responsibility by to consult in database table through of data Team.
+            The method is responsibility by to consult in database table through of data Team.
 	*/
 	public function consultarPorTime(Time $dadosTime){
-		$sql = "SELECT * FROM jogador WHERE time_id_time= '{$dadosTime->__getIdTime()}'";
+		$sql = "SELECT * FROM jogador WHERE time_id_time = '{$dadosTime->__getIdTime()}'";
 		$resultado = $this->conexao->banco->Execute($sql);
 		$registro = $resultado->FetchNextObject();
 		$dadosJogador = new Jogador();
-		$dadosJogador->__constructOverload($registro->ID_JOGADOR,$registro->TIME_ID_TIME,$registro->NOME,$registro->DATA_NASCIMENTO,$registro->CPF,$registro->NUMERO);
+		$dadosJogador->__constructOverload($registro->ID_JOGADOR, $registro->TIME_ID_TIME,
+                                                   $registro->NOME, $registro->DATA_NASCIMENTO,
+                                                   $registro->CPF, $registro->NUMERO);
 		return $dadosJogador;
 	}
 
 	/*
-		The mthod is responsibility by to delete data in databse table.
+            The mthod is responsibility by to delete data in databse table.
 	*/
 	public function excluir($id){
-		$sql = "DELETE FROM jogador WHERE id_jogador= '{$id}' ";
+		$sql = "DELETE FROM jogador WHERE id_jogador = '{$id}' ";
 		$resultado = $this->conexao->banco->Execute($sql);
 	}
 
 	/*
-		The method is responsibility by count all registers of type Player.
+            The method is responsibility by count all registers of type Player.
 	*/
 	public function contarRegistrosJogador(){
 		$sql = "SELECT COUNT(*) as contagem FROM jogador";
@@ -104,50 +124,50 @@ class JogadorDAO{
 	}
 
 	/*
-		The method is responsibility by to list gunners through of information data of type Player and Team.
+            The method is responsibility by to list gunners through of information data of type Player and Team.
 	*/
 	public function listarArtilheiros(){
-		$sql = "SELECT j.nome AS nome,t.nome AS nome_time,j.numero AS numero , SUM(gol) AS gols
-
-				FROM dados d,jogador j,time t
-				
-				WHERE j.id_jogador = d.jogador_id_jogador
-				AND j.time_id_time = t.id_time
-				
-				GROUP BY jogador_id_jogador
-				
-				ORDER BY gols DESC";
+		$sql = "SELECT j.nome AS nome,      
+                               t.nome AS nome_time, 
+                               j.numero AS numero , 
+                               SUM(gol) AS gols
+                        FROM dados d,jogador j,time t
+			WHERE j.id_jogador = d.jogador_id_jogador
+			AND j.time_id_time = t.id_time
+			GROUP BY jogador_id_jogador
+			ORDER BY gols DESC";
 		$resultado = $this->conexao->banco->Execute($sql);
 		while($registro = $resultado->FetchNextObject()){
-			$artilheiro['nome'] = $registro->NOME;
-			$artilheiro['time'] = $registro->NOME_TIME;
-			$artilheiro['gols'] = $registro->GOLS;
-			$artilheiro['numero'] = $registro->NUMERO;
-			$arrayArtilheiro[] = $artilheiro;
+                    $artilheiro['nome'] = $registro->NOME;
+                    $artilheiro['time'] = $registro->NOME_TIME;
+                    $artilheiro['gols'] = $registro->GOLS;
+                    $artilheiro['numero'] = $registro->NUMERO;
+                    $arrayArtilheiro[] = $artilheiro;
 		}	
 		return $arrayArtilheiro;
 	}
 
 	/*
-		The method is responsibility by to list fear players through of information data of type Player and Team.
+            The method is responsibility by to list fear players through of information data of type Player and Team.
 	*/
 	public function listarFearPlayers(){
-		$sql = "SELECT j.nome AS nome,t.nome AS nome_time,j.numero AS numero , (d.advertencia + d.punicao + d.desqualificacao + d.relatorio) AS faltas
-				FROM dados d,jogador j,time t
-				
-				WHERE j.id_jogador = d.jogador_id_jogador
-				AND j.time_id_time = t.id_time
-				
-				GROUP BY jogador_id_jogador
-				
-				ORDER BY faltas ASC";
+		$sql = "SELECT j.nome AS nome,
+                               t.nome AS nome_time,
+                               j.numero AS numero , 
+                               (d.advertencia + d.punicao + d.desqualificacao + d.relatorio) 
+                               AS faltas
+			FROM dados d,jogador j,time t
+                        WHERE j.id_jogador = d.jogador_id_jogador
+			AND j.time_id_time = t.id_time
+			GROUP BY jogador_id_jogador	
+			ORDER BY faltas ASC";
 		$resultado = $this->conexao->banco->Execute($sql);
 		while($registro = $resultado->FetchNextObject()){
-			$fear['nome'] = $registro->NOME;
-			$fear['time'] = $registro->NOME_TIME;
-			$fear['faltas'] = $registro->FALTAS;
-			$fear['numero'] = $registro->NUMERO;
-			$arrayFear[] = $fear;
+                    $fear['nome'] = $registro->NOME;
+                    $fear['time'] = $registro->NOME_TIME;
+                    $fear['faltas'] = $registro->FALTAS;
+                    $fear['numero'] = $registro->NUMERO;
+                    $arrayFear[] = $fear;
 		}
 		
 		return $arrayFear;

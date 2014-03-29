@@ -1,9 +1,9 @@
 <?php
 
 /*
-	Name: Conexao.php
-	Description: Class to connect to mysql database through ADODB library, 
-	t this class contains all the sensitive information from the database
+    Name: Conexao.php
+    Description: Class to connect to mysql database through ADODB library, 
+    this class contains all the sensitive information from the database
 */
 
 require_once('./libs/adodb/adodb.inc.php');
