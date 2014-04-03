@@ -1,5 +1,4 @@
 <?php
-
 /*
     Name: ArbitroController.php
     Description:Class that performs the listing of teams and games
