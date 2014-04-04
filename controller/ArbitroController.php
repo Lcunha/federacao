@@ -97,7 +97,7 @@ class ArbitroController {
     }
 
     /*
-        Responsible function to delete data from an already registered referee.
+       Responsible function to delete data from an already registered referee.
     */
     public function _excluir($id){
         return $this->arbitroDAO->excluir($id);
