@@ -1,18 +1,18 @@
 <?php
 
 /* 
-    Name: Jogador.php
+    Name: Player.php
     Description: This is the class that contains the attributes, accessor methods 
-    and constructors of a player. The player must contains 'idJogador', 'idTime', 
-    'nome', 'dataNascimento', 'cpf' and 'numero'. 
+    and constructors of a player. The player must contains 'idPlayer', 'idTeam', 
+    'playerName', 'birthDatePlayer', 'cpf' and 'numberPlayer'. 
 */
-class Jogador{
-    private $idJogador;
-    private $idTime;
-    private $nome;
-    private $dataNascimento;
+class Player{
+    private $idPlayer;
+    private $idTeam;
+    private $playerName;
+    private $birthDatePlayer;
     private $cpf;
-    private $numero;
+    private $numberPlayer;
 	
     /*
         Default construct declaration. Using constructor methods is appropriate for any initialization 
@@ -25,56 +25,56 @@ class Jogador{
     /*
         Overload construct.
     */
-    public function __constructOverload($idJogador, $idTime, $nome, $dataNascimento, $cpf, 
-                                        $numero){
-    	$this->idJogador = $idJogador;
-	$this->idTime = $idTime;
-	$this->nome = $nome;
-	$this->dataNascimento = $dataNascimento;
+    public function __constructOverload($idPlayer, $idTeam, $playerName, $birthDatePlayer, $cpf, 
+                                        $numberPlayer){
+    	$this->idPlayer = $idPlayer;
+	$this->idTeam = $idTeam;
+	$this->playerName = $playerName;
+	$this->birthDatePlayer = $birthDatePlayer;
 	$this->cpf = $cpf;
-	$this->numero = $numero;
+	$this->numberPlayer = $numberPlayer;
     }
         
     /*
-        Method to verify the attribute 'idJogador' of the class.
+        Method to verify the attribute 'idPlayer' of the class.
     */
-    public function __getIdJogador(){
-	return $this->idJogador;
+    public function __getIdPlayer(){
+	return $this->idPlayer;
     }
         
     /*
-        Method to modify the attribute 'idJogador' of the class.
+        Method to modify the attribute 'idPlayer' of the class.
     */
-    public function __setIdJogador($idJogador){
-	$this->idJogador = $idJogador;
+    public function __setIdPlayer($idPlayer){
+	$this->idPlayer = $idPlayer;
     }
         
     /*
-        Method to verify the attribute 'nome' of the class.
+        Method to verify the attribute 'playerName' of the class.
     */
-    public function __getNome(){
-	return $this->nome;
+    public function __getPlayerName(){
+	return $this->playerName;
     }
         
     /*
-        Method to modify the attribute 'nome' of the class.
+        Method to modify the attribute 'playerName' of the class.
     */
-    public function __setNome($nome){
-	$this->nome = $nome;
+    public function __setPlayerName($playerName){
+	$this->playerName = $playerName;
     }
         
     /*
-        Method to verify the attribute 'dataNascimento' of the class.
+        Method to verify the attribute 'birthDatePlayer' of the class.
     */
-    public function __getDataNascimento(){
-	return $this->dataNascimento;
+    public function __getBirthDatePlayer(){
+	return $this->birthDatePlayer;
     }
         
     /*
-        Method to modify the attribute 'dataNascimento' of the class.
+        Method to modify the attribute 'birthDatePlayer' of the class.
     */
-    public function __setDataNascimento($dataNascimento){
-	$this->dataNascimento = $dataNascimento;
+    public function __setBirthDatePlayer($birthDatePlayer){
+	$this->birthDatePlayer = $birthDatePlayer;
     }
         
     /*
@@ -92,31 +92,31 @@ class Jogador{
     }
         
     /*
-        Method to verify the attribute 'idTime' of the class.
+        Method to verify the attribute 'idTeam' of the class.
     */
-    public function __getIdTime(){
-	return $this->idTime;
+    public function __getIdTeam(){
+	return $this->idTeam;
     }
         
     /*
-        Method to modify the attribute 'idTime' of the class.
+        Method to modify the attribute 'idTeam' of the class.
     */
-    public function __setIdTime($idTime){
-	$this->idTime = $idTime;
+    public function __setIdTeam($idTeam){
+	$this->idTeam = $idTeam;
     }
         
     /*
-        Method to verify the attribute 'numero' of the class.
+        Method to verify the attribute 'numberPlayer' of the class.
     */
-    public function __getNumero(){
-	return $this->numero;
+    public function __getNumberPlayer(){
+	return $this->numberPlayer;
     }
         
     /*
-        Method to modify the attribute 'numero' of the class.
+        Method to modify the attribute 'numberPlayer' of the class.
     */
-    public function __setNumero($numero){
-	$this->numero = $numero;
+    public function __setNumberPlayer($numberPlayer){
+	$this->numberPlayer = $numberPlayer;
     }
 }
 
