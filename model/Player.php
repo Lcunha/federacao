@@ -4,7 +4,7 @@
     Name: Player.php
     Description: This is the class that contains the attributes, accessor methods 
     and constructors of a player. The player must contains 'idPlayer', 'idTeam', 
-    'playerName', 'birthDatePlayer', 'cpf' and 'numberPlayer'. 
+    'playerName', 'birthDatePlayer', 'cpf' and 'playerNumber'. 
 */
 class Player{
     private $idPlayer;
@@ -12,7 +12,7 @@ class Player{
     private $playerName;
     private $birthDatePlayer;
     private $cpf;
-    private $numberPlayer;
+    private $playerNumber;
 	
     /*
         Default construct declaration. Using constructor methods is appropriate for any initialization 
@@ -26,13 +26,13 @@ class Player{
         Overload construct.
     */
     public function __constructOverload($idPlayer, $idTeam, $playerName, $birthDatePlayer, $cpf, 
-                                        $numberPlayer){
+                                        $playerNumber){
     	$this->idPlayer = $idPlayer;
 	$this->idTeam = $idTeam;
 	$this->playerName = $playerName;
 	$this->birthDatePlayer = $birthDatePlayer;
 	$this->cpf = $cpf;
-	$this->numberPlayer = $numberPlayer;
+	$this->playerNumber = $playerNumber;
     }
         
     /*
@@ -106,17 +106,17 @@ class Player{
     }
         
     /*
-        Method to verify the attribute 'numberPlayer' of the class.
+        Method to verify the attribute 'playerNumber' of the class.
     */
-    public function __getNumberPlayer(){
-	return $this->numberPlayer;
+    public function __getPlayerNumber(){
+	return $this->playerNumber;
     }
         
     /*
-        Method to modify the attribute 'numberPlayer' of the class.
+        Method to modify the attribute 'playerNumber' of the class.
     */
-    public function __setNumberPlayer($numberPlayer){
-	$this->numberPlayer = $numberPlayer;
+    public function __setPlayerNumber($playerNumber){
+	$this->playerNumber = $playerNumber;
     }
 }
 
