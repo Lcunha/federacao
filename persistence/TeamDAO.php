@@ -27,7 +27,7 @@ class TeamDAO{
 	*/
 	public function listAllTeam(){
 		$sql = "SELECT * FROM time";
-		$result = $this->connection->banco->Execute($sql);
+		$result = $this->connection->dataBase->Execute($sql);
 		while($record = $result->FetchNextObject()){
 			$teamData = new Team();
 			$teamData->__constructOverload($record->ID_TIME, $record->TECNICO_ID_TECNICO,
@@ -45,7 +45,7 @@ class TeamDAO{
 	*/
 	public function listarAllPlayersTeam($idTeam){
 		$sql = "SELECT * FROM jogador WHERE time_id_time = '{$idTeam}'";
-		$result = $this->connection->banco->Execute($sql);
+		$result = $this->connection->dataBase->Execute($sql);
 		while($record = $result->FetchNextObject()){
 			$playerData = new Player();
 			$playerData->__constructOverload($record->ID_JOGADOR, $record->TIME_ID_TIME,
@@ -66,7 +66,7 @@ class TeamDAO{
 			FROM dados_campeonato dc,time t
 			WHERE t.id_time = dc.time_id_time
 			ORDER BY dc.pontos DESC;";
-		$result = $this->connection->banco->Execute($sql);
+		$result = $this->connection->dataBase->Execute($sql);
 		while($record = $result->FetchNextObject()){
 			$teamData = new DadosTeam();
 			$teamData->__constructOverload(0, $record->ID_TIME, $record->PONTOS, 
@@ -88,7 +88,7 @@ class TeamDAO{
 				'{$teamData->__getTeamName()}', '{$teamData->__getTeamCategory()}', 
 				'{$teamData->__getTeamAddress()}', '{$teamData->__getTeamFoundationDate()}', 
 				'{$teamData->__getTeamPresident()}', '{$teamData->__getTeamPhone()}')";
-		$this->connection->banco->Execute($sql);
+		$this->connection->dataBase->Execute($sql);
 		return mysql_insert_id();
 	}
 	
@@ -105,7 +105,7 @@ class TeamDAO{
                             presidente = '{$teamData->__getTeamPresident()}', 
                             telefone = '{$teamData->__getTeamPhone()}' 
 			WHERE id_time = '{$teamData->__getIdTeam()}' ";
-		$this->connection->banco->Execute($sql);
+		$this->connection->dataBase->Execute($sql);
 		return $teamData;
 	}
 	
@@ -114,7 +114,7 @@ class TeamDAO{
 	*/
 	public function consultByIdTeam($idTeam){
 		$sql = "SELECT * FROM time WHERE id_time = '{$idTeam}'";
-		$result = $this->connection->banco->Execute($sql);
+		$result = $this->connection->dataBase->Execute($sql);
 		$record = $result->FetchNextObject();
 		$teamData = new Team();
 		$teamData->__constructOverload($record->ID_TIME, $record->TECNICO_ID_TECNICO, 
@@ -129,7 +129,7 @@ class TeamDAO{
 	*/
 	public function consultByTeamName($teamName){
 		$sql = "SELECT * FROM time WHERE nome = '{$teamName}'";
-		$result = $this->connection->banco->Execute($sql);
+		$result = $this->connection->dataBase->Execute($sql);
 		$record = $result->FetchNextObject();
 		$teamData = new Team();
 		$teamData->__constructOverload($record->ID_TIME, $record->TECNICO_ID_TECNICO,
@@ -145,7 +145,7 @@ class TeamDAO{
 	*/
 	public function deleteTeam($idTeam){
 		$sql = "DELETE FROM time WHERE id_time = '{$idTeam}' ";
-		$result = $this->connection->banco->Execute($sql);
+		$result = $this->connection->dataBase->Execute($sql);
 	}
 
 	/*
@@ -153,7 +153,7 @@ class TeamDAO{
 	*/
 	public function amountTeamsRecords(){
 		$sql = "SELECT COUNT(*) as contagem FROM time";
-		$result = $this->connection->banco->Execute($sql);
+		$result = $this->connection->dataBase->Execute($sql);
 		$record = $result->FetchNextObject();
 		return $record->CONTAGEM;
 	}

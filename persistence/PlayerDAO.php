@@ -25,7 +25,7 @@ class PlayerDAO{
 	*/
 	public function listAllPlayers(){
             $sql = "SELECT * FROM jogador";
-            $result = $this->connection->banco->Execute($sql);
+            $result = $this->connection->dataBase->Execute($sql);
             while($record = $result->FetchNextObject()){
                     $playerData = new Player();
                     $playerData->__constructOverload($record->ID_JOGADOR,
@@ -45,7 +45,7 @@ class PlayerDAO{
                     VALUES ('{$playerData->__getPlayerName()}','{$playerData->__getIdTeam()}',
                             '{$playerData->__getBirthDatePlayer()}',
                             '{$playerData->__getCpf()}','{$playerData->__getPlayerNumber()}')";
-            $this->connection->banco->Execute($sql);
+            $this->connection->dataBase->Execute($sql);
 	}
 	
 	/*
@@ -59,7 +59,7 @@ class PlayerDAO{
                         cpf = '{$playerData->__getCpf()}', 
                         numero = '{$playerData->__getPlayerNumber()}' 
                     WHERE id_jogador='{$playerData->__getIdPlayer()}' ";
-            $this->connection->banco->Execute($sql);
+            $this->connection->dataBase->Execute($sql);
             return $playerData;
 	}
 	
@@ -68,7 +68,7 @@ class PlayerDAO{
 	*/
 	public function consultByIdPlayer($id){
             $sql = "SELECT * FROM jogador WHERE id_jogador = '{$id}'";
-            $result = $this->connection->banco->Execute($sql);
+            $result = $this->connection->dataBase->Execute($sql);
             $record = $result->FetchNextObject();
             $playerData = new Player();
             $playerData->__constructOverload($record->ID_JOGADOR, $record->TIME_ID_TIME,
@@ -82,7 +82,7 @@ class PlayerDAO{
 	*/
 	public function consultByPlayerName($playerName){
             $sql = "SELECT * FROM jogador WHERE nome = '{$playerName}'";
-            $result = $this->connection->banco->Execute($sql);
+            $result = $this->connection->dataBase->Execute($sql);
             $record = $result->FetchNextObject();
             $playerData = new Player();
             $playerData->__constructOverload($record->ID_JOGADOR, $record->TIME_ID_TIME,
@@ -96,7 +96,7 @@ class PlayerDAO{
 	*/
 	public function consultPlayerByIdTeam($teamData){
             $sql = "SELECT * FROM jogador WHERE time_id_time = '{$teamData->__getIdTeam()}'";
-            $result = $this->connection->banco->Execute($sql);
+            $result = $this->connection->dataBase->Execute($sql);
             $record = $result->FetchNextObject();
             $playerData = new Player();
             $playerData->__constructOverload($record->ID_JOGADOR, $record->TIME_ID_TIME,
@@ -110,7 +110,7 @@ class PlayerDAO{
 	*/
 	public function deletePlayer($idPlayer){
             $sql = "DELETE FROM jogador WHERE id_jogador = '{$idPlayer}' ";
-            $result = $this->connection->banco->Execute($sql);
+            $result = $this->connection->dataBase->Execute($sql);
 	}
 
 	/*
@@ -118,7 +118,7 @@ class PlayerDAO{
 	*/
 	public function amountPlayersRecords(){
             $sql = "SELECT COUNT(*) as contagem FROM jogador";
-            $result = $this->connection->banco->Execute($sql);
+            $result = $this->connection->dataBase->Execute($sql);
             $record = $result->FetchNextObject();
             return $record->CONTAGEM;
 	}
@@ -136,7 +136,7 @@ class PlayerDAO{
                     AND j.time_id_time = t.id_time
                     GROUP BY jogador_id_jogador
                     ORDER BY gols DESC";
-            $result = $this->connection->banco->Execute($sql);
+            $result = $this->connection->dataBase->Execute($sql);
             while($record = $result->FetchNextObject()){
                 $gunner['playerName'] = $record->NOME;
                 $gunner['teamName'] = $record->NOME_TIME;
@@ -161,7 +161,7 @@ class PlayerDAO{
                     AND j.time_id_time = t.id_time
                     GROUP BY jogador_id_jogador	
                     ORDER BY faltas ASC";
-            $result = $this->connection->banco->Execute($sql);
+            $result = $this->connection->dataBase->Execute($sql);
             while($record = $result->FetchNextObject()){
                 $fear['playerName'] = $record->NOME;
                 $fear['teamName'] = $record->NOME_TIME;
