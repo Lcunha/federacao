@@ -4,16 +4,16 @@
     Name: AjaxView.php
     Description: View of score.
 */
-include_once('./controller/TempoController.php');
+include_once('./controller/TimeController.php');
 
-$placarA = $_GET["placarA"];
-$placarB = $_GET["placarB"];
-$seteMetrosA = $_GET["seteMetrosA"];
-$seteMetrosB = $_GET["seteMetrosB"];
-$seteMetros = $seteMetrosA + $seteMetrosB;
+$socoreboardA = $_GET["scoreboardA"];
+$scoreboardB = $_GET["scoreboardB"];
+$amountSevenMetersA = $_GET["amountSevenMetersA"];
+$amountSevenMetersB = $_GET["amountSevenMetersB"];
+$amountSevenMetersTotal = $amountSevenMetersA + $amountSevenMetersB;
 
-$tempoCO = new TempoController();
-$arrayTempo = $tempoCO->_listarTodos();
-$idTempoAtual = $tempoCO->_consultarUltimoRegistro();
-$tempoCO->_inserirGolTimeA($placarA, $seteMetros, $idTempoAtual);
-$tempoCO->_inserirGolTimeB($placarB, $idTempoAtual);
+$timeCO = new TimeController();
+$arrayTimeData = $timeCO->_listAllTimes();
+$idActualTime = $timeCO->_consultLastRecordInserted();
+$timeCO->_insertGoalTeamA($scoreboardA, $amountSevenMetersTotal, $idActualTime);
+$timeCO->_insertGoalTeamB($scoreboardB, $idActualTime);
