@@ -25,7 +25,7 @@ class TeamDAO{
             The method is responsibility by to list all registers in database table
             of type Team.
 	*/
-	public function listAllTeam(){
+	public function listAllTeams(){
 		$sql = "SELECT * FROM time";
 		$result = $this->connection->dataBase->Execute($sql);
 		while($record = $result->FetchNextObject()){
@@ -81,7 +81,7 @@ class TeamDAO{
 	/*
             The method is responsibility by to insert data in database table.
 	*/
-	public function insertTeam(Team $teamData){
+	public function insertTeam($teamData){
 		$sql = "INSERT INTO time (tecnico_id_tecnico, nome, categoria, endereco, 
 					  data_fundacao, presidente, telefone) 
 			VALUES ('{$teamData->__getIdCoach()}',
@@ -95,7 +95,7 @@ class TeamDAO{
 	/*
             The method is responsibility by to update data in database table.
 	*/
-	public function atualizar(Team $teamData){
+	public function updateTeam($teamData){
 		$sql = "UPDATE time 
 			SET tecnico_id_tecnico = '{$teamData->__getIdCoah()}',
                             nome = '{$teamData->__getTeamName()}', 
