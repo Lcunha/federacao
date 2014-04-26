@@ -1,25 +1,25 @@
 <?php
 
 /* 
-    Name: Dados.php
+    Name: GameData.php
     Description: This is the class that contains the attributes, accessor methods 
-    and constructors about all game data. The data must contains 'idDados', 
-    'idJogador','idTempo' 'advertencia', 'punicao', 'desqualificacao', 
-    'relatorio' and 'gol'. 
+    and constructors about all game data. The data must contains 'idGameData', 
+    'idPlayer','idTimePlay' 'warning', 'punishment', 'disqualification', 
+    'numberReports' and 'gameGoals'. 
 */
-class Dados{
-    private $idDados;
-    private $idJogador;
-    private $idTempo;
-    private $advertencia;
-    private $punicao;
-    private $desqualificacao;
-    private $relatorio;
-    private $gol;
+class GameData{
+    private $idGameData;
+    private $idPlayer;
+    private $idTimePlay;
+    private $warning;
+    private $punishment;
+    private $disqualification;
+    private $numberReports;
+    private $gameGoals;
 
     /*
-        Default construct declaration. Using constructor methods is appropriate for any initialization 
-        that the object may need before being used.
+        Default construct declaration. Using constructor methods is appropriate for any 
+        initialization that the object may need before being used.
     */
     public function __construct(){
 
@@ -28,127 +28,127 @@ class Dados{
     /*
         Overload construct.
     */
-    public function __constructOverload($idDados, $idJogador, $idTempo, $advertencia, $punicao,
-                                        $desqualificacao, $relatorio, $gol){
-	$this->idDados = $idDados;
-    	$this->idJogador = $idJogador;
-	$this->idTempo = $idTempo;
-	$this->advertencia = $advertencia;
-	$this->punicao = $punicao;
-	$this->desqualificacao = $desqualificacao;
-	$this->relatorio = $relatorio;
-	$this->gol = $gol;
+    public function __constructOverload($idGameData, $idPlayer, $idTimePlay, $warning, $punishment,
+                                        $disqualification, $numberReports, $gameGoals){
+	$this->idGameData = $idGameData;
+    	$this->idPlayer = $idPlayer;
+	$this->idTimePlay = $idTimePlay;
+	$this->warning = $warning;
+	$this->punishment = $punishment;
+	$this->disqualification = $disqualification;
+	$this->numberReports = $numberReports;
+	$this->gameGoals = $gameGoals;
     }
         
     /*
-        Method to verify the attribute 'idDados' of the class.
+        Method to verify the attribute 'idGameData' of the class.
     */
-    public function __getIdDados(){
-	return $this->idDados;
+    public function __getIdGameData(){
+	return $this->idGameData;
     }
         
     /*
-        Method to modify the attribute 'idDados' of the class.
+        Method to modify the attribute 'idGameData' of the class.
     */
-    public function __setIdDados($idDados){
-	$this->idDados = $idDados;
+    public function __setIdGameData($idGameData){
+	$this->idGameData = $idGameData;
     }
         
     /*
-        Method to verify the attribute 'idJogador' of the class.
+        Method to verify the attribute 'idPlayer' of the class.
     */
-    public function __getIdJogador(){
-	return $this->idJogador;
+    public function __getIdPlayer(){
+	return $this->idPlayer;
     }
         
     /*
-        Method to modify the attribute 'idJogador' of the class.
+        Method to modify the attribute 'idPlayer' of the class.
     */
-    public function __setIdJogador($idJogador){
-	$this->idJogador = $idJogador;
+    public function __setIdPlayer($idPlayer){
+	$this->idPlayer = $idPlayer;
     }
         
     /*
-        Method to verify the attribute 'idTempo' of the class.
+        Method to verify the attribute 'idTimePlay' of the class.
     */
-    public function __getIdTempo(){
-	return $this->idTempo;
+    public function __getIdTimePlay(){
+	return $this->idTimePlay;
     }
         
     /*
-        Method to modify the attribute 'idTempo' of the class.
+        Method to modify the attribute 'idTimePlay' of the class.
     */
-    public function __setIdTempo($idTempo){
-	$this->idTempo = $idTempo;
+    public function __setIdTimePlay($idTimePlay){
+	$this->idTimePlay = $idTimePlay;
     }
         
     /*
-        Method to verify the attribute 'advertencia' of the class.
+        Method to verify the attribute 'warning' of the class.
     */
-    public function __getAdvertencia(){
-	return $this->advertencia;
+    public function __getWarning(){
+	return $this->warning;
     }
         
     /*
-        Method to modify the attribute 'advertencia' of the class.
+        Method to modify the attribute 'warning' of the class.
     */
-    public function __setAdvertencia($advertencia){
-	$this->advertencia = $advertencia;
+    public function __setWarning($warning){
+	$this->warning = $warning;
     }
         
     /*
-        Method to verify the attribute 'punicao' of the class.
+        Method to verify the attribute 'punishment' of the class.
     */
-    public function __getPunicao(){
-	return $this->punicao;
+    public function __getPunishment(){
+	return $this->punishment;
     }
         
     /*
-        Method to modify the attribute 'punicao' of the class.
+        Method to modify the attribute 'punishment' of the class.
     */
-    public function __setPunicao($punicao){
-	$this->punicao = $punicao;
+    public function __setPunishment($punishment){
+	$this->punishment = $punishment;
     }
         
     /*
-        Method to verify the attribute 'desqualificacao' of the class.
+        Method to verify the attribute 'disqualification' of the class.
     */
-    public function __getDesqualificacao(){
-	return $this->desqualificacao;
+    public function __getDisqualification(){
+	return $this->disqualification;
     }
         
     /*
-        Method to modify the attribute 'desqualificacao' of the class.
+        Method to modify the attribute 'disqualification' of the class.
     */
-    public function __setDesqualificacao($desqualificacao){
-	$this->desqualificacao = $desqualificacao;
+    public function __setDisqualification($disqualification){
+	$this->disqualification = $disqualification;
     }
         
     /*
-        Method to verify the attribute 'relatorio' of the class.
+        Method to verify the attribute 'numberReports' of the class.
     */
-    public function __getRelatorio(){
-	return $this->relatorio;
+    public function __getNumberReports(){
+	return $this->numberReports;
     }
         
     /*
-        Method to modify the attribute 'relatorio' of the class.
+        Method to modify the attribute 'numberReports' of the class.
     */
-    public function __setRelatorio($relatorio){
-	$this->relatorio = $relatorio;
+    public function __setNumberReports($numberReports){
+	$this->numberReports = $numberReports;
     }
         
     /*
-        Method to verify the attribute 'gol' of the class.
+        Method to verify the attribute 'gameGoals' of the class.
     */
-    public function __getGol(){
-	return $this->gol;
+    public function __getGameGoals(){
+	return $this->gameGoals;
     }
         
     /*
-        Method to modify the attribute 'gol' of the class.
+        Method to modify the attribute 'gameGoals' of the class.
     */
-    public function __setGol($gol){
-	$this->gol = $gol;
+    public function __setGameGoals($gameGoals){
+	$this->gameGoals = $gameGoals;
     }
 }
