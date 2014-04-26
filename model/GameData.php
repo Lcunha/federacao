@@ -4,17 +4,17 @@
     Name: GameData.php
     Description: This is the class that contains the attributes, accessor methods 
     and constructors about all game data. The data must contains 'idGameData', 
-    'idPlayer','idTimePlay' 'warning', 'punishment', 'disqualification', 
-    'numberReports' and 'gameGoals'. 
+    'idPlayer','idTimePlay' 'amountWarning', 'amountPunishment', 'amountDisqualification', 
+    'amountReports' and 'gameGoals'. 
 */
 class GameData{
     private $idGameData;
     private $idPlayer;
     private $idTimePlay;
-    private $warning;
-    private $punishment;
-    private $disqualification;
-    private $numberReports;
+    private $amountWarning;
+    private $amountPunishment;
+    private $amountDisqualification;
+    private $amountReports;
     private $gameGoals;
 
     /*
@@ -28,15 +28,16 @@ class GameData{
     /*
         Overload construct.
     */
-    public function __constructOverload($idGameData, $idPlayer, $idTimePlay, $warning, $punishment,
-                                        $disqualification, $numberReports, $gameGoals){
+    public function __constructOverload($idGameData, $idPlayer, $idTimePlay, $amountWarning, 
+                                        $amountPunishment, $amountDisqualification, $amountReports,
+                                        $gameGoals){
 	$this->idGameData = $idGameData;
     	$this->idPlayer = $idPlayer;
 	$this->idTimePlay = $idTimePlay;
-	$this->warning = $warning;
-	$this->punishment = $punishment;
-	$this->disqualification = $disqualification;
-	$this->numberReports = $numberReports;
+	$this->amountWarning = $amountWarning;
+	$this->amountPunishment = $amountPunishment;
+	$this->amountDisqualification = $amountDisqualification;
+	$this->amountReports = $amountReports;
 	$this->gameGoals = $gameGoals;
     }
         
@@ -83,59 +84,59 @@ class GameData{
     }
         
     /*
-        Method to verify the attribute 'warning' of the class.
+        Method to verify the attribute 'amountWarning' of the class.
     */
-    public function __getWarning(){
-	return $this->warning;
+    public function __getAmountWarning(){
+	return $this->amountWarning;
     }
         
     /*
-        Method to modify the attribute 'warning' of the class.
+        Method to modify the attribute 'amountWarning' of the class.
     */
-    public function __setWarning($warning){
-	$this->warning = $warning;
+    public function __setAmountWarning($amountWarning){
+	$this->amountWarning = $amountWarning;
     }
         
     /*
-        Method to verify the attribute 'punishment' of the class.
+        Method to verify the attribute 'amountPunishment' of the class.
     */
-    public function __getPunishment(){
-	return $this->punishment;
+    public function __getAmountPunishment(){
+	return $this->amountPunishment;
     }
         
     /*
-        Method to modify the attribute 'punishment' of the class.
+        Method to modify the attribute 'amountPunishment' of the class.
     */
-    public function __setPunishment($punishment){
-	$this->punishment = $punishment;
+    public function __setAmountPunishment($amountPunishment){
+	$this->amountPunishment = $amountPunishment;
     }
         
     /*
-        Method to verify the attribute 'disqualification' of the class.
+        Method to verify the attribute 'amountDisqualification' of the class.
     */
-    public function __getDisqualification(){
-	return $this->disqualification;
+    public function __getAmountDisqualification(){
+	return $this->amountDisqualification;
     }
         
     /*
-        Method to modify the attribute 'disqualification' of the class.
+        Method to modify the attribute 'amountDisqualification' of the class.
     */
-    public function __setDisqualification($disqualification){
-	$this->disqualification = $disqualification;
+    public function __setAmountDisqualification($amountDisqualification){
+	$this->amountDisqualification = $amountDisqualification;
     }
         
     /*
-        Method to verify the attribute 'numberReports' of the class.
+        Method to verify the attribute 'amountReports' of the class.
     */
-    public function __getNumberReports(){
-	return $this->numberReports;
+    public function __getAmountReports(){
+	return $this->amountReports;
     }
         
     /*
-        Method to modify the attribute 'numberReports' of the class.
+        Method to modify the attribute 'amountReports' of the class.
     */
-    public function __setNumberReports($numberReports){
-	$this->numberReports = $numberReports;
+    public function __setAmountReports($amountReports){
+	$this->amountReports = $amountReports;
     }
         
     /*
