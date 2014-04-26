@@ -1,168 +1,166 @@
 <?php
 
 /*
-    Name: DadosDAO.php  
+    Name: GameDataDAO.php  
     Description:Class data persistence with CRUD functions (create, read, update, delete) 
     for handling the type Data, in the relevant table in mysql.
 */
+include_once ('./model/GameData.php');
+include_once ('./persistence/Connection.php');
 
-include_once ('./model/Dados.php');
-include_once ('./persistence/Conexao.php');
+class GameDataDAO{
+    private $connection;
 
-class DadosDAO{
-	private $conexao;
-
-	/* 
-            Construct method of class DataDAO 
-	*/
-	public function __construct(){
-            $this->conexao = new Conexao();
-	}
+    /* 
+        Construct method of class DataDAO 
+    */
+    public function __construct(){
+        $this->connection = new Connection();
+    }
 	
-	/* 
-            Method is responsible for listing all datas in table database mysql. 
-	*/
-	public function listarTodos(){
-            $sql = "SELECT * FROM dados";
-            $resultado = $this->conexao->banco->Execute($sql);
-            while($registro = $resultado->FetchNextObject()){
-                    $dadosDados = new Dados();
-                    $dadosDados->__constructOverload($registro->ID_DADOS, 
-                                                     $registro->JOGADOR_ID_JOGADOR,
-                                                     $registro->TEMPO_ID_TEMPO, 
-                                                     $registro->ADVERTENCIA, 
-                                                     $registro->PUNICAO,
-                                                     $registro->DESQUALIFICACAO,
-                                                     $registro->RELATORIO, $registro->GOL);
-                    $retornaDados[] = $dadosDados;
-            }
-            return $retornaDados;
-	}
-
-	/* 
-            Method is responsible insertion of data in database table. 
-	*/
-	public function inserir(Dados $dadosDados){
-            $sql = "INSERT INTO dados (jogador_id_jogador, tempo_id_tempo, advertencia,
-                                       punicao, desqualificacao, relatorio, gol)
-                    VALUES ('{$dadosDados->__getIdJogador()}', 
-                            '{$dadosDados->__getIdTempo()}',
-                            '{$dadosDados->__getAdvertencia()}', 
-                            '{$dadosDados->__getPunicao()}',
-                            '{$dadosDados->__getDesqualificacao()}',
-                            '{$dadosDados->__getRelatorio()}',
-                            '{$dadosDados->__getGol()}')";
-            $this->conexao->banco->Execute($sql);
-	}
-
-	/* 
-            Method is reponsible update of data in database table. 
-	*/
-	public function atualizar(Dados $dadosDados){
-            $sql = "UPDATE dados 
-                    SET jogador_id_jogador = '{$dadosDados->__getIdJogador()}', 
-                        tempo_id_tempo = '{$dadosDados->__getIdTempo()}', 
-                        advertencia ='{$dadosDados->__getAdvertencia()}', 
-                        punicao = '{$dadosDados->__getPunicao()}', 
-                        desqualificacao = '{$dadosDados->__getDesqualificacao()}', 
-                        relatorio = '{$dadosDados->__getRelatorio()}', 
-                        gol = '{$dadosDados->__getGol()}' 
-                    WHERE id_dados = '{$dadosDados->__getIdDados()}' ";
-            $this->conexao->banco->Execute($sql);
-	}
-
-	/* 
-            The method responsibility update of data in database table. 
-	*/
-	public function atualizarDados(Dados $dadosDados){
-            $sql = "UPDATE dados 
-                    SET advertencia = '{$dadosDados->__getAdvertencia()}', 
-                        punicao = '{$dadosDados->__getPunicao()}', 
-                        desqualificacao = '{$dadosDados->__getDesqualificacao()}', 
-                        relatorio = '{$dadosDados->__getRelatorio()}', 
-                        gol = '{$dadosDados->__getGol()}'
-                    WHERE jogador_id_jogador = '{$dadosDados->__getIdJogador()}'
-                    AND tempo_id_tempo='{$dadosDados->__getIdTempo()}'";
-            $this->conexao->banco->Execute($sql);
-	}
-
-	/* 
-            The method responsibility is consult in database table through of ID. 
-	*/
-	public function consultarPorId($id){
-            $sql = "SELECT * FROM dados WHERE id_dados = '{$id}'";
-            $resultado = $this->conexao->banco->Execute($sql);
-            $registro = $resultado->FetchNextObject();
-            $dadosDados = new Dados();
-            $dadosDados->__constructOverload($registro->ID_DADOS, 
-                                             $registro->JOGADOR_ID_JOGADOR,
-                                             $registro->TEMPO_ID_TEMPO, 
-                                             $registro->ADVERTENCIA, 
-                                             $registro->PUNICAO,
-                                             $registro->DESQUALIFICACAO,
-                                             $registro->RELATORIO, 
-                                             $registro->GOL);
-            return $dadosDados;
-	}
-
-	/*
-            The method reponsibility is consult in database table through the ID of type Player. 
-	*/
-	public function consultarPorIdJogador($idJogador){
-            $sql = "SELECT * FROM dados WHERE jogador_id_jogador = '{$idJogador}'";
-            $resultado = $this->conexao->banco->Execute($sql);
-            $registro = $resultado->FetchNextObject();
-            $dadosDados = new Dados();
-            $dadosDados->__constructOverload($registro->ID_DADOS,
-                                             $registro->JOGADOR_ID_JOGADOR,
-                                             $registro->TEMPO_ID_TEMPO,
-                                             $registro->ADVERTENCIA, $registro->PUNICAO,
-                                             $registro->DESQUALIFICACAO, $registro->RELATORIO,
-                                             $registro->GOL);
-            return $dadosDados;
-	}
-
-	/* 
-            The method responsibility is consult in database table through the ID of type Time. 
-	*/
-	public function consultarPorIdTempo($idTempo){
-            $sql = "SELECT * FROM dados WHERE tempo_id_tempo = '{$idTempo}'";
-            $resultado = $this->conexao->banco->Execute($sql);
-            $registro = $resultado->FetchNextObject();
-            $dadosDados = new Dados();
-            $dadosDados->__constructOverload($registro->ID_DADOS,
-                                             $registro->JOGADOR_ID_JOGADOR,
-                                             $registro->TEMPO_ID_TEMPO,
-                                             $registro->ADVERTENCIA, $registro->PUNICAO,
-                                             $registro->DESQUALIFICACAO, $registro->RELATORIO,
-                                             $registro->GOL);
-            return $dadosDados;
-	}
-
-	/* 
-            The method responsibility is consult in database table by report. 
-	*/
-	public function consultarPorRelatorio($relatorio){
-            $sql = "SELECT * FROM dados WHERE relatorio = '{$relatorio}'";
-            $resultado = $this->conexao->banco->Execute($sql);
-            $registro = $resultado->FetchNextObject();
-            $dadosDados = new Dados();
-            $dadosDados->__constructOverload($registro->ID_DADOS,
-                                             $registro->JOGADOR_ID_JOGADOR,
-                                             $registro->TEMPO_ID_TEMPO,
-                                             $registro->ADVERTENCIA,
-                                             $registro->PUNICAO,
-                                             $registro->DESQUALIFICACAO,
-                                             $registro->RELATORIO, $registro->GOL);
-            return $dadosDados;
+    /* 
+        Method is responsible for listing all datas in table database mysql. 
+    */
+    public function listAllData(){
+        $sql = "SELECT * FROM dados";
+        $result = $this->connection->database->Execute($sql);
+        while($record = $result->FetchNextObject()){
+            $generalGameData = new GameData();
+            $generalGameData->__constructOverload($record->ID_DADOS, 
+                                                  $record->JOGADOR_ID_JOGADOR,
+                                                  $record->TEMPO_ID_TEMPO, 
+                                                  $record->ADVERTENCIA, 
+                                                  $record->PUNICAO,
+                                                  $record->DESQUALIFICACAO,
+                                                  $record->RELATORIO, $record->GOL);
+            $returnGameData[] = $generalGameData;
         }
+        return $returnGameData;
+    }
 
-	/* 
-            The method responsibility is delete in database table through of ID. 
-	*/
-	public function excluir($id){
-            $sql = "DELETE FROM dados WHERE id_dados= '{$id}' ";
-            $resultado = $this->conexao->banco->Execute($sql);
-	}
+    /* 
+        Method is responsible insertion of data in database table. 
+    */
+    public function insertData(GameData $generalGameData){
+        $sql = "INSERT INTO dados (jogador_id_jogador, tempo_id_tempo, advertencia,
+                                   punicao, desqualificacao, relatorio, gol)
+                VALUES ('{$generalGameData->__getIdPlayer()}', 
+                        '{$generalGameData->__getIdTimePlay()}',
+                        '{$generalGameData->__getAmountWarnings()}', 
+                        '{$generalGameData->__getAmountPunishment()}',
+                        '{$generalGameData->__getAmountDisqualification()}',
+                        '{$generalGameData->__getAmountReports()}',
+                        '{$generalGameData->__getGameGoals()}')";
+        $this->connection->database->Execute($sql);
+    }
+
+    /* 
+        Method is reponsible update of data in database table. 
+    */
+    public function updateData(GameData $generalGameData){
+        $sql = "UPDATE dados 
+                SET jogador_id_jogador = '{$generalGameData->__getIdPlayer()}', 
+                    tempo_id_tempo = '{$generalGameData->__getIdTimePlay()}', 
+                    advertencia ='{$generalGameData->__getAmountWarnings()}', 
+                    punicao = '{$generalGameData->__getAmountPunishment()}', 
+                    desqualificacao = '{$generalGameData->__getAmountDisqualification()}', 
+                    relatorio = '{$generalGameData->__getAmountReports()}', 
+                    gol = '{$generalGameData->__getGameGoals()}' 
+                WHERE id_dados = '{$generalGameData->__getIdGameData()}' ";
+        $this->connection->database->Execute($sql);
+    }
+
+    /* 
+        The method responsibility update of data in database table. 
+    */
+    public function updateGameData(GameData $generalGameData){
+        $sql = "UPDATE dados 
+                SET advertencia = '{$generalGameData->__getAmountWarnings()}', 
+                    punicao = '{$generalGameData->__getAmountPunishment()}', 
+                    desqualificacao = '{$generalGameData->__getAmountDisqualification()}', 
+                    relatorio = '{$generalGameData->__getAmountReports()}', 
+                    gol = '{$generalGameData->__getGameGoals()}'
+                WHERE jogador_id_jogador = '{$generalGameData->__getIdPlayer()}'
+                AND tempo_id_tempo='{$generalGameData->__getIdTimePlay()}'";
+        $this->connection->database->Execute($sql);
+    }
+
+    /* 
+        The method responsibility is consult in database table through of ID. 
+    */
+    public function consultByIdGameData($id){
+        $sql = "SELECT * FROM dados WHERE id_dados = '{$id}'";
+        $result = $this->connection->database->Execute($sql);
+        $record = $result->FetchNextObject();
+        $generalGameData = new GameData();
+        $generalGameData->__constructOverload($record->ID_DADOS, 
+                                              $record->JOGADOR_ID_JOGADOR,
+                                              $record->TEMPO_ID_TEMPO, 
+                                              $record->ADVERTENCIA, 
+                                              $record->PUNICAO,
+                                              $record->DESQUALIFICACAO,
+                                              $record->RELATORIO, 
+                                              $record->GOL);
+        return $generalGameData;
+    }
+
+    /*
+        The method reponsibility is consult in database table through the ID of type Player. 
+    */
+    public function consultByIdPlayer($idPlayer){
+        $sql = "SELECT * FROM dados WHERE jogador_id_jogador = '{$idPlayer}'";
+        $result = $this->connection->database->Execute($sql);
+        $record = $result->FetchNextObject();
+        $generalGameData = new GameData();
+        $generalGameData->__constructOverload($record->ID_DADOS,
+                                              $record->JOGADOR_ID_JOGADOR,
+                                              $record->TEMPO_ID_TEMPO,
+                                              $record->ADVERTENCIA, $record->PUNICAO,
+                                              $record->DESQUALIFICACAO, $record->RELATORIO,
+                                              $record->GOL);
+        return $generalGameData;
+    }
+
+    /* 
+        The method responsibility is consult in database table through the ID of type Time. 
+    */
+    public function consultByIdTimePlay($idTimePlay){
+        $sql = "SELECT * FROM dados WHERE tempo_id_tempo = '{$idTimePlay}'";
+        $result = $this->connection->database->Execute($sql);
+        $record = $result->FetchNextObject();
+        $generalGameData = new GameData();
+        $generalGameData->__constructOverload($record->ID_DADOS,
+                                              $record->JOGADOR_ID_JOGADOR,
+                                              $record->TEMPO_ID_TEMPO,
+                                              $record->ADVERTENCIA, $record->PUNICAO,
+                                              $record->DESQUALIFICACAO, $record->RELATORIO,
+                                              $record->GOL);
+        return $generalGameData;
+    }
+
+    /* 
+        The method responsibility is consult in database table by report. 
+    */
+    public function consultByAmountReports($amountReports){
+        $sql = "SELECT * FROM dados WHERE relatorio = '{$amountReports}'";
+        $result = $this->connection->database->Execute($sql);
+        $record = $result->FetchNextObject();
+        $generalGameData = new GameData();
+        $generalGameData->__constructOverload($record->ID_DADOS,
+                                              $record->JOGADOR_ID_JOGADOR,
+                                              $record->TEMPO_ID_TEMPO,
+                                              $record->ADVERTENCIA,
+                                              $record->PUNICAO,
+                                              $record->DESQUALIFICACAO,
+                                              $record->RELATORIO, $record->GOL);
+        return $generalGameData;
+    }
+
+    /* 
+        The method responsibility is delete in database table through of ID. 
+    */
+    public function deleteData($id){
+        $sql = "DELETE FROM dados WHERE id_dados= '{$id}' ";
+        $result = $this->connection->database->Execute($sql);
+    }
 }
-
