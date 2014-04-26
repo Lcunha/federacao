@@ -16,4 +16,4 @@ $idTimePlay = $_GET["idTempo"];
 
 $GameDataCO = new GameDataController();
 $GameDataCO->_updateGameData($playerId, $idTimePlay, $playerA, $playerP, $playerD,
-                         $playerR, $playerGoal);
+                             $playerR, $playerGoal);
