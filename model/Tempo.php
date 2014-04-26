@@ -4,15 +4,15 @@
     Name: Tempo.php
     Description: This is the class that contains the attributes, accessor methods 
     and constructors of the time, time spends in a game. The time must contains 
-    'idTempo', 'idJogo', 'tipo', 'advertencia', 'punicao', 'desqualificacao', 
+    'idTimePlay', 'idPlayer', 'type', 'warning', 'warning', 'desqualificacao', 
     'relatorio', 'tiro7Metros', 'tempoTecnico', 'placarTime1' and 'placarTime2'. 
 */
 class Tempo{
-    private $idTempo;
-    private $idJogo;
-    private $tipo;
-    private $advertencia;
-    private $punicao;
+    private $idTimePlay;
+    private $idPlayer;
+    private $type;
+    private $warning;
+    private $warning;
     private $desqualificacao;
     private $relatorio;
     private $tiro7Metros;
@@ -31,11 +31,11 @@ class Tempo{
     /*
         Overload construct.
     */
-    public function __constructOverload($idTempo, $idJogo, $tipo, $tiro7Metros, $tempoTecnico,
+    public function __constructOverload($idTimePlay, $idPlayer, $type, $tiro7Metros, $tempoTecnico,
                                         $placarTime1, $placarTime2){
-	$this->idTempo = $idTempo;
-	$this->idJogo = $idJogo;
-	$this->tipo = $tipo;
+	$this->idTimePlay = $idTimePlay;
+	$this->idPlayer = $idPlayer;
+	$this->type = $type;
 	$this->tiro7Metros = $tiro7Metros;
 	$this->tempoTecnico = $tempoTecnico;
 	$this->placarTime1 = $placarTime1;
@@ -43,73 +43,73 @@ class Tempo{
     }
         
     /*
-        Method to verify the attribute 'idTempo' of the class.
+        Method to verify the attribute 'idTimePlay' of the class.
     */
-    public function __getIdTempo(){
-	return $this->idTempo;
+    public function __getIdTimePlay(){
+	return $this->idTimePlay;
     }
         
     /*
-        Method to modify the attribute 'idTempo' of the class.
+        Method to modify the attribute 'idTimePlay' of the class.
     */
-    public function __setIdTempo($idTempo){
-	$this->idTempo = $idTempo;
+    public function __setIdTimePlay($idTimePlay){
+	$this->idTimePlay = $idTimePlay;
     }
         
     /*
-        Method to verify the attribute 'idJogo' of the class.
+        Method to verify the attribute 'idPlayer' of the class.
     */
-    public function __getIdJogo(){
-	return $this->idJogo;
+    public function __getIdPlayer(){
+	return $this->idPlayer;
     }
         
     /*
-        Method to modify the attribute 'idJogo' of the class.
+        Method to modify the attribute 'idPlayer' of the class.
     */
-    public function __setIdJogo($idJogo){
-	$this->idJogo = $idJogo;
+    public function __setIdPlayer($idPlayer){
+	$this->idPlayer = $idPlayer;
     }
         
     /*
-        Method to verify the attribute 'tipo' of the class.
+        Method to verify the attribute 'type' of the class.
     */
-    public function __getTipo(){
-	return $this->tipo;
+    public function __getType(){
+	return $this->type;
     }
         
     /*
-        Method to modify the attribute 'tipo' of the class.
+        Method to modify the attribute 'type' of the class.
     */
-    public function __setTipo($tipo){
-    	$this->tipo = $tipo;
+    public function __setType($type){
+    	$this->type = $type;
     }
         
     /*
         Method to verify the attribute 'avertencia' of the class.
     */
     public function __getAdvertencia(){
-	return $this->advertencia;
+	return $this->warning;
     }
         
     /*
-        Method to modify the attribute 'advertencia' of the class.
+        Method to modify the attribute 'warning' of the class.
     */
-    public function __setAdvertencia($advertencia){
-	$this->advertencia = $advertencia;
+    public function __setAdvertencia($warning){
+	$this->warning = $warning;
     }
         
     /*
-        Method to verify the attribute 'punicao' of the class.
+        Method to verify the attribute 'warning' of the class.
     */
     public function __getPunicao(){
-	return $this->punicao;
+	return $this->warning;
     }
         
     /*
-        Method to modify the attribute 'punicao' of the class.
+        Method to modify the attribute 'warning' of the class.
     */
-    public function __setPunicao($punicao){
-	$this->punicao = $punicao;
+    public function __setPunicao($warning){
+	$this->warning = $warning;
     }
         
     /*
