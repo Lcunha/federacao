@@ -31,7 +31,7 @@ class DadosTimeView{
             This function is responsible to add team data.
         */
         public function inserir(){
-		return $this->dadosTimeCO->_inserir($dadosTime);
+		return $this->dadosTimeCO->_inserir($dataTeam);
 	}
 	/*
             This function is responsible to update team data.
