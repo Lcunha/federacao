@@ -26,8 +26,8 @@ class DadosTimeController {
         Function responsible for performing a query on a team by ID.
      */
     public function _consultarPorId($id){
-        $dadosDadosTime = new DadosTime();
-        $dadosDadosTime = $this->dadosTimeDAO->consultarPorId($id);
+        $dataDataTeam = new DadosTime();
+        $dataDataTeam = $this->dadosTimeDAO->consultarPorId($id);
         //$arrayDados['nome'] = $dadosArbitro->__getNome();
         //$arrayDados['telefone'] = $dadosArbitro->__getTelefone();
         //$arrayDados['cpf'] = $dadosArbitro->__getCpf();
@@ -38,35 +38,35 @@ class DadosTimeController {
     /*
         Function responsible for entering data of a team.
      */
-    public function _inserir(DadosTime $dadosTime){
-        return $this->dadosTimeDAO->inserir($dadosTime);
+    public function _inserir(DadosTime $dataTeam){
+        return $this->dadosTimeDAO->inserir($dataTeam);
     }
 
     /*
         Responsible for updating the data team.
      */
-    public function _atualizar($idDadosTime, $pontos, $jogos, $vitorias, $empates, $derrotas, $gols, $golsLevados){
-        $dadosDadosTime = new DadosTime();
-        $dadosDadosTime->__constructOverload(0, $idDadosTime, $pontos, $jogos, $vitorias, 
-                                             $empates, $derrotas, $gols, $golsLevados);
-        $this->dadosTimeDAO->atualizar($dadosDadosTime);
+    public function _atualizar($idDataTeam, $teamPoints, $playerTeam, $victoryTeam, $drawTeam, $lossTeam, $amountGoals, $concededGoals){
+        $dataDataTeam = new DadosTime();
+        $dataDataTeam->__constructOverload(0, $idDataTeam, $teamPoints, $playerTeam, $victoryTeam, 
+                                             $drawTeam, $lossTeam, $amountGoals, $concededGoals);
+        $this->dadosTimeDAO->atualizar($dataDataTeam);
     }
 
     /*
         Responsible for updating the scores of times in matches.
      */
-    public function _atualizarPontos($idTimeA, $idTimeB, $golsTimeA, $golsTimeB) {
-        if ($golsTimeA > $golsTimeB) {
-            $pontuacaoA = 3;
-            $pontuacaoB = 0;
-        } else if ($golsTimeA < $golsTimeB) {
-            $pontuacaoA = 0;
-            $pontuacaoB = 3;
-        } else if ($golsTimeA == $golsTimeB) {
-            $pontuacaoA = 1;
-            $pontuacaoB = 1;
+    public function _atualizarPontos($idTeam1, $idTeam2, $goalsTeam1, $goalsTeam2) {
+        if ($goalsTeam1 > $goalsTeam2) {
+            $punctuation1 = 3;
+            $punctuation2 = 0;
+        } else if ($goalsTeam1 < $goalsTeam2) {
+            $punctuation1 = 0;
+            $punctuation2 = 3;
+        } else if ($goalsTeam1 == $goalsTeam2) {
+            $punctuation1 = 1;
+            $punctuation2 = 1;
         }
-        $this->dadosTimeDAO->atualizarPontos($idTimeA, $idTimeB, $pontuacaoA, $pontuacaoB, $golsTimeA, $golsTimeB);
+        $this->dadosTimeDAO->atualizarPontos($idTeam1, $idTeam2, $punctuation1, $punctuation2, $goalsTeam1, $goalsTeam2);
     }
 
     /*
