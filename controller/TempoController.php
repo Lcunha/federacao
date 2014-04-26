@@ -54,9 +54,9 @@ class TempoController {
     /*
         Function responsible for doing a query for a time from an id of a game.
     */
-    public function _consultarPorId($id){
+    public function _consultarPorId($idTime){
         $dataTime = new Tempo();
-        $dataTime = $this->tempoDAO->consultarPorId($id);
+        $dataTime = $this->tempoDAO->consultarPorId($idTime);
         $arrayData['idTempo'] = $dataTime->__getIdTempo();
         $arrayData['idJogo'] = $dataTime->__getIdJogo();
         $arrayData['tipo'] = $dataTime->__getTipo();
@@ -103,8 +103,8 @@ class TempoController {
     /*
         Function responsible for deleting the data on time.
     */
-    public function _excluir($id){
-        return $this->tempoDAO->excluir($id);
+    public function _excluir($idTime){
+        return $this->tempoDAO->excluir($idTime);
     }
 
     /*

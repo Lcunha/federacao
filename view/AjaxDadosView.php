@@ -6,14 +6,14 @@
 */
 include_once('./controller/DadosController.php');
 
-$jogadorId = $_GET["jogadorId"];
-$jogadorGol = $_GET["jogadorGol"];
-$jogadorA = $_GET["jogadorA"];
-$jogadorP = $_GET["jogadorP"];
-$jogadorD = $_GET["jogadorD"];
-$jogadorR = $_GET["jogadorR"];
-$idTempo = $_GET["idTempo"];
+$playerId = $_GET["jogadorId"];
+$playerGoal = $_GET["jogadorGol"];
+$player1 = $_GET["jogadorA"];
+$playerP = $_GET["jogadorP"];
+$playerD = $_GET["jogadorD"];
+$playerR = $_GET["jogadorR"];
+$idTime = $_GET["idTempo"];
 
 $DadoCO = new DadosController();
-$DadoCO->_atualizarDados($jogadorId, $idTempo, $jogadorA, $jogadorP, $jogadorD,
-                         $jogadorR, $jogadorGol);
+$DadoCO->_atualizarDados($playerId, $idTime, $jogadorA, $jogadorP, $playerD,
+                         $jogadorR, $playerGoal);
