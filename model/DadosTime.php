@@ -45,42 +45,42 @@ class DadosTime{
     /*
         Method to verify the attribute 'idDataTeam' of the class.
     */
-    public function __getIdDadosTime(){
+    public function __getIdDataTeam(){
 	return $this->idDataTeam;
     }
         
     /*
         Method to modify the attribute 'idDataTeam' of the class.
     */
-    public function __setIdDadosTime($idDataTeam){
+    public function __setIdDataTeam($idDataTeam){
     	$this->idDataTeam = $idDataTeam;
     }
         
     /*
         Method to verify the attribute 'Team' of the class.
     */
-    public function __getIdTime(){
+    public function __getTeam(){
 	return $this->Team;
     }
         
     /*
         Method to modify the attribute 'Team' of the class.
     */
-    public function __setIdTime($Team){
+    public function __setTeam($Team){
     	$this->Team = $Team;
     }
         
     /*
         Method to verify the attribute 'teamPoints' of the class.
     */
-    public function __getPontos(){
+    public function __getTeamPoints(){
 	return $this->teamPoints;
     }
         
     /*
         Method to modify the attribute 'teamPoints' of the class.
     */
-    public function __setPontos($teamPoints){
+    public function __setTeamPoints($teamPoints){
 	$this->teamPoints = $teamPoints;
     }
         
@@ -94,77 +94,77 @@ class DadosTime{
     /*
         Method to modify the attribute 'playerTeam' of the class.
     */
-    public function __setJogos($playerTeam){
+    public function __setPlayerTeam($playerTeam){
     	$this->playerTeam = $playerTeam;
     }
         
     /*
         Method to verify the attribute 'victoryTeam' of the class.
     */
-    public function __getVitorias(){
+    public function __getVictoryTeam(){
 	return $this->victoryTeam;
 	}
         
     /*
         Method to modify the attribute 'victoryTeam' of the class.
     */
-    public function __setVitorias($victoryTeam){
+    public function __setVictoryTeam($victoryTeam){
     	$this->victoryTeam = $victoryTeam;
     }
         
     /*
         Method to verify the attribute 'empates' of the class.
     */
-    public function __getEmpates(){
+    public function __getDrawTeam(){
     	return $this->drawTeam;
     }
         
     /*
         Method to modify the attribute 'empates' of the class.
     */
-    public function __setEmpates($empates){
-	$this->drawTeam = $empates;
+    public function __setdrawTeam($drawTeam){
+	$this->drawTeam = $drawTeam;
     }
         
     /*
         Method to verify the attribute 'derrotas' of the class.
     */
-    public function __getDerrotas(){
+    public function __getLossTeam(){
 	return $this->lossTeam;
     }
         
     /*
         Method to modify the attribute 'derrotas' of the class.
     */
-    public function __setDerrotas($derrotas){
-	$this->lossTeam = $derrotas;
+    public function __setLossTeam($lossTeam){
+	$this->lossTeam = $lossTeam;
     }
         
     /*
         Method to verify the attribute 'gols' of the class.
     */
-    public function __getGols(){
+    public function __getAmountGoals(){
 	return $this->amountGoals;
     }
         
     /*
         Method to modify the attribute 'gols' of the class.
     */
-    public function __setGols($gols){
-    	$this->amountGoals = $gols;
+    public function __setAmountGoals($amountGoals){
+    	$this->amountGoals = $amountGoals;
     }
         
     /*
         Method to verify the attribute 'golsLevados' of the class.
     */
-    public function __getGolsLevados(){
+    public function __getConcededGoals(){
 	return $this->concededGoals;
     }
         
     /*
         Method to modify the attribute 'golsLevados' of the class.
     */
-    public function __setGolsLevados($golsLevados){
-	$this->concededGoals = $golsLevados;
+    public function __setConcededGoals($concededGoals){
+	$this->concededGoals = $concededGoals;
     }
 }
