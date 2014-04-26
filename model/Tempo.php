@@ -4,21 +4,21 @@
     Name: Tempo.php
     Description: This is the class that contains the attributes, accessor methods 
     and constructors of the time, time spends in a game. The time must contains 
-    'idTimePlay', 'idPlayer', 'type', 'warning', 'warning', 'desqualificacao', 
-    'relatorio', 'tiro7Metros', 'tempoTecnico', 'placarTime1' and 'placarTime2'. 
+    'idTimePlay', 'idPlayer', 'type', 'amountPunishment', 'warning', 'amountDisqualification', 
+    'amountReports', 'amountSevenMetersTotal', 'tempoTecnico', 'scoreboardTeam1' and 'scoreboardTeam2'. 
 */
 class Tempo{
     private $idTimePlay;
     private $idPlayer;
     private $type;
-    private $warning;
-    private $warning;
-    private $desqualificacao;
-    private $relatorio;
-    private $tiro7Metros;
+    private $amountPunishment;
+    private $amountWarning;
+    private $amountDisqualification;
+    private $amountReports;
+    private $amountSevenMetersTotal;
     private $tempoTecnico;
-    private $placarTime1;
-    private $placarTime2;
+    private $scoreboardTeam1;
+    private $scoreboardTeam2;
 	
     /*
         Default construct declaration. Using constructor methods is appropriate for any initialization 
@@ -31,15 +31,15 @@ class Tempo{
     /*
         Overload construct.
     */
-    public function __constructOverload($idTimePlay, $idPlayer, $type, $tiro7Metros, $tempoTecnico,
-                                        $placarTime1, $placarTime2){
+    public function __constructOverload($idTimePlay, $idPlayer, $type, $amountSevenMetersTotal, $tempoTecnico,
+                                        $scoreboardTeam1, $scoreboardTeam2){
 	$this->idTimePlay = $idTimePlay;
 	$this->idPlayer = $idPlayer;
 	$this->type = $type;
-	$this->tiro7Metros = $tiro7Metros;
+	$this->amountSevenMetersTotal = $amountSevenMetersTotal;
 	$this->tempoTecnico = $tempoTecnico;
-	$this->placarTime1 = $placarTime1;
-	$this->placarTime2 = $placarTime2;
+	$this->scoreboardTeam1 = $scoreboardTeam1;
+	$this->scoreboardTeam2 = $scoreboardTeam2;
     }
         
     /*
@@ -87,71 +87,71 @@ class Tempo{
     /*
         Method to verify the attribute 'avertencia' of the class.
     */
-    public function __getAdvertencia(){
-	return $this->warning;
+    public function __getAmountWarning(){
+	return $this->amountWarning;
     }
         
     /*
-        Method to modify the attribute 'warning' of the class.
+        Method to modify the attribute 'amountWarning' of the class.
     */
-    public function __setAdvertencia($warning){
-	$this->warning = $warning;
+    public function __setAmountWarning($amountWarning){
+	$this->amountWarning = $amountWarning;
     }
         
     /*
-        Method to verify the attribute 'warning' of the class.
+        Method to verify the attribute 'amountPunishment' of the class.
     */
-    public function __getPunicao(){
-	return $this->warning;
+    public function __getAmountPunishment(){
+	return $this->amountPunishment;
     }
         
     /*
-        Method to modify the attribute 'warning' of the class.
+        Method to modify the attribute 'amountPunishment' of the class.
     */
-    public function __setPunicao($warning){
-	$this->warning = $warning;
+    public function __setAmountPunishment($amountPunishment){
+	$this->amountPunishment = $amountPunishment;
     }
         
     /*
-        Method to verify the attribute 'desqualificacao' of the class.
+        Method to verify the attribute 'amountDisqualification' of the class.
     */
-    public function __getDesqualificacao(){
-	return $this->desqualificacao;
+    public function __getAmountDisqualification(){
+	return $this->amountDisqualification;
     }
         
     /*
-        Method to modify the attribute 'desqualificacao' of the class.
+        Method to modify the attribute 'amountDisqualification' of the class.
     */
-    public function __setDesqualificacao($desqualificacao){
-	$this->desqualificacao = $desqualificacao;
+    public function __setAmountDisqualification($amountDisqualification){
+	$this->amountDisqualification = $amountDisqualification;
     }
         
     /*
-        Method to verify the attribute 'relatorio' of the class.
+        Method to verify the attribute 'amountReports' of the class.
     */
-    public function __getRelatorio(){
-	return $this->relatorio;
+    public function __getAmountReports(){
+	return $this->amountReports;
     }
         
     /*
-        Method to modify the attribute 'relatorio' of the class.
+        Method to modify the attribute 'amountReports' of the class.
     */
-    public function __setRelatorio($relatorio){
-	$this->relatorio = $relatorio;
+    public function __setAmountReports($amountReports){
+	$this->amountReports = $amountReports;
     }
         
     /*
-        Method to verify the attribute 'tiro7Metros' of the class.
+        Method to verify the attribute 'amountSevenMetersTotal' of the class.
     */
     public function __getTiro7Metros(){
-	return $this->tiro7Metros;
+	return $this->amountSevenMetersTotal;
     }
         
     /*
-        Method to modify the attribute 'tiro7Metros' of the class.
+        Method to modify the attribute 'amountSevenMetersTotal' of the class.
     */
-    public function __setTiro7Metros($tiro7Metros){
-	$this->tiro7Metros = $tiro7Metros;
+    public function __setTiro7Metros($amountSevenMetersTotal){
+	$this->amountSevenMetersTotal = $amountSevenMetersTotal;
     }
         
     /*
@@ -169,30 +169,30 @@ class Tempo{
     }
         
     /*
-        Method to verify the attribute 'placarTime1' of the class.
+        Method to verify the attribute 'scoreboardTeam1' of the class.
     */
-    public function __getPlacarTime1(){
-	return $this->placarTime1;
+    public function __getScoreboardTeam1(){
+	return $this->scoreboardTeam1;
     }
         
     /*
-        Method to modify the attribute 'placarTime1' of the class.
+        Method to modify the attribute 'scoreboardTeam1' of the class.
     */
-    public function __setPlacarTime1($placarTime1){
-	$this->placarTime1 = $placarTime1;
+    public function __setScoreboardTeam1($scoreboardTeam1){
+	$this->scoreboardTeam1 = $scoreboardTeam1;
     }
         
     /*
-        Method to verify the attribute 'placarTime2' of the class.
+        Method to verify the attribute 'scoreboardTeam2' of the class.
     */
-    public function __getPlacarTime2(){
-	return $this->placarTime2;
+    public function __getScoreboardTeam2(){
+	return $this->scoreboardTeam2;
     }
         
     /*
-        Method to modify the attribute 'placarTime2' of the class.
+        Method to modify the attribute 'scoreboardTeam2' of the class.
     */
-    public function __setPlacarTime2($placarTime2){
-	$this->placarTime2 = $placarTime2;
+    public function __setScoreboardTeam2($scoreboardTeam2){
+	$this->scoreboardTeam2 = $scoreboardTeam2;
     }
 }
