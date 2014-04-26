@@ -26,78 +26,78 @@ class TempoController {
         Function responsible for inserting the time, entering the score, team and game that is being done.
     */
     public function _listarDadosParaTabela(){
-        $dadosTempo = new Tempo();
-        $arrayDadosTempo = $this->tempoDAO->listarTodos();
-        for ($i = 0; $i < count($arrayDadosTempo); $i++) {
-            $dadosTempoTempo = $arrayDadosTempo[$i];
-            $arrayTr[] = "
+        $dataTime = new Tempo();
+        $arrayDataTime = $this->tempoDAO->listarTodos();
+        for ($i = 0; $i < count($arrayDataTime); $i++) {
+            $dataTeamTime = $arrayDataTime[$i];
+            $htmlLinesDataFromPlayers[] = "
 			<tr>
           			<td><input type=\"checkbox\" value=\"1\" name=\"marcar[]\" /></td>
-					<td>" . $dadosTempo->__getIdTempo() . "</td>
-          			<td>" . $dadosTempo->__getIdJogo() . "</td>
-          			<td>" . $dadosTempo->__getTiro7Metros() . "</td>
-          			<td>" . $dadosTempo->__getTempoTecnico() . "</td>
-          			<td>" . $dadosTempo->__getPlacarTime1() . "</td>
-          			<td>" . $dadosTempo->__getPlacarTime2() . "</td>
-          			<td>" . $dadosTempo->__getTipo() . "</td>
+					<td>" . $dataTime->__getIdTempo() . "</td>
+          			<td>" . $dataTime->__getIdJogo() . "</td>
+          			<td>" . $dataTime->__getTiro7Metros() . "</td>
+          			<td>" . $dataTime->__getTempoTecnico() . "</td>
+          			<td>" . $dataTime->__getPlacarTime1() . "</td>
+          			<td>" . $dataTime->__getPlacarTime2() . "</td>
+          			<td>" . $dataTime->__getTipo() . "</td>
           			<td>
-            			<a href=\"?pag=tempo&action=edit&id=" . $dadosTempo->__getIdTempo() .
+            			<a href=\"?pag=tempo&action=edit&id=" . $dataTime->__getIdTempo() .
                     "\"><img src=\"./views/images/edit.png\" width=\"16\" height=\"16\" /></a>
-            			<a href=\"?pag=tempo&action=exclude&id=" . $dadosTempo->__getIdTempo() . 
+            			<a href=\"?pag=tempo&action=exclude&id=" . $dataTime->__getIdTempo() . 
                     "\"><img src=\"./views/images/delete.png\" width=\"16\" height=\"16\" /></a>
           			</td>
 			</tr>";
         }
-        return $arrayTr;
+        return $htmlLinesDataFromPlayers;
     }
 
     /*
         Function responsible for doing a query for a time from an id of a game.
     */
     public function _consultarPorId($id){
-        $dadosTempo = new Tempo();
-        $dadosTempo = $this->tempoDAO->consultarPorId($id);
-        $arrayDados['idTempo'] = $dadosTempo->__getIdTempo();
-        $arrayDados['idJogo'] = $dadosTempo->__getIdJogo();
-        $arrayDados['tipo'] = $dadosTempo->__getTipo();
-        $arrayDados['tiro7Metros'] = $dadosTempo->__getTiro7Metros();
-        $arrayDados['tempoTecnico'] = $dadosTempo->__getTempoTecnico();
-        $arrayDados['placarTime1'] = $dadosTempo->__getPlacarTime1();
-        $arrayDados['placarTime2'] = $dadosTempo->__getPlacarTime2();
+        $dataTime = new Tempo();
+        $dataTime = $this->tempoDAO->consultarPorId($id);
+        $arrayData['idTempo'] = $dataTime->__getIdTempo();
+        $arrayData['idJogo'] = $dataTime->__getIdJogo();
+        $arrayData['tipo'] = $dataTime->__getTipo();
+        $arrayData['tiro7Metros'] = $dataTime->__getTiro7Metros();
+        $arrayData['tempoTecnico'] = $dataTime->__getTempoTecnico();
+        $arrayData['placarTime1'] = $dataTime->__getPlacarTime1();
+        $arrayData['placarTime2'] = $dataTime->__getPlacarTime2();
 
-        return $arrayDados;
+        return $arrayData;
     }
 
     /*
         Function responsible for doing a query for a time from an id of time report.
      */
-    public function _consultarPorRelatorio($relatorio){
-        return $this->tempoDAO->consultarPorRelatorio($relatorio);
+    public function _consultarPorRelatorio($amountReports){
+        return $this->tempoDAO->consultarPorRelatorio($amountReports);
     }
 
     /*
         Function responsible for inserting a time table.
     */
-    public function _inserirTempo($idJogo){
-        return $this->tempoDAO->inserirTempo($idJogo);
+    public function _inserirTempo($idPlayer){
+        return $this->tempoDAO->inserirTempo($idPlayer);
     }
 
     /*
         Function responsible for updating the data of games.
     */
-    public function _atualizar($idTempo, $idJogo, $tiro7Metros, $tempoTecnico, $placarTime1, $placarTime2, $tipo){
-        $dadosTempo = new Tempo();
-        $dadosTempo->__constructOverload($idTempo, $idJogo, $tiro7Metros, $tempoTecnico, $placarTime1, $placarTime2, $tipo);
+    public function _atualizar($idTeam, $idPlayer, $amountSevenMetersTotal, $timeCoach, $scoreboardTeam1, $scoreboardTeam2, $type){
+        $dataTime = new Tempo();
+        $dataTime->__constructOverload($idTeam, $idPlayer, $amountSevenMetersTotal, $timeCoach, $scoreboardTeam1, $scoreboardTeam2, $type);
         $this->tempoDAO->atualizar($dadosDados);
     }
 
     /*
         Function responsible for saving the data of time in the game.
     */
-    public function _salvar($idTempo, $idJogo, $tiro7Metros, $tempoTecnico, $placarTime1, $placarTime2, $tipo){
-        $dadosTempo = new Tempo();
-        $dadosTempo->__constructOverload(0, $idJogo, $tiro7Metros, $tempoTecnico, $placarTime1, $placarTime2, $tipo);
-        $this->tempoDAO->inserir($dadosTempo);
+    public function _salvar($idTeam, $idPlayer, $amountSevenMetersTotal, $timeCoach, $scoreboardTeam1, $scoreboardTeam2, $type){
+        $dataTime = new Tempo();
+        $dataTime->__constructOverload(0, $idPlayer, $amountSevenMetersTotal, $timeCoach, $scoreboardTeam1, $scoreboardTeam2, $type);
+        $this->tempoDAO->inserir($dataTime);
     }
 
     /*
@@ -110,24 +110,24 @@ class TempoController {
     /*
         Function responsible for inserting a goal from team.
     */
-    public function _inserirGolTimeA($placarA, $seteMetros, $idTempo){
-        return $this->tempoDAO->inserirGolTimeA($placarA, $seteMetros, $idTempo);
+    public function _inserirGolTimeA($scoreboardA, $amountSevenMetersTotal, $idTeam){
+        return $this->tempoDAO->inserirGolTimeA($scoreboardA, $amountSevenMetersTotal, $idTeam);
     }
 
     /*
         Function responsible for inserting a goal from team.
     */
-    public function _inserirGolTimeB($placarB, $idTempoAtual){
-        return $this->tempoDAO->inserirGolTimeB($placarB, $idTempoAtual);
+    public function _inserirGolTimeB($scoreboardB, $idTeamCurrent){
+        return $this->tempoDAO->inserirGolTimeB($scoreboardB, $idTeamCurrent);
     }
 
     /*
         Function responsible for consulting the last record of time was registered.
     */
     public function _consultarUltimoRegistro(){
-        $resultado = $this->tempoDAO->consultarUltimoRegistro();
-        $idTempo = $resultado->Fields('id');
-        return $idTempo;
+        $result = $this->tempoDAO->consultarUltimoRegistro();
+        $idTeam = $result->Fields('id');
+        return $idTeam;
     }
 
 }
