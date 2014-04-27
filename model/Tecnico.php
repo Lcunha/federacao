@@ -1,16 +1,16 @@
 <?php
 
 /* 
-    Name: Tecnico.php
+    Name: Coach.php
     Description: This is the class that contains the attributes, accessor methods 
-    and constructors of a coach. The coach must contains 'idTecnico', 'nome',
-    'telefone' and 'cpf'. 
+    and constructors of a coach. The coach must contains 'idCoach', 'coachName',
+    'coachPhone' and 'coachCpf'. 
 */
-class Tecnico{
-    private $idTecnico;
-    private $nome;
-    private $telefone;
-    private $cpf;
+class Coach{
+    private $idCoach;
+    private $coachName;
+    private $coachPhone;
+    private $coachCpf;
 	
     /*
         Default construct declaration. Using constructor methods is appropriate for any initialization 
@@ -23,66 +23,66 @@ class Tecnico{
     /*
         Overload construct.
     */
-    public function __constructOverload($idTecnico, $nome, $telefone, $cpf){
-    	$this->idTecnico = $idTecnico;
-	$this->nome = $nome;
-	$this->telefone = $telefone;
-	$this->cpf = $cpf;
+    public function __constructOverload($idCoach, $coachName, $coachPhone, $coachCpf){
+    	$this->idCoach = $idCoach;
+	$this->coachName = $coachName;
+	$this->coachPhone = $coachPhone;
+	$this->coachCpf = $coachCpf;
     }
         
     /*
-        Method to verify the attribute 'idTecnico' of the class.
+        Method to verify the attribute 'idCoach' of the class.
     */
-    public function __getIdTecnico(){
-	return $this->idTecnico;
+    public function __getIdCoach(){
+	return $this->idCoach;
     }
         
     /*
-        Method to modify the attribute 'idTecnico' of the class.
+        Method to modify the attribute 'idCoach' of the class.
     */
-    public function __setIdTecnico($idTecnico){
-	$this->idTecnico = $idTecnico;
+    public function __setIdCoach($idCoach){
+	$this->idCoach = $idCoach;
     }
         
     /*
-        Method to verify the attribute 'nome' of the class.
+        Method to verify the attribute 'coachName' of the class.
     */
-    public function __getNome(){
-	return $this->nome;
+    public function __getCoachName(){
+	return $this->coachName;
     }
         
     /*
-        Method to modify the attribute 'nome' of the class.
+        Method to modify the attribute 'coachName' of the class.
     */
-    public function __setNome($nome){
-	$this->nome = $nome;
+    public function __setCoachName($coachName){
+	$this->coachName = $coachName;
     }
         
     /*
-        Method to verify the attribute 'telefone' of the class.
+        Method to verify the attribute 'coachPhone' of the class.
     */
-    public function __getTelefone(){
-	return $this->telefone;
+    public function __getCoachPhone(){
+	return $this->coachPhone;
     }
         
     /*
-        Method to modify the attribute 'telefone' of the class.
+        Method to modify the attribute 'coachPhone' of the class.
     */
-    public function __setTelefone($telefone){
-	$this->telefone = $telefone;
+    public function __setCoachPhone($coachPhone){
+	$this->coachPhone = $coachPhone;
     }
         
     /*
-        Method to verify the attribute 'cpf' of the class.
+        Method to verify the attribute 'coachCpf' of the class.
     */
-    public function __getCpf(){
-	return $this->cpf;
+    public function __getCoachCpf(){
+	return $this->coachCpf;
     }
         
     /*
-        Method to modify the attribute 'cpf' of the class.
+        Method to modify the attribute 'coachCpf' of the class.
     */
-    public function __setCpf($cpf){
-	$this->cpf = $cpf;
+    public function __setCoachCpf($coachCpf){
+	$this->coachCpf = $coachCpf;
     }
 }
