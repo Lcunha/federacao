@@ -1,36 +1,36 @@
 <?php
 
 /*
-    Name: ArbitroDAO.php  
-    Description:Class data persistence with CRUD functions (create, read, update, delete) 
+    Name: RefereeDAO.php  
+    Description: Class data persistence with CRUD functions (create, read, update, delete) 
     for handling the type Arbitrator, in the relevant table in mysql.
  */
 
-include_once (__APP_PATH.'/model/Arbitro.php');
-include_once (__APP_PATH.'/persistence/Conexao.php');
+include_once (__APP_PATH.'/model/Referee.php');
+include_once (__APP_PATH.'/persistence/Connection.php');
 
-class ArbitroDAO{
-	private $conexao;
+class RefereeDAO{
+	private $connection;
 	
 	/* 
             Construct Method of class ArbitratorDAO 
 	*/
 	public function __construct(){
-            $this->conexao = new Conexao();
+            $this->connection = new Connection();
 	}
 
 	/* 
             That method consultation for listing all arbitrators of table in mysql. 
 	*/
-	public function listarTodos(){
+	public function listAllReferees(){
             $sql = "SELECT * FROM arbitro";
-            $resultado = $this->conexao->banco->Execute($sql);
-            while($registro = $resultado->FetchNextObject()){
+            $result = $this->connection->banco->Execute($sql);
+            while($register = $result->FetchNextObject()){
                     $dadosArbitro = new Arbitro();
-                    $dadosArbitro->__constructOverload($registro->ID_ARBITRO, 
-                                                       $registro->NOME, 
-                                                       $registro->TELEFONE, 
-                                                       $registro->CPF);
+                    $dadosArbitro->__constructOverload($register->ID_ARBITRO, 
+                                                       $register->NOME, 
+                                                       $register->TELEFONE, 
+                                                       $register->CPF);
                     $retornaArbitros[] = $dadosArbitro;
             }
             return $retornaArbitros;
@@ -44,7 +44,7 @@ class ArbitroDAO{
                     VALUES ('{$dadosArbitro->__getNome()}', 
                     '{$dadosArbitro->__getTelefone()}',
                     '{$dadosArbitro->__getCpf()}')";
-            $this->conexao->banco->Execute($sql);
+            $this->connection->banco->Execute($sql);
 	}
 
 	/* 
@@ -55,7 +55,7 @@ class ArbitroDAO{
                            telefone ='{$dadosArbitro->__getTelefone()}', 
                            cpf ='{$dadosArbitro->__getCpf()}'
                     WHERE id_arbitro ='{$dadosArbitro->__getIdArbitro()}' ";
-            $this->conexao->banco->Execute($sql);
+            $this->connection->banco->Execute($sql);
 	}
 
 	/* 
@@ -63,11 +63,11 @@ class ArbitroDAO{
 	*/
 	public function consultarPorId($id){
             $sql = "SELECT * FROM arbitro WHERE id_arbitro = '{$id}'";
-            $resultado = $this->conexao->banco->Execute($sql);
-            $registro = $resultado->FetchNextObject();
+            $result = $this->connection->banco->Execute($sql);
+            $register = $result->FetchNextObject();
             $dadosArbitro = new Arbitro();
-            $dadosArbitro->__constructOverload($registro->ID_ARBITRO, $registro->NOME, 
-                                               $registro->TELEFONE, $registro->CPF);
+            $dadosArbitro->__constructOverload($register->ID_ARBITRO, $register->NOME, 
+                                               $register->TELEFONE, $register->CPF);
             return $dadosArbitro;
 	}
 	
@@ -76,11 +76,11 @@ class ArbitroDAO{
 	*/
 	public function consultarPorNome($nome){
             $sql = "SELECT * FROM arbitro WHERE nome= '{$nome}'";
-            $resultado = $this->conexao->banco->Execute($sql);
-            $registro = $resultado->FetchNextObject();
+            $result = $this->connection->banco->Execute($sql);
+            $register = $result->FetchNextObject();
             $dadosDadosTime = new DadosTime();
-            $dadosDadosTime->__constructOverload($registro->ID_ARBITRO, $registro->NOME, 
-                                                 $registro->CPF);
+            $dadosDadosTime->__constructOverload($register->ID_ARBITRO, $register->NOME, 
+                                                 $register->CPF);
             return $dadosDadosTime;
 	}
 
@@ -89,7 +89,7 @@ class ArbitroDAO{
 	*/
 	public function excluir($id){
             $sql = "DELETE FROM arbitro WHERE id_arbitro= '{$id}' ";
-            $resultado = $this->conexao->banco->Execute($sql);
+            $result = $this->connection->banco->Execute($sql);
 	}
 
 	/* 
@@ -97,9 +97,9 @@ class ArbitroDAO{
 	*/
 	public function contarRegistrosArbitro(){
             $sql = "SELECT COUNT(*) as contagem FROM arbitro";
-            $resultado = $this->conexao->banco->Execute($sql);
-            $registro = $resultado->FetchNextObject();
-            return $registro->CONTAGEM;
+            $result = $this->connection->banco->Execute($sql);
+            $register = $result->FetchNextObject();
+            return $register->CONTAGEM;
 	}
 }
 
