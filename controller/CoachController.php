@@ -2,8 +2,8 @@
 
 /*
     Name: CoachController.php
-    Description: Class responsible for inserting, deleting,
-    changing a manager in addition to making an appointment for a technician already registered.
+    Description: Class responsible for inserting, deleting, changing a manager in addition 
+    to making an appointment for a coach already registered.
 */
 include_once(__APP_PATH . '/persistence/CoachDAO.php');
 include_once(__APP_PATH . '/model/Coach.php');
@@ -17,7 +17,7 @@ class CoachController {
     }
 
     /*
-        Function responsible for selecting the technical data in the table.
+        Function responsible for selecting the coach data in the table.
     */
     public function _listCoachesForSelect(){
         $coachData = new Coach();
@@ -31,7 +31,7 @@ class CoachController {
     }
 
     /*
-        List the function responsible for the technical data in the table.
+        List the function responsible for the coach data in the table.
      */
     public function _listAllCoachesForTable(){
         $coachData = new Coach();
@@ -79,7 +79,7 @@ class CoachController {
     }
 
     /*
-        Function responsible for saving the data of a new techical already registered.
+        Function responsible for saving the data of a new coach already registered.
      */
     public function _saveCoach($coachName, $coachPhone, $coachCpf){
         $coachData = new Coach();
@@ -88,7 +88,7 @@ class CoachController {
     }
 
     /*
-        Function responsible for updating the data of technical.
+        Function responsible for updating the data of coach.
     */
     public function _updateCoach($idCoach, $coachName, $coachPhone, $coachCpf){
         $coachData = new Coach();
@@ -97,7 +97,7 @@ class CoachController {
     }
 
     /*
-        Function responsible for deleting the data on technical.
+        Function responsible for deleting the data on coach.
      */
 
     public function _deleteCoach($id){
@@ -105,7 +105,7 @@ class CoachController {
     }
 
     /*
-        Function responsible for counting how many records technicians.
+        Function responsible for counting how many coaches records.
     */
     public function _amountCoachesRecords(){
         return $this->coachDAO->amountCoachesRecords();
