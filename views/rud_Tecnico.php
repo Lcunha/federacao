@@ -1,16 +1,21 @@
 <?php 
-	require_once __APP_PATH.'/view/TecnicoView.php';
-	$tecnicoVW = new TecnicoView();
-	$action = isset( $_GET['action'] ) ? $_GET['action'] : null;
-	$id = isset( $_GET['id'] ) ? $_GET['id'] : null;
-	if($action == "edit"){
-		include(__APP_PATH.'/views/cad_Tecnico.php');
-	}
-	if($action == "exclude"){
-		$tecnicoVW->excluir($id);
-	}
-	?>
-	?>	
+
+require_once __APP_PATH.'/view/CoachView.php';
+
+$coachVW = new CoachView();
+$action = isset( $_GET['action'] ) ? $_GET['action'] : null;
+$id = isset( $_GET['id'] ) ? $_GET['id'] : null;
+
+if($action == "edit"){
+    include(__APP_PATH.'/views/cad_Coach.php');
+}
+
+if($action == "exclude"){
+    $coachVW->deleteCoach($id);
+}
+   
+?>
+?>	
 	<script src="./views/js/jquery.tablesorter.min.js"></script>
     <script src="./views/js/jquery.tablesorter.pager.js"></script>
 <style>
@@ -138,61 +143,67 @@ background-color: #CC0000;
 	float: right;
 }
 </style>
+
 <center><h2>Tecnicos</h2></center>
-<div id="medida2">
-<a href="?pag=cad-tecnico" class="but but-primary float">Incluir novo tecnico</a>
-<div id="clear"></div>
+<div id = "medida2">
+    <a href = "?pag = cad-tecnico" class = "but but-primary float">Incluir novo tecnico</a>
+    <div id = "clear"></div>
 </div>
-    <form class="medida" style="margin: 0 auto" method="post" action="exemplo.html" id="frm-filtro">
-      <p>
-        <label for="pesquisar">Pesquisar</label>
-        <input type="text" id="pesquisar" name="pesquisar" size="30" />
-      </p>
+
+    <form class = "medida" style = "margin: 0 auto" method = "post" action = "exemplo.html" 
+          id = "frm-filtro">
+        <p>
+            <label for = "pesquisar">Pesquisar</label>
+            <input type = "text" id = "pesquisar" name = "pesquisar" size = "30" />
+        </p>
     </form>
     
-    <table style="margin: 0 auto"  cellspacing="0" summary="Tecnicos">
-      <thead>
-        <tr>
-          <th><input type="checkbox" value="1" id="marcar-todos" name="marcar-todos" /></th>
-          <th>ID</th>
-          <th>Nome</th>
-          <th>Telefone</th>
-          <th>CPF</th>
-          <th>Ações</th>
-        </tr>
-      </thead>
-      <tbody>
-       		<?php 
-        		$tr = $tecnicoVW->listarTecnicosParaTabela();
-        		for($i=0;$i<count($tr);$i++){
-					echo $tr[$i];
-				}
-        	?> 
-      </tbody>
+    <table style = "margin: 0 auto" cellspacing = "0" summary = "Tecnicos">
+        <thead>
+            <tr>
+                <th><input type = "checkbox" value = "1" id = "marcar-todos" 
+                           name = "marcar-todos" /></th>
+                <th>ID</th>
+                <th>Nome</th>
+                <th>Telefone</th>
+                <th>CPF</th>
+                <th>Aï¿½ï¿½es</th>
+            </tr>
+        </thead>
+        
+        <tbody>
+            <?php 
+        	$tr = $coachVW->listAllCoachesForTable();
+        	for($i=0;$i<count($tr);$i++){
+                    echo $tr[$i];
+		}
+            ?> 
+        </tbody>
     </table>
 
-    <div id="pager" class="pager">
-    	<form style="margin: 0 auto;">
+    <div id = "pager" class = "pager">
+    	<form style = "margin: 0 auto;">
 
-    <div id="pager" class="pager" align="center">
-    	<form style="margin: 0 auto">
+    <div id = "pager" class = "pager" align = "center">
+    	<form style = "margin: 0 auto">
 
-				<span>
-					Exibir <select class="pagesize">
-							<option selected="selected"  value="10">10</option>
-							<option value="20">20</option>
-							<option value="30">30</option>
-							<option  value="40">40</option>
-					</select> registros
-				</span>
+            <span>
+		Exibir <select class = "pagesize">
+                            <option selected = "selected" value = "10">10</option>
+                            <option value = "20">20</option>
+                            <option value = "30">30</option>
+                            <option  value = "40">40</option>
+                       </select> registros
+            </span>
 
-			<img src="./views/images/first.png" class="first"/>
-    		<img src="./views/images/prev.png" class="prev"/>
-    		<input type="text" class="pagedisplay"/>
-    		<img src="./views/images/next.png" class="next"/>
-    		<img src="./views/images/last.png" class="last"/>
+            <img src = "./views/images/first.png" class = "first"/>
+            <img src = "./views/images/prev.png" class = "prev"/>
+            <input type = "text" class = "pagedisplay"/>
+            <img src = "./views/images/next.png" class = "next"/>
+            <img src = "./views/images/last.png" class = "last"/>
     	</form>
-    </div>  
+    </div> 
+            
     <script>
     $(function(){
       
@@ -248,5 +259,4 @@ background-color: #CC0000;
         });
       
     });
-</script>
-    
+</script>   
