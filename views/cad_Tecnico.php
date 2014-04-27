@@ -62,50 +62,71 @@ background-color: #CC0000;
 }
 </style>
 <?php 
-require_once __APP_PATH.'/view/TecnicoView.php';
-$tecnicoVW = new TecnicoView();	
+
+require_once __APP_PATH.'/view/CoachView.php';
+
+$coachVW = new CoachView();	
 $id = isset( $_GET['id'] ) ? $_GET['id'] : null;
 $action = isset( $_GET['action'] ) ? $_GET['action'] : null;
+
 if($action == "edit"){
-	$dados = $tecnicoVW->consultarPorId($id);
+	$coachData = $coachVW->consultByIdCoach($id);
 ?>
 <center><h2> Alterar Cadastro</h2></center>
-	<form id="contactform" method="post" action="">
-    	<div class="field">
-        	<input type="text" class="input" name="nome" id="nome" placeholder="Nome do Tecnico" value="<?php echo $dados['nome']?>" required>
+    <form id = "contactform" method = "post" action = "">
+        <div class = "field">
+            <input type = "text" class = "input" name = "nome" id = "nome" 
+                   placeholder = "Nome do Tecnico" value = "<?php echo $coachData['coachName']?>" 
+                   required>
         </div>
-        <div class="field">
-    	<input type="text" class="input" name="telefone" id="telefone" placeholder="Telefone"value="<?php echo $dados['telefone']?>" required>
+    
+        <div class = "field">
+            <input type = "text" class = "input" name = "telefone" id = "telefone" 
+                   placeholder = "Telefone" value = "<?php echo $coachData['coachPhone']?>" 
+                   required>
         </div>
-        <div class="field">
-    	<input type="text" class="input" name="cpf" id="cpf" placeholder="CPF" value="<?php echo $dados['cpf']?>"required>
+        
+        <div class = "field">
+            <input type = "text" class = "input" name = "cpf" id = "cpf" placeholder = "CPF" 
+                   value = "<?php echo $coachData['coachCpf']?>" required>
         </div>
-        <input type="submit" class="but but-success" name="Cadastrar" value="Editar">
-        <input type="reset" class="but but-error" name="apagar" value="Limpar">
-	</form>
+    
+        <input type = "submit" class = "but but-success" name = "Cadastrar" value = "Editar">
+        <input type = "reset" class = "but but-error" name = "apagar" value = "Limpar">
+    </form>
+
 <?php 
-	if ($_SERVER['REQUEST_METHOD'] == 'POST'){
-		$tecnicoVW->atualizar($id);
-	}
+	
+    if ($_SERVER['REQUEST_METHOD'] == 'POST'){
+        $coachVW->updateCoach($id);
+    }
 }
+
 else {	
-?>
-<center><h2> Cadastro de Tecnicos</h2></center>
-	<form id="contactform" method="post" action="">
-    	<div class="field">
-        	<input type="text" class="input" name="nome" id="nome" placeholder="Nome do Tecnico" required>
-        </div>
-        <div class="field">
-    	<input type="text" class="input" name="telefone" id="telefone" placeholder="Telefone" required>
-        </div>
-        <div class="field">
-    	<input type="text" class="input" name="cpf" id="cpf" placeholder="CPF" required>
-        </div>
-        <input type="submit" class="but but-success" name="Cadastrar" value="Cadastrar">
-        <input type="reset" class="but but-error" name="apagar" value="Limpar">
+    ?>
+    <center><h2> Cadastro de Tecnicos</h2></center>
+	<form id = "contactform" method = "post" action = "">
+            <div class = "field">
+                <input type = "text" class = "input" name = "nome" id = "nome" 
+                       placeholder = "Nome do Tecnico" required>
+            </div>
+        
+            <div class = "field">
+                <input type = "text" class = "input" name = "telefone" id = "telefone" 
+                       placeholder = "Telefone" required>
+            </div>
+            
+            <div class = "field">
+                <input type = "text" class = "input" name = "cpf" id = "cpf" 
+                       placeholder = "CPF" required>
+            </div>
+            
+            <input type = "submit" class = "but but-success" name = "Cadastrar" value = "Cadastrar">
+            <input type = "reset" class = "but but-error" name = "apagar" value = "Limpar">
 	</form>
+    
 <?php
 	if ($_SERVER['REQUEST_METHOD'] == 'POST'){
-		$tecnicoVW->salvar();
+            $coachVW->saveCoach();
 	}
 }
