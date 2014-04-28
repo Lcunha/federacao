@@ -7,7 +7,8 @@
     'idDataTeam', 'Team', 'teamPoints', 'playerTeam', 'victoryTeam', 'empates', 'derrotas',
     'gols' and 'golsLevados'. 
 */
-class DadosTime{
+class DataTeam{
+    
     private $idDataTeam;
     private $Team;
     private $teamPoints;

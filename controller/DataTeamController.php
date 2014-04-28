@@ -5,9 +5,9 @@
     Description: Updates the points earned by teams in each match held.
  */
 include_once('./persistence/DataTeamDAO.php');
-include_once('./model/DadosTime.php');
+include_once('./model/DataTeam.php');
 
-class DadosTimeController {
+class DataTeamController {
 
     private $dataTeamDAO;
 
@@ -19,15 +19,15 @@ class DadosTimeController {
         Function responsible for listing all data Team.
     */
     public function _listAllData(){
-        return $this->dadosTimeDAO-> listAllData();
+        return $this->dataTeamDAO-> listAllData();
     }
 
     /*
         Function responsible for performing a query on a team by ID.
      */
-    public function _consultByIdData($id){
+    public function _consultByIdData($idData){
         $dataDataTeam = new DadosTime();
-        $dataDataTeam = $this->dadosTimeDAO->consultByIdData($id);
+        $dataDataTeam = $this->dataTeamDAO->consultByIdData($idData);
         //$arrayDados['nome'] = $dadosArbitro->__getNome();
         //$arrayDados['telefone'] = $dadosArbitro->__getTelefone();
         //$arrayDados['cpf'] = $dadosArbitro->__getCpf();
@@ -39,7 +39,7 @@ class DadosTimeController {
         Function responsible for entering data of a team.
      */
     public function _insertData(DadosTime $dataTeam){
-        return $this->dadosTimeDAO->insertData($dataTeam);
+        return $this->dataTeamDAO->insertData($dataTeam);
     }
 
     /*
@@ -49,7 +49,7 @@ class DadosTimeController {
         $dataDataTeam = new DadosTime();
         $dataDataTeam->__constructOverload(0, $idDataTeam, $teamPoints, $playerTeam, $victoryTeam, 
                                              $drawTeam, $lossTeam, $amountGoals, $concededGoals);
-        $this->dadosTimeDAO->updateData($dataDataTeam);
+        $this->dataTeamDAO->updateData($dataDataTeam);
     }
 
     /*
@@ -66,14 +66,14 @@ class DadosTimeController {
             $punctuation1 = 1;
             $punctuation2 = 1;
         }
-        $this->dadosTimeDAO->updateDataPoint($idTeam1, $idTeam2, $punctuation1, $punctuation2, $goalsTeam1, $goalsTeam2);
+        $this->dataTeamDAO->updateDataPoint($idTeam1, $idTeam2, $punctuation1, $punctuation2, $goalsTeam1, $goalsTeam2);
     }
 
     /*
         Function responsible for deleting the data on time.
      */
-    public function _deleteData($id) {
-        return $this->dadosTimeDAO->deleteData($id);
+    public function _deleteData($idData) {
+        return $this->dataTeamDAO->deleteData($idData);
     }
 
 }

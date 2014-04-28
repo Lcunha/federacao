@@ -6,7 +6,7 @@
 */
 include_once(__APP_PATH.'/controller/DataTeamController.php');
 
-class DadosTimeView{
+class DataTeamView{
 	private $dataTeamCO;
         /*
             This function is responsible to instantiate the DadosTimeController.
@@ -37,7 +37,7 @@ class DadosTimeView{
             This function is responsible to update team data.
         */
         public function updateData($id){
-		$formulario = $_POST;
+		$form = $_POST;
 		return $this->dataTeamCO->_updateData();
 	}
 	/*

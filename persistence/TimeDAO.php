@@ -1,11 +1,11 @@
 <?php
 
 /*
-	Name: TempoDAO.php  
-	Description:Class data persistence with CRUD functions (create, read, update, delete) 
-	for handling the type Time, in the relevant table in mysql.
+    Name: TempoDAO.php  
+    Description:Class data persistence with CRUD functions (create, read, update, delete) 
+    for handling the type Time, in the relevant table in mysql.
 */
-include_once ('./model/Time.php');
+include_once ('./model/Team.php');
 include_once ('./model/Jogo.php');
 include_once ('./persistence/Conexao.php');
 
@@ -25,15 +25,15 @@ class TimeDAO{
 	public function listarTodos(){
             $sql = "SELECT * FROM tempo";
             $result = $this->connection->banco->Execute($sql);
-            while($registro = $result->FetchNextObject()){
-                $dadosTempo = new Tempo();
-                $dadosTempo->__constructOverload($registro->ID_TEMPO, $registro->JOGO_ID_JOGO,
-                                                 $registro->TIPO, $registro->TIRO_7METROS,
-                                                 $registro->TEMPO_TECNICO, $registro->PLACAR_TIME1,
-                                                 $registro->PLACAR_TIME2);
-                $retornaTempo[] = $dadosTempo;
+            while($record = $result->FetchNextObject()){
+                $dataTime = new Tempo();
+                $dataTime->__constructOverload($record->ID_TEMPO, $record->JOGO_ID_JOGO,
+                                                 $record->TIPO, $record->TIRO_7METROS,
+                                                 $record->TEMPO_TECNICO, $record->PLACAR_TIME1,
+                                                 $record->PLACAR_TIME2);
+                $returnTime[] = $dataTime;
             }
-            return $retornaTempo;
+            return $returnTime;
     }
 	
 	/*
@@ -49,17 +49,17 @@ class TimeDAO{
 	/*
             The method is responsibility by to update data in database table.
 	*/
-	public function atualizar(Tempo $dadosTempo){
+	public function atualizar(Tempo $dataTime){
             $sql = "UPDATE tempo 
-                    SET jogo_id_jogo='{$dadosTempo->__getIdJogo()}',
-                        tipo='{$dadosTempo->__getTipo()}', 
-                        tiro_7metros='{$dadosTempo->__getTiro7Metros()}',
-                        tempo_tecnico='{$dadosTempo->__getTempoTecnico()}', 
-                        placar_time1='{$dadosTempo->__getplacarTime1()}', 
-                        placar_time2='{$dadosTempo->__getPlacarTime2()}'  
-                    WHERE id_tempo='{$dadosTempo->__getIdTempo()}' ";
+                    SET jogo_id_jogo='{$dataTime->__getIdJogo()}',
+                        tipo='{$dataTime->__getTipo()}', 
+                        tiro_7metros='{$dataTime->__getTiro7Metros()}',
+                        tempo_tecnico='{$dataTime->__getTempoTecnico()}', 
+                        placar_time1='{$dataTime->__getplacarTime1()}', 
+                        placar_time2='{$dataTime->__getPlacarTime2()}'  
+                    WHERE id_tempo='{$dataTime->__getIdTempo()}' ";
             $this->connection->banco->Execute($sql);
-            return $dadosTempo;
+            return $dataTime;
 	}
 	
 	/*
@@ -68,13 +68,13 @@ class TimeDAO{
 	public function consultarPorId($id){
             $sql = "SELECT * FROM tempo WHERE id_tempo = '{$id}'";
             $result = $this->connection->banco->Execute($sql);
-            $registro = $result->FetchNextObject();
-            $dadosTempo = new Tempo();
-            $dadosTempo->__constructOverload($registro->ID_TEMPO, $registro->JOGO_ID_JOGO,
-                                             $registro->TIPO, $registro->TIRO_7METROS,
-                                             $registro->TEMPO_TECNICO, $registro->PLACAR_TIME1,
-                                             $registro->PLACAR_TIME2);		
-            return $dadosTempo;
+            $record = $result->FetchNextObject();
+            $dataTime = new Tempo();
+            $dataTime->__constructOverload($record->ID_TEMPO, $record->JOGO_ID_JOGO,
+                                             $record->TIPO, $record->TIRO_7METROS,
+                                             $record->TEMPO_TECNICO, $record->PLACAR_TIME1,
+                                             $record->PLACAR_TIME2);		
+            return $dataTime;
 	}
 	
 	/*
@@ -83,13 +83,13 @@ class TimeDAO{
 	public function consultarPorRelatorio($relatorio){
             $sql = "SELECT * FROM tempo WHERE relatorio = '{$relatorio}'";
             $result = $this->connection->banco->Execute($sql);
-            $registro = $result->FetchNextObject();
-            $dadosTempo = new Tempo();
-            $dadosTempo->__constructOverload($registro->ID_TEMPO, $registro->JOGO_ID_JOGO,
-                                             $registro->TIPO, $registro->TIRO_7METROS,
-                                             $registro->TEMPO_TECNICO, $registro->PLACAR_TIME1,
-                                             $registro->PLACAR_TIME2);
-            return $dadosTempo;
+            $record = $result->FetchNextObject();
+            $dataTime = new Tempo();
+            $dataTime->__constructOverload($record->ID_TEMPO, $record->JOGO_ID_JOGO,
+                                             $record->TIPO, $record->TIRO_7METROS,
+                                             $record->TEMPO_TECNICO, $record->PLACAR_TIME1,
+                                             $record->PLACAR_TIME2);
+            return $dataTime;
 	}
 
 	/*

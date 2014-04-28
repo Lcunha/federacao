@@ -7,7 +7,8 @@
     'idTimePlay', 'idPlayer', 'type', 'amountPunishment', 'warning', 'amountDisqualification', 
     'amountReports', 'amountSevenMetersTotal', 'tempoTecnico', 'scoreboardTeam1' and 'scoreboardTeam2'. 
 */
-class Tempo{
+class Time{
+    
     private $idTimePlay;
     private $idPlayer;
     private $type;

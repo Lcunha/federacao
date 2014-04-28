@@ -6,7 +6,6 @@
     for handling the associative type Data_Team, in the relevant table (table associative) 
     in mysql.
  */
-
 include_once ('./model/Coach.php');
 include_once ('./persistence/Connection.php');
 include_once ('./persistence/TeamDAO.php');
@@ -83,7 +82,7 @@ class DataTeamDAO{
             $sql = "SELECT * FROM dados_campeonato WHERE time_id_time = '{$id}' ";
             $result = $this->connection->banco->Execute($sql);
             $record = $result->FetchNextObject();
-            $dataDataTeam = new DadosTime();
+            $dataDataTeam = new DataTeam();
             $dataDataTeam->__constructOverload($record->ID_DADOS_CAMPEONATO,
                                                  $record->TIME_ID_TIME, $record->PONTOS,
                                                  $record->JOGOS, $record->VITORIAS,
