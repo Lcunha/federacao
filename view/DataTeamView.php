@@ -17,34 +17,34 @@ class DadosTimeView{
 	/*
             This function is responsible to list all the data of the Team.
         */
-        public function listarTodos(){
-		return $this->dadosTimeCO->listarTodos();
+        public function  showAllData(){
+		return $this->dadosTimeCO-> showAllData();
 	}
 	/*
             This function is responsible to consult the data of the team by the 
             id.
         */
-        public function consultarPorId($id){
-		return $this->dadosTimeCO->_consultarPorId($id);
+        public function  browseByIdData($id){
+		return $this->dadosTimeCO->_browseByIdData($id);
 	}
 	/*
             This function is responsible to add team data.
         */
-        public function inserir(){
-		return $this->dadosTimeCO->_inserir($dataTeam);
+        public function insertData(){
+		return $this->dadosTimeCO->_insertData($dataTeam);
 	}
 	/*
             This function is responsible to update team data.
         */
-        public function atualizar($id){
+        public function updateData($id){
 		$formulario = $_POST;
-		return $this->dadosTimeCO->_atualizar();
+		return $this->dadosTimeCO->_updateData();
 	}
 	/*
             This function is responsible to delete team data.
         */
-        public function excluir($id){
-		return $this->dadosTimeCO->_excluir($id);
+        public function deleteData($id){
+		return $this->dadosTimeCO->_deleteData($id);
 	}
 	
 }
