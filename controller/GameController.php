@@ -58,12 +58,12 @@ class GameController {
     public function _consultByIdGame($idGame){
         $gameData = new Game();
         $gameData = $this->gameDAO->consultByIdGame($idGame);
-        $arrayGameData['espectadores'] = $gameData->__getGameAudience();
-        $arrayGameData['cidade'] = $gameData->__getGameCity();
-        $arrayGameData['localizacao'] = $gameData->__getGameLocation();
-        $arrayGameData['dataJogo'] = $gameData->__getGameDate();
-        $arrayGameData['duracao'] = $gameData->__getGameDuration();
-        $arrayGameData['total7Metros'] = $gameData->__getTotal7Meters();
+        $arrayGameData['gameAudience'] = $gameData->__getGameAudience();
+        $arrayGameData['gameCity'] = $gameData->__getGameCity();
+        $arrayGameData['gameLocation'] = $gameData->__getGameLocation();
+        $arrayGameData['gameDate'] = $gameData->__getGameDate();
+        $arrayGameData['gameDuration'] = $gameData->__getGameDuration();
+        $arrayGameData['total7Meters'] = $gameData->__getTotal7Meters();
 
         return $arrayGameData;
     }
