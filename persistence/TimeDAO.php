@@ -5,19 +5,18 @@
 	Description:Class data persistence with CRUD functions (create, read, update, delete) 
 	for handling the type Time, in the relevant table in mysql.
 */
-
-include_once ('./model/Tempo.php');
+include_once ('./model/Time.php');
 include_once ('./model/Jogo.php');
 include_once ('./persistence/Conexao.php');
 
-class TempoDAO{
-	private $conexao;
+class TimeDAO{
+	private $connection;
 	
 	/*
             The method is responsibility by to instance the class and initialize variable of conection with database.
 	*/
 	public function __construct(){
-            $this->conexao = new Conexao();
+            $this->connection = new Conexao();
 	}
 	
 	/*
@@ -25,8 +24,8 @@ class TempoDAO{
 	*/
 	public function listarTodos(){
             $sql = "SELECT * FROM tempo";
-            $resultado = $this->conexao->banco->Execute($sql);
-            while($registro = $resultado->FetchNextObject()){
+            $result = $this->connection->banco->Execute($sql);
+            while($registro = $result->FetchNextObject()){
                 $dadosTempo = new Tempo();
                 $dadosTempo->__constructOverload($registro->ID_TEMPO, $registro->JOGO_ID_JOGO,
                                                  $registro->TIPO, $registro->TIRO_7METROS,
@@ -44,7 +43,7 @@ class TempoDAO{
             $sql = "INSERT INTO tempo (jogo_id_jogo, tiro_7metros, tempo_tecnico, placar_time1,
                                        placar_time2,tipo) 
                     VALUES ('{$idJogo}',0,0,0,0,0)";
-            $this->conexao->banco->Execute($sql);
+            $this->connection->banco->Execute($sql);
 	}
 	
 	/*
@@ -59,7 +58,7 @@ class TempoDAO{
                         placar_time1='{$dadosTempo->__getplacarTime1()}', 
                         placar_time2='{$dadosTempo->__getPlacarTime2()}'  
                     WHERE id_tempo='{$dadosTempo->__getIdTempo()}' ";
-            $this->conexao->banco->Execute($sql);
+            $this->connection->banco->Execute($sql);
             return $dadosTempo;
 	}
 	
@@ -68,8 +67,8 @@ class TempoDAO{
 	*/
 	public function consultarPorId($id){
             $sql = "SELECT * FROM tempo WHERE id_tempo = '{$id}'";
-            $resultado = $this->conexao->banco->Execute($sql);
-            $registro = $resultado->FetchNextObject();
+            $result = $this->connection->banco->Execute($sql);
+            $registro = $result->FetchNextObject();
             $dadosTempo = new Tempo();
             $dadosTempo->__constructOverload($registro->ID_TEMPO, $registro->JOGO_ID_JOGO,
                                              $registro->TIPO, $registro->TIRO_7METROS,
@@ -83,8 +82,8 @@ class TempoDAO{
 	*/
 	public function consultarPorRelatorio($relatorio){
             $sql = "SELECT * FROM tempo WHERE relatorio = '{$relatorio}'";
-            $resultado = $this->conexao->banco->Execute($sql);
-            $registro = $resultado->FetchNextObject();
+            $result = $this->connection->banco->Execute($sql);
+            $registro = $result->FetchNextObject();
             $dadosTempo = new Tempo();
             $dadosTempo->__constructOverload($registro->ID_TEMPO, $registro->JOGO_ID_JOGO,
                                              $registro->TIPO, $registro->TIRO_7METROS,
@@ -98,7 +97,7 @@ class TempoDAO{
 	*/
 	public function excluir($id){
             $sql = "DELETE FROM jogador WHERE id_jogador = '{$id}' ";
-            $resultado = $this->conexao->banco->Execute($sql);
+            $result = $this->connection->banco->Execute($sql);
 	}
 
 	/*
@@ -108,7 +107,7 @@ class TempoDAO{
             $sql = "UPDATE tempo 
                     SET placar_time1 = '{$placarA}', tiro_7metros = '{$seteMetros}' 
                     WHERE id_tempo = '{$idTempo}'";
-            $resultado = $this->conexao->banco->Execute($sql);
+            $result = $this->connection->banco->Execute($sql);
 	}
 
 	/*
@@ -118,7 +117,7 @@ class TempoDAO{
             $sql = "UPDATE tempo 
                     SET placar_time2 = '{$placarB}'  
                     WHERE id_tempo = '{$idTempo}'";
-            $resultado = $this->conexao->banco->Execute($sql);
+            $result = $this->connection->banco->Execute($sql);
 	}
 
 	/*
@@ -126,7 +125,7 @@ class TempoDAO{
 	*/
 	public function consultarUltimoRegistro(){
             $sql = "SELECT MAX(id_tempo) AS id FROM tempo";
-            $resultado = $this->conexao->banco->Execute($sql);
-            return $resultado;
+            $result = $this->connection->banco->Execute($sql);
+            return $result;
 	}
 }

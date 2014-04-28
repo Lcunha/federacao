@@ -7,18 +7,18 @@
     in mysql.
  */
 
-include_once ('./model/Arbitro.php');
-include_once ('./persistence/Conexao.php');
-include_once ('./persistence/TimeDAO.php');
+include_once ('./model/Coach.php');
+include_once ('./persistence/Connection.php');
+include_once ('./persistence/TeamDAO.php');
 
-class DadosTimeDAO{
-	private $conexao;
+class DataTeamDAO{
+	private $connection;
 	
 	/*
             The method is responsibility to instance the class.
 	*/
 	public function __construct(){
-            $this->conexao = new Conexao();
+            $this->connection = new Conexao();
 	}
 
 	/*
@@ -26,7 +26,7 @@ class DadosTimeDAO{
 	*/
 	public function listarTodos(){
             $sql = "SELECT * FROM dados_campeonato";
-            $result = $this->conexao->banco->Execute($sql);
+            $result = $this->connection->banco->Execute($sql);
             while($record = $result->FetchNextObject()){
                     $dataDataTeam = new DadosTime();
                     $dataDataTeam->__constructOverload($record->ID_DADOS_CAMPEONATO,
@@ -56,7 +56,7 @@ class DadosTimeDAO{
                             '{$dataDataTeam->__getGols()}',
                             '{$dataDataTeam->__getGolsLevados()}',
                             '{$dataDataTeam->__getIdTime()}')";
-            return $this->conexao->banco->Execute($sql);
+            return $this->connection->banco->Execute($sql);
 	}
 
 	/*
@@ -64,7 +64,7 @@ class DadosTimeDAO{
 	*/
 	public function consultarPorId($id){
             $sql = "SELECT * FROM dados_campeonato WHERE id_dados_campeonato = '{$id}' ";
-            $result = $this->conexao->banco->Execute($sql);
+            $result = $this->connection->banco->Execute($sql);
             $record = $result->FetchNextObject();
             $dataDataTeam = new DadosTime();
             $dataDataTeam->__constructOverload($record->ID_DADOS_CAMPEONATO, 
@@ -81,7 +81,7 @@ class DadosTimeDAO{
 	*/
 	public function consultarPorIdTime($id){
             $sql = "SELECT * FROM dados_campeonato WHERE time_id_time = '{$id}' ";
-            $result = $this->conexao->banco->Execute($sql);
+            $result = $this->connection->banco->Execute($sql);
             $record = $result->FetchNextObject();
             $dataDataTeam = new DadosTime();
             $dataDataTeam->__constructOverload($record->ID_DADOS_CAMPEONATO,
@@ -105,7 +105,7 @@ class DadosTimeDAO{
                         gols = '{$dataDataTeam->__getGols()}', 
                         gols_levados = '{$dataDataTeam->__getGolsLevados()}' 
                     WHERE time_id_time = '{$dataDataTeam->__getIdTime()}' ";
-            $this->conexao->banco->Execute($sql);
+            $this->connection->banco->Execute($sql);
 	}
 
 	/*
@@ -183,8 +183,8 @@ class DadosTimeDAO{
                                  gols_levados = '{$newGoalsTaken2}' 
                              WHERE time_id_time='{$team2->__getIdTime()}' ";
             }
-            $this->conexao->banco->Execute($sqlA);
-            $this->conexao->banco->Execute($sqlB);
+            $this->connection->banco->Execute($sqlA);
+            $this->connection->banco->Execute($sqlB);
 	}
 
 	/*
@@ -192,6 +192,6 @@ class DadosTimeDAO{
 	*/
 	public function excluir($id){
             $sql = "DELETE FROM dados_campeonato WHERE id_dados_campeonato = '{$id}' ";
-            $result = $this->conexao->banco->Execute($sql);
+            $result = $this->connection->banco->Execute($sql);
 	}
 }

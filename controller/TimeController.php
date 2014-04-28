@@ -5,15 +5,15 @@
     Description: List data from playtime in the table, performs a query,
     delete, change and updates the weather data, inserts the goals achieved by each team the match lasting.
  */
-include_once('./persistence/TempoDAO.php');
-include_once('./model/Tempo.php');
+include_once('./persistence/TimeDAO.php');
+include_once('./model/Time.php');
 
-class TempoController {
+class TimeController {
 
-    private $tempoDAO;
+    private $timeDAO;
 
     public function __construct(){
-        $this->tempoDAO = new TempoDAO();
+        $this->timeDAO = new TimeDAO();
     }
     /*
         Function responsible for listing the data of time.

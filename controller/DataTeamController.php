@@ -4,15 +4,15 @@
     Name: DadosTimeController.php
     Description: Updates the points earned by teams in each match held.
  */
-include_once('./persistence/DadosTimeDAO.php');
+include_once('./persistence/DataTeamDAO.php');
 include_once('./model/DadosTime.php');
 
 class DadosTimeController {
 
-    private $dadosTimeDAO;
+    private $dataTeamDAO;
 
     public function __construct(){
-        $this->dadosTimeDAO = new DadosTimeDAO();
+        $this->dataTeamDAO = new DataTeamDAO();
     }
 
     /*
