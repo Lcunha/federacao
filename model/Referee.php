@@ -1,16 +1,16 @@
 <?php
 
 /*
-    Name: Arbitro.php
+    Name: Referee.php
     Description: This is the class that contains the attributes, accessor methods 
-    and constructors of a referee. A referee must contains 'idArbitro', 'nome',
-    'telefone' and 'cpf'.
+    and constructors of a referee. A referee must contains 'idReferee', 'refereeName',
+    'refereePhone' and 'refereeCpf'.
 */
-class Arbitro{
-    private $idArbitro;
-    private $nome;
-    private $telefone;
-    private $cpf;
+class Referee{
+    private $idReferee;
+    private $refereeName;
+    private $refereePhone;
+    private $refereeCpf;
 
     /*
         Default construct declaration. Using constructor methods is appropriate for any initialization 
@@ -23,66 +23,66 @@ class Arbitro{
     /*
         Overload construct.
     */
-    public function __constructOverload($idArbitro, $nome, $telefone, $cpf){
-	$this->idArbitro = $idArbitro;
-	$this->nome = $nome;
-	$this->telefone = $telefone;
-	$this->cpf = $cpf;
+    public function __constructOverload($idReferee, $refereeName, $refereePhone, $refereeCpf){
+	$this->idReferee = $idReferee;
+	$this->refereeName = $refereeName;
+	$this->refereePhone = $refereePhone;
+	$this->refereeCpf = $refereeCpf;
     }
         
     /*
         Method to verify the attribute 'idAtributo' of the class.
     */
-    public function __getIdArbitro(){
-    	return $this->idArbitro;
+    public function __getIdReferee(){
+    	return $this->idReferee;
     }
 
     /*
        Method to modify the attribute 'idAtributo' of the class.
     */
-    public function __setIdArbitro($idArbitro){
-	$this->idArbitro = $idArbitro;
+    public function __setIdReferee($idReferee){
+	$this->idReferee = $idReferee;
     }
         
     /*
-        Method to verify the attribute 'nome' of the class.
+        Method to verify the attribute 'refereeName' of the class.
     */
-    public function __getNome(){
-	return $this->nome;
+    public function __getRefereeName(){
+	return $this->refereeName;
     }
         
     /*
-        Method to modify the attribute 'nome' of the class.
+        Method to modify the attribute 'refereeName' of the class.
     */
-    public function __setNome($nome){
-	$this->nome = $nome;
+    public function __setRefereeName($refereeName){
+	$this->refereeName = $refereeName;
     }
 
     /*
-         Method to verify the attribute 'telefone' of the class.
+         Method to verify the attribute 'refereePhone' of the class.
     */
-    public function __getTelefone(){
-    	return $this->telefone;
+    public function __getRefereePhone(){
+    	return $this->refereePhone;
     }
         
     /*
-        Method to modify the attribute 'telefone' of the class.
+        Method to modify the attribute 'refereePhone' of the class.
     */
-    public function __setTelefone($telefone){
-	$this->telefone = $telefone;
+    public function __setRefereePhone($refereePhone){
+	$this->refereePhone = $refereePhone;
     }
         
     /*
-        Method to verify the attribute 'cpf' of the class.
+        Method to verify the attribute 'refereeCpf' of the class.
     */
-    public function __getCpf(){
-	return $this->cpf;
+    public function __getRefereeCpf(){
+	return $this->refereeCpf;
     }
         
     /*
-        Method to modify the attribute 'cpf' of the class.
+        Method to modify the attribute 'refereeCpf' of the class.
     */
-    public function __setCpf($cpf){
-    	$this->cpf = $cpf;
+    public function __setRefereeCpf($refereeCpf){
+    	$this->refereeCpf = $refereeCpf;
     }
 }
