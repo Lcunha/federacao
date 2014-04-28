@@ -18,16 +18,16 @@ class TempoController {
     /*
         Function responsible for listing the data of time.
     */
-    public function _listarTodos(){
-        return $this->tempoDAO->listarTodos();
+    public function _listAllTime(){
+        return $this->tempoDAO->listAllTimes();
     }
 
     /*
         Function responsible for inserting the time, entering the score, team and game that is being done.
     */
-    public function _listarDadosParaTabela(){
+    public function _listAllDataForTables(){
         $dataTime = new Tempo();
-        $arrayDataTime = $this->tempoDAO->listarTodos();
+        $arrayDataTime = $this->tempoDAO->listAllTimes();
         for ($i = 0; $i < count($arrayDataTime); $i++) {
             $dataTeamTime = $arrayDataTime[$i];
             $htmlLinesDataFromPlayers[] = "
@@ -54,9 +54,9 @@ class TempoController {
     /*
         Function responsible for doing a query for a time from an id of a game.
     */
-    public function _consultarPorId($idTime){
+    public function _consultByIdTime($idTime){
         $dataTime = new Tempo();
-        $dataTime = $this->tempoDAO->consultarPorId($idTime);
+        $dataTime = $this->tempoDAO->consultByIdTime($idTime);
         $arrayData['idTempo'] = $dataTime->__getIdTempo();
         $arrayData['idJogo'] = $dataTime->__getIdJogo();
         $arrayData['tipo'] = $dataTime->__getTipo();
@@ -78,23 +78,23 @@ class TempoController {
     /*
         Function responsible for inserting a time table.
     */
-    public function _inserirTempo($idPlayer){
-        return $this->tempoDAO->inserirTempo($idPlayer);
+    public function _insertTime($idPlayer){
+        return $this->tempoDAO->insertTime($idPlayer);
     }
 
     /*
         Function responsible for updating the data of games.
     */
-    public function _atualizar($idTeam, $idPlayer, $amountSevenMetersTotal, $timeCoach, $scoreboardTeam1, $scoreboardTeam2, $type){
+    public function _updateTime($idTeam, $idPlayer, $amountSevenMetersTotal, $timeCoach, $scoreboardTeam1, $scoreboardTeam2, $type){
         $dataTime = new Tempo();
         $dataTime->__constructOverload($idTeam, $idPlayer, $amountSevenMetersTotal, $timeCoach, $scoreboardTeam1, $scoreboardTeam2, $type);
-        $this->tempoDAO->atualizar($dadosDados);
+        $this->tempoDAO->updateTime($dadosDados);
     }
 
     /*
         Function responsible for saving the data of time in the game.
     */
-    public function _salvar($idTeam, $idPlayer, $amountSevenMetersTotal, $timeCoach, $scoreboardTeam1, $scoreboardTeam2, $type){
+    public function _saveTime($idTeam, $idPlayer, $amountSevenMetersTotal, $timeCoach, $scoreboardTeam1, $scoreboardTeam2, $type){
         $dataTime = new Tempo();
         $dataTime->__constructOverload(0, $idPlayer, $amountSevenMetersTotal, $timeCoach, $scoreboardTeam1, $scoreboardTeam2, $type);
         $this->tempoDAO->inserir($dataTime);
@@ -103,29 +103,29 @@ class TempoController {
     /*
         Function responsible for deleting the data on time.
     */
-    public function _excluir($idTime){
-        return $this->tempoDAO->excluir($idTime);
+    public function _deleteTime($idTime){
+        return $this->tempoDAO->deleteTime($idTime);
     }
 
     /*
         Function responsible for inserting a goal from team.
     */
-    public function _inserirGolTimeA($scoreboardA, $amountSevenMetersTotal, $idTeam){
-        return $this->tempoDAO->inserirGolTimeA($scoreboardA, $amountSevenMetersTotal, $idTeam);
+    public function _insertGoalsTeam1($scoreboardA, $amountSevenMetersTotal, $idTeam){
+        return $this->tempoDAO->insertGoalsTeam1($scoreboardA, $amountSevenMetersTotal, $idTeam);
     }
 
     /*
         Function responsible for inserting a goal from team.
     */
-    public function _inserirGolTimeB($scoreboardB, $idTeamCurrent){
-        return $this->tempoDAO->inserirGolTimeB($scoreboardB, $idTeamCurrent);
+    public function _insertGoalsTeam2($scoreboardB, $idTeamCurrent){
+        return $this->tempoDAO->insertGoalsTeam2($scoreboardB, $idTeamCurrent);
     }
 
     /*
         Function responsible for consulting the last record of time was registered.
     */
-    public function _consultarUltimoRegistro(){
-        $result = $this->tempoDAO->consultarUltimoRegistro();
+    public function _lastQueryRegistry(){
+        $result = $this->tempoDAO-> lastQueryRegistry();
         $idTeam = $result->Fields('id');
         return $idTeam;
     }
