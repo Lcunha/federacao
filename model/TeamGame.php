@@ -1,14 +1,14 @@
 <?php
 
 /* 
-    Name: TimeJogo.php
+    Name: TeamGame.php
     Description: This is the class that contains the attributes, accessor methods 
     and constructors of the team that is playing the game. The team in the game 
     must contains 'idJogo' and 'idTime'. 
 */
-class TimeJogo{
-    private $idJogo;
-    private $idTime;
+class TeamGame{
+    private $idGame;
+    private $idTeam;
 	
     /*
         Default construct declaration. Using constructor methods is appropriate for any initialization 
@@ -21,23 +21,23 @@ class TimeJogo{
     /*
         Overload construct.
     */
-    public function __constructOverload($idJogo, $idTime){
-    	$this->idJogo = $idJogo;
+    public function __constructOverload($idGame, $idTime){
+    	$this->idGame = $idGame;
 	$this->idTime = $idTime;
     }
         
     /*
-        Method to verify the attribute 'idJogo' of the class.
+        Method to verify the attribute 'idGame' of the class.
     */
-    public function __getIdJogo(){
-	return $this->idJogo;
+    public function __getIdGame(){
+	return $this->idGame;
     }
         
     /*
-        Method to modify the attribute 'idJogo' of the class.
+        Method to modify the attribute 'idGame' of the class.
     */
-    public function __setIdJogo($idJogo){
-	$this->idJogo = $idJogo;
+    public function __setIdGame($idGame){
+	$this->idGame = $idGame;
     }
         
     /*
