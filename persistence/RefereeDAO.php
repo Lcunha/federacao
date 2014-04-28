@@ -24,80 +24,80 @@ class RefereeDAO{
 	*/
 	public function listAllReferees(){
             $sql = "SELECT * FROM arbitro";
-            $result = $this->connection->banco->Execute($sql);
+            $result = $this->connection->dataBase->Execute($sql);
             while($register = $result->FetchNextObject()){
-                    $dadosArbitro = new Arbitro();
-                    $dadosArbitro->__constructOverload($register->ID_ARBITRO, 
+                    $dataReferee = new Referee();
+                    $dataReferee->__constructOverload($register->ID_ARBITRO, 
                                                        $register->NOME, 
                                                        $register->TELEFONE, 
                                                        $register->CPF);
-                    $retornaArbitros[] = $dadosArbitro;
+                    $returnReferee[] = $dataReferee;
             }
-            return $retornaArbitros;
+            return $returnReferee;
 	}
 
 	/* 
             Method that is responsible for insertion into table arbitrator in database mysql. 
 	*/
-	public function inserir(Arbitro $dadosArbitro){
+	public function insertReferee(Referee $dataReferee){
             $sql = "INSERT INTO arbitro (nome, telefone, cpf)
-                    VALUES ('{$dadosArbitro->__getNome()}', 
-                    '{$dadosArbitro->__getTelefone()}',
-                    '{$dadosArbitro->__getCpf()}')";
-            $this->connection->banco->Execute($sql);
+                    VALUES ('{$dataReferee->__getRefereeName()}', 
+                    '{$dataReferee->__getRefereePhone()}',
+                    '{$dataReferee->__getRefereeCpf()}')";
+            $this->connection->dataBase->Execute($sql);
 	}
 
 	/* 
 	   Method that responsible for update into table arbitrator to database. 
 	*/
-	public function atualizar(Arbitro $dadosArbitro){
-            $sql = "UPDATE arbitro SET nome ='{$dadosArbitro->__getNome()}',
-                           telefone ='{$dadosArbitro->__getTelefone()}', 
-                           cpf ='{$dadosArbitro->__getCpf()}'
-                    WHERE id_arbitro ='{$dadosArbitro->__getIdArbitro()}' ";
-            $this->connection->banco->Execute($sql);
+	public function updateReferee(Referee $dataReferee){
+            $sql = "UPDATE arbitro SET nome ='{$dataReferee->__getRefereeName()}',
+                           telefone ='{$dataReferee->__getRefereePhone()}', 
+                           cpf ='{$dataReferee->__getRefereeCpf()}'
+                    WHERE id_arbitro ='{$dataReferee->__getIdReferee()}' ";
+            $this->connection->dataBase->Execute($sql);
 	}
 
 	/* 
             Method is responsible for consult in table arbitrator in database mysql through of ID. 
 	*/
-	public function consultarPorId($id){
-            $sql = "SELECT * FROM arbitro WHERE id_arbitro = '{$id}'";
-            $result = $this->connection->banco->Execute($sql);
+	public function consultByIdReferee($idReferee){
+            $sql = "SELECT * FROM arbitro WHERE id_arbitro = '{$idReferee}'";
+            $result = $this->connection->dataBase->Execute($sql);
             $register = $result->FetchNextObject();
-            $dadosArbitro = new Arbitro();
-            $dadosArbitro->__constructOverload($register->ID_ARBITRO, $register->NOME, 
+            $dataReferee = new Referee();
+            $dataReferee->__constructOverload($register->ID_ARBITRO, $register->NOME, 
                                                $register->TELEFONE, $register->CPF);
-            return $dadosArbitro;
+            return $dataReferee;
 	}
 	
 	/* 
             Method is responsible for consult in table arbitrator in database mysql through of NAME. 
 	*/
-	public function consultarPorNome($nome){
-            $sql = "SELECT * FROM arbitro WHERE nome= '{$nome}'";
-            $result = $this->connection->banco->Execute($sql);
+	public function consultByRefereeName($nome){
+            $sql = "SELECT * FROM arbitro WHERE nome= '{$refereeName}'";
+            $result = $this->connection->dataBase->Execute($sql);
             $register = $result->FetchNextObject();
-            $dadosDadosTime = new DadosTime();
-            $dadosDadosTime->__constructOverload($register->ID_ARBITRO, $register->NOME, 
+            $dataDataTeam = new TeamData();
+            $dataDataTeam->__constructOverload($register->ID_ARBITRO, $register->NOME, 
                                                  $register->CPF);
-            return $dadosDadosTime;
+            return $dataDataTeam;
 	}
 
 	/* 
             Method is responsible for exclude in table arbitrator in database mysql through of ID. 
 	*/
-	public function excluir($id){
-            $sql = "DELETE FROM arbitro WHERE id_arbitro= '{$id}' ";
-            $result = $this->connection->banco->Execute($sql);
+	public function deleteReferee($idReferee){
+            $sql = "DELETE FROM arbitro WHERE id_arbitro= '{$idReferee}' ";
+            $result = $this->connection->dataBase->Execute($sql);
 	}
 
 	/* 
             Method is responsible for count of registered in table arbitrator in database. 
 	*/
-	public function contarRegistrosArbitro(){
+	public function amountRefereesRecords(){
             $sql = "SELECT COUNT(*) as contagem FROM arbitro";
-            $result = $this->connection->banco->Execute($sql);
+            $result = $this->connection->dataBase->Execute($sql);
             $register = $result->FetchNextObject();
             return $register->CONTAGEM;
 	}
