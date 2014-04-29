@@ -199,7 +199,7 @@ class PlayerController {
         $arrayDataPlayer['playerName'] = $playerData->__getPlayerName();
         $arrayDataPlayer['idTeam'] = $playerData->__getIdTeam();
         $arrayDataPlayer['birthDatePlayer'] = $playerData->__getBirthDatePlayer();
-        $arrayDataPlayer['cpf'] = $playerData->__getCpfPlayer();
+        $arrayDataPlayer['cpfPlayer'] = $playerData->__getCpfPlayer();
         $arrayDataPlayer['playerNumber'] = $playerData->__getPlayerNumber();
 
         return $arrayDataPlayer;
@@ -294,10 +294,10 @@ class PlayerController {
             $htmlLineDataFearPlayers[] = "
 		
 	           <tr>
-	     <th class=\"th-piqueno th-cor\">" . $dataFearPlayer['numero'] . "</th>
-	 <th class=\"th-cor\">" . $dataFearPlayer['nome'] . "</th>
-		    <th class=\"th-cor\">" . $dataFearPlayer['time'] . "</th>
-		           <th class=\"th-piqueno th-cor\">" . $dataFearPlayer['faltas'] . "</th>
+	     <th class=\"th-piqueno th-cor\">" . $dataFearPlayer['playerNumber'] . "</th>
+	 <th class=\"th-cor\">" . $dataFearPlayer['playerName'] . "</th>
+		    <th class=\"th-cor\">" . $dataFearPlayer['idTeam'] . "</th>
+		           <th class=\"th-piqueno th-cor\">" . $dataFearPlayer['amountPunishments'] . "</th>
 		       </tr>";
         }
         return $htmlLineDataFearPlayers;

@@ -161,7 +161,7 @@ class TeamController {
             $pos = $i;
             $pos++;
             $var = $team->_consultByIdTeam($teamData->__getIdTeam());
-            $teamName = $var['nome'];
+            $teamName = $var['teamName'];
             $points = $teamData->__getAmountGoals() - $teamData->__getConcededGoals();
             if ($teamData->__getTeamPoints() != 0){
                 $percentage = (int) ( 100 * ($teamData->__getVictoryTeam()) / ($teamData->__getPlayerTeam()));
@@ -180,7 +180,7 @@ class TeamController {
 				<th class=\"th-piqueno th-cor\">" . $teamData->__getLossTeam() . "</th>
 				<th class=\"th-piqueno th-cor\">" . $teamData->__getAmountGoals() . "</th>
 				<th class=\"th-piqueno th-cor\">" . $teamData->__getConcededGoals() . "</th>
-				<th class=\"th-piqueno th-colir\">" . $balance . "</th>
+				<th class=\"th-piqueno th-colir\">" . $points . "</th>
 				<th class=\"th-piqueno th-cor\">" . $percentage . "</th>
 			</tr>
 			";
