@@ -33,13 +33,13 @@ class TimeController {
             $htmlLinesDataFromPlayers[] = "
 			<tr>
           			<td><input type=\"checkbox\" value=\"1\" name=\"marcar[]\" /></td>
-					<td>" . $dataTime->__getIdTempo() . "</td>
-          			<td>" . $dataTime->__getIdJogo() . "</td>
-          			<td>" . $dataTime->__getTiro7Metros() . "</td>
-          			<td>" . $dataTime->__getTempoTecnico() . "</td>
-          			<td>" . $dataTime->__getPlacarTime1() . "</td>
-          			<td>" . $dataTime->__getPlacarTime2() . "</td>
-          			<td>" . $dataTime->__getTipo() . "</td>
+					<td>" . $dataTime->__getIdTimePlay() . "</td>
+          			<td>" . $dataTime->__getIdPlayer() . "</td>
+          			<td>" . $dataTime->__getAmountSevenMetersTotal() . "</td>
+          			<td>" . $dataTime->__getTimeCoach() . "</td>
+          			<td>" . $dataTime->__getScoreboardTeam1() . "</td>
+          			<td>" . $dataTime->__getScoreboardTeam2() . "</td>
+          			<td>" . $dataTime->__getType() . "</td>
           			<td>
             			<a href=\"?pag=tempo&action=edit&id=" . $dataTime->__getIdTempo() .
                     "\"><img src=\"./views/images/edit.png\" width=\"16\" height=\"16\" /></a>

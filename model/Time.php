@@ -17,7 +17,7 @@ class Time{
     private $amountDisqualification;
     private $amountReports;
     private $amountSevenMetersTotal;
-    private $tempoTecnico;
+    private $timeCoach;
     private $scoreboardTeam1;
     private $scoreboardTeam2;
 	
@@ -32,13 +32,13 @@ class Time{
     /*
         Overload construct.
     */
-    public function __constructOverload($idTimePlay, $idPlayer, $type, $amountSevenMetersTotal, $tempoTecnico,
+    public function __constructOverload($idTimePlay, $idPlayer, $type, $amountSevenMetersTotal, $timeCoach,
                                         $scoreboardTeam1, $scoreboardTeam2){
 	$this->idTimePlay = $idTimePlay;
 	$this->idPlayer = $idPlayer;
 	$this->type = $type;
 	$this->amountSevenMetersTotal = $amountSevenMetersTotal;
-	$this->tempoTecnico = $tempoTecnico;
+	$this->timeCoach = $timeCoach;
 	$this->scoreboardTeam1 = $scoreboardTeam1;
 	$this->scoreboardTeam2 = $scoreboardTeam2;
     }
@@ -144,29 +144,29 @@ class Time{
     /*
         Method to verify the attribute 'amountSevenMetersTotal' of the class.
     */
-    public function __getTiro7Metros(){
+    public function __getAmountSevenMetersTotal(){
 	return $this->amountSevenMetersTotal;
     }
         
     /*
         Method to modify the attribute 'amountSevenMetersTotal' of the class.
     */
-    public function __setTiro7Metros($amountSevenMetersTotal){
+    public function __setAmountSevenMetersTotal($amountSevenMetersTotal){
 	$this->amountSevenMetersTotal = $amountSevenMetersTotal;
     }
         
     /*
-        Method to verify the attribute 'tempoTecnico' of the class.
+        Method to verify the attribute 'timeCoach' of the class.
     */
-    public function __getTempoTecnico(){
-    	return $this->tempoTecnico;
+    public function __getTimeCoach(){
+    	return $this->timeCoach;
     }
         
     /*
-        Method to modify the attribute 'tempoTecnico' of the class.
+        Method to modify the attribute 'timeCoach' of the class.
     */
-    public function __setTempoTecnico($tempoTecnico){
-	$this->tempoTecnico = $tempoTecnico;
+    public function __setTimeCoach($timeCoach){
+	$this->timeCoach = $timeCoach;
     }
         
     /*
