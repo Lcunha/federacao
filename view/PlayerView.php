@@ -21,9 +21,9 @@ class PlayerView{
         */
 	public function savePlayer(){
 		$formPlayer = $_POST;
-		$this->playerCO->_savePlayer($formPlayer['idTeam'], 
-                $formPlayer['playerName'], $formPlayer['birthDatePlayer'], 
-                $formPlayer['cpfPlayer'], $formPlayer['playerNumber']);
+		$this->playerCO->_savePlayer($formPlayer['id_time'], 
+                $formPlayer['nome'], $formPlayer['data_nascimento'], 
+                $formPlayer['cpf'], $formPlayer['numero']);
 		echo "Dados inseridos com sucesso";
 	}
         /*

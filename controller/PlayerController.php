@@ -37,7 +37,7 @@ class PlayerController {
         $arrayPlayerData = $this->playerDAO->listAllPlayers();
         for ($i = 0; $i < count($arrayPlayerData); $i++) {
             $playerData = $arrayPlayerData[$i];
-            $htmlLinesDataFromPlayers[] = "
+            $tr[] = "
 			<tr>
           			<td><input type=\"checkbox\" value=\"1\" name=\"marcar[]\" /></td>
 					<td>" . $playerData->__getIdPlayer() . "</td>
@@ -55,7 +55,7 @@ class PlayerController {
 			</tr>";
         }
 
-        return $linesDataFromPlayers;
+        return $tr;
     }
 
     /*

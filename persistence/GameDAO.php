@@ -42,8 +42,8 @@ class GameDAO{
 	public function insertGame(Game $gameData){
             $sql = "INSERT INTO jogo (espectadores, cidade, localizacao, duracao, data_jogo
                                       hora_jogo, total_7Metros) 
-                    VALUES ('{$gameData->__getAudience()}','{$gameData->__getCity()}',
-                            '{$gameData->__getLocation()}','{$gameData->__getDuration()}',
+                    VALUES ('{$gameData->__getGameAudience()}','{$gameData->__getGameCity()}',
+                            '{$gameData->__getGameLocation()}','{$gameData->__getGameDuration()}',
                             '{$gameData->__getGameDate()}','{$gameData->__getGameTime()}',
                             '{$gameData->__getTotal7Meters()}')";
             $this->connection->dataBase->Execute($sql);
@@ -56,11 +56,11 @@ class GameDAO{
 	*/
 	public function updateGame(Game $gameData){
             $sql = "UPDATE jogo 
-                    SET espectadores = '{$gameData->__getAudience()}',
-                        cidade = '{$gameData->__getCity()}', 
-                        localizacao = '{$gameData->__getLocation()}', 
+                    SET espectadores = '{$gameData->__getGameAudience()}',
+                        cidade = '{$gameData->__getGameCityCity()}', 
+                        localizacao = '{$gameData->__getGameLocation()}', 
                         data_jogo = '{$gameData->__getGameDate()}', 
-                        duracao = '{$gameData->__getDuration()}' 
+                        duracao = '{$gameData->__getGameDuration()}' 
                     WHERE id_jogo = '{$gameData->__getIdGame()}' ";
             $this->connection->dataBase->Execute($sql);
             return $gameData;

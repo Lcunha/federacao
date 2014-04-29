@@ -44,7 +44,7 @@ class PlayerDAO{
             $sql = "INSERT INTO jogador (time_id_time, nome, data_nascimento, cpf, numero) 
                     VALUES ('{$playerData->__getPlayerName()}','{$playerData->__getIdTeam()}',
                             '{$playerData->__getBirthDatePlayer()}',
-                            '{$playerData->__getCpfPlayer}','{$playerData->__getPlayerNumber()}')";
+                            '{$playerData->__getCpfPlayer()}','{$playerData->__getPlayerNumber()}')";
             $this->connection->dataBase->Execute($sql);
 	}
 	

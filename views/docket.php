@@ -245,11 +245,11 @@ $actualGameNumber = count($arrayGames)+1;
 <?php 
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST'){
-	$team1 = $_POST['idTeam1'];
-	$team2 = $_POST['idTeam2'];
+	$team1 = $_POST['idA'];
+	$team2 = $_POST['idB'];
 	$idActualGame = $gameVW->insertGame();
-	$teamGameVW->saveTeamGame($idActualGame,$_POST['idTeam1']);
-	$teamGameVW->saveTeamGame($idActualGame,$_POST['idTeam2']);
+	$teamGameVW->saveTeamGame($idActualGame,$_POST['idA']);
+	$teamGameVW->saveTeamGame($idActualGame,$_POST['idB']);
 	$gameVW->insertGame($actualGameNumber);
 	$idTimeInserted = mysql_insert_id();
 	$gameDataVW->insertDataTeam($idTimeInserted,$team1,$team2);
