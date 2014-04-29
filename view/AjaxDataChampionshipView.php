@@ -8,8 +8,8 @@ include_once('./controller/DataTeamController.php');
 
 $team1 = isset( $_GET['idA'] ) ? $_GET['idA'] : null;
 $team2 = isset( $_GET['idB'] ) ? $_GET['idB'] : null;
-$goalsTeam1 = isset( $_GET['golsTimeA'] ) ? $_GET['golsTimeA'] : null;
-$goalsTeam2 = isset( $_GET['golsTimeB'] ) ? $_GET['golsTimeB'] : null;
+$goalsTeam1 = isset( $_GET['goalsTeam1'] ) ? $_GET['goalsTeam1'] : null;
+$goalsTeam2 = isset( $_GET['goalsTeam2'] ) ? $_GET['goalsTeam2'] : null;
 
 
 
