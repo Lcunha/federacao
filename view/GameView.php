@@ -48,7 +48,7 @@ class GameView{
      */
     public function saveGame(){
         return $this->gameCO->_saveGame($_POST['idTimeA'], $_POST['idTimeB'], 
-        $_POST['espectadorez'], $_POST['cidade'], $_POST['local'], 
+        $_POST['espectadores'], $_POST['cidade'], $_POST['local'], 
         $_POST['data'], $_POST['hora'], $_POST['duracao']);
     }
 

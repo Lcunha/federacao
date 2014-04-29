@@ -20,7 +20,7 @@ class TeamView{
         */ 
 	public function saveTeam(){
 		$formTeam = $_POST;
-		$this->teamCO->_salvar($formTeam['idCoach'], 
+		$this->teamCO->_saveTeam($formTeam['idCoach'], 
                 $formTeam['teamName'], $formTeam['teamCategory'], 
                 $formTeam['teamAddress'], $formTeam['teamFoundationDate'], 
                 $formTeam['teamPresident'], $formTeam['teamPhone']);
@@ -41,7 +41,7 @@ class TeamView{
             This function is responsible to delete a team.
         */ 
 	public function deleteTeam($idTeam){
-		return $this->teamCO->_deleteTeam($idteam);
+		return $this->teamCO->_deleteTeam($idTeam);
 	}
         /*
             This function is responsible to list the coachs by selecting them.
@@ -60,6 +60,6 @@ class TeamView{
             This function is responsible to consult teams by id.
         */ 
 	public function consultByIdTeam($idTeam){
-		return $this->teamCO->_consultByIdTeam($idteam);
+		return $this->teamCO->_consultByIdTeam($idTeam);
 	}
 }

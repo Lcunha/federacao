@@ -26,7 +26,7 @@ class RefereeView{
 		echo "Dados inseridos com sucesso";
 	}
         /*
-            This function is responsible to update the arbitro data.
+            This function is responsible to update the referee data.
         */
 	public function updateReferee($idReferee){
 		$formReferee = $_POST;
@@ -34,19 +34,19 @@ class RefereeView{
                 $formReferee['refereePhone'], $formReferee['refereeCpf']);
 	}
         /*
-            This function is responsible to delete the arbitro.
+            This function is responsible to delete the referee.
         */
 	public function deleteReferee($idReferee){
 		return $this->refereeCO->_deleteReferee($idReferee);
 	}
         /*
-            This function is responsible to list the arbitros in a table.
+            This function is responsible to list the referees in a table.
         */
 	public function listAllRefereesForTables(){
 		return $this->refereeCO->_listAllRefereesForTables();
 	}
         /*
-            This function is responsible to consult an arbitro by the id.
+            This function is responsible to consult an referee by the id.
         */
 	public function consultByIdReferee($idReferee){
 		return $this->refereeCO->_consultByIdReferee($idReferee);

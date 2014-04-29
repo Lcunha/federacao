@@ -21,9 +21,9 @@ class PlayerView{
         */
 	public function savePlayer(){
 		$formPlayer = $_POST;
-		$this->playerCO->_savePlayer($formPlayer['IdTeam'], 
-                $formPlayer['playerName'], $formPlayer['data_nascimento'], 
-                $formPlayer['cpf'], $formPlayer['playerNumber']);
+		$this->playerCO->_savePlayer($formPlayer['idTeam'], 
+                $formPlayer['playerName'], $formPlayer['birthDatePlayer'], 
+                $formPlayer['cpfPlayer'], $formPlayer['playerNumber']);
 		echo "Dados inseridos com sucesso";
 	}
         /*
@@ -31,7 +31,7 @@ class PlayerView{
         */
 	public function listAllTeamsForSelect(){
 		$teamCO = new TeamController();
-		return $teamCO->_listTeamsParaSelect();
+		return $teamCO->_listAllTeamsForSelect();
 	}
         /*
             This function is responsible to list the player to the table.
@@ -58,9 +58,9 @@ class PlayerView{
         */
 	public function updatePlayer($idPlayer){
 		$formPlayer = $_POST;
-		return $this->playerCO->_atualizar($idPlayer, $formPlayer['IdTeam'],  
-                $formPlayer['playerName'], $formPlayer['data_nascimento'], 
-                $formPlayer['cpf'], $formPlayer['playerNumber']);
+		return $this->playerCO->_atualizar($idPlayer, $formPlayer['idTeam'],  
+                $formPlayer['playerName'], $formPlayer['birthDatePlayer'], 
+                $formPlayer['cpfPlayer'], $formPlayer['playerNumber']);
 	}
         /*
             This function is responsible to delete the player.

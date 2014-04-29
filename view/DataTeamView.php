@@ -1,7 +1,7 @@
 <?php
 
 /*
-    Name: DadosTimeView.php
+    Name: DataTeamView.php
     Description: This view shows the data of each team.
 */
 include_once(__APP_PATH.'/controller/DataTeamController.php');
@@ -9,7 +9,7 @@ include_once(__APP_PATH.'/controller/DataTeamController.php');
 class DataTeamView{
 	private $dataTeamCO;
         /*
-            This function is responsible to instantiate the DadosTimeController.
+            This function is responsible to instantiate the DataTeamController.
         */
 	public function __construct(){
 		$this->dataTeamCO = new DataTeamController();
@@ -17,34 +17,34 @@ class DataTeamView{
 	/*
             This function is responsible to list all the data of the Team.
         */
-        public function  showAllData(){
-		return $this->dataTeamCO-> showAllData();
+        public function  listAllData(){
+		return $this->dataTeamCO->_listAllData();
 	}
 	/*
             This function is responsible to consult the data of the team by the 
             id.
         */
-        public function  browseByIdData($id){
-		return $this->dataTeamCO->_browseByIdData($id);
+        public function  consultByIdDataTeam($id){
+		return $this->dataTeamCO->_consultByIdDataTeam($id);
 	}
 	/*
             This function is responsible to add team data.
         */
-        public function insertData(){
-		return $this->dataTeamCO->_insertData($dataTeam);
+        public function insertDataTeam(){
+		return $this->dataTeamCO->_insertDataTeam($dataTeam);
 	}
 	/*
             This function is responsible to update team data.
         */
-        public function updateData($id){
+        public function updateDataTeam($id){
 		$form = $_POST;
-		return $this->dataTeamCO->_updateData();
+		return $this->dataTeamCO->_updateDataTeam();
 	}
 	/*
             This function is responsible to delete team data.
         */
-        public function deleteData($id){
-		return $this->dataTeamCO->_deleteData($id);
+        public function deleteDataTeam($id){
+		return $this->dataTeamCO->_deleteDataTeam($id);
 	}
 	
 }

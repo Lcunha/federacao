@@ -1,18 +1,18 @@
 <?php
 
 /*
-    Name: AjaxDadosCampeonatoView.php
+    Name: AjaxDataChampionshipView.php
     Description: View of championship data.
 */
-include_once('./controller/DadosTimeController.php');
+include_once('./controller/DataTeamController.php');
 
-$timeA = isset( $_GET['idA'] ) ? $_GET['idA'] : null;
-$timeB = isset( $_GET['idB'] ) ? $_GET['idB'] : null;
-$golsTimeA = isset( $_GET['golsTimeA'] ) ? $_GET['golsTimeA'] : null;
-$golsTimeB = isset( $_GET['golsTimeB'] ) ? $_GET['golsTimeB'] : null;
+$team1 = isset( $_GET['idA'] ) ? $_GET['idA'] : null;
+$team2 = isset( $_GET['idB'] ) ? $_GET['idB'] : null;
+$goalsTeam1 = isset( $_GET['golsTimeA'] ) ? $_GET['golsTimeA'] : null;
+$goalsTeam2 = isset( $_GET['golsTimeB'] ) ? $_GET['golsTimeB'] : null;
 
 
 
-$DadosTimeCO = new DadosTimeController();
-$DadosTimeCO->_atualizarPontos($timeA, $timeB, $golsTimeA, $golsTimeB);
+$DataTeamCO = new DataTeamController();
+$DataTeamCO->_updateDataPoint($team1, $team2, $goalsTeam1, $goalsTeam2);
 
