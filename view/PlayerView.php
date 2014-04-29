@@ -36,8 +36,8 @@ class PlayerView{
         /*
             This function is responsible to list the player to the table.
         */
-	public function listAllPlayersForTables(){
-		return $this->playerCO->_listAllPlayersForTables();
+	public function listAllPlayersAllTables(){
+		return $this->playerCO->_listAllPlayersAllTables();
 	}
         /*
             This function is responsible to list the players of team A.

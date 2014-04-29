@@ -89,7 +89,7 @@ class TeamController {
     public function _consultByIdTeam($id){
         $teamData = new Team();
         $teamData = $this->teamDAO->consultByIdTeam($id);
-        $arrayDataTeam['idCoach'] = $teamData->__getIdTecnico();
+        $arrayDataTeam['idCoach'] = $teamData->__getIdCoach();
         $arrayDataTeam['teamName'] = $teamData->__getTeamName();
         $arrayDataTeam['teamCategory'] = $teamData->__getTeamCategory();
         $arrayDataTeam['teamAddress'] = $teamData->__getTeamAddress();

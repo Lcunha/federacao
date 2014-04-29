@@ -157,7 +157,7 @@ $dataTeamVW = new DataTeamView();
 $teamGameVW = new TeamGameView();
 $gameVW = new GameView();
 $gameDataVW = new GameDataView();
-$arrayGames = $gameVW->listarTodos();
+$arrayGames = $gameVW->listAllGames();
 $actualGameNumber = count($arrayGames)+1;
 ?>
 

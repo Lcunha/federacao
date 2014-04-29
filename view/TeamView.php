@@ -53,8 +53,8 @@ class TeamView{
         /*
             This function is responsible to list teams to the table.
         */ 
-	public function listTeamsForTables(){
-		return $this->teamCO->_listTeamsForTables();
+	public function listAllTeamsForTables(){
+		return $this->teamCO->_listAllTeamsForTables();
 	}
         /*
             This function is responsible to consult teams by id.
