@@ -21,7 +21,7 @@ class PlayerView{
         */
 	public function savePlayer(){
 		$formPlayer = $_POST;
-		$this->playerCO->_savePlayer($formPlayer['id_time'], 
+		$this->playerCO->_savePlayer($formPlayer['time_id_time'], 
                 $formPlayer['nome'], $formPlayer['data_nascimento'], 
                 $formPlayer['cpf'], $formPlayer['numero']);
 		echo "Dados inseridos com sucesso";
