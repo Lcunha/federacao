@@ -6,7 +6,7 @@
     this class contains all the sensitive information from the database
 */
 
-require_once('./libs/adodb/adodb-lib.inc.php');
+require_once('./libs/adodb/adodb.inc.php');
 
 class Connection{
 	
