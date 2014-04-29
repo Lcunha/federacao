@@ -112,7 +112,7 @@ class TeamDAO{
 	/*
             The method is responsibility by to consult in database table through of ID.
 	*/
-	public function consultByIdTeam(Team $idTeam){
+	public function consultByIdTeam($idTeam){
 		$sql = "SELECT * FROM time WHERE id_time = '{$idTeam}'";
 		$result = $this->connection->dataBase->Execute($sql);
 		$record = $result->FetchNextObject();
