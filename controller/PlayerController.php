@@ -220,7 +220,7 @@ class PlayerController {
         $playerData = $this->playerDAO->consultByPlayerName($id);
         $arrayDataPlayer['idTeam'] = $playerData->__getIdTeam();
         $arrayDataPlayer['birthDatePlayer'] = $playerData->__getBirthDatePlayer();
-        $arrayDataPlayer['cpf'] = $playerData->__getCpfPlayer();
+        $arrayDataPlayer['cpfPlayer'] = $playerData->__getCpfPlayer();
         $arrayDataPlayer['playerNumber'] = $playerData->__getPlayerNumber();
 
         return $arrayDataPlayer;
@@ -236,18 +236,18 @@ class PlayerController {
     /*
         Function responsible for updating embed player.
     */
-    public function _updatePlayer($idPlayer, $idTeam, $playerName, $birthDatePlayer, $cpf, $playerNumer){
+    public function _updatePlayer($idPlayer, $idTeam, $playerName, $birthDatePlayer, $cpfPlayer, $playerNumer){
         $playerData = new Player();
-        $playerData->__constructOverload($idPlayer, $idTeam, $playerName, $birthDatePlayer, $cpf, $playerNumer);
+        $playerData->__constructOverload($idPlayer, $idTeam, $playerName, $birthDatePlayer, $cpfPlayer, $playerNumer);
         $this->playerDAO->updatePlayer($playerData);
     }
 
     /*
         Function responsible for saving the data of a player.
     */
-    public function _savePlayer($playerName, $idTeam, $birthDatePlayer, $cpf, $playerNumber){
+    public function _savePlayer($playerName, $idTeam, $birthDatePlayer, $cpfPlayer, $playerNumber){
         $playerData = new Player();
-        $playerData->__constructOverload(0, $idTeam, $playerName, $birthDatePlayer, $cpf, $playerNumber);
+        $playerData->__constructOverload(0, $idTeam, $playerName, $birthDatePlayer, $cpfPlayer, $playerNumber);
         $this->playerDAO->insertPlayer($playerData);
     }
 
@@ -296,8 +296,8 @@ class PlayerController {
 	           <tr>
 	     <th class=\"th-piqueno th-cor\">" . $dataFearPlayer['playerNumber'] . "</th>
 	 <th class=\"th-cor\">" . $dataFearPlayer['playerName'] . "</th>
-		    <th class=\"th-cor\">" . $dataFearPlayer['idTeam'] . "</th>
-		           <th class=\"th-piqueno th-cor\">" . $dataFearPlayer['amountPunishments'] . "</th>
+		    <th class=\"th-cor\">" . $dataFearPlayer['teamName'] . "</th>
+		           <th class=\"th-piqueno th-cor\">" . $dataFearPlayer['amountPenalty'] . "</th>
 		       </tr>";
         }
         return $htmlLineDataFearPlayers;
