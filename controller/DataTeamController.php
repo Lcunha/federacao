@@ -1,7 +1,7 @@
 <?php
 
 /*
-    Name: DadosTimeController.php
+    Name: DataTeamController.php
     Description: Updates the points earned by teams in each match held.
  */
 include_once('./persistence/DataTeamDAO.php');
@@ -19,37 +19,37 @@ class DataTeamController {
         Function responsible for listing all data Team.
     */
     public function _listAllData(){
-        return $this->dataTeamDAO-> listAllData();
+        return $this->dataTeamDAO->listAllDataTeam();
     }
 
     /*
         Function responsible for performing a query on a team by ID.
      */
-    public function _consultByIdData($idData){
-        $dataDataTeam = new DadosTime();
-        $dataDataTeam = $this->dataTeamDAO->consultByIdData($idData);
-        //$arrayDados['nome'] = $dadosArbitro->__getNome();
-        //$arrayDados['telefone'] = $dadosArbitro->__getTelefone();
-        //$arrayDados['cpf'] = $dadosArbitro->__getCpf();
+    public function _consultByIdDataTeam($idDataTeam){
+        $dataDataTeam = new DataTeam();
+        $dataDataTeam = $this->dataTeamDAO->consultByIdDataTeam($idDataTeam);
+        //$arrayDataTeam['nome'] = $dadosArbitro->__getNome();
+        //$arrayDataTeam['telefone'] = $dadosArbitro->__getTelefone();
+        //$arrayDataTeam['cpf'] = $dadosArbitro->__getCpf();
 
-        return $arrayDados;
+        return $arrayDataTeam;
     }
 
     /*
         Function responsible for entering data of a team.
      */
-    public function _insertData(DadosTime $dataTeam){
-        return $this->dataTeamDAO->insertData($dataTeam);
+    public function _insertDataTeam(DataTeam $dataTeam){
+        return $this->dataTeamDAO->insertDataTeam($dataTeam);
     }
 
     /*
         Responsible for updating the data team.
      */
-    public function _updateData($idDataTeam, $teamPoints, $playerTeam, $victoryTeam, $drawTeam, $lossTeam, $amountGoals, $concededGoals){
-        $dataDataTeam = new DadosTime();
+    public function _updateDataTeam($idDataTeam, $teamPoints, $playerTeam, $victoryTeam, $drawTeam, $lossTeam, $amountGoals, $concededGoals){
+        $dataDataTeam = new DataTeam();
         $dataDataTeam->__constructOverload(0, $idDataTeam, $teamPoints, $playerTeam, $victoryTeam, 
                                              $drawTeam, $lossTeam, $amountGoals, $concededGoals);
-        $this->dataTeamDAO->updateData($dataDataTeam);
+        $this->dataTeamDAO->updateDataTeam($dataDataTeam);
     }
 
     /*
@@ -72,8 +72,8 @@ class DataTeamController {
     /*
         Function responsible for deleting the data on time.
      */
-    public function _deleteData($idData) {
-        return $this->dataTeamDAO->deleteData($idData);
+    public function _deleteDataTeam($idDataTeam) {
+        return $this->dataTeamDAO->deleteDataTeam($idDataTeam);
     }
 
 }

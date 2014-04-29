@@ -23,7 +23,7 @@ class GameDataController {
     */
     public function _listAllDataForTables(){
         $generalGameData = new GameData();
-        $arrayGameData = $this->gameDataDAO->listAllData();
+        $arrayGameData = $this->gameDataDAO->listAllGameData();
         for ($i = 0; $i < count($arrayGameData); $i++){
             $generalGameData = $arrayGameData[$i];
             $htmLinesDataFromGameData[] = "
@@ -53,8 +53,8 @@ class GameDataController {
     /*
         Function responsible for listing all data of a game.
     */
-    public function _listAllData(){
-        return $this->gameDataDAO->listAllData();
+    public function _listAllGameData(){
+        return $this->gameDataDAO->listAllGameData();
     }
 
     /*
@@ -92,12 +92,12 @@ class GameDataController {
         for ($i = 0; $i < count($team1); $i++){
             $team1Data->__constructOverload(0, $team1[$i]->__getIdPlayer(), $idTimeInserted, 
                                             0, 0, 0, 0, 0);
-            $this->gameDataDAO->insertData($team1Data);
+            $this->gameDataDAO->insertGameData($team1Data);
         }
         for ($i = 0; $i < count($team2); $i++){
             $team2Data->__constructOverload(0, $team2[$i]->__getIdPlayer(), $idTimeInserted, 
                                             0, 0, 0, 0, 0);
-            $this->gameDataDAO->insertData($team2Data);
+            $this->gameDataDAO->insertGameData($team2Data);
         }
     }
 
@@ -129,19 +129,19 @@ class GameDataController {
     /*
         Function responsible for saving the data of a new game already registered.
     */
-    public function _saveData($idPlayer, $idTimePlay, $amountWarning, $amountPunishment, 
+    public function _saveGameData($idPlayer, $idTimePlay, $amountWarning, $amountPunishment, 
                             $amountDisqualification, $amountReports){
         $generalGameData = new GameData();
         $generalGameData->__constructOverload(0, $idPlayer, $idTimePlay, $amountWarning, 
                                               $amountPunishment, $amountDisqualification, 
                                               $amountReports);
-        $this->gameDataDAO->insertData($generalGameData);
+        $this->gameDataDAO->insertGameData($generalGameData);
     }
 
     /*
         Function responsible for deleting the data on game.
     */
-    public function _deleteData($id){
-        return $this->gameDataDAO->deleteData($id);
+    public function _deleteGameData($id){
+        return $this->gameDataDAO->deleteGameData($id);
     }
 }

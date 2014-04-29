@@ -123,7 +123,7 @@ class TeamController {
     /*
         Function responsible for updating the data of a team.
      */
-    public function _updateTeam($idteam, $idCoach, $teamName, $teamCategory, $teamAddress, $teamFoundationDate, $teamPresident, $teamPhone){
+    public function _updateTeam($idTeam, $idCoach, $teamName, $teamCategory, $teamAddress, $teamFoundationDate, $teamPresident, $teamPhone){
 
         $teamData = new Team();
         $teamData->__constructOverload($idTeam, $idCoach, $teamName, $teamCategory, $teamAddress, $teamFoundationDate, $teamPresident, 
@@ -135,7 +135,7 @@ class TeamController {
         Function responsible for deleting the data on team.
      */
 
-    public function _deleteTeam($id){
+    public function _deleteTeam($idTeam){
         return $this->teamDAO->deleteTeam($idTeam);
     }
 

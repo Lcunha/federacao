@@ -50,7 +50,7 @@ class TeamGameController {
     /*
         Function responsible for performing a query by team.
     */
-    public function _consultByTeam($idTime){
+    public function _consultByTeam($idTeam){
         return $this->teamGameDAO->consultIdTeam($idTeam);
     }
 

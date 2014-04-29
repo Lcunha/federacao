@@ -1,7 +1,7 @@
 <?php
 
 /*
-    Name: TempoController.php
+    Name: TimeController.php
     Description: List data from playtime in the table, performs a query,
     delete, change and updates the weather data, inserts the goals achieved by each team the match lasting.
  */
@@ -54,16 +54,16 @@ class TimeController {
     /*
         Function responsible for doing a query for a time from an id of a game.
     */
-    public function _consultByIdTime($idTime){
+    public function _consultByIdTime($idTimePlay){
         $dataTime = new Time();
-        $dataTime = $this->timeDAO->consultByIdTime($idTime);
-        $arrayData['idTempo'] = $dataTime->__getIdTimePlay();
-        $arrayData['idJogo'] = $dataTime->__getIdPlayer();
-        $arrayData['tipo'] = $dataTime->__getType();
-        $arrayData['tiro7Metros'] = $dataTime->__getAmountSevenMetersTotal();
-        $arrayData['tempoTecnico'] = $dataTime->__getTimeCoach();
-        $arrayData['placarTime1'] = $dataTime->__getScoreboardTeam1();
-        $arrayData['placarTime2'] = $dataTime->__getScoreboardTeam2();
+        $dataTime = $this->timeDAO->consultByIdTime($idTimePlay);
+        $arrayData['idTimePlay'] = $dataTime->__getIdTimePlay();
+        $arrayData['idGame'] = $dataTime->__getIdPlayer();
+        $arrayData['type'] = $dataTime->__getType();
+        $arrayData['amountSevenMetersTotal'] = $dataTime->__getAmountSevenMetersTotal();
+        $arrayData['timeCoach'] = $dataTime->__getTimeCoach();
+        $arrayData['scoreboardTeam1'] = $dataTime->__getScoreboardTeam1();
+        $arrayData['scoreboardTeam2'] = $dataTime->__getScoreboardTeam2();
 
         return $arrayData;
     }
@@ -72,7 +72,7 @@ class TimeController {
         Function responsible for doing a query for a time from an id of time report.
      */
     public function _consultByReport($amountReports){
-        return $this->timeDAO->consultarPorRelatorio($amountReports);
+        return $this->timeDAO->consultByReport($amountReports);
     }
 
     /*
@@ -86,18 +86,18 @@ class TimeController {
         Function responsible for updating the data of games.
     */
     public function _updateTime($idTeam, $idPlayer, $amountSevenMetersTotal, $timeCoach, $scoreboardTeam1, $scoreboardTeam2, $type){
-        $dataTime = new Tempo();
+        $dataTime = new Time();
         $dataTime->__constructOverload($idTeam, $idPlayer, $amountSevenMetersTotal, $timeCoach, $scoreboardTeam1, $scoreboardTeam2, $type);
-        $this->timeDAO->updateTime($dadosDados);
+        $this->timeDAO->updateTime($dataTime);
     }
 
     /*
         Function responsible for saving the data of time in the game.
     */
     public function _saveTime($idTeam, $idPlayer, $amountSevenMetersTotal, $timeCoach, $scoreboardTeam1, $scoreboardTeam2, $type){
-        $dataTime = new Tempo();
+        $dataTime = new Time();
         $dataTime->__constructOverload(0, $idPlayer, $amountSevenMetersTotal, $timeCoach, $scoreboardTeam1, $scoreboardTeam2, $type);
-        $this->timeDAO->inserir($dataTime);
+        $this->timeDAO->insertTime($dataTime);
     }
 
     /*

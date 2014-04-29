@@ -44,7 +44,7 @@ class PlayerController {
           			<td>" . $playerData->__getIdTeam() . "</td>
           			<td>" . $playerData->__getPlayerName() . "</td>
           			<td>" . $playerData->__getBirthDatePlayer() . "</td>
-          			<td>" . $playerData->__getCpf() . "</td>
+          			<td>" . $playerData->__getCpfPlayer() . "</td>
           			<td>" . $playerData->__getPlayerNumber() . "</td>
           			<td>
             			<a href=\"?pag=player&action=edit&id=" . $playerData->__getIdPlayer() . 
@@ -199,7 +199,7 @@ class PlayerController {
         $arrayDataPlayer['playerName'] = $playerData->__getPlayerName();
         $arrayDataPlayer['idTeam'] = $playerData->__getIdTeam();
         $arrayDataPlayer['birthDatePlayer'] = $playerData->__getBirthDatePlayer();
-        $arrayDataPlayer['cpf'] = $playerData->__getCpf();
+        $arrayDataPlayer['cpf'] = $playerData->__getCpfPlayer();
         $arrayDataPlayer['playerNumber'] = $playerData->__getPlayerNumber();
 
         return $arrayDataPlayer;
@@ -220,7 +220,7 @@ class PlayerController {
         $playerData = $this->playerDAO->consultByPlayerName($id);
         $arrayDataPlayer['idTeam'] = $playerData->__getIdTeam();
         $arrayDataPlayer['birthDatePlayer'] = $playerData->__getBirthDatePlayer();
-        $arrayDataPlayer['cpf'] = $playerData->__getCpf();
+        $arrayDataPlayer['cpf'] = $playerData->__getCpfPlayer();
         $arrayDataPlayer['playerNumber'] = $playerData->__getPlayerNumber();
 
         return $arrayDataPlayer;
