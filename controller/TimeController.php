@@ -71,7 +71,7 @@ class TimeController {
     /*
         Function responsible for doing a query for a time from an id of time report.
      */
-    public function _consultarPorRelatorio($amountReports){
+    public function _consultByReport($amountReports){
         return $this->timeDAO->consultarPorRelatorio($amountReports);
     }
 

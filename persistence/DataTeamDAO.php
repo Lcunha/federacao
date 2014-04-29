@@ -23,7 +23,7 @@ class DataTeamDAO{
 	/*
             The method is responsibility by list all registers in database table.
 	*/
-	public function listarTodos(){
+	public function listAllData(){
             $sql = "SELECT * FROM dados_campeonato";
             $result = $this->connection->banco->Execute($sql);
             while($record = $result->FetchNextObject()){
@@ -44,7 +44,7 @@ class DataTeamDAO{
 	/*
             The method is responsibility to insert data in database table.
 	*/
-	public function inserir(DadosTime $dataDataTeam){
+	public function insertData(DadosTime $dataDataTeam){
             $sql = "INSERT INTO dados_campeonato(pontos, jogos, vitorias, empates,
                                                  derrotas, gols, gols_levados, time_id_time)
                     VALUES ('{$dataDataTeam->__getPontos()}', 
@@ -61,7 +61,7 @@ class DataTeamDAO{
 	/*
 		The method is responsibility to consult in database table through of ID.
 	*/
-	public function consultarPorId($id){
+	public function consultByIdData($id){
             $sql = "SELECT * FROM dados_campeonato WHERE id_dados_campeonato = '{$id}' ";
             $result = $this->connection->banco->Execute($sql);
             $record = $result->FetchNextObject();
@@ -111,7 +111,7 @@ class DataTeamDAO{
 		The method is responsibility by to update of points and information data in 
                 database table.
 	*/
-	public function atualizarPontos($idTeam1, $idTeam2, $pointsTeam1, $pointsTeam2, $goalsTeam1,
+	public function updateDataPoint($idTeam1, $idTeam2, $pointsTeam1, $pointsTeam2, $goalsTeam1,
                                         $goalsTeam2){
             $team1 = new TimeDAO();
             $team1 = $this->consultarPorIdTime($idTeam1);
@@ -189,7 +189,7 @@ class DataTeamDAO{
 	/*
             The method is responsibility by to delete data in database table.
 	*/
-	public function excluir($id){
+	public function deleteData($id){
             $sql = "DELETE FROM dados_campeonato WHERE id_dados_campeonato = '{$id}' ";
             $result = $this->connection->banco->Execute($sql);
 	}
