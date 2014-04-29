@@ -62,23 +62,23 @@ background-color: #CC0000;
 }
 </style>
 <?php 
-require_once __APP_PATH.'/view/ArbitroView.php';
-$arbitroVW = new ArbitroView();	
+require_once __APP_PATH.'/view/RefereeView.php';
+$refereeVW = new RefereeView();	
 $id = isset( $_GET['id'] ) ? $_GET['id'] : null;
 $action = isset( $_GET['action'] ) ? $_GET['action'] : null;
 if($action == "edit"){
-	$dados = $arbitroVW->consultarPorId($id);
+	$dataReferee = $refereeVW->consultByIdReferee($id);
 ?>
 <center><h2> Alterar Cadastro</h2></center>
 	<form id="contactform" method="post" action="">
     	<div class="field">
-        	<input type="text" class="input" name="nome" id="nome" placeholder="Nome" value="<?php echo $dados['nome']?>" required>
+        	<input type="text" class="input" name="nome" id="nome" placeholder="Nome" value="<?php echo $dataReferee['nome']?>" required>
         </div>
         <div class="field">
-    	<input type="text" class="input" name="telefone" id="telefone" placeholder="Telefone" value="<?php echo $dados['telefone']?>" required>
+    	<input type="text" class="input" name="telefone" id="telefone" placeholder="Telefone" value="<?php echo $dataReferee['telefone']?>" required>
         </div>
         <div class="field">
-    	<input type="text" class="input" name="cpf" id="cpf" placeholder="Cpf" value="<?php echo $dados['cpf']?>" required>
+    	<input type="text" class="input" name="cpf" id="cpf" placeholder="Cpf" value="<?php echo $dataReferee['cpf']?>" required>
         </div>
         <input type="submit" class="but but-success" name="Alterar" on value="Editar">
 	</form>
@@ -88,7 +88,7 @@ if($action == "edit"){
 	</script>
 <?php 
 	if ($_SERVER['REQUEST_METHOD'] == 'POST'){
-		$arbitroVW->atualizar($id);
+		$refereeVW->updateReferee($id);
 	}
 }
 else {	
@@ -109,6 +109,6 @@ else {
 	</form>
 <?php
 	if ($_SERVER['REQUEST_METHOD'] == 'POST'){
-		$arbitroVW->salvar();
+		$refereeVW->saveReferee();
 	}
 }

@@ -62,7 +62,7 @@ background-color: #CC0000;
 	}
 }*/
 if ($_SERVER['REQUEST_METHOD'] == 'POST'){
-	$jogadorVW->excluir($id);
+	$playerVW->deletePlayer($id);
 }
 
 ?>

@@ -40,16 +40,16 @@ th{
         <h2 style="margin: 0 auto; width: 1024px; text-align:center;">Graficos</h2><br/>
          	<div id="graficos">
             	<div id="butao-cliente">
-                	<?php echo $mainVW->contarRegistrosTime();?><br />TIMES
+                	<?php echo $mainVW->amountTeamsRecords();?><br />TIMES
                 </div>
                 <div id="butao-cliente">
-                	<?php echo $mainVW->contarRegistrosJogador();?><br />JOGADORES
+                	<?php echo $mainVW->amountPlayersRecords();?><br />JOGADORES
                 </div>
                 <div id="butao-cliente">
-                	<?php echo $mainVW->contarRegistrosTecnico();?><br />TECNICOS
+                	<?php echo $mainVW->amountCoachesRecords();?><br />TECNICOS
                 </div>
                 <div id="butao-cliente">
-                	<?php echo $mainVW->contarRegistrosArbitro();?><br />ARBITROS
+                	<?php echo $mainVW->amountRefereesRecords();?><br />ARBITROS
                 </div>
                 <div id="clear"></div>            
              </div>
@@ -73,7 +73,7 @@ th{
                 </tr>
             </thead>
             	<?php 
-				$tr = $mainVW->listarTimesParaTabelaCampeonato();
+				$tr = $mainVW->listAllTeamsForChampionshipTable();
         		for($i=0;$i<count($tr);$i++){
 					echo $tr[$i];
 				}
@@ -89,7 +89,7 @@ th{
                 </tr>
 			 </thead>
         	<?php 
-        		$tr = $mainVW->listarArtilheiros();
+        		$tr = $mainVW->listGunners();
         		for($i=0;$i<count($tr);$i++){
 					echo $tr[$i];
 				}

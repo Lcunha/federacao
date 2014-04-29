@@ -1,13 +1,13 @@
 <?php 
-	require_once __APP_PATH.'/view/ArbitroView.php';
-	$arbitroVW = new ArbitroView();
+	require_once __APP_PATH.'/view/RefereeView.php';
+	$refereeVW = new RefereeView();
 	$action = isset( $_GET['action'] ) ? $_GET['action'] : null;
 	$id = isset( $_GET['id'] ) ? $_GET['id'] : null;
 	if($action == "edit"){
-		include(__APP_PATH.'/views/cad_Arbitro.php');
+		include(__APP_PATH.'/views/cad_Referee.php');
 	}
 	if($action == "exclude"){
-		$arbitroVW->excluir($id);
+		$refereeVW->deleteReferee($id);
 	}
 ?>	
 	<script src="./views/js/jquery.tablesorter.min.js"></script>
@@ -157,12 +157,12 @@ background-color: #CC0000;
           <th>Nome</th>
           <th>Telefone</th>
           <th>CPF</th>
-          <th>Ações</th>
+          <th>Aï¿½ï¿½es</th>
         </tr>
       </thead>
       <tbody>
        		<?php 
-        		$tr = $arbitroVW->listarArbitrosParaTabela();
+        		$tr = $refereeVW->listAllRefereesForTables();
         		for($i=0;$i<count($tr);$i++){
 					echo $tr[$i];
 				}

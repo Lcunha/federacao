@@ -62,22 +62,22 @@ background-color: #CC0000;
 }
 </style>
 <?php 
-require_once __APP_PATH.'/view/JogadorView.php';
-$jogadorVW = new JogadorView();	
+require_once __APP_PATH.'/view/PlayerView.php';
+$playerVW = new PlayerView();	
 $id = isset( $_GET['id'] ) ? $_GET['id'] : null;
 $action = isset( $_GET['action'] ) ? $_GET['action'] : null;
 if($action == "edit"){
-	$dados = $jogadorVW->consultarPorId($id);
+	$playerData = $playerVW->consultByIdPlayer($id);
 ?>
 <center><h2> Alterar Cadastro</h2></center>
 	<form id="contactform" method="post" action="">
     	<div class="field">
-        	<input type="text" class="input" name="nome" id="nome" placeholder="Nome do Jogador" value="<?php echo $dados['nome']?>" required>
+        	<input type="text" class="input" name="nome" id="nome" placeholder="Nome do Jogador" value="<?php echo $playerData['nome']?>" required>
         </div>
         <div class="field">
         	<select class="input" name="idTime" id="idTime" required>
         	<?php 
-        		$options = $jogadorVW->listarTimesParaSelect();
+        		$options = $playerVW->listAllTeamsForSelect();
         		for($i=0;$i<count($options);$i++){
 					echo $options[$i];
 				}
@@ -85,19 +85,19 @@ if($action == "edit"){
         	</select>
         </div>
         <div class="field">
-    	<input type="date" class="input" name="data_nascimento" id="data_nascimento" placeholder="Data de nascimeto" value="<?php echo $dados['data_nascimento']?>"required>
+    	<input type="date" class="input" name="data_nascimento" id="data_nascimento" placeholder="Data de nascimeto" value="<?php echo $playerData['data_nascimento']?>"required>
         </div>
         <div class="field">
-    	<input type="text" class="input" name="cpf" id="cpf" placeholder="CPF" value="<?php echo $dados['cpf']?>"required>
+    	<input type="text" class="input" name="cpf" id="cpf" placeholder="CPF" value="<?php echo $playerData['cpf']?>"required>
         </div>
         <div class="field">
-    	<input type="text" class="input" name="numero" id="numero" placeholder="Numero da Camisa" value="<?php echo $dados['numero']?>" required>
+    	<input type="text" class="input" name="numero" id="numero" placeholder="Numero da Camisa" value="<?php echo $playerData['numero']?>" required>
         </div>
         <input type="submit" class="but but-success" name="Alterar" value="Editar">
 	</form>
 <?php 
 	if ($_SERVER['REQUEST_METHOD'] == 'POST'){
-		$jogadorVW->atualizar($id);
+		$playerVW->updatePlayer($id);
 	}
 }
 else {
@@ -110,7 +110,7 @@ else {
         <div class="field">
         	<select class="input" name="idTime" id="idTime" required>
         	<?php 
-        		$options = $jogadorVW->listarTimesParaSelect();
+        		$options = $playerVW->listAllTeamsForSelect();
         		for($i=0;$i<count($options);$i++){
 					echo $options[$i];
 				}
@@ -132,6 +132,6 @@ else {
 	</form>
 <?php
 	if ($_SERVER['REQUEST_METHOD'] == 'POST'){
-		$jogadorVW->salvar();
+		$playerVW->savePlayer();
 	}
 }

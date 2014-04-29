@@ -57,7 +57,7 @@ th{
                 </tr>
             </thead>
             	<?php 
-				$tr = $mainVW->listarTimesParaTabelaCampeonato();
+				$tr = $mainVW->listAllTeamsForChampionshipTable();
         		for($i=0;$i<count($tr);$i++){
 					echo $tr[$i];
 				}
@@ -76,7 +76,7 @@ th{
                 </tr>
             </thead>
             	<?php 
-        		$tr = $mainVW->listarArtilheiros();
+        		$tr = $mainVW->listGunners();
         		for($i=0;$i<count($tr);$i++){
 					echo $tr[$i];
 				}
@@ -95,7 +95,7 @@ th{
                 </tr>
             </thead>
             	<?php 
-        		$tr = $mainVW->listarFearPlayers();
+        		$tr = $mainVW->listFearPlayers();
         		for($i=0;$i<count($tr);$i++){
 					echo $tr[$i];
 				}

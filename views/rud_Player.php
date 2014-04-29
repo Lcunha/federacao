@@ -1,13 +1,13 @@
 <?php 
-	require_once __APP_PATH.'/view/JogadorView.php';
-	$jogadorVW = new JogadorView();
+	require_once __APP_PATH.'/view/PlayerView.php';
+	$playerVW = new PlayerView();
 	$action = isset( $_GET['action'] ) ? $_GET['action'] : null;
 	$id = isset( $_GET['id'] ) ? $_GET['id'] : null;
 	if($action == "edit"){
-		include(__APP_PATH.'/views/cad_Jogador.php');
+		include(__APP_PATH.'/views/cad_Player.php');
 	}
 	if($action == "exclude"){
-		$jogadorVW->excluir($id);
+		$playerVW->deletePlayer($id);
 	}
 ?>	
 	<script src="./views/js/jquery.tablesorter.min.js"></script>
@@ -159,12 +159,12 @@ background-color: #CC0000;
           <th>Data de nascimento</th>
           <th>CPF</th>
           <th>Numero</th>
-          <th>Ações</th>
+          <th>Aï¿½ï¿½es</th>
         </tr>
       </thead>
       <tbody>
        		<?php 
-        		$tr = $jogadorVW->listarJogadoresParaTabela();
+        		$tr = $playerVW->listAllPlayersForTables();
         		for($i=0;$i<count($tr);$i++){
 					echo $tr[$i];
 				}

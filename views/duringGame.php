@@ -143,12 +143,12 @@ padding: 1px 1px;
 </style>
 
 <?php 
-require_once __APP_PATH.'/view/JogadorView.php';
+require_once __APP_PATH.'/view/PlayerView.php';
 
 $idA = isset( $_GET['idA'] ) ? $_GET['idA'] : null;
 $idB = isset( $_GET['idB'] ) ? $_GET['idB'] : null;
-$idTempo = isset( $_GET['idTempo'] ) ? $_GET['idTempo'] : null;
-$jogadorVW = new JogadorView();	
+$idTimePlay = isset( $_GET['idTimePlay'] ) ? $_GET['idTimePlay'] : null;
+$playerVW = new PlayerView();	
 ?>
 
 
@@ -327,7 +327,7 @@ $jogadorVW = new JogadorView();
     		
 				
 						
-						$tr = $jogadorVW->listarJogadoresParaSumulaTimeA($idA,$idTempo);
+						$tr = $playerVW->listAllPlayersForDocketTeamA($idA,$idTimePlay);
 						for($i=0;$i<count($tr);$i++){
 							echo $tr[$i];
 					}
@@ -352,7 +352,7 @@ $jogadorVW = new JogadorView();
 		<?php 
 				
 						
-						$tr = $jogadorVW->listarJogadoresParaSumulaTimeB($idB,$idTempo);
+						$tr = $playerVW->listAllPlayersForDocketTeamB($idB,$idTimePlay);
 						for($i=0;$i<count($tr);$i++){
 							echo $tr[$i];
 						}

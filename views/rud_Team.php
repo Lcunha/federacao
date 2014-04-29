@@ -1,13 +1,13 @@
 <?php 
-	require_once __APP_PATH.'/view/TimeView.php';
-	$timeVW = new TimeView();
+	require_once __APP_PATH.'/view/TeamView.php';
+	$teamVW = new TeamView();
 	$action = isset( $_GET['action'] ) ? $_GET['action'] : null;
 	$id = isset( $_GET['id'] ) ? $_GET['id'] : null;
 	if($action == "edit"){
-		include(__APP_PATH.'/views/cad_Time.php');
+		include(__APP_PATH.'/views/cad_Team.php');
 	}
 	if($action == "exclude"){
-		$timeVW->excluir($id);
+		$teamVW->deleteTeam($id);
 	}
 ?>	
 	<script src="./views/js/jquery.tablesorter.min.js"></script>
@@ -161,13 +161,13 @@ background-color: #CC0000;
           <th>Presidente</th>
           <th>Telefone</th>
           <th>Pontos</th>
-          <th>Ações</th>
+          <th>Aï¿½ï¿½es</th>
           
         </tr>
       </thead>
       <tbody>
        		<?php 
-        		$tr = $timeVW->listarTimeParaTabela();
+        		$tr = $teamVW->listTeamsForTables();
         		for($i=0;$i<count($tr);$i++){
 					echo $tr[$i];
 				}

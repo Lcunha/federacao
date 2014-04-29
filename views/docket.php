@@ -144,25 +144,25 @@ padding: 1px 1px;
 }
 </style>
 <?php 
-require_once __APP_PATH.'/view/JogadorView.php';
-require_once __APP_PATH.'/view/DadosTimeView.php';
-require_once __APP_PATH.'/view/TimeJogoView.php';
-require_once __APP_PATH.'/view/JogoView.php';
-require_once __APP_PATH.'/view/DadosView.php';
+require_once __APP_PATH.'/view/PlayerView.php';
+require_once __APP_PATH.'/view/DataTeamView.php';
+require_once __APP_PATH.'/view/TeamGameView.php';
+require_once __APP_PATH.'/view/GameView.php';
+require_once __APP_PATH.'/view/GameDataView.php';
 
 
 
-$jogadorVW = new JogadorView();	
-$dadosTimeVW = new DadosTimeView();
-$timeJogoVW = new TimeJogoView();
-$jogoVW = new JogoView();
-$dadosVW = new DadosView();
-$arrayJogos = $jogoVW->listarTodos();
-$numeroJogoAtual = count($arrayJogos)+1;
+$playerVW = new PlayerView();	
+$dataTeamVW = new DataTeamView();
+$teamGameVW = new TeamGameView();
+$gameVW = new GameView();
+$gameDataVW = new GameDataView();
+$arrayGames = $gameVW->listarTodos();
+$actualGameNumber = count($arrayGames)+1;
 ?>
 
 
-<div id="comecoDoJogo">
+<div id="comecoDoGame">
 
 
 
@@ -172,7 +172,7 @@ $numeroJogoAtual = count($arrayJogos)+1;
 
 
 
-<h2 style="margin: 0 auto; width: 1024px; text-align:center;">INICIAR JOGO  Nº <?php echo $numeroJogoAtual?></h2>
+<h2 style="margin: 0 auto; width: 1024px; text-align:center;">INICIAR JOGO  Nº <?php echo $actualGameNumber?></h2>
 
 <form method="post" style="margin: 0 auto;" >
 <table class="medidas" border="0">
@@ -187,9 +187,9 @@ $numeroJogoAtual = count($arrayJogos)+1;
 <tr>
 	<td>A</td>
 	<td>
-		<select class="input" name="idTimeA" id="idTimeA" required>
+		<select class="input" name="idTeamA" id="idTeamA" required>
 	        	<?php 
-	        		$options = $jogadorVW->listarTimesParaSelect();
+	        		$options = $playerVW->listAllTeamsForSelect();
 	        		for($i=0;$i<count($options);$i++){
 						echo $options[$i];
 					}
@@ -199,9 +199,9 @@ $numeroJogoAtual = count($arrayJogos)+1;
     <td><small>Versos</small></td>
 	<td>B</td>
    <td>
-		<select class="input" name="idTimeB" id="idTimeB" required>
+		<select class="input" name="idTeamB" id="idTeamB" required>
 	        	<?php 
-	        		$options = $jogadorVW->listarTimesParaSelect();
+	        		$options = $playerVW->listAllTeamsForSelect();
 	        		for($i=0;$i<count($options);$i++){
 						echo $options[$i];
 					}
@@ -230,29 +230,29 @@ $numeroJogoAtual = count($arrayJogos)+1;
 	</td>
     <td class="medida-td2"><input class="input" type="text" name="local" id="local" placeholder="Nome do local" required></td>
     <td class="medida-td1"><input class="input2" type="date" name="data" id="data" required></td>
-    <td class="medida-td1"><input class="input2" type="time" name="hora" id="hora" required></td>
+    <td class="medida-td1"><input class="input2" type="team" name="hora" id="hora" required></td>
     <td></td>
     <td class="medida-td1"><input class="inputCaixa" type="text" name="duracao" id="duracao" placeholder="Nº" required></td>
 </tr>
 </form>
 </table>
 <div id="but">
-<input type="button" name="iniciar-jogo" class="but but-error align-but" value="Limpar" onclick="window.location.href='?pag=sumula'">
-<input type="submit" name="iniciar-jogo" class="but but-success align-but" value="Iniciar">
+<input type="button" name="iniciar-game" class="but but-error align-but" value="Limpar" onclick="window.location.href='?pag=sumula'">
+<input type="submit" name="iniciar-game" class="but but-success align-but" value="Iniciar">
 <div id="clear"></div>
 </div>
 </div>
 <?php 
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST'){
-	$timeA = $_POST['idTimeA'];
-	$timeB = $_POST['idTimeB'];
-	$idJogoAtual = $jogoVW->inserir();
-	$timeJogoVW->salvar($idJogoAtual,$_POST['idTimeA']);
-	$timeJogoVW->salvar($idJogoAtual,$_POST['idTimeB']);
-	$jogoVW->inserirTempo($numeroJogoAtual);
-	$idTempoInserido = mysql_insert_id();
-	$dadosVW->inserir($idTempoInserido,$timeA,$timeB);
-	echo" <script>document.location.href='?pag=duranteJogo&idA=".$timeA."&idB=".$timeB."&idTempo=".$idTempoInserido."'</script>";
+	$team1 = $_POST['idTeam1'];
+	$team2 = $_POST['idTeam2'];
+	$idActualGame = $gameVW->insertGame();
+	$teamGameVW->saveTeamGame($idActualGame,$_POST['idTeam1']);
+	$teamGameVW->saveTeamGame($idActualGame,$_POST['idTeam2']);
+	$gameVW->insertGame($actualGameNumber);
+	$idTimeInserted = mysql_insert_id();
+	$gameDataVW->insertDataTeam($idTimeInserted,$team1,$team2);
+	echo" <script>document.location.href='?pag=duranteGame&idA=".$team1."&idB=".$team2."&idTempo=".$idTimeInserted."'</script>";
 
 }
