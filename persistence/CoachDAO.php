@@ -29,9 +29,9 @@ class CoachDAO{
             $coachData = new Coach();
             $coachData->__constructOverload($record->ID_TECNICO, $record->NOME,
                                              $record->TELEFONE, $record->CPF);
-            $returnCoach[] = $coachData;
+            $return[] = $coachData;
         }
-        return $returnCoach;
+        return $return;
     }
 	
     /*

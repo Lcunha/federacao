@@ -164,7 +164,7 @@ background-color: #CC0000;
       </thead>
       <tbody>
        		<?php 
-        		$tr = $playerVW->listAllPlayersForTables();
+        		$tr = $playerVW->listAllPlayersAllTables();
         		for($i=0;$i<count($tr);$i++){
 					echo $tr[$i];
 				}

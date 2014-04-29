@@ -162,7 +162,7 @@ class TeamController {
             $pos++;
             $var = $team->_consultByIdTeam($teamData->__getIdTeam());
             $teamName = $var['teamName'];
-            $saldo = $teamData->__getGoals() - $teamData->__getConcededGoals();
+            $points = $teamData->__getAmountGoals() - $teamData->__getConcededGoals();
             if ($teamData->__get() != 0){
                 $percentage = (int) ( 100 * ($teamData->__getVictories()) / ($teamData->__getPlays()));
             } else{

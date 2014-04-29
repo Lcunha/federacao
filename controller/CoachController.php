@@ -38,7 +38,7 @@ class CoachController {
         $arrayCoachData = $this->coachDAO->listAllCoaches();
         for ($i = 0; $i < count($arrayCoachData); $i++){
             $coachData = $arrayCoachData[$i];
-            $htmlDataFromCoach[] = " 
+            $tr[] = " 
 			<tr>
                             <td><input type=\"checkbox\" value=\"1\" name=\"marcar[]\" /></td>
 				<td>" . $coachData->__getIdCoach() . "</td>
@@ -55,7 +55,7 @@ class CoachController {
           			</td>
                     </tr>";
         }
-        return $htmlDataFromCoach;
+        return $tr;
     }
 
     /*
