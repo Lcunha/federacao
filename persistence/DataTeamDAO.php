@@ -1,7 +1,7 @@
 <?php
 
 /*
-    Name: DadosTimeDAO.php  
+    Name: DataTeamDAO.php  
     Description:Class data persistence with CRUD functions (create, read, update, delete) 
     for handling the associative type Data_Team, in the relevant table (table associative) 
     in mysql.
@@ -17,17 +17,17 @@ class DataTeamDAO{
             The method is responsibility to instance the class.
 	*/
 	public function __construct(){
-            $this->connection = new Conexao();
+            $this->connection = new Connection();
 	}
 
 	/*
-            The method is responsibility by list all registers in database table.
+            The method is responsibility by list all registers in dataBase table.
 	*/
-	public function listAllData(){
+	public function listAllDataTeam(){
             $sql = "SELECT * FROM dados_campeonato";
-            $result = $this->connection->banco->Execute($sql);
+            $result = $this->connection->dataBase->Execute($sql);
             while($record = $result->FetchNextObject()){
-                    $dataDataTeam = new DadosTime();
+                    $dataDataTeam = new DataTeam();
                     $dataDataTeam->__constructOverload($record->ID_DADOS_CAMPEONATO,
                                                          $record->TIME_ID_TIME,
                                                          $record->PONTOS, $record->JOGOS,
@@ -42,9 +42,9 @@ class DataTeamDAO{
 	}
 
 	/*
-            The method is responsibility to insert data in database table.
+            The method is responsibility to insert data in dataBase table.
 	*/
-	public function insertData(DadosTime $dataDataTeam){
+	public function insertDataTeam(DataTeam $dataDataTeam){
             $sql = "INSERT INTO dados_campeonato(pontos, jogos, vitorias, empates,
                                                  derrotas, gols, gols_levados, time_id_time)
                     VALUES ('{$dataDataTeam->__getTeamPoints()}', 
@@ -55,17 +55,17 @@ class DataTeamDAO{
                             '{$dataDataTeam->__getAmountGoals()}',
                             '{$dataDataTeam->__getConcededGoals()}',
                             '{$dataDataTeam->__getIdDataTeam()}')";
-            return $this->connection->banco->Execute($sql);
+            return $this->connection->dataBase->Execute($sql);
 	}
 
 	/*
-		The method is responsibility to consult in database table through of ID.
+		The method is responsibility to consult in dataBase table through of ID.
 	*/
-	public function consultByIdData($id){
+	public function consultByIdDataTeam($id){
             $sql = "SELECT * FROM dados_campeonato WHERE id_dados_campeonato = '{$id}' ";
-            $result = $this->connection->banco->Execute($sql);
+            $result = $this->connection->dataBase->Execute($sql);
             $record = $result->FetchNextObject();
-            $dataDataTeam = new DadosTime();
+            $dataDataTeam = new DataTeam();
             $dataDataTeam->__constructOverload($record->ID_DADOS_CAMPEONATO, 
                                                  $record->TIME_ID_TIME,
                                                  $record->PONTOS,
@@ -76,11 +76,11 @@ class DataTeamDAO{
 	}
 
 	/*
-            The method is responsibility to consult in database table through the ID of type Team.
+            The method is responsibility to consult in dataBase table through the ID of type Team.
 	*/
-	public function consultarPorIdTime($id){
+	public function consultByIdTeam($id){
             $sql = "SELECT * FROM dados_campeonato WHERE time_id_time = '{$id}' ";
-            $result = $this->connection->banco->Execute($sql);
+            $result = $this->connection->dataBase->Execute($sql);
             $record = $result->FetchNextObject();
             $dataDataTeam = new DataTeam();
             $dataDataTeam->__constructOverload($record->ID_DADOS_CAMPEONATO,
@@ -92,9 +92,9 @@ class DataTeamDAO{
 	}
 
 	/*
-            The method is responsibility to update data in database table.
+            The method is responsibility to update data in dataBase table.
 	*/
-	public function atualizar(DadosTime $dataDataTeam){
+	public function updateDataTeam(DataTeam $dataDataTeam){
             $sql = "UPDATE dados_campeonato 
                     SET pontos = '{$dataDataTeam->__getTeamPoints()}', 
                         jogos = '{$dataDataTeam->__getPlayerTeam()}', 
@@ -104,18 +104,18 @@ class DataTeamDAO{
                         gols = '{$dataDataTeam->__getAmountGoals()}', 
                         gols_levados = '{$dataDataTeam->__getConcededGoals()}' 
                     WHERE time_id_time = '{$dataDataTeam->__getIdDataTeam()}' ";
-            $this->connection->banco->Execute($sql);
+            $this->connection->dataBase->Execute($sql);
 	}
 
 	/*
 		The method is responsibility by to update of points and information data in 
-                database table.
+                dataBase table.
 	*/
 	public function updateDataPoint($idTeam1, $idTeam2, $pointsTeam1, $pointsTeam2, $goalsTeam1,
                                         $goalsTeam2){
             $team1 = new TimeDAO();
-            $team1 = $this->consultarPorIdTime($idTeam1);
-            $team2 = $this->consultarPorIdTime($idTeam2);
+            $team1 = $this->consultByIdTeam($idTeam1);
+            $team2 = $this->consultByIdTeam($idTeam2);
             $newPlayer1 = $team1->__getPlayerTeam()+1;
             $newPlayer2 = $team2->__getPlayerTeam()+1;
             if($goalsTeam1 > $goalsTeam2){
@@ -130,7 +130,7 @@ class DataTeamDAO{
                     $sqlA = "UPDATE dados_campeonato 
                              SET pontos = '{$newPoints1}', 
                                  jogos = '{$newPlayer1}', 
-                                 vitorias = '{$novaVitoriaA}',
+                                 vitorias = '{$newVictory1}',
                                  gols = '{$newGoals1}', 
                                  gols_levados = '{$newGoalsTaken1}' 
                              WHERE time_id_time = '{$team1->__getIdDataTeam()}' ";
@@ -143,8 +143,8 @@ class DataTeamDAO{
                              WHERE time_id_time = '{$team2->__getIdDataTeam()}' ";
             }
             else if($goalsTeam1 < $goalsTeam2){
-                    $novaVitoriaB = $team2->__getVictoryTeam() + 1;
-                    $novaDerrotaA = $team1->__getLossTeam() + 1;
+                    $newVictory2 = $team2->__getVictoryTeam() + 1;
+                    $newDefeat1 = $team1->__getLossTeam() + 1;
                     $newGoals1 = $team1->__getAmountGoals() + $goalsTeam1;
                     $newGoals2 = $team2->__getAmountGoals() + $goalsTeam2;
                     $newGoalsTaken1 = $team1->__getConcededGoals() + $goalsTeam2;
@@ -153,12 +153,12 @@ class DataTeamDAO{
                     $newPoints2 = $team2->__getTeamPoints() + $pointsTeam2;
                     $sqlA = "UPDATE dados_campeonato 
                              SET pontos = '{$newPoints1}', jogos = '{$newPlayer1}', 
-                                 derrotas='{$novaDerrotaA}', gols = '{$newGoals1}', 
+                                 derrotas='{$newDefeat1}', gols = '{$newGoals1}', 
                                  gols_levados = '{$newGoalsTaken1}' 
                              WHERE time_id_time = '{$team1->__getIdDataTeam()}' ";
                     $sqlB = "UPDATE dados_campeonato 
                              SET pontos = '{$newPoints2}', jogos = '{$newPlayer2}', 
-                                 vitorias = '{$novaVitoriaB}', gols = '{$newGoals2}', 
+                                 vitorias = '{$newVictory2}', gols = '{$newGoals2}', 
                                  gols_levados = '{$newGoalsTaken2}' 
                              WHERE time_id_time='{$team2->__getIdDataTeam()}' ";
             }
@@ -182,15 +182,15 @@ class DataTeamDAO{
                                  gols_levados = '{$newGoalsTaken2}' 
                              WHERE time_id_time='{$team2->__getIdDataTeam()}' ";
             }
-            $this->connection->banco->Execute($sqlA);
-            $this->connection->banco->Execute($sqlB);
+            $this->connection->dataBase->Execute($sqlA);
+            $this->connection->dataBase->Execute($sqlB);
 	}
 
 	/*
-            The method is responsibility by to delete data in database table.
+            The method is responsibility by to delete data in dataBase table.
 	*/
-	public function deleteData($id){
+	public function deleteDataTeam($id){
             $sql = "DELETE FROM dados_campeonato WHERE id_dados_campeonato = '{$id}' ";
-            $result = $this->connection->banco->Execute($sql);
+            $result = $this->connection->dataBase->Execute($sql);
 	}
 }

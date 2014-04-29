@@ -74,7 +74,7 @@ class RefereeDAO{
 	/* 
             Method is responsible for consult in table arbitrator in database mysql through of NAME. 
 	*/
-	public function consultByRefereeName($nome){
+	public function consultByRefereeName($refereeName){
             $sql = "SELECT * FROM arbitro WHERE nome= '{$refereeName}'";
             $result = $this->connection->dataBase->Execute($sql);
             $register = $result->FetchNextObject();

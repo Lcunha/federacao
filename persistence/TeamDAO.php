@@ -68,7 +68,7 @@ class TeamDAO{
 			ORDER BY dc.pontos DESC;";
 		$result = $this->connection->dataBase->Execute($sql);
 		while($record = $result->FetchNextObject()){
-			$teamData = new DadosTeam();
+			$teamData = new DataTeam();
 			$teamData->__constructOverload(0, $record->ID_TIME, $record->PONTOS, 
 							$record->JOGOS, $record->VITORIAS,
 							$record->EMPATES,$record->DERROTAS,

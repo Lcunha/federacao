@@ -20,17 +20,17 @@ class GameDAO{
 	}
 	
 	/*
-            The method is responsability by to list all registers in database table.
+            The method is responsability by to list all records in database table.
 	*/
 	public function listAllGames(){
             $sql = "SELECT * FROM jogo";
             $result = $this->connection->dataBase->Execute($sql);
-            while($register = $result->FetchNextObject()){
+            while($record = $result->FetchNextObject()){
                     $gameData = new Game();
-                    $gameData->__constructOverload($register->ID_JOGO, $register->ESPECTADORES,
-                                                    $register->CIDADE, $register->LOCALIZACAO,
-                                                    $register->DATA_JOGO, $register->HORA_JOGO,
-                                                    $register->DURACAO, $register->TOTAL_7METROS);
+                    $gameData->__constructOverload($record->ID_JOGO, $record->ESPECTADORES,
+                                                    $record->CIDADE, $record->LOCALIZACAO,
+                                                    $record->DATA_JOGO, $record->HORA_JOGO,
+                                                    $record->DURACAO, $record->TOTAL_7METROS);
                     $returnGame[] = $gameData;
             }
             return $returnGame;
@@ -72,12 +72,12 @@ class GameDAO{
 	public function consultByIdGame($idGame){
             $sql = "SELECT * FROM jogo WHERE id_jogo = '{$idGame}'";
             $result = $this->connection->dataBase->Execute($sql);
-            $register = $result->FetchNextObject();
+            $record = $result->FetchNextObject();
             $gameData = new Game();
-            $gameData->__constructOverload($register->ID_JOGO, $register->ESPECTADORES,
-                                            $register->CIDADE, $register->LOCALIZACAO,
-                                            $register->DATA_JOGO, $register->DURACAO,
-                                            $register->TOTAL_7METROS);
+            $gameData->__constructOverload($record->ID_JOGO, $record->ESPECTADORES,
+                                            $record->CIDADE, $record->LOCALIZACAO,
+                                            $record->DATA_JOGO, $record->DURACAO,
+                                            $record->TOTAL_7METROS);
             return $gameData;
 	}
 	
@@ -87,12 +87,12 @@ class GameDAO{
 	public function consultByGameDate($gameDate){
             $sql = "SELECT * FROM jogo WHERE data_jogo = '{$gameDate}'";
             $result = $this->connection->dataBase->Execute($sql);
-            $register = $result->FetchNextObject();
+            $record = $result->FetchNextObject();
             $gameData = new Game();
-            $gameData->__constructOverload($register->ID_JOGO,$register->ESPECTADORES,
-                                            $register->CIDADE,$register->LOCALIZACAO,
-                                            $register->DATA_JOGO,$register->DURACAO,
-                                            $register->TOTAL_7METROS);
+            $gameData->__constructOverload($record->ID_JOGO,$record->ESPECTADORES,
+                                            $record->CIDADE,$record->LOCALIZACAO,
+                                            $record->DATA_JOGO,$record->DURACAO,
+                                            $record->TOTAL_7METROS);
             return $gameData;
 	}
 

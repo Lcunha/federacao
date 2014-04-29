@@ -23,15 +23,15 @@ class TeamGameDAO{
 	}
 	
 	/*
-            The method is responsibility by to list all registers in database table.
+            The method is responsibility by to list all records in database table.
 	*/
 	public function listAllTeamGames(){
             $sql = "SELECT * FROM time_jogo";
             $result = $this->connection->dataBase->Execute($sql);
-            while($register = $result->FetchNextObject()){
+            while($record = $result->FetchNextObject()){
                 $teamDataGame = new TeamGame();
-                $teamDataGame->__constructOverload($register->TIME_ID_TIME, 
-                                                    $register->TEMPO_ID_TEMPO);
+                $teamDataGame->__constructOverload($record->TIME_ID_TIME, 
+                                                    $record->TEMPO_ID_TEMPO);
                 $returnTeamGame[] = $teamDataGame;
             }
             return $returnTeamGame;
@@ -63,10 +63,10 @@ class TeamGameDAO{
 	public function consultByIdTeam($idTeam){
             $sql = "SELECT * FROM time_jogo WHERE time_id_time = '{$idTeam}'";
             $result = $this->connection->dataBase->Execute($sql);
-            $register = $result->FetchNextObject();
+            $record = $result->FetchNextObject();
             $teamDataGame = new TeamGame();
-            $teamDataGame->__constructOverload($register->TIME_ID_TIME, 
-                                                $register->TEMPO_ID_TEMPO);
+            $teamDataGame->__constructOverload($record->TIME_ID_TIME, 
+                                                $record->TEMPO_ID_TEMPO);
             return $teamDataGame;
 	}
 	
@@ -76,10 +76,10 @@ class TeamGameDAO{
 	public function consultByTime($idTime){
             $sql = "SELECT * FROM time_jogo WHERE tempo_id_tempo = '{$idTime}'";
             $result = $this->connection->dataBase->Execute($sql);
-            $register = $result->FetchNextObject();
+            $record = $result->FetchNextObject();
             $teamDataGame = new TeamGame();
-            $teamDataGame->__constructOverload($register->TIME_ID_TIME, 
-                                                $register->TEMPO_ID_TEMPO);
+            $teamDataGame->__constructOverload($record->TIME_ID_TIME, 
+                                                $record->TEMPO_ID_TEMPO);
             return $teamDataGame;
 	}
 

@@ -19,11 +19,11 @@ class GameDataDAO{
     }
 	
     /* 
-        Method is responsible for listing all datas in table database mysql. 
+        Method is responsible for listing all datas in table dataBase mysql. 
     */
-    public function listAllData(){
+    public function listAllGameData(){
         $sql = "SELECT * FROM dados";
-        $result = $this->connection->database->Execute($sql);
+        $result = $this->connection->dataBase->Execute($sql);
         while($record = $result->FetchNextObject()){
             $generalGameData = new GameData();
             $generalGameData->__constructOverload($record->ID_DADOS, 
@@ -39,9 +39,9 @@ class GameDataDAO{
     }
 
     /* 
-        Method is responsible insertion of data in database table. 
+        Method is responsible insertion of data in dataBase table. 
     */
-    public function insertData(GameData $generalGameData){
+    public function insertGameData(GameData $generalGameData){
         $sql = "INSERT INTO dados (jogador_id_jogador, tempo_id_tempo, advertencia,
                                    punicao, desqualificacao, relatorio, gol)
                 VALUES ('{$generalGameData->__getIdPlayer()}', 
@@ -51,11 +51,11 @@ class GameDataDAO{
                         '{$generalGameData->__getAmountDisqualification()}',
                         '{$generalGameData->__getAmountReports()}',
                         '{$generalGameData->__getGameGoals()}')";
-        $this->connection->database->Execute($sql);
+        $this->connection->dataBase->Execute($sql);
     }
 
     /* 
-        Method is reponsible update of data in database table. 
+        Method is reponsible update of data in dataBase table. 
     */
     public function updateData(GameData $generalGameData){
         $sql = "UPDATE dados 
@@ -67,11 +67,11 @@ class GameDataDAO{
                     relatorio = '{$generalGameData->__getAmountReports()}', 
                     gol = '{$generalGameData->__getGameGoals()}' 
                 WHERE id_dados = '{$generalGameData->__getIdGameData()}' ";
-        $this->connection->database->Execute($sql);
+        $this->connection->dataBase->Execute($sql);
     }
 
     /* 
-        The method responsibility update of data in database table. 
+        The method responsibility update of data in dataBase table. 
     */
     public function updateGameData(GameData $generalGameData){
         $sql = "UPDATE dados 
@@ -82,15 +82,15 @@ class GameDataDAO{
                     gol = '{$generalGameData->__getGameGoals()}'
                 WHERE jogador_id_jogador = '{$generalGameData->__getIdPlayer()}'
                 AND tempo_id_tempo='{$generalGameData->__getIdTimePlay()}'";
-        $this->connection->database->Execute($sql);
+        $this->connection->dataBase->Execute($sql);
     }
 
     /* 
-        The method responsibility is consult in database table through of ID. 
+        The method responsibility is consult in dataBase table through of ID. 
     */
     public function consultByIdGameData($id){
         $sql = "SELECT * FROM dados WHERE id_dados = '{$id}'";
-        $result = $this->connection->database->Execute($sql);
+        $result = $this->connection->dataBase->Execute($sql);
         $record = $result->FetchNextObject();
         $generalGameData = new GameData();
         $generalGameData->__constructOverload($record->ID_DADOS, 
@@ -105,11 +105,11 @@ class GameDataDAO{
     }
 
     /*
-        The method reponsibility is consult in database table through the ID of type Player. 
+        The method reponsibility is consult in dataBase table through the ID of type Player. 
     */
     public function consultByIdPlayer($idPlayer){
         $sql = "SELECT * FROM dados WHERE jogador_id_jogador = '{$idPlayer}'";
-        $result = $this->connection->database->Execute($sql);
+        $result = $this->connection->dataBase->Execute($sql);
         $record = $result->FetchNextObject();
         $generalGameData = new GameData();
         $generalGameData->__constructOverload($record->ID_DADOS,
@@ -122,11 +122,11 @@ class GameDataDAO{
     }
 
     /* 
-        The method responsibility is consult in database table through the ID of type Time. 
+        The method responsibility is consult in dataBase table through the ID of type Time. 
     */
     public function consultByIdTimePlay($idTimePlay){
         $sql = "SELECT * FROM dados WHERE tempo_id_tempo = '{$idTimePlay}'";
-        $result = $this->connection->database->Execute($sql);
+        $result = $this->connection->dataBase->Execute($sql);
         $record = $result->FetchNextObject();
         $generalGameData = new GameData();
         $generalGameData->__constructOverload($record->ID_DADOS,
@@ -139,11 +139,11 @@ class GameDataDAO{
     }
 
     /* 
-        The method responsibility is consult in database table by report. 
+        The method responsibility is consult in dataBase table by report. 
     */
     public function consultByAmountReports($amountReports){
         $sql = "SELECT * FROM dados WHERE relatorio = '{$amountReports}'";
-        $result = $this->connection->database->Execute($sql);
+        $result = $this->connection->dataBase->Execute($sql);
         $record = $result->FetchNextObject();
         $generalGameData = new GameData();
         $generalGameData->__constructOverload($record->ID_DADOS,
@@ -157,10 +157,10 @@ class GameDataDAO{
     }
 
     /* 
-        The method responsibility is delete in database table through of ID. 
+        The method responsibility is delete in dataBase table through of ID. 
     */
-    public function deleteData($id){
+    public function deleteGameData($id){
         $sql = "DELETE FROM dados WHERE id_dados= '{$id}' ";
-        $result = $this->connection->database->Execute($sql);
+        $result = $this->connection->dataBase->Execute($sql);
     }
 }

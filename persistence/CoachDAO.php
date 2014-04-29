@@ -20,11 +20,11 @@ class CoachDAO{
     }
 	
     /*
-        The method is responsibility to list all registers in database table.
+        The method is responsibility to list all registers in dataBase table.
     */
     public function listAllCoaches(){
         $sql = "SELECT * FROM tecnico";
-        $result = $this->connection->database->Execute($sql);
+        $result = $this->connection->dataBase->Execute($sql);
         while($record = $result->FetchNextObject()){
             $coachData = new Coach();
             $coachData->__constructOverload($record->ID_TECNICO, $record->NOME,
@@ -35,17 +35,17 @@ class CoachDAO{
     }
 	
     /*
-        The method is responsibility to insert data in database table.
+        The method is responsibility to insert data in dataBase table.
     */
     public function insertCoach(Coach $coachData){
         $sql = "INSERT INTO tecnico (nome , telefone, cpf) 
                 VALUES ('{$coachData->__getCoachName()}', '{$coachData->__getCoachPhone()}',
                         '{$coachData->__getCoachCpf()}')";
-        $this->connection->database->Execute($sql);
+        $this->connection->dataBase->Execute($sql);
     }
 	
     /*
-        The method is responsibility to update data in database table.
+        The method is responsibility to update data in dataBase table.
     */
     public function updateCoach(Coach $coachData){
         $sql = "UPDATE tecnico 
@@ -53,16 +53,16 @@ class CoachDAO{
                     telefone = '{$coachData->__getCoachPhone()}', 
                     cpf = '{$coachData->__getCoachCpf()}' 
                 WHERE id_tecnico = '{$coachData->__getIdCoach()}' ";
-        $this->connection->database->Execute($sql);
+        $this->connection->dataBase->Execute($sql);
         return $coachData;
     }
 	
     /*
-        The method is responsibility to consult in database table through of ID.
+        The method is responsibility to consult in dataBase table through of ID.
     */
     public function consultByIdCoach($id){
         $sql = "SELECT * FROM tecnico WHERE id_tecnico = '{$id}' ";
-        $result = $this->connection->database->Execute($sql);
+        $result = $this->connection->dataBase->Execute($sql);
         $record = $result->FetchNextObject();
         $coachData = new Coach();
         $coachData->__constructOverload($record->ID_TECNICO, $record->NOME,
@@ -71,11 +71,11 @@ class CoachDAO{
     }
 	
     /*
-        The method is responsibility to consult in database table through of Name.
+        The method is responsibility to consult in dataBase table through of Name.
     */
     public function consultByCoachName($coachName){
         $sql = "SELECT * FROM tecnico WHERE nome = '{$coachName}'";
-        $result = $this->connection->database->Execute($sql);
+        $result = $this->connection->dataBase->Execute($sql);
         $record = $result->FetchNextObject();
         $coachData = new Coach();
         $coachData->__constructOverload($record->ID_TECNICO, $record->NOME,
@@ -84,19 +84,19 @@ class CoachDAO{
     }
 
     /*
-        The method is responsibility to delete data in database table.
+        The method is responsibility to delete data in dataBase table.
     */
     public function deleteCoach($id){
         $sql = "DELETE FROM tecnico WHERE id_tecnico = '{$id}' ";
-        $result = $this->connection->database->Execute($sql);
+        $result = $this->connection->dataBase->Execute($sql);
     }
 
     /*
-        The method is responsibility to count registers of Coach in database table. 
+        The method is responsibility to count registers of Coach in dataBase table. 
     */
     public function amountCoachesRecords(){
         $sql = "SELECT COUNT(*) as contagem FROM tecnico";
-        $result = $this->connection->database->Execute($sql);
+        $result = $this->connection->dataBase->Execute($sql);
         $record = $result->FetchNextObject();
         return $record->CONTAGEM;
     }
