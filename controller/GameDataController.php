@@ -60,9 +60,9 @@ class GameDataController {
     /*
         Makes a query data stored games from an id entered by the User.
     */
-    public function _consultByIdGameData($id){
+    public function _consultByIdGameData($idGameData){
         $generalGameData = new GameData();
-        $generalGameData = $this->gameDataDAO->consultByIdGameData($id);
+        $generalGameData = $this->gameDataDAO->consultByIdGameData($idGameData);
         $arrayGameData['amountWarning'] = $generalGameData->__getAmountWarnings();
         $arrayGameData['amountPunishment'] = $generalGameData->__getAmountPunishment();
         $arrayGameData['amountDisqualification'] = $generalGameData->__getAmountDisqualification();
@@ -141,7 +141,7 @@ class GameDataController {
     /*
         Function responsible for deleting the data on game.
     */
-    public function _deleteGameData($id){
-        return $this->gameDataDAO->deleteGameData($id);
+    public function _deleteGameData($idGameData){
+        return $this->gameDataDAO->deleteGameData($idGameData);
     }
 }

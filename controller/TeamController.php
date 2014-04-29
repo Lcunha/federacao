@@ -86,9 +86,9 @@ class TeamController {
     /*
         Responsible role by querying a team using an id.
     */
-    public function _consultByIdTeam($id){
+    public function _consultByIdTeam($idTeam){
         $teamData = new Team();
-        $teamData = $this->teamDAO->consultByIdTeam($id);
+        $teamData = $this->teamDAO->consultByIdTeam($idTeam);
         $arrayDataTeam['idCoach'] = $teamData->__getIdCoach();
         $arrayDataTeam['teamName'] = $teamData->__getTeamName();
         $arrayDataTeam['teamCategory'] = $teamData->__getTeamCategory();

@@ -215,9 +215,9 @@ class PlayerController {
     /*
         Function that handles player data and makes the query their data using its name.
     */
-    public function _consultByPlayerName($nome){
+    public function _consultByPlayerName($playerName){
         $playerData = new Player();
-        $playerData = $this->playerDAO->consultByPlayerName($id);
+        $playerData = $this->playerDAO->consultByPlayerName($playerName);
         $arrayDataPlayer['idTeam'] = $playerData->__getIdTeam();
         $arrayDataPlayer['birthDatePlayer'] = $playerData->__getBirthDatePlayer();
         $arrayDataPlayer['cpfPlayer'] = $playerData->__getCpfPlayer();

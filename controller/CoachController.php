@@ -61,9 +61,9 @@ class CoachController {
     /*
         Function responsible for performing a query by ID.
     */
-    public function _consultByIdCoach($id){
+    public function _consultByIdCoach($idCoach){
         $coachData = new Coach();
-        $coachData = $this->coachDAO->consultByIdCoach($id);
+        $coachData = $this->coachDAO->consultByIdCoach($idCoach);
         $arrayData['coachName'] = $coachData->__getCoachName();
         $arrayData['coachPhone'] = $coachData->__getCoachPhone();
         $arrayData['coachCpf'] = $coachData->__getCoachCpf();
@@ -100,8 +100,8 @@ class CoachController {
         Function responsible for deleting the data on coach.
      */
 
-    public function _deleteCoach($id){
-        return $this->coachDAO->deleteCoach($id);
+    public function _deleteCoach($idCoach){
+        return $this->coachDAO->deleteCoach($idCoach);
     }
 
     /*
