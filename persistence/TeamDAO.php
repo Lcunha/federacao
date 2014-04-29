@@ -43,7 +43,7 @@ class TeamDAO{
             The method is responsibility by to list all registers in database table 
             of type Player.
 	*/
-	public function listAllPlayersTeam(Team $idTeam){
+	public function listAllPlayersTeam($idTeam){
 		$sql = "SELECT * FROM jogador WHERE time_id_time = '{$idTeam}'";
 		$result = $this->connection->dataBase->Execute($sql);
 		while($record = $result->FetchNextObject()){
