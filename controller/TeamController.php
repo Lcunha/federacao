@@ -164,7 +164,7 @@ class TeamController {
             $teamName = $var['nome'];
             $points = $teamData->__getAmountGoals() - $teamData->__getConcededGoals();
             if ($teamData->__getTeamPoints() != 0){
-                $percentage = (int) ( 100 * ($teamData->__getVictoryTeam()) / ($teamData->__getLossTeam()));
+                $percentage = (int) ( 100 * ($teamData->__getVictoryTeam()) / ($teamData->__getPlayerTeam()));
             } else{
                 $percentage = 0;
             }
@@ -174,11 +174,11 @@ class TeamController {
 				<th class=\"th-piqueno th-cor\">" . $pos . "</th>
 				<th class=\"th-cor\">$teamName</th>
 				<th class=\"th-piqueno th-cor\">" . $teamData->__getTeamPoints() . "</th>
-				<th class=\"th-piqueno th-cor\">" . $teamData->__getPlays() . "</th>
+				<th class=\"th-piqueno th-cor\">" . $teamData->__getPlayerTeam() . "</th>
 				<th class=\"th-piqueno th-cor\">" . $teamData->__getVictoryTeam() . "</th>
-				<th class=\"th-piqueno th-cor\">" . $teamData->__getDraws() . "</th>
-				<th class=\"th-piqueno th-cor\">" . $teamData->__getDefeats() . "</th>
-				<th class=\"th-piqueno th-cor\">" . $teamData->__getGoals() . "</th>
+				<th class=\"th-piqueno th-cor\">" . $teamData->__getDrawTeam() . "</th>
+				<th class=\"th-piqueno th-cor\">" . $teamData->__getLossTeam() . "</th>
+				<th class=\"th-piqueno th-cor\">" . $teamData->__getAmountGoals() . "</th>
 				<th class=\"th-piqueno th-cor\">" . $teamData->__getConcededGoals() . "</th>
 				<th class=\"th-piqueno th-colir\">" . $balance . "</th>
 				<th class=\"th-piqueno th-cor\">" . $percentage . "</th>

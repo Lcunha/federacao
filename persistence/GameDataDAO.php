@@ -46,7 +46,7 @@ class GameDataDAO{
                                    punicao, desqualificacao, relatorio, gol)
                 VALUES ('{$generalGameData->__getIdPlayer()}', 
                         '{$generalGameData->__getIdTimePlay()}',
-                        '{$generalGameData->__getAmountWarnings()}', 
+                        '{$generalGameData->__getAmountWarning()}', 
                         '{$generalGameData->__getAmountPunishment()}',
                         '{$generalGameData->__getAmountDisqualification()}',
                         '{$generalGameData->__getAmountReports()}',
@@ -61,7 +61,7 @@ class GameDataDAO{
         $sql = "UPDATE dados 
                 SET jogador_id_jogador = '{$generalGameData->__getIdPlayer()}', 
                     tempo_id_tempo = '{$generalGameData->__getIdTimePlay()}', 
-                    advertencia ='{$generalGameData->__getAmountWarnings()}', 
+                    advertencia ='{$generalGameData->__getAmountWarning()}', 
                     punicao = '{$generalGameData->__getAmountPunishment()}', 
                     desqualificacao = '{$generalGameData->__getAmountDisqualification()}', 
                     relatorio = '{$generalGameData->__getAmountReports()}', 
@@ -75,7 +75,7 @@ class GameDataDAO{
     */
     public function updateGameData(GameData $generalGameData){
         $sql = "UPDATE dados 
-                SET advertencia = '{$generalGameData->__getAmountWarnings()}', 
+                SET advertencia = '{$generalGameData->__getAmountWarning()}', 
                     punicao = '{$generalGameData->__getAmountPunishment()}', 
                     desqualificacao = '{$generalGameData->__getAmountDisqualification()}', 
                     relatorio = '{$generalGameData->__getAmountReports()}', 
