@@ -29,9 +29,9 @@ class CoachDAO{
             $coachData = new Coach();
             $coachData->__constructOverload($record->ID_TECNICO, $record->NOME,
                                              $record->TELEFONE, $record->CPF);
-            $return[] = $coachData;
+            $returnCoachData[] = $coachData;
         }
-        return $return;
+        return $returnCoachData;
     }
 	
     /*
@@ -60,8 +60,8 @@ class CoachDAO{
     /*
         The method is responsibility to consult in dataBase table through of ID.
     */
-    public function consultByIdCoach($id){
-        $sql = "SELECT * FROM tecnico WHERE id_tecnico = '{$id}' ";
+    public function consultByIdCoach(Coach $idCoach){
+        $sql = "SELECT * FROM tecnico WHERE id_tecnico = '{$idCoach}' ";
         $result = $this->connection->dataBase->Execute($sql);
         $record = $result->FetchNextObject();
         $coachData = new Coach();
@@ -73,7 +73,7 @@ class CoachDAO{
     /*
         The method is responsibility to consult in dataBase table through of Name.
     */
-    public function consultByCoachName($coachName){
+    public function consultByCoachName(Coach $coachName){
         $sql = "SELECT * FROM tecnico WHERE nome = '{$coachName}'";
         $result = $this->connection->dataBase->Execute($sql);
         $record = $result->FetchNextObject();
@@ -86,8 +86,8 @@ class CoachDAO{
     /*
         The method is responsibility to delete data in dataBase table.
     */
-    public function deleteCoach($id){
-        $sql = "DELETE FROM tecnico WHERE id_tecnico = '{$id}' ";
+    public function deleteCoach(Coach $idCoach){
+        $sql = "DELETE FROM tecnico WHERE id_tecnico = '{$idCoach}' ";
         $result = $this->connection->dataBase->Execute($sql);
     }
 

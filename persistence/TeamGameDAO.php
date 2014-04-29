@@ -60,7 +60,7 @@ class TeamGameDAO{
 	/*
             The method is responsiblity by to consult in database table through of type Team.
 	*/
-	public function consultByIdTeam($idTeam){
+	public function consultByIdTeam(TeamGame $idTeam){
             $sql = "SELECT * FROM time_jogo WHERE time_id_time = '{$idTeam}'";
             $result = $this->connection->dataBase->Execute($sql);
             $record = $result->FetchNextObject();
@@ -73,8 +73,8 @@ class TeamGameDAO{
 	/*
             The method is responsiblity by to consult in database table through Time.
 	*/
-	public function consultByTime($idTime){
-            $sql = "SELECT * FROM time_jogo WHERE tempo_id_tempo = '{$idTime}'";
+	public function consultByTime(TeamGame $idTimePlay){
+            $sql = "SELECT * FROM time_jogo WHERE tempo_id_tempo = '{$idTimePlay}'";
             $result = $this->connection->dataBase->Execute($sql);
             $record = $result->FetchNextObject();
             $teamDataGame = new TeamGame();
@@ -86,7 +86,7 @@ class TeamGameDAO{
 	/*
             The method is responsibility by to delete data in database table.
 	*/
-	public function deleteTeamGame($idGame){
+	public function deleteTeamGame(TeamGame $idGame){
             $sql = "DELETE FROM jogo_time WHERE jogo_id_jogo = '{$idGame}' ";
             $result = $this->connection->dataBase->Execute($sql);
 	}

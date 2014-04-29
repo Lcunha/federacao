@@ -25,12 +25,12 @@ class RefereeDAO{
 	public function listAllReferees(){
             $sql = "SELECT * FROM arbitro";
             $result = $this->connection->dataBase->Execute($sql);
-            while($register = $result->FetchNextObject()){
+            while($record = $result->FetchNextObject()){
                     $dataReferee = new Referee();
-                    $dataReferee->__constructOverload($register->ID_ARBITRO, 
-                                                       $register->NOME, 
-                                                       $register->TELEFONE, 
-                                                       $register->CPF);
+                    $dataReferee->__constructOverload($record->ID_ARBITRO, 
+                                                       $record->NOME, 
+                                                       $record->TELEFONE, 
+                                                       $record->CPF);
                     $returnReferee[] = $dataReferee;
             }
             return $returnReferee;
@@ -61,45 +61,45 @@ class RefereeDAO{
 	/* 
             Method is responsible for consult in table arbitrator in database mysql through of ID. 
 	*/
-	public function consultByIdReferee($idReferee){
+	public function consultByIdReferee(Referee $idReferee){
             $sql = "SELECT * FROM arbitro WHERE id_arbitro = '{$idReferee}'";
             $result = $this->connection->dataBase->Execute($sql);
-            $register = $result->FetchNextObject();
+            $record = $result->FetchNextObject();
             $dataReferee = new Referee();
-            $dataReferee->__constructOverload($register->ID_ARBITRO, $register->NOME, 
-                                               $register->TELEFONE, $register->CPF);
+            $dataReferee->__constructOverload($record->ID_ARBITRO, $record->NOME, 
+                                               $record->TELEFONE, $record->CPF);
             return $dataReferee;
 	}
 	
 	/* 
             Method is responsible for consult in table arbitrator in database mysql through of NAME. 
 	*/
-	public function consultByRefereeName($refereeName){
+	public function consultByRefereeName(Referee $refereeName){
             $sql = "SELECT * FROM arbitro WHERE nome= '{$refereeName}'";
             $result = $this->connection->dataBase->Execute($sql);
-            $register = $result->FetchNextObject();
+            $record = $result->FetchNextObject();
             $dataDataTeam = new TeamData();
-            $dataDataTeam->__constructOverload($register->ID_ARBITRO, $register->NOME, 
-                                                 $register->CPF);
+            $dataDataTeam->__constructOverload($record->ID_ARBITRO, $record->NOME, 
+                                                 $record->CPF);
             return $dataDataTeam;
 	}
 
 	/* 
             Method is responsible for exclude in table arbitrator in database mysql through of ID. 
 	*/
-	public function deleteReferee($idReferee){
+	public function deleteReferee(Referee $idReferee){
             $sql = "DELETE FROM arbitro WHERE id_arbitro= '{$idReferee}' ";
             $result = $this->connection->dataBase->Execute($sql);
 	}
 
 	/* 
-            Method is responsible for count of registered in table arbitrator in database. 
+            Method is responsible for count of recorded in table arbitrator in database. 
 	*/
 	public function amountRefereesRecords(){
             $sql = "SELECT COUNT(*) as contagem FROM arbitro";
             $result = $this->connection->dataBase->Execute($sql);
-            $register = $result->FetchNextObject();
-            return $register->CONTAGEM;
+            $record = $result->FetchNextObject();
+            return $record->CONTAGEM;
 	}
 }
 

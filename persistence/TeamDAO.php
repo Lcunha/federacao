@@ -43,7 +43,7 @@ class TeamDAO{
             The method is responsibility by to list all registers in database table 
             of type Player.
 	*/
-	public function listAllPlayersTeam($idTeam){
+	public function listAllPlayersTeam(Team $idTeam){
 		$sql = "SELECT * FROM jogador WHERE time_id_time = '{$idTeam}'";
 		$result = $this->connection->dataBase->Execute($sql);
 		while($record = $result->FetchNextObject()){
@@ -81,7 +81,7 @@ class TeamDAO{
 	/*
             The method is responsibility by to insert data in database table.
 	*/
-	public function insertTeam($teamData){
+	public function insertTeam(Team $teamData){
 		$sql = "INSERT INTO time (tecnico_id_tecnico, nome, categoria, endereco, 
 					  data_fundacao, presidente, telefone) 
 			VALUES ('{$teamData->__getIdCoach()}',
@@ -95,7 +95,7 @@ class TeamDAO{
 	/*
             The method is responsibility by to update data in database table.
 	*/
-	public function updateTeam($teamData){
+	public function updateTeam(Team $teamData){
 		$sql = "UPDATE time 
 			SET tecnico_id_tecnico = '{$teamData->__getIdCoah()}',
                             nome = '{$teamData->__getTeamName()}', 
@@ -112,7 +112,7 @@ class TeamDAO{
 	/*
             The method is responsibility by to consult in database table through of ID.
 	*/
-	public function consultByIdTeam($idTeam){
+	public function consultByIdTeam(Team $idTeam){
 		$sql = "SELECT * FROM time WHERE id_time = '{$idTeam}'";
 		$result = $this->connection->dataBase->Execute($sql);
 		$record = $result->FetchNextObject();
@@ -127,7 +127,7 @@ class TeamDAO{
 	/*
             The method is responsibility by to consult in database table through of Name.
 	*/
-	public function consultByTeamName($teamName){
+	public function consultByTeamName(Team $teamName){
 		$sql = "SELECT * FROM time WHERE nome = '{$teamName}'";
 		$result = $this->connection->dataBase->Execute($sql);
 		$record = $result->FetchNextObject();
@@ -143,7 +143,7 @@ class TeamDAO{
 	/*
             The method is responsibility by to delete data in database table.
 	*/
-	public function deleteTeam($idTeam){
+	public function deleteTeam(Team $idTeam){
 		$sql = "DELETE FROM time WHERE id_time = '{$idTeam}' ";
 		$result = $this->connection->dataBase->Execute($sql);
 	}

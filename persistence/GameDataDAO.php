@@ -88,8 +88,8 @@ class GameDataDAO{
     /* 
         The method responsibility is consult in dataBase table through of ID. 
     */
-    public function consultByIdGameData($id){
-        $sql = "SELECT * FROM dados WHERE id_dados = '{$id}'";
+    public function consultByIdGameData(GameData $idGameData){
+        $sql = "SELECT * FROM dados WHERE id_dados = '{$idGameData}'";
         $result = $this->connection->dataBase->Execute($sql);
         $record = $result->FetchNextObject();
         $generalGameData = new GameData();
@@ -107,7 +107,7 @@ class GameDataDAO{
     /*
         The method reponsibility is consult in dataBase table through the ID of type Player. 
     */
-    public function consultByIdPlayer($idPlayer){
+    public function consultByIdPlayer(GameData $idPlayer){
         $sql = "SELECT * FROM dados WHERE jogador_id_jogador = '{$idPlayer}'";
         $result = $this->connection->dataBase->Execute($sql);
         $record = $result->FetchNextObject();
@@ -124,7 +124,7 @@ class GameDataDAO{
     /* 
         The method responsibility is consult in dataBase table through the ID of type Time. 
     */
-    public function consultByIdTimePlay($idTimePlay){
+    public function consultByIdTimePlay(GameData $idTimePlay){
         $sql = "SELECT * FROM dados WHERE tempo_id_tempo = '{$idTimePlay}'";
         $result = $this->connection->dataBase->Execute($sql);
         $record = $result->FetchNextObject();
@@ -141,7 +141,7 @@ class GameDataDAO{
     /* 
         The method responsibility is consult in dataBase table by report. 
     */
-    public function consultByAmountReports($amountReports){
+    public function consultByAmountReports(GameData $amountReports){
         $sql = "SELECT * FROM dados WHERE relatorio = '{$amountReports}'";
         $result = $this->connection->dataBase->Execute($sql);
         $record = $result->FetchNextObject();
@@ -159,8 +159,8 @@ class GameDataDAO{
     /* 
         The method responsibility is delete in dataBase table through of ID. 
     */
-    public function deleteGameData($id){
-        $sql = "DELETE FROM dados WHERE id_dados= '{$id}' ";
+    public function deleteGameData(GameData $idGameData){
+        $sql = "DELETE FROM dados WHERE id_dados= '{$idGameData}' ";
         $result = $this->connection->dataBase->Execute($sql);
     }
 }

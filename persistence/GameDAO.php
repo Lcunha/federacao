@@ -31,9 +31,9 @@ class GameDAO{
                                                     $record->CIDADE, $record->LOCALIZACAO,
                                                     $record->DATA_JOGO, $record->HORA_JOGO,
                                                     $record->DURACAO, $record->TOTAL_7METROS);
-                    $returnGame[] = $gameData;
+                    $returnGameData[] = $gameData;
             }
-            return $returnGame;
+            return $returnGameData;
 	}
 	
 	/*
@@ -57,7 +57,7 @@ class GameDAO{
 	public function updateGame(Game $gameData){
             $sql = "UPDATE jogo 
                     SET espectadores = '{$gameData->__getGameAudience()}',
-                        cidade = '{$gameData->__getGameCityCity()}', 
+                        cidade = '{$gameData->__getGameCity()}', 
                         localizacao = '{$gameData->__getGameLocation()}', 
                         data_jogo = '{$gameData->__getGameDate()}', 
                         duracao = '{$gameData->__getGameDuration()}' 
@@ -69,7 +69,7 @@ class GameDAO{
 	/*
 		The method is responsibility by to consult in database table of ID.
 	*/
-	public function consultByIdGame($idGame){
+	public function consultByIdGame(Game $idGame){
             $sql = "SELECT * FROM jogo WHERE id_jogo = '{$idGame}'";
             $result = $this->connection->dataBase->Execute($sql);
             $record = $result->FetchNextObject();
@@ -84,7 +84,7 @@ class GameDAO{
 	/*
 		The method is responsibility by to consult in database table of game date.
 	*/
-	public function consultByGameDate($gameDate){
+	public function consultByGameDate(Game $gameDate){
             $sql = "SELECT * FROM jogo WHERE data_jogo = '{$gameDate}'";
             $result = $this->connection->dataBase->Execute($sql);
             $record = $result->FetchNextObject();
@@ -99,8 +99,8 @@ class GameDAO{
 	/*
             The method is responsibility by to delete in database table.
 	*/
-	public function deleteGame($idGame){
-            $sql = "DELETE FROM arbitro WHERE id_arbitro = '{$idGame}' ";
+	public function deleteGame(Game $idReferee){
+            $sql = "DELETE FROM arbitro WHERE id_arbitro = '{$idReferee}' ";
             $result = $this->connection->dataBase->Execute($sql);
 	}
 }

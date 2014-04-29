@@ -39,7 +39,7 @@ class TimeDAO{
 	/*
             The method is responsibility by to insert data in database table.
 	*/
-	public function insertGame($idGame){
+	public function insertGame(Time $idGame){
             $sql = "INSERT INTO tempo (jogo_id_jogo, tiro_7metros, tempo_tecnico, placar_time1,
                                        placar_time2,tipo) 
                     VALUES ('{$idGame}',0,0,0,0,0)";
@@ -65,8 +65,8 @@ class TimeDAO{
 	/*
             The method is responsibility by to consult data in database through of ID.
 	*/
-	public function consultByIdTime($id){
-            $sql = "SELECT * FROM tempo WHERE id_tempo = '{$id}'";
+	public function consultByIdTime(Time $idTimePlay){
+            $sql = "SELECT * FROM tempo WHERE id_tempo = '{$idTimePlay}'";
             $result = $this->connection->dataBase->Execute($sql);
             $record = $result->FetchNextObject();
             $dataTime = new Time();
@@ -80,7 +80,7 @@ class TimeDAO{
 	/*
             The method is responsibility by to consult data in database through of amountReports.
 	*/
-	public function consultByReport($amountReports){
+	public function consultByReport(Team $amountReports){
             $sql = "SELECT * FROM tempo WHERE relatorio = '{$amountReports}'";
             $result = $this->connection->dataBase->Execute($sql);
             $record = $result->FetchNextObject();
@@ -95,28 +95,28 @@ class TimeDAO{
 	/*
             The method is responsibility by to delete in database table.
 	*/
-	public function deletePlayer($id){
-            $sql = "DELETE FROM jogador WHERE id_jogador = '{$id}' ";
+	public function deletePlayer(Time $idPlayer){
+            $sql = "DELETE FROM jogador WHERE id_jogador = '{$idPlayer}' ";
             $result = $this->connection->dataBase->Execute($sql);
 	}
 
 	/*
             The method is responsibility by to insert point in atributter scoreboard of teamA and seven meters.
 	*/
-	public function insertGoalsTeam1( $scoreboardTeam1, $amountSevenMetersTotal, $idTime){
+	public function insertGoalsTeam1($scoreboardTeam1, $amountSevenMetersTotal, $idTimePlay){
             $sql = "UPDATE tempo 
                     SET placar_time1 = '{$scoreboardTeam1}', tiro_7metros = '{$amountSevenMetersTotal}' 
-                    WHERE id_tempo = '{$idTime}'";
+                    WHERE id_tempo = '{$idTimePlay}'";
             $result = $this->connection->dataBase->Execute($sql);
 	}
 
 	/*
             The method is responsibility by to insert pont in atributter scoreboard of teamB and seven meters.
 	*/
-	public function insertGoalsTeam2($scoreboardTeam2, $idTime){
+	public function insertGoalsTeam2($scoreboardTeam2, $idTimePlay){
             $sql = "UPDATE tempo 
                     SET placar_time2 = '{$scoreboardTeam2}'  
-                    WHERE id_tempo = '{$idTime}'";
+                    WHERE id_tempo = '{$idTimePlay}'";
             $result = $this->connection->dataBase->Execute($sql);
 	}
 

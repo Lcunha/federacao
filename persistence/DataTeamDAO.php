@@ -61,8 +61,8 @@ class DataTeamDAO{
 	/*
 		The method is responsibility to consult in dataBase table through of ID.
 	*/
-	public function consultByIdDataTeam($id){
-            $sql = "SELECT * FROM dados_campeonato WHERE id_dados_campeonato = '{$id}' ";
+	public function consultByIdDataTeam(DataTeam $idDataTeam){
+            $sql = "SELECT * FROM dados_campeonato WHERE id_dados_campeonato = '{$idDataTeam}' ";
             $result = $this->connection->dataBase->Execute($sql);
             $record = $result->FetchNextObject();
             $dataDataTeam = new DataTeam();
@@ -78,8 +78,8 @@ class DataTeamDAO{
 	/*
             The method is responsibility to consult in dataBase table through the ID of type Team.
 	*/
-	public function consultByIdTeam($id){
-            $sql = "SELECT * FROM dados_campeonato WHERE time_id_time = '{$id}' ";
+	public function consultByIdTeam(DataTeam $idTeam){
+            $sql = "SELECT * FROM dados_campeonato WHERE time_id_time = '{$idTeam}' ";
             $result = $this->connection->dataBase->Execute($sql);
             $record = $result->FetchNextObject();
             $dataDataTeam = new DataTeam();
@@ -189,8 +189,8 @@ class DataTeamDAO{
 	/*
             The method is responsibility by to delete data in dataBase table.
 	*/
-	public function deleteDataTeam($id){
-            $sql = "DELETE FROM dados_campeonato WHERE id_dados_campeonato = '{$id}' ";
+	public function deleteDataTeam(DataTeam $idDataTeam){
+            $sql = "DELETE FROM dados_campeonato WHERE id_dados_campeonato = '{$idDataTeam}' ";
             $result = $this->connection->dataBase->Execute($sql);
 	}
 }

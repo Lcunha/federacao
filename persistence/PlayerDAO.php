@@ -40,7 +40,7 @@ class PlayerDAO{
 	/*
             The method is responsibility by to insert data in database table.
 	*/
-	public function insertPlayer($playerData){
+	public function insertPlayer(Player $playerData){
             $sql = "INSERT INTO jogador (time_id_time, nome, data_nascimento, cpf, numero) 
                     VALUES ('{$playerData->__getPlayerName()}','{$playerData->__getIdTeam()}',
                             '{$playerData->__getBirthDatePlayer()}',
@@ -51,7 +51,7 @@ class PlayerDAO{
 	/*
             The method is responsibility by to update data in database table.
 	*/
-	public function updatePlayer($playerData){
+	public function updatePlayer(Player $playerData){
             $sql = "UPDATE jogador 
                     SET time_id_time = '{$playerData->__getIdTeam()}',
                         nome = '{$playerData->__getPlayerName()}', 
@@ -66,8 +66,8 @@ class PlayerDAO{
 	/*
             The method is responsibility by to consult in database table through of ID.
 	*/
-	public function consultByIdPlayer($id){
-            $sql = "SELECT * FROM jogador WHERE id_jogador = '{$id}'";
+	public function consultByIdPlayer(Player $idPlayer){
+            $sql = "SELECT * FROM jogador WHERE id_jogador = '{$idPlayer}'";
             $result = $this->connection->dataBase->Execute($sql);
             $record = $result->FetchNextObject();
             $playerData = new Player();
@@ -80,7 +80,7 @@ class PlayerDAO{
 	/*
             The method is responsibility by to consult in database table through of Name.
 	*/
-	public function consultByPlayerName($playerName){
+	public function consultByPlayerName(Player $playerName){
             $sql = "SELECT * FROM jogador WHERE nome = '{$playerName}'";
             $result = $this->connection->dataBase->Execute($sql);
             $record = $result->FetchNextObject();
@@ -94,7 +94,7 @@ class PlayerDAO{
 	/*
             The method is responsibility by to consult in database table through of data Team.
 	*/
-	public function consultPlayerByIdTeam($teamData){
+	public function consultPlayerByIdTeam(Player $teamData){
             $sql = "SELECT * FROM jogador WHERE time_id_time = '{$teamData->__getIdTeam()}'";
             $result = $this->connection->dataBase->Execute($sql);
             $record = $result->FetchNextObject();
@@ -108,7 +108,7 @@ class PlayerDAO{
 	/*
             The mthod is responsibility by to delete data in databse table.
 	*/
-	public function deletePlayer($idPlayer){
+	public function deletePlayer(Player $idPlayer){
             $sql = "DELETE FROM jogador WHERE id_jogador = '{$idPlayer}' ";
             $result = $this->connection->dataBase->Execute($sql);
 	}
