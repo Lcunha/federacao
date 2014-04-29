@@ -51,13 +51,13 @@ class TimeDAO{
 	*/
 	public function updateTime(Tempo $dataTime){
             $sql = "UPDATE tempo 
-                    SET jogo_id_jogo='{$dataTime->__getIdJogo()}',
-                        tipo='{$dataTime->__getTipo()}', 
-                        tiro_7metros='{$dataTime->__getTiro7Metros()}',
-                        tempo_tecnico='{$dataTime->__getTempoTecnico()}', 
-                        placar_time1='{$dataTime->__getplacarTime1()}', 
-                        placar_time2='{$dataTime->__getPlacarTime2()}'  
-                    WHERE id_tempo='{$dataTime->__getIdTempo()}' ";
+                    SET jogo_id_jogo='{$dataTime->__getIdPlayer()}',
+                        tipo='{$dataTime->__getType()}', 
+                        tiro_7metros='{$dataTime->__getAmountSevenMetersTotal()}',
+                        tempo_tecnico='{$dataTime->__getTimeCoach()}', 
+                        placar_time1='{$dataTime->__getScoreboardTeam1()}', 
+                        placar_time2='{$dataTime->__getScoreboardTeam1()}'  
+                    WHERE id_tempo='{$dataTime->__getIdTimePlay()}' ";
             $this->connection->banco->Execute($sql);
             return $dataTime;
 	}
