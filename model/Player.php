@@ -4,19 +4,19 @@
     Name: Player.php
     Description: This is the class that contains the attributes, accessor methods 
     and constructors of a player. The player must contains 'idPlayer', 'idTeam', 
-    'playerName', 'birthDatePlayer', 'cpf' and 'playerNumber'. 
+    'playerName', 'birthDatePlayer', 'cpfPlayer' and 'playerNumber'. 
 */
 class Player{
     private $idPlayer;
     private $idTeam;
     private $playerName;
     private $birthDatePlayer;
-    private $cpf;
+    private $cpfPlayer;
     private $playerNumber;
 	
     /*
-        Default construct declaration. Using constructor methods is appropriate for any initialization 
-        that the object may need before being used.
+        Default construct declaration. Using constructor methods is appropriate for any  
+        initialization that the object may need before being used.
     */
     public function __construct(){
 		
@@ -25,13 +25,13 @@ class Player{
     /*
         Overload construct.
     */
-    public function __constructOverload($idPlayer, $idTeam, $playerName, $birthDatePlayer, $cpf, 
-                                        $playerNumber){
+    public function __constructOverload($idPlayer, $idTeam, $playerName, $birthDatePlayer,  
+                                        $cpfPlayer, $playerNumber){
     	$this->idPlayer = $idPlayer;
 	$this->idTeam = $idTeam;
 	$this->playerName = $playerName;
 	$this->birthDatePlayer = $birthDatePlayer;
-	$this->cpf = $cpf;
+	$this->cpfPlayer = $cpfPlayer;
 	$this->playerNumber = $playerNumber;
     }
         
@@ -78,17 +78,17 @@ class Player{
     }
         
     /*
-        Method to verify the attribute 'cpf' of the class.
+        Method to verify the attribute 'cpfPlayer' of the class.
     */
-    public function __getCpf(){
-	return $this->cpf;
+    public function __getCpfPlayer(){
+	return $this->cpfPlayer;
     }
         
     /*
-        Method to modify the attribute 'cpf' of the class.
+        Method to modify the attribute 'cpfPlayer' of the class.
     */
-    public function __setCpf($cpf){
-	$this->cpf = $cpf;
+    public function __setCpfPlayer($cpfPlayer){
+	$this->cpfPlayer = $cpfPlayer;
     }
         
     /*

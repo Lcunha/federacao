@@ -4,8 +4,9 @@
     Name: Tempo.php
     Description: This is the class that contains the attributes, accessor methods 
     and constructors of the time, time spends in a game. The time must contains 
-    'idTimePlay', 'idPlayer', 'type', 'amountPunishment', 'warning', 'amountDisqualification', 
-    'amountReports', 'amountSevenMetersTotal', 'tempoTecnico', 'scoreboardTeam1' and 'scoreboardTeam2'. 
+    'idTimePlay', 'idPlayer', 'type', 'amountPunishment', 'amountWarning', 
+    'amountDisqualification', 'amountReports', 'amountSevenMetersTotal', 'timeCoach', 
+ *  'scoreboardTeam1' and 'scoreboardTeam2'. 
 */
 class Time{
     
@@ -32,8 +33,8 @@ class Time{
     /*
         Overload construct.
     */
-    public function __constructOverload($idTimePlay, $idPlayer, $type, $amountSevenMetersTotal, $timeCoach,
-                                        $scoreboardTeam1, $scoreboardTeam2){
+    public function __constructOverload($idTimePlay, $idPlayer, $type, $amountSevenMetersTotal, 
+                                        $timeCoach, $scoreboardTeam1, $scoreboardTeam2){
 	$this->idTimePlay = $idTimePlay;
 	$this->idPlayer = $idPlayer;
 	$this->type = $type;
@@ -86,7 +87,7 @@ class Time{
     }
         
     /*
-        Method to verify the attribute 'avertencia' of the class.
+        Method to verify the attribute 'amountWarning' of the class.
     */
     public function __getAmountWarning(){
 	return $this->amountWarning;

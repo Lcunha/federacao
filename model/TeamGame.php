@@ -4,15 +4,15 @@
     Name: TeamGame.php
     Description: This is the class that contains the attributes, accessor methods 
     and constructors of the team that is playing the game. The team in the game 
-    must contains 'idJogo' and 'idTime'. 
+    must contains 'idJogo' and 'idTeam'. 
 */
 class TeamGame{
     private $idGame;
     private $idTeam;
 	
     /*
-        Default construct declaration. Using constructor methods is appropriate for any initialization 
-        that the object may need before being used.
+        Default construct declaration. Using constructor methods is appropriate for any 
+        initialization that the object may need before being used.
     */
     public function __construct(){
 
@@ -21,9 +21,9 @@ class TeamGame{
     /*
         Overload construct.
     */
-    public function __constructOverload($idGame, $idTime){
+    public function __constructOverload($idGame, $idTeam){
     	$this->idGame = $idGame;
-	$this->idTime = $idTime;
+	$this->idTeam = $idTeam;
     }
         
     /*
@@ -41,16 +41,16 @@ class TeamGame{
     }
         
     /*
-        Method to verify the attribute 'idTime' of the class.
+        Method to verify the attribute 'idTeam' of the class.
     */
-    public function __getIdTime(){
-	return $this->idTime;
+    public function __getIdTeam(){
+	return $this->idTeam;
     }
         
     /*
-        Method to modify the attribute 'idTime' of the class.
+        Method to modify the attribute 'idTeam' of the class.
     */
-    public function __setIdTime($idTime){
-	$this->idTime = $idTime;
+    public function __setIdTeam($idTeam){
+	$this->idTeam = $idTeam;
     }
 }

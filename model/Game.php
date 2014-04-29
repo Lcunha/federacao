@@ -17,8 +17,8 @@ class Game{
     private $total7Meters;
 	
     /*
-        Default construct declaration. Using constructor methods is appropriate for any initialization 
-        that the object may need before being used.
+        Default construct declaration. Using constructor methods is appropriate for 
+        any initialization that the object may need before being used.
     */
     public function __construct(){
 	
@@ -27,8 +27,8 @@ class Game{
     /*
         Overload construct.
     */
-    public function __constructOverload($idGame, $gameAudience, $gameCity, $gameLocation, $gameDate,
-                                        $gameTime, $gameDuration, $total7Meters){
+    public function __constructOverload($idGame, $gameAudience, $gameCity, $gameLocation, 
+                                        $gameDate, $gameTime, $gameDuration, $total7Meters){
 	$this->idGame = $idGame;
 	$this->gameAudience = $gameAudience;
 	$this->gameCity = $gameCity;

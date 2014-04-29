@@ -13,8 +13,8 @@ class Referee{
     private $refereeCpf;
 
     /*
-        Default construct declaration. Using constructor methods is appropriate for any initialization 
-        that the object may need before being used.
+        Default construct declaration. Using constructor methods is appropriate for any 
+        initialization that the object may need before being used.
     */
     public function __construct(){
    

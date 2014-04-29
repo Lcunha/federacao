@@ -4,8 +4,8 @@
     Name: Team.php
     Description: This is the class that contains the attributes, accessor methods 
     and constructors of a team. The team must contains 'idTeam', 'idCoach',  
-    'teamName', 'teamCategory', 'teamAddress', 'teamFoundationDate', 'teamPresident', 'teamPhone' and 
-    'teamPoints'. 
+    'teamName', 'teamCategory', 'teamAddress', 'teamFoundationDate', 'teamPresident', 'teamPhone'  
+    and 'teamPoints'. 
 */
 class Team{
     private $idTeam;
@@ -19,8 +19,8 @@ class Team{
     private $teamPoints;
 	
     /*
-        Default construct declaration. Using constructor methods is appropriate for any initialization 
-        that the object may need before being used.
+        Default construct declaration. Using constructor methods is appropriate for any 
+        initialization that the object may need before being used.
     */
     public function __construct(){
 

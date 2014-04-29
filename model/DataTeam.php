@@ -4,13 +4,13 @@
     Name: DadosTime.php
     Description: This is the class that contains the attributes, accessor methods 
     and constructors about all team data. The team data must contains 
-    'idDataTeam', 'Team', 'teamPoints', 'playerTeam', 'victoryTeam', 'empates', 'derrotas',
-    'gols' and 'golsLevados'. 
+    'idDataTeam', 'idTeam', 'teamPoints', 'playerTeam', 'victoryTeam', 'drawTeam', 
+    'lossTeam', 'amountGoals' and 'concededGoals'. 
 */
 class DataTeam{
     
     private $idDataTeam;
-    private $Team;
+    private $idTeam;
     private $teamPoints;
     private $playerTeam;
     private $victoryTeam;
@@ -20,8 +20,8 @@ class DataTeam{
     private $concededGoals;
 	
     /*
-        Default construct declaration. Using constructor methods is appropriate for any initialization 
-        that the object may need before being used.
+        Default construct declaration. Using constructor methods is appropriate for any 
+        initialization that the object may need before being used.
     */
     public function __construct(){
 	
@@ -30,10 +30,11 @@ class DataTeam{
     /*
         Overload construct.
     */
-    public function __constructOverload($idDataTeam, $Team, $teamPoints, $playerTeam, $victoryTeam,
-                                        $drawTeam, $lossTeam, $amountGoals, $concededGoals){
+    public function __constructOverload($idDataTeam, $idTeam, $teamPoints, $playerTeam, 
+                                        $victoryTeam, $drawTeam, $lossTeam, $amountGoals, 
+                                        $concededGoals){
 	$this->idDataTeam = $idDataTeam;
-	$this->Team = $Team;
+	$this->idTeam = $idTeam;
 	$this->teamPoints = $teamPoints ;
 	$this->playerTeam = $playerTeam;
 	$this->victoryTeam = $victoryTeam;
@@ -58,17 +59,17 @@ class DataTeam{
     }
         
     /*
-        Method to verify the attribute 'Team' of the class.
+        Method to verify the attribute 'idTeam' of the class.
     */
-    public function __getTeam(){
-	return $this->Team;
+    public function __getIdTeam(){
+	return $this->idTeam;
     }
         
     /*
-        Method to modify the attribute 'Team' of the class.
+        Method to modify the attribute 'idTeam' of the class.
     */
-    public function __setTeam($Team){
-    	$this->Team = $Team;
+    public function __setIdTeam($idTeam){
+    	$this->idTeam = $idTeam;
     }
         
     /*
@@ -88,7 +89,7 @@ class DataTeam{
     /*
         Method to verify the attribute 'playerTeam' of the class.
     */
-    public function __getJogos(){
+    public function __getPlayerTeam(){
 	return $this->playerTeam;
     }
        
@@ -114,56 +115,56 @@ class DataTeam{
     }
         
     /*
-        Method to verify the attribute 'empates' of the class.
+        Method to verify the attribute 'drawTeam' of the class.
     */
     public function __getDrawTeam(){
     	return $this->drawTeam;
     }
         
     /*
-        Method to modify the attribute 'empates' of the class.
+        Method to modify the attribute 'drawTeam' of the class.
     */
-    public function __setdrawTeam($drawTeam){
+    public function __setDrawTeam($drawTeam){
 	$this->drawTeam = $drawTeam;
     }
         
     /*
-        Method to verify the attribute 'derrotas' of the class.
+        Method to verify the attribute 'lossTeam' of the class.
     */
     public function __getLossTeam(){
 	return $this->lossTeam;
     }
         
     /*
-        Method to modify the attribute 'derrotas' of the class.
+        Method to modify the attribute 'lossTeam' of the class.
     */
     public function __setLossTeam($lossTeam){
 	$this->lossTeam = $lossTeam;
     }
         
     /*
-        Method to verify the attribute 'gols' of the class.
+        Method to verify the attribute 'amountGoals' of the class.
     */
     public function __getAmountGoals(){
 	return $this->amountGoals;
     }
         
     /*
-        Method to modify the attribute 'gols' of the class.
+        Method to modify the attribute 'amountGoals' of the class.
     */
     public function __setAmountGoals($amountGoals){
     	$this->amountGoals = $amountGoals;
     }
         
     /*
-        Method to verify the attribute 'golsLevados' of the class.
+        Method to verify the attribute 'concededGoals' of the class.
     */
     public function __getConcededGoals(){
 	return $this->concededGoals;
     }
         
     /*
-        Method to modify the attribute 'golsLevados' of the class.
+        Method to modify the attribute 'concededGoals' of the class.
     */
     public function __setConcededGoals($concededGoals){
 	$this->concededGoals = $concededGoals;
