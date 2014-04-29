@@ -41,9 +41,9 @@ class TimeController {
           			<td>" . $dataTime->__getScoreboardTeam2() . "</td>
           			<td>" . $dataTime->__getType() . "</td>
           			<td>
-            			<a href=\"?pag=tempo&action=edit&id=" . $dataTime->__getIdTempo() .
+            			<a href=\"?pag=tempo&action=edit&id=" . $dataTime->__getIdTimePlay() .
                     "\"><img src=\"./views/images/edit.png\" width=\"16\" height=\"16\" /></a>
-            			<a href=\"?pag=tempo&action=exclude&id=" . $dataTime->__getIdTempo() . 
+            			<a href=\"?pag=tempo&action=exclude&id=" . $dataTime->__getIdTimePlay() . 
                     "\"><img src=\"./views/images/delete.png\" width=\"16\" height=\"16\" /></a>
           			</td>
 			</tr>";
@@ -57,13 +57,13 @@ class TimeController {
     public function _consultByIdTime($idTime){
         $dataTime = new Time();
         $dataTime = $this->timeDAO->consultByIdTime($idTime);
-        $arrayData['idTempo'] = $dataTime->__getIdTempo();
-        $arrayData['idJogo'] = $dataTime->__getIdJogo();
-        $arrayData['tipo'] = $dataTime->__getTipo();
-        $arrayData['tiro7Metros'] = $dataTime->__getTiro7Metros();
-        $arrayData['tempoTecnico'] = $dataTime->__getTempoTecnico();
-        $arrayData['placarTime1'] = $dataTime->__getPlacarTime1();
-        $arrayData['placarTime2'] = $dataTime->__getPlacarTime2();
+        $arrayData['idTempo'] = $dataTime->__getIdTimePlay();
+        $arrayData['idJogo'] = $dataTime->__getIdPlayer();
+        $arrayData['tipo'] = $dataTime->__getType();
+        $arrayData['tiro7Metros'] = $dataTime->__getAmountSevenMetersTotal();
+        $arrayData['tempoTecnico'] = $dataTime->__getTimeCoach();
+        $arrayData['placarTime1'] = $dataTime->__getScoreboardTeam1();
+        $arrayData['placarTime2'] = $dataTime->__getScoreboardTeam2();
 
         return $arrayData;
     }
