@@ -42,6 +42,10 @@ switch($page){
 	case 'duranteJogo':
 		include(__APP_PATH.'/views/duringGame.php');
 		break;
+        case 'ingles':
+                include (__APP_PATH.'/views/languages/english/initialIngles.php');
+		break;
+            
 	default:
 		include(__APP_PATH.'/views/initial.php');	
 }

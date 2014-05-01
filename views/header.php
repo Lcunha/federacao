@@ -17,7 +17,10 @@
 	
     	<div id="medida">
             <nav>
-            <!--<img src="./views/images/imagemFED.jpg" width="100" height="100" style="padding: 4px 10px;" > -->
+                
+           <a href="?pag=port"><img src="./views/images/port.png" width="100" height="100" style="padding: 4px 10px;" /></a> 
+         
+           <a href="?pag=ingles"> <img src="./views/images/ing.png" width="100" height="100" style="padding: 4px 10px;" /></a> 
         		<ul>
                 	<li class="borda borda-direita"><a href="">Cadastros</a>
                 		<ul> 
