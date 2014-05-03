@@ -18,10 +18,11 @@
     	<div id="medida">
             <nav>
                 
-           <a href="?pag=port"><img src="./views/images/port.png" width="100" height="100" style="padding: 4px 10px;" /></a> 
+         <!--  <a href="?pag=port"><img src="./views/images/port.png" width="100" height="100" style="padding: 4px 10px;" /></a> 
          
            <a href="?pag=ingles"> <img src="./views/images/ing.png" width="100" height="100" style="padding: 4px 10px;" /></a> 
-        		<ul>
+        -->
+         <ul>
                 	<li class="borda borda-direita"><a href="">Cadastros</a>
                 		<ul> 
                     		<li><a href="?pag=tecnico">Tecnicos</a></li>
