@@ -18,6 +18,7 @@ class CoachController {
 
     /*
         Function responsible for selecting the coach data in the table.
+        It has no input parameter and returns an array with all the data of selected coach.
     */
     public function _listCoachesForSelect(){
         $coachData = new Coach();
@@ -31,6 +32,7 @@ class CoachController {
     }
 
     /*
+        The function has no input parameter and returns an array called tr with all data selected coach.
         List the function responsible for the coach data in the table.
      */
     public function _listAllCoachesForTable(){
@@ -59,6 +61,9 @@ class CoachController {
     }
 
     /*
+        The function receives as input parameter the id of a particular coach and return an array with all the 
+        data the coach identified by this id. 
+        The query function to another function of the class coachDAO that queries such data in the database. 
         Function responsible for performing a query by ID.
     */
     public function _consultByIdCoach($idCoach){
@@ -73,6 +78,9 @@ class CoachController {
 
     /*
         Function responsible for performing a query by name.
+        The function receives as input parameter the name of a 
+        coach and class return calls another function that returns the coachDAO 
+        class consulting a coach returning your data.
      */
     public function _consultByCoachName($coachName){
         return $this->coachDAO->consultByCoachName($coachName);
@@ -80,6 +88,8 @@ class CoachController {
 
     /*
         Function responsible for saving the data of a new coach already registered.
+        The function receives as input parameter the name of a coach your phone and 
+        your ID, saving the system. The function has no return.
      */
     public function _saveCoach($coachName, $coachPhone, $coachCpf){
         $coachData = new Coach();
@@ -89,6 +99,9 @@ class CoachController {
 
     /*
         Function responsible for updating the data of coach.
+        The function receives as input parameter the name of a coach 
+        your phone and your ID, your id and updating all the data entering as parameter 
+        of the function in the database. The function has no return.
     */
     public function _updateCoach($idCoach, $coachName, $coachPhone, $coachCpf){
         $coachData = new Coach();
@@ -98,6 +111,7 @@ class CoachController {
 
     /*
         Function responsible for deleting the data on coach.
+     
      */
 
     public function _deleteCoach($idCoach){
