@@ -111,15 +111,17 @@ class CoachController {
 
     /*
         Function responsible for deleting the data on coach.
-     
-     */
-
+        The function receives as input parameter hi a coach. 
+        The return of this function is responsible for deleting the data in that coach database.
+    */
     public function _deleteCoach($idCoach){
         return $this->coachDAO->deleteCoach($idCoach);
     }
 
     /*
         Function responsible for counting how many coaches records.
+        The function has no input parameter and returns the number 
+        of coaches registered in the system.
     */
     public function _amountCoachesRecords(){
         return $this->coachDAO->amountCoachesRecords();
