@@ -18,6 +18,7 @@ class GameController {
 
     /*
         Function responsible for listing the data of a game at a table.
+        The function has no input parameter and returns an array with all the data of all table games.
     */
     public function _listAllGamesForTables(){
         $gameData = new Game();
@@ -47,6 +48,8 @@ class GameController {
 
     /*
         Function responsible for listing the data of a game.
+        A função não possui nenhum parametro de entrada. E retorna a 
+        chamada da função listAllGame da classe gameDAO. 
     */
     public function _listAllGames(){
         return $this->gameDAO->listAllGames();
@@ -54,6 +57,8 @@ class GameController {
 
     /*
         Function responsible for performing a query by ID.
+        The function has as input parameter the id of the game.
+        And returns an aray with all game data.
     */
     public function _consultByIdGame($idGame){
         $gameData = new Game();
@@ -69,7 +74,9 @@ class GameController {
     }
 
     /*
-        Function responsible for performing a query by date game.
+        Function responsible for performing a query by date game. A função possui como 
+        parametro de entrada a data de um jogo cadastrado. E retorna uma consulta 
+        no banco a partir da data desse jogo cadastrado.
     */
     public function _consultByGameDate($gameDate){
         return $this->gameDAO->consultByGameDate($gameDate);
@@ -77,6 +84,9 @@ class GameController {
 
     /*
         Function responsible for entering data of a game.
+        The function has as input parameter audience game, 
+        city game, game location, date game, team game, game duration, total7 meters.
+        The function returns all the data entered into the database.
     */
     public function _insertGame($gameAudience, $gameCity, $gameLocation, $gameDate, $gameTime, $gameDuration, $total7Meters){
         $gameData = new Game();
@@ -95,6 +105,8 @@ class GameController {
 
     /*
         Function responsible for saving the data of a new game already registered.
+        The function has as input parameter of id game, game audience, city game, 
+        game location, date game, game duration. The function has no return.
      */
     public function _saveGame($idTime1, $idTime2, $gameAudience, $gameCity, $gameLocation, $gameDate, $gameTime, $gameDuration){
         $gameData = new Game();
@@ -104,6 +116,9 @@ class GameController {
 
     /*
         Function responsible for deleting the data on game.
+        The function deletes a game on the table from sending the game id as 
+        parameter the function.The function returns the call of the function deleteGame 
+        gameDAO class, performing a deletion in the database.
     */
     public function _deleteGame($idGame){
         return $this->gameDAO->deleteGame($idGame);
