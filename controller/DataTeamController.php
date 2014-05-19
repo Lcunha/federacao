@@ -16,7 +16,8 @@ class DataTeamController {
     }
 
     /*
-        Function responsible for listing all data Team.
+        Function responsible for listing all data Team. 
+        The function has no input paramentro.
     */
     public function _listAllData(){
         return $this->dataTeamDAO->listAllDataTeam();
@@ -24,6 +25,8 @@ class DataTeamController {
 
     /*
         Function responsible for performing a query on a team by ID.
+        The function has as input the id of the data for a particular team and returns an 
+        array with all the data the team id that the function receives input.
      */
     public function _consultByIdDataTeam($idDataTeam){
         $dataDataTeam = new DataTeam();
@@ -43,9 +46,13 @@ class DataTeamController {
     }
 
     /*
-        Responsible for updating the data team.
+        Responsible for updating the data team.The function has as input 
+        the data of a team and its return inserting these data into a table that stores the data team.
+        The function has as input idDataTeam, teamPoints, playerTeam, victoryTeam, drawTeam, lossTeam, 
+        amountGoals, concededGoals. This function has no return.
      */
-    public function _updateDataTeam($idDataTeam, $teamPoints, $playerTeam, $victoryTeam, $drawTeam, $lossTeam, $amountGoals, $concededGoals){
+    public function _updateDataTeam($idDataTeam, $teamPoints, $playerTeam, $victoryTeam, $drawTeam, 
+                                    $lossTeam, $amountGoals, $concededGoals){
         $dataDataTeam = new DataTeam();
         $dataDataTeam->__constructOverload(0, $idDataTeam, $teamPoints, $playerTeam, $victoryTeam, 
                                              $drawTeam, $lossTeam, $amountGoals, $concededGoals);
@@ -53,7 +60,10 @@ class DataTeamController {
     }
 
     /*
-        Responsible for updating the scores of times in matches.
+        Responsible for updating the scores of times in matches. 
+        The function has as input the scores of the teams that 
+        will be atualizandos, they being idTeam1, idTeam2, goalsTeam1, goalsTeam2.
+        The function returns the updated points of matches.
      */
     public function _updateDataPoint($idTeam1, $idTeam2, $goalsTeam1, $goalsTeam2) {
         if ($goalsTeam1 > $goalsTeam2) {
@@ -71,6 +81,8 @@ class DataTeamController {
 
     /*
         Function responsible for deleting the data on time.
+        The function takes the id of a particular data table and 
+        return the function call of dataTeamDAO class that excludes idDataTeam database.
      */
     public function _deleteDataTeam($idDataTeam) {
         return $this->dataTeamDAO->deleteDataTeam($idDataTeam);
