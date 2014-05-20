@@ -17,7 +17,9 @@ class RefereeController {
 
     /*
         Function responsible for taking the data registered by the referee system 
-        and store the information in a vector.
+        and store the information in a vector.The function has no input parameter and 
+        performs a query on the database of all registered in the system in a table referees, 
+        has as return an array with all the data of registered referees.
      */
     public function _listAllRefereesForTables(){
         $dataReferee = new Referee();
@@ -41,7 +43,9 @@ class RefereeController {
     }
 
     /*
-        Responsible function to list all registered referees
+        Responsible function to list all registered referees.
+        The function has no input parameter and returns the data of all referees 
+        registered in the database alert function listAllReferees found on refereesDAO class.
      */
     public function _listAllReferees(){
         return $this->refereeDAO->listAllReferees();

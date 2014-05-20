@@ -297,6 +297,8 @@ class PlayerController {
 
     /*
         Function that query on all data Gunners players present in classes.
+        The function has no input parameter and performs a query on the database of 
+        all registered in the system Gunners, has as return an array with all the data of registered gunners.
     */
     public function _listGunners(){
         $arrayDataGunner = $this->playerDAO->listGunners();
@@ -316,6 +318,9 @@ class PlayerController {
 
     /*
         Function that query on all data Gunners players present in classes.
+        The function has no input parameter and performs a query on the database 
+        of all players fear registered in the system, has to return an array with 
+        all the data of registered players fear.
     */
     public function _listFearPlayers(){
         $arrayDataFearPlayers = $this->playerDAO->listFearPlayers();
