@@ -159,6 +159,8 @@ class GameDataController {
 
     /*
         Function responsible for deleting the data on game.
+        The function receives as a parameter the id of the team 
+        that will be deleted and calls the function of GameDataDAO class that performs the deletion in the database.
     */
     public function _deleteGameData($idGameData){
         return $this->gameDataDAO->deleteGameData($idGameData);

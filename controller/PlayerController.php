@@ -16,7 +16,9 @@ class PlayerController {
     }
 
     /*
-        Responsible function to list all the data for the registered players to be selected.
+       Responsible function to list all the data for the registered players to be selected.
+       The function has no input parameter. And returns an array with all 
+       players registered in the database.
     */
     public function _listAllPlayersForSelect(){
         $playerData = new Player();
@@ -31,6 +33,8 @@ class PlayerController {
 
     /*
         Responsible function to list all player data in a table.
+        The function has no input parameter. Stores all data of a 
+        player in an array and returns this array with data.
     */
     public function _listAllPlayersAllTables(){
         $playerData = new Player();
@@ -60,6 +64,9 @@ class PlayerController {
 
     /*
         Function responsible for taking all player data assembling a team.
+        It lists all players contained in the database of players. And select players 
+        to form a team, paramentro receives as input the id of the team and the id of a 
+        player time.E returns an array that stores all this data.
     */
     public function _listAllPlayersForDocketTeamA($idTeam, $idTimePlay){
         $idPlayer[0] = -1;
@@ -125,6 +132,8 @@ class PlayerController {
 
     /*
         Function responsible for taking all registered players already and simulate a team with them.
+        It lists all players contained in the data of the second team players. Paramentro receives 
+        as input the id of the team and the id of a player time.E returns an array that stores all this data.
     */
     public function __listAllPlayersForDocketTeamB($idTeam, $idTimePlay){
         $idPlayer[0] = -1;
@@ -185,6 +194,9 @@ class PlayerController {
 
     /*
         Function responsible for listing all players.
+        It has no input parameter and returns a list of all the players that 
+        have already been registered in the database, this list and returned through the 
+        function listAllPlayer found on playerDAO class.
     */
     public function _listAllPlayers(){
         return $this->playerDAO->listAllPlayers();
@@ -192,6 +204,9 @@ class PlayerController {
 
     /*
         Performs query a player from a selected id.
+        Has as input parameter the variable that stores the id 
+        of a player and holds an appointment at the bank through this database id, 
+        the result of this query is stored in an array and the function returns this array.
     */
     public function _consultByIdPlayer($idPlayer){
         $playerData = new Player();
@@ -207,6 +222,9 @@ class PlayerController {
 
     /*
         Performs query a player from a selected team.
+        Has as input parameter the variable that stores the id of 
+        a team, and queries for all teams registered in the database data through this id. 
+        It returns the function call consultPlayerByIdTeam present in class playerDAO
     */
     public function _consultPlayerByIdTeam($idTeam){
         return $this->playerDAO->consultPlayerByIdTeam($idTeam);
@@ -214,6 +232,8 @@ class PlayerController {
 
     /*
         Function that handles player data and makes the query their data using its name.
+        Receives as input parameter the player's name and that name through query data that player in the database.
+        Returns an array of all player data stored consulted.
     */
     public function _consultByPlayerName($playerName){
         $playerData = new Player();
@@ -228,6 +248,8 @@ class PlayerController {
 
     /*
         Function responsible for inserting a new player.
+        Receives as input parameter data that player returns and the call of 
+        insertPlayer function that is in playerDAO class.
     */
     public function _insertPlayer($playerData){
         return $this->playerDAO->insertPlayer($playerData);
@@ -235,6 +257,9 @@ class PlayerController {
 
     /*
         Function responsible for updating embed player.
+        Receives as parameter input all data from player to be upgraded, and they id team, player name,
+        birth date player, cpf player, numer player. Sending all these data through updateplayer 
+        function it updates all data contained in playerDAO class.
     */
     public function _updatePlayer($idPlayer, $idTeam, $playerName, $birthDatePlayer, $cpfPlayer, $playerNumer){
         $playerData = new Player();
@@ -244,6 +269,8 @@ class PlayerController {
 
     /*
         Function responsible for saving the data of a player.
+        Receives as input parameter all player data to be saved in the 
+        system as player name, team id, birth date player, cpf player, player number.Nao has no return.
     */
     public function _savePlayer($playerName, $idTeam, $birthDatePlayer, $cpfPlayer, $playerNumber){
         $playerData = new Player();
@@ -253,6 +280,8 @@ class PlayerController {
 
     /*
         Function responsible for deleting the data on game.
+        Receives as input parameter the id that player will be excluded 
+        from the system and delete all your data. Returns the function call which is in deletePlayer playerDAO class.
     */
     public function _deletePlayer($idPlayer){
         return $this->playerDAO->deletePlayer($idPlayer);
@@ -260,6 +289,7 @@ class PlayerController {
 
     /*
         Function responsible for counting the records on how many players were registered.
+        It has no input parameter and returns the function call amountPlayersRecords found on playerDAO class.
     */
     public function _amountPlayersRecords(){
         return $this->playerDAO->amountPlayersRecords();
