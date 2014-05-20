@@ -20,6 +20,8 @@ class GameDataController {
 
     /*
         Function responsible for receiving all game data reported by the User System.
+        The function has no input parameter returns data over a game already registered 
+        in the database of the system through an array that stores all the game data.
     */
     public function _listAllDataForTables(){
         $generalGameData = new GameData();
@@ -52,6 +54,8 @@ class GameDataController {
 
     /*
         Function responsible for listing all data of a game.
+        The function has no input parameter returns over all 
+        data contained in a game gameDataDAO class through the listAllGameData function.
     */
     public function _listAllGameData(){
         return $this->gameDataDAO->listAllGameData();
@@ -59,6 +63,8 @@ class GameDataController {
 
     /*
         Makes a query data stored games from an id entered by the User.
+        The function has as input the id parameter data set. That stores 
+        the data of a game like this function returns an array with all the data stored.
     */
     public function _consultByIdGameData($idGameData){
         $generalGameData = new GameData();
@@ -72,6 +78,9 @@ class GameDataController {
 
     /*
         Makes a query of reports of games already registered.
+        The function receives as parameter the variable that stores 
+        the amount and reports from that variable it makes a query to the reports stored 
+        in the database. The result of this query and stored in a variable and the function returns this variable.
     */
     public function _consultByAmountReports($amountReports){
         $generalGameData = new GameData();
@@ -81,6 +90,8 @@ class GameDataController {
 
     /*
         Inserts the data team in a match.
+        The function takes as input the parameter 
+        idTimeInserted, idTeam1, idTeam2 variables. And insert this new data in the database. The function has no return.
     */
     public function _insertDataTeam($idTimeInserted, $idTeam1, $idTeam2){
         $team1Data = new GameData();
@@ -103,6 +114,9 @@ class GameDataController {
 
     /*
          Responsible for updating the data of the games making the necessary changes to them.
+         The function takes as input the parameter idGameData, idPlayer, idTimePlay, amountWarning,
+         amountPunishment, amountDisqualification, amountReports, gameGoals variables. And all these 
+         updated values ​​stored in variables in the database. The function has no return.
     */
     public function _updateData($idGameData, $idPlayer, $idTimePlay, $amountWarning,
                                 $amountPunishment, $amountDisqualification, $amountReports, 
@@ -115,7 +129,9 @@ class GameDataController {
     }
 
     /*
-        Responsible for updating all the data matches.
+        Responsible for updating all the data matches.The function takes as input 
+        the parameter idPlayer, idTimePlay, amountWarning, amountPunishment, amountDisqualification, 
+        amountReports, gameGoals variables. Updating all data from a set contained in those variables in the database.
     */
     public function _updateGameData($idPlayer, $idTimePlay, $amountWarning, $amountPunishment, 
                                     $amountDisqualification, $amountReports, $gameGoals){
@@ -128,9 +144,12 @@ class GameDataController {
 
     /*
         Function responsible for saving the data of a new game already registered.
+        The function takes as input the parameter idPlayer, idTimePlay, amountWarning, 
+        amountPunishment, amountDisqualification, amountReports variables. Saving all these 
+        new data from a game in the database. The function has no return.
     */
     public function _saveGameData($idPlayer, $idTimePlay, $amountWarning, $amountPunishment, 
-                            $amountDisqualification, $amountReports){
+                                  $amountDisqualification, $amountReports){
         $generalGameData = new GameData();
         $generalGameData->__constructOverload(0, $idPlayer, $idTimePlay, $amountWarning, 
                                               $amountPunishment, $amountDisqualification, 
