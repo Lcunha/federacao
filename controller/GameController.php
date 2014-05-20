@@ -96,6 +96,10 @@ class GameController {
 
     /*
         Function responsible for updating the data of a game.
+        The function takes as input the id parameter variables game, game audience, city game,
+        game location, date game, game duration.
+        Updating the database of a game in the database alert gameDAO the class and performing updateGame function.
+      
     */
     public function _updateGame($idGame, $gameAudience, $gameCity, $gameLocation, $gameDate, $gameDuration){
         $gameData = new Game();
