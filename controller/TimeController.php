@@ -17,6 +17,8 @@ class TimeController {
     }
     /*
         Function responsible for listing the data of time.
+        The function has no parameters and returns from the call 
+        enters the listAllTimes function.
     */
     public function _listAllTime(){
         return $this->timeDAO->listAllTimes();
