@@ -20,6 +20,8 @@ class TeamController {
 
     /*
         Responsible function to list all data Team.
+        The function has no input parameter, returns an array that 
+        stores the id of the team and the id name of the teams to be selected.
     */
     public function _listAllTeamsForSelect(){
         $teamData = new Team();
@@ -34,6 +36,8 @@ class TeamController {
 
     /*
         Function responsible for listing all players.
+        The funação has no input parameter and returns the function 
+        call listAllPlayersTeam found on teamDAO class.
     */
     public function _listAllPlayersTeam($idTeam){
         return $this->teamDAO->listAllPlayersTeam($idTeam);
@@ -41,6 +45,7 @@ class TeamController {
 
     /*
         Function responsible for all data list of registered teams in the table.
+        The funação has no input parameter and returns an array that stores all the data of the players on the team.
     */
     public function _listAllTeamsForTables(){
         $teamData = new Team();
@@ -71,6 +76,8 @@ class TeamController {
 
     /*
         Function responsible for listing all of the teams.
+        The funação has no input parameter and returns the function call listAllTeams 
+        listing all times registered in the system.
     */
     public function _listAllTeams(){
         return $this->teamDAO->listAllTeams();
@@ -78,6 +85,8 @@ class TeamController {
 
     /*
         Function responsible for listing all of the teams points.
+        The funação has no input parameter and returns the call of listAllTeamsByPoints
+        function, which reports the number of points achieved by the team.
     */
     public function _listAllTeamsByPoints(){
         return $this->teamDAO->listAllTeamsByPoints();
@@ -85,6 +94,8 @@ class TeamController {
 
     /*
         Responsible role by querying a team using an id.
+        The function has no input parameter, returns an array that 
+        stores the id of the team and the id name of the teams to be selected.
     */
     public function _consultByIdTeam($idTeam){
         $teamData = new Team();
@@ -102,6 +113,8 @@ class TeamController {
 
     /*
         Function responsible for consulting by name.
+        The function performs a query on the database using a 
+        team name. As input parameter has the team name and returns an array with all the information the team.
     */
     public function _consultarByTeamName($teamName){
         return $this->teamDAO->consultByTeamName($teamName);

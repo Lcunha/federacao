@@ -17,7 +17,10 @@ class TeamGameController {
     }
 
     /*
-        Function we list all data of the games that are being played on the table grabbing data from teams in the game.
+        Function we list all data of the games that are being played on the table grabbing 
+        data from teams in the game.The funação has no input parameter and returns an array that 
+        stores the data of the team and the games.The funação has no input parameter and returns an array 
+        that stores the data of the team and the games.
     */
     public function _listTeamGameForTables(){
         $teamDataGame = new TeamGame();
@@ -42,6 +45,8 @@ class TeamGameController {
 
     /*
         Function responsible for listing all games.
+        The funação has no input parameter and returns the function call listAllTeamGames 
+        found on teamGameDAO class.
      */
     public function _listAllTeamGames(){
         return $this->teamGameDAO->listAllTeamGames();
@@ -49,18 +54,14 @@ class TeamGameController {
 
     /*
         Function responsible for performing a query by team.
+        The function performs a query on the database of a team using its 
+        id. Has as input parameter the id of the team and returns the function call 
+        consultIdTeam found on teamGameDAO class.
     */
     public function _consultByTeam($idTeam){
         return $this->teamGameDAO->consultIdTeam($idTeam);
     }
-
-    /*
-        Function responsible for performing a query by time.
-    */
-    public function _consultByTime($idTime){
-        return $this->teamGameDAO->consultByTime($idTime);
-    }
-
+  
     /*
         Function responsible for performing a query by game.
     */

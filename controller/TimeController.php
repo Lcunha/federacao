@@ -24,6 +24,7 @@ class TimeController {
 
     /*
         Function responsible for inserting the time, entering the score, team and game that is being done.
+        The funação has no input parameter and returns an array that stores the data for a time.
     */
     public function _listAllDataForTables(){
         $dataTime = new Time();
