@@ -64,6 +64,8 @@ class TeamGameController {
   
     /*
         Function responsible for performing a query by game.
+        Has as input parameter the team game that will be inserted 
+        into the system and returns the function call insertTeamGame found on teamGameDAO class.
     */
     public function _insertTeamGame(TeamGame $teamGame){
         return $this->teamGameDAO->insertTeamGame($teamGame);

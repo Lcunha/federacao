@@ -54,6 +54,8 @@ class TimeController {
 
     /*
         Function responsible for doing a query for a time from an id of a game.
+        Has as input parameter the id team play, and from that it performs the query 
+        parameter data. The function returns an array that stores all the data in that game.
     */
     public function _consultByIdTime($idTimePlay){
         $dataTime = new Time();
@@ -71,6 +73,8 @@ class TimeController {
 
     /*
         Function responsible for doing a query for a time from an id of time report.
+        The function performs a query on the bank reports. The function receives as 
+        input parameter amount of reports. And returns the call consultByReport function.
      */
     public function _consultByReport($amountReports){
         return $this->timeDAO->consultByReport($amountReports);
@@ -78,6 +82,8 @@ class TimeController {
 
     /*
         Function responsible for inserting a time table.
+        The function performs a query on the bank reports. The function receives as 
+        input parameter id that player will be inserted in the times. Returns the call of insertTime function.
     */
     public function _insertTime($idPlayer){
         return $this->timeDAO->insertTime($idPlayer);
@@ -121,6 +127,9 @@ class TimeController {
 
     /*
         Function responsible for inserting a goal from team.
+        The function performs a query on the bank reports. The function takes 
+        as input the parameter scoreboardA, amountSevenMetersTotal, variables, which are 
+        the data that will be inserted in the gos time1. Returns the call of insertGoalsTeam1 function.
     */
     public function _insertGoalsTeam1($scoreboardA, $amountSevenMetersTotal, $idTeam){
         return $this->timeDAO->insertGoalsTeam1($scoreboardA, $amountSevenMetersTotal, $idTeam);
@@ -128,6 +137,9 @@ class TimeController {
 
     /*
         Function responsible for inserting a goal from team.
+        The function performs a query on the bank reports. The function receives as parameter the input 
+        variables scoreboardB, idTeamCurrentque is the data that will be inserted in the gos time2. 
+        Returns the call of insertGoalsTeam2 function.
     */
     public function _insertGoalsTeam2($scoreboardB, $idTeamCurrent){
         return $this->timeDAO->insertGoalsTeam2($scoreboardB, $idTeamCurrent);
@@ -135,6 +147,8 @@ class TimeController {
 
     /*
         Function responsible for consulting the last record of time was registered.
+        The function has no input parameter and returns the variable that stores 
+        the last query registry.
     */
     public function _lastQueryRegistry(){
         $result = $this->timeDAO-> lastQueryRegistry();
