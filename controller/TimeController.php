@@ -84,8 +84,13 @@ class TimeController {
 
     /*
         Function responsible for updating the data of games.
+        Receives as parameter data length of a game to be updated, id team, 
+        player id, amount full seven meters, team coach, scoreboard Team1, Team2 
+        scoreboard, type. Send this new data to the database and performs the update.
+        The function has no return.
     */
-    public function _updateTime($idTeam, $idPlayer, $amountSevenMetersTotal, $timeCoach, $scoreboardTeam1, $scoreboardTeam2, $type){
+    public function _updateTime($idTeam, $idPlayer, $amountSevenMetersTotal, $timeCoach, 
+                                $scoreboardTeam1, $scoreboardTeam2, $type){
         $dataTime = new Time();
         $dataTime->__constructOverload($idTeam, $idPlayer, $amountSevenMetersTotal, $timeCoach, $scoreboardTeam1, $scoreboardTeam2, $type);
         $this->timeDAO->updateTime($dataTime);

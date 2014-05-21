@@ -53,7 +53,9 @@ class RefereeController {
 
     /*
         Responsible for querying the data of a referee from the id function 
-        entered by User
+        entered by User.The function receives as a parameter the id of a referee
+        to ensure that data is found that specific id. After querying the database 
+        returns an array with the data from the referee.
     */
     public function _consultByIdReferee($idReferee){
         $dataReferee = new Referee();
@@ -67,6 +69,10 @@ class RefereeController {
 
     /*
         Function responsible for performing a query by name.
+        The function receives as parameter the name of one referee 
+        for the data to be queried one specific name, making a query data in 
+        the database with the name that is received as a parameter of the function. 
+        After querying the database returns an array with the data from the referee.
     */
     public function _consultByRefereeName($refereeName){
         return $this->refereeDAO->consultByRefereeName($refereeName);
@@ -75,7 +81,9 @@ class RefereeController {
     /*
         Responsible for calling the function of insertion of a new
         arbitrator in the table by calling the function insert function in 
-        existing class ArbitroDAO.php
+        existing class ArbitroDAO.php.  The function receives as parameter a variable 
+        named referee to referee in a new database is inserted. Returning to the function 
+        call insert the referee refereeDAO class.
      */
     public function _insertReferee(Referee $referee){
         return $this->refereeDAO->insertReferee($referee);
@@ -83,6 +91,9 @@ class RefereeController {
 
     /*
         Responsible function to modify data already a registered referee.
+        Receives as parameter data from referee to be updated, and they id referee, 
+        referee name, phone referee, referee cpf. Send this new data to the database and 
+        performs the update. The function has no return.
     */
     public function _updateReferee($idReferee, $refereeName, $refereePhone, $refereeCpf){
         $dataReferee = new Referee();

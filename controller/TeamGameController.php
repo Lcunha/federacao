@@ -70,6 +70,9 @@ class TeamGameController {
 
     /*
         Function responsible for updating the game data.
+        Receives as parameter the data team in a game to be updated 
+        while they were game id, id team. Send this new data to the database and performs 
+        the update. The function has no return.
     */
 
     public function _updateTeamGame($idGame, $idTeam){

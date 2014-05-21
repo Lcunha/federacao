@@ -122,8 +122,12 @@ class TeamController {
 
     /*
         Function responsible for updating the data of a team.
+        Receives as parameter the data team to be updated, with team and id,
+        id coach, team name, team category, team address, team foundation date,team president, 
+        team phone. Send this new data to the database and performs the update. The function has no return.
      */
-    public function _updateTeam($idTeam, $idCoach, $teamName, $teamCategory, $teamAddress, $teamFoundationDate, $teamPresident, $teamPhone){
+    public function _updateTeam($idTeam, $idCoach, $teamName, $teamCategory, $teamAddress, $teamFoundationDate, 
+                                $teamPresident, $teamPhone){
 
         $teamData = new Team();
         $teamData->__constructOverload($idTeam, $idCoach, $teamName, $teamCategory, $teamAddress, $teamFoundationDate, $teamPresident, 
