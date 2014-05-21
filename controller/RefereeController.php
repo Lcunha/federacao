@@ -103,7 +103,8 @@ class RefereeController {
 
     /*
         Function responsible for saving the data of a new arbitrator already 
-        registered.
+        registered.Receives as input parameter data to the referee saved, they are name,
+        phone and cpf. This function will insert these new data in the database. Having no return.
      */
     public function _saveReferee($refereeName, $refereePhone, $refereeCpf){
         $dataReferee = new Referee();
@@ -113,6 +114,8 @@ class RefereeController {
 
     /*
        Responsible function to delete data from an already registered referee.
+       Receives as parameter id of a referee to the data for this id are deleted 
+       from the database. Having to return to deleteReferee function refereeDAO class.
     */
     public function _deleteReferee($idReferee){
         return $this->refereeDAO->deleteReferee($idReferee);
@@ -120,7 +123,8 @@ class RefereeController {
 
     /*
         Function responsible for telling how many arbitrators have already been 
-        registered.
+        registered.The function has no input parameter and returns the function call 
+        amountRefereesRecords found on refereeDAO class.
      */
     public function _amountRefereesRecords(){
         return $this->refereeDAO->amountRefereesRecords();

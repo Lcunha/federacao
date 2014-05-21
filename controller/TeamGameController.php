@@ -83,6 +83,8 @@ class TeamGameController {
 
     /*
         Function salver responsible for the data of the games that are being played.
+        Receives as input parameter data to the team game saved, they current game and id, 
+        id being Team. This function will insert these new data in the database. Has no return.
     */
     public function _saveTeamGame($idCurrentGame, $idTeam){
         $teamDataGame = new TeamGame();
@@ -92,6 +94,8 @@ class TeamGameController {
 
     /*
         Function responsible for deleting the data on team playing.
+        Receives as parameter id of a game for a team that data if a game that 
+        has this id are deleted from the database. Having to return to deleteTeamGame function teamGameDAO class.
     */
     public function _deleteTeamGame($idGame){
         return $this->teamGameDAO->deleteTeamGame($idGame);

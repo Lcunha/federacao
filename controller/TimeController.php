@@ -98,8 +98,12 @@ class TimeController {
 
     /*
         Function responsible for saving the data of time in the game.
+        Receives as parameter input time data to be saved, and they player id, 
+        amount full seven meters, team coach, team scoreboard, scoreboard team2, type. 
+        This function will insert these new data in the database. Has no return.
     */
-    public function _saveTime($idTeam, $idPlayer, $amountSevenMetersTotal, $timeCoach, $scoreboardTeam1, $scoreboardTeam2, $type){
+    public function _saveTime($idTeam, $idPlayer, $amountSevenMetersTotal, $timeCoach, 
+                              $scoreboardTeam1, $scoreboardTeam2, $type){
         $dataTime = new Time();
         $dataTime->__constructOverload(0, $idPlayer, $amountSevenMetersTotal, $timeCoach, $scoreboardTeam1, $scoreboardTeam2, $type);
         $this->timeDAO->insertTime($dataTime);
@@ -107,6 +111,8 @@ class TimeController {
 
     /*
         Function responsible for deleting the data on time.
+        Receives as parameter id of a team so that data of a team 
+        that has this id are deleted from the database. Having to return to deleteTeam function teamDAO class.
     */
     public function _deleteTime($idTime){
         return $this->timeDAO->deleteTime($idTime);

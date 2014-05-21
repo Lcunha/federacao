@@ -109,8 +109,12 @@ class TeamController {
 
     /*
         Function responsible for saving the data of a team.
+        Receives as input parameter data to the team saved, they being coach, name, category, 
+        address, foundation date,president, phone. This function will insert these new data in the 
+        database. Have to return the call of insertDataTeam function.
     */
-    public function _saveTeam($idCoach, $teamName, $teamCategory, $teamAddress, $teamFoundationDate, $teamPresident, $teamPhone){
+    public function _saveTeam($idCoach, $teamName, $teamCategory, $teamAddress, $teamFoundationDate, 
+                              $teamPresident, $teamPhone){
         $teamData = new Team();
         $dataDataTeam = new DataTeam();
         $dataDataTeamDAO = new DataTeamDAO();
@@ -137,6 +141,8 @@ class TeamController {
 
     /*
         Function responsible for deleting the data on team.
+        Receives as parameter id of a team for which the data are a 
+        team that has this id are deleted from the database. Having to return to deleteTeam function teamDAO class.
      */
 
     public function _deleteTeam($idTeam){
@@ -145,6 +151,8 @@ class TeamController {
 
     /*
         Function responsible for counting the records of the teams.
+        The function has no input parameter and returns the function call 
+        amountTeamsRecords found on teamDAO class.
     */
     public function _amountTeamsRecords(){
         return $this->teamDAO->amountTeamsRecords();
