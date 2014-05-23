@@ -2,7 +2,7 @@
 
 /*
     Name: AjaxView.php
-    Description: View of score.
+    Description: View that shows the score board of each team.
 */
 include_once('./controller/TimeController.php');
 
