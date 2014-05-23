@@ -2,7 +2,8 @@
 
 /*
     Name: GameDataView.php
-    Description: This view shows the data added by the user.
+    Description: This view allows to consult game data by id, insert data team, 
+    update data and delete data.
 */
 include_once(__APP_PATH.'/controller/GameDataController.php');
 
@@ -17,6 +18,8 @@ class GameDataView{
     }
     
     /*
+        The function receives as input parameter the id of the game and 
+        returns to the data game controller the function.
         This function is responsible to consult the controller data.
     */
     public function consultByIdGameData($id){
@@ -24,6 +27,8 @@ class GameDataView{
     }
     
     /*
+        The function receives as input parameter the id of the team inserted, 
+        id of team 1 and 2 and returns to the data game controller the function.
         This function is responsible to add to the controller data.
     */
     public function insertDataTeam($idTimeInserted, $idTeam1, $idTeam2){
@@ -31,8 +36,10 @@ class GameDataView{
     }
     
     /*
-        This function is responsible to update the controller data from the text received 
-        by the form.
+        The function receives as input parameter the id of the game and 
+        returns to the data game controller the function.
+        This function is responsible to update the controller data from the text
+        received by the form.
     */
     public function updateData($id){
 	$formGameData = $_POST;
@@ -40,6 +47,8 @@ class GameDataView{
     }
     
     /*
+        The function receives as input parameter the id of the game and 
+        returns to the data game controller the function.
         This function is responsible to delete the controller data.
     */
     public function deleteData($id){
