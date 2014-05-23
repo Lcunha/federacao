@@ -6,7 +6,7 @@
     and constructors of the time, time spends in a game. The time must contains 
     'idTimePlay', 'idPlayer', 'type', 'amountPunishment', 'amountWarning', 
     'amountDisqualification', 'amountReports', 'amountSevenMetersTotal', 'timeCoach', 
- *  'scoreboardTeam1' and 'scoreboardTeam2'. 
+    'scoreboardTeam1' and 'scoreboardTeam2'. 
 */
 class Time{
     
@@ -35,6 +35,11 @@ class Time{
     */
     public function __constructOverload($idTimePlay, $idPlayer, $type, $amountSevenMetersTotal, 
                                         $timeCoach, $scoreboardTeam1, $scoreboardTeam2){
+        
+        /*
+            This defines that the new value that the program or the user put on the attribute will 
+            be now the value of the attribute.
+        */
 	$this->idTimePlay = $idTimePlay;
 	$this->idPlayer = $idPlayer;
 	$this->type = $type;
@@ -48,6 +53,10 @@ class Time{
         Method to verify the attribute 'idTimePlay' of the class.
     */
     public function __getIdTimePlay(){
+        
+        /* 
+            Return the value in the attribute 'idTimePlay'.
+        */
 	return $this->idTimePlay;
     }
         
@@ -55,6 +64,11 @@ class Time{
         Method to modify the attribute 'idTimePlay' of the class.
     */
     public function __setIdTimePlay($idTimePlay){
+        
+        /*
+            This defines that the new value that the program or the user put on the attribute will 
+            be now the value of the attribute, in this case 'idTimePlay'.
+        */
 	$this->idTimePlay = $idTimePlay;
     }
         
@@ -62,6 +76,10 @@ class Time{
         Method to verify the attribute 'idPlayer' of the class.
     */
     public function __getIdPlayer(){
+        
+        /* 
+            Return the value in the attribute 'idPlayer'.
+        */
 	return $this->idPlayer;
     }
         
@@ -69,6 +87,11 @@ class Time{
         Method to modify the attribute 'idPlayer' of the class.
     */
     public function __setIdPlayer($idPlayer){
+        
+        /*
+            This defines that the new value that the program or the user put on the attribute will 
+            be now the value of the attribute, in this case 'idPlayer'.
+        */
 	$this->idPlayer = $idPlayer;
     }
         
@@ -76,6 +99,10 @@ class Time{
         Method to verify the attribute 'type' of the class.
     */
     public function __getType(){
+        
+        /* 
+            Return the value in the attribute 'type'.
+        */
 	return $this->type;
     }
         
@@ -83,6 +110,11 @@ class Time{
         Method to modify the attribute 'type' of the class.
     */
     public function __setType($type){
+        
+        /*
+            This defines that the new value that the program or the user put on the attribute will 
+            be now the value of the attribute, in this case 'type'.
+        */
     	$this->type = $type;
     }
         
@@ -90,6 +122,10 @@ class Time{
         Method to verify the attribute 'amountWarning' of the class.
     */
     public function __getAmountWarning(){
+        
+        /* 
+            Return the value in the attribute 'amountWarning'.
+        */
 	return $this->amountWarning;
     }
         
@@ -97,6 +133,11 @@ class Time{
         Method to modify the attribute 'amountWarning' of the class.
     */
     public function __setAmountWarning($amountWarning){
+        
+        /*
+            This defines that the new value that the program or the user put on the attribute will 
+            be now the value of the attribute, in this case 'amountWarning'.
+        */
 	$this->amountWarning = $amountWarning;
     }
         
@@ -104,6 +145,10 @@ class Time{
         Method to verify the attribute 'amountPunishment' of the class.
     */
     public function __getAmountPunishment(){
+        
+        /* 
+            Return the value in the attribute 'amountPunishment'.
+        */
 	return $this->amountPunishment;
     }
         
@@ -111,6 +156,11 @@ class Time{
         Method to modify the attribute 'amountPunishment' of the class.
     */
     public function __setAmountPunishment($amountPunishment){
+        
+        /*
+            This defines that the new value that the program or the user put on the attribute will 
+            be now the value of the attribute, in this case 'amountPunishment'.
+        */
 	$this->amountPunishment = $amountPunishment;
     }
         
@@ -118,6 +168,10 @@ class Time{
         Method to verify the attribute 'amountDisqualification' of the class.
     */
     public function __getAmountDisqualification(){
+        
+        /* 
+            Return the value in the attribute 'amountDisqualification'.
+        */
 	return $this->amountDisqualification;
     }
         
@@ -125,6 +179,11 @@ class Time{
         Method to modify the attribute 'amountDisqualification' of the class.
     */
     public function __setAmountDisqualification($amountDisqualification){
+        
+        /*
+            This defines that the new value that the program or the user put on the attribute will 
+            be now the value of the attribute, in this case 'amountDisqualification'.
+        */
 	$this->amountDisqualification = $amountDisqualification;
     }
         
@@ -132,6 +191,10 @@ class Time{
         Method to verify the attribute 'amountReports' of the class.
     */
     public function __getAmountReports(){
+        
+        /* 
+            Return the value in the attribute 'amountReports'.
+        */
 	return $this->amountReports;
     }
         
@@ -139,6 +202,11 @@ class Time{
         Method to modify the attribute 'amountReports' of the class.
     */
     public function __setAmountReports($amountReports){
+        
+        /*
+            This defines that the new value that the program or the user put on the attribute will 
+            be now the value of the attribute, in this case 'amountReports'.
+        */
 	$this->amountReports = $amountReports;
     }
         
@@ -146,6 +214,10 @@ class Time{
         Method to verify the attribute 'amountSevenMetersTotal' of the class.
     */
     public function __getAmountSevenMetersTotal(){
+        
+        /* 
+            Return the value in the attribute 'amountSevenMetersTotal'.
+        */
 	return $this->amountSevenMetersTotal;
     }
         
@@ -153,6 +225,11 @@ class Time{
         Method to modify the attribute 'amountSevenMetersTotal' of the class.
     */
     public function __setAmountSevenMetersTotal($amountSevenMetersTotal){
+        
+        /*
+            This defines that the new value that the program or the user put on the attribute will 
+            be now the value of the attribute, in this case 'amountSevenMetersTotal'.
+        */
 	$this->amountSevenMetersTotal = $amountSevenMetersTotal;
     }
         
@@ -160,6 +237,10 @@ class Time{
         Method to verify the attribute 'timeCoach' of the class.
     */
     public function __getTimeCoach(){
+        
+        /* 
+            Return the value in the attribute 'timeCoach'.
+        */
     	return $this->timeCoach;
     }
         
@@ -167,6 +248,11 @@ class Time{
         Method to modify the attribute 'timeCoach' of the class.
     */
     public function __setTimeCoach($timeCoach){
+        
+        /*
+            This defines that the new value that the program or the user put on the attribute will 
+            be now the value of the attribute, in this case 'timeCoach'.
+        */
 	$this->timeCoach = $timeCoach;
     }
         
@@ -174,6 +260,10 @@ class Time{
         Method to verify the attribute 'scoreboardTeam1' of the class.
     */
     public function __getScoreboardTeam1(){
+        
+        /* 
+            Return the value in the attribute 'scoreboardTeam1'.
+        */
 	return $this->scoreboardTeam1;
     }
         
@@ -181,6 +271,11 @@ class Time{
         Method to modify the attribute 'scoreboardTeam1' of the class.
     */
     public function __setScoreboardTeam1($scoreboardTeam1){
+        
+        /*
+            This defines that the new value that the program or the user put on the attribute will 
+            be now the value of the attribute, in this case 'scoreboardTeam1'.
+        */
 	$this->scoreboardTeam1 = $scoreboardTeam1;
     }
         
@@ -188,6 +283,10 @@ class Time{
         Method to verify the attribute 'scoreboardTeam2' of the class.
     */
     public function __getScoreboardTeam2(){
+        
+        /* 
+            Return the value in the attribute 'scoreboardTeam2'.
+        */
 	return $this->scoreboardTeam2;
     }
         
@@ -195,6 +294,11 @@ class Time{
         Method to modify the attribute 'scoreboardTeam2' of the class.
     */
     public function __setScoreboardTeam2($scoreboardTeam2){
+        
+        /*
+            This defines that the new value that the program or the user put on the attribute will 
+            be now the value of the attribute, in this case 'scoreboardTeam2'.
+        */
 	$this->scoreboardTeam2 = $scoreboardTeam2;
     }
 }
