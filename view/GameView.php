@@ -1,8 +1,9 @@
 <?php
 
 /*
-  Name: GameView.php
-  Description: This view shows the data of each game.
+    Name: GameView.php
+    Description: This view allows to list all games, consult by game id, insert 
+    game, save game, delete game and insert time.
  */
 include_once('./controller/GameController.php');
 include_once('./controller/TimeController.php');
@@ -22,6 +23,7 @@ class GameView{
     }
 
     /*
+      The function returns to the data game controller the function.
       This function is responsible to list all the games.
      */
     public function listAllGames(){
