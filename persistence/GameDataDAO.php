@@ -2,7 +2,7 @@
 
 /*
     Name: GameDataDAO.php  
-    Description:Class data persistence with CRUD functions (create, read, update, delete) 
+    Description: Class data persistence with CRUD functions (create, read, update, delete) 
     for handling the type Data, in the relevant table in mysql.
 */
 include_once ('./model/GameData.php');
@@ -12,14 +12,16 @@ class GameDataDAO{
     private $connection;
 
     /* 
-        Construct method of class DataDAO 
+        Construct method of the class GameDataDAO. 
     */
     public function __construct(){
         $this->connection = new Connection();
     }
 	
-    /* 
-        Method is responsible for listing all datas in table dataBase mysql. 
+    /*
+        The method is responsible to list all records about the game in database table.
+        This function doesn't have input parameters and returns a list with all the game 
+        data that already are in the database table.
     */
     public function listAllGameData(){
         $sql = "SELECT * FROM dados";
@@ -38,8 +40,10 @@ class GameDataDAO{
         return $returnGameData;
     }
 
-    /* 
-        Method is responsible insertion of data in dataBase table. 
+    /*
+        The method is responsible to insert data in database table. This function have one
+        variable of the class GameData (that capture the information with the getters method of 
+        the class to insert the information) as input parameter. It doesn't have any return.
     */
     public function insertGameData(GameData $generalGameData){
         $sql = "INSERT INTO dados (jogador_id_jogador, tempo_id_tempo, advertencia,
@@ -55,7 +59,9 @@ class GameDataDAO{
     }
 
     /* 
-        Method is reponsible update of data in dataBase table. 
+        The method is responsible to update data in database table. This function have one
+        variable of the class GameData (that capture the information with the getters method of 
+        the class to update the information) as input parameter. It doens't have return. 
     */
     public function updateData(GameData $generalGameData){
         $sql = "UPDATE dados 
@@ -71,7 +77,9 @@ class GameDataDAO{
     }
 
     /* 
-        The method responsibility update of data in dataBase table. 
+        The method is responsible to update data in database table. This function have one
+        variable of the class GameData (that capture the information with the getters method of 
+        the class to update the information) as input parameter. It doens't have return. 
     */
     public function updateGameData(GameData $generalGameData){
         $sql = "UPDATE dados 
@@ -85,8 +93,10 @@ class GameDataDAO{
         $this->connection->dataBase->Execute($sql);
     }
 
-    /* 
-        The method responsibility is consult in dataBase table through of ID. 
+    /*
+        The method is responsible to consult by id the database table. This function have 
+        the id of the class GameData (to search the database table) as input parameter. It 
+        returns all the game data that are in the database table searched.
     */
     public function consultByIdGameData(GameData $idGameData){
         $sql = "SELECT * FROM dados WHERE id_dados = '{$idGameData}'";
@@ -105,7 +115,9 @@ class GameDataDAO{
     }
 
     /*
-        The method reponsibility is consult in dataBase table through the ID of type Player. 
+        The method is responsible to consult by id the database player table. This function have 
+        the idPlayer of the class GameData (to search the database table) as input parameter. It 
+        returns all the game data that are in the database table searched.
     */
     public function consultByIdPlayer(GameData $idPlayer){
         $sql = "SELECT * FROM dados WHERE jogador_id_jogador = '{$idPlayer}'";
@@ -121,8 +133,10 @@ class GameDataDAO{
         return $generalGameData;
     }
 
-    /* 
-        The method responsibility is consult in dataBase table through the ID of type Time. 
+    /*
+        The method is responsible to consult by id the database time table. This function have 
+        the idTimePlay of the class GameData (to search the database table) as input parameter. It 
+        returns all the game data that are in the database table searched.
     */
     public function consultByIdTimePlay(GameData $idTimePlay){
         $sql = "SELECT * FROM dados WHERE tempo_id_tempo = '{$idTimePlay}'";
@@ -138,8 +152,10 @@ class GameDataDAO{
         return $generalGameData;
     }
 
-    /* 
-        The method responsibility is consult in dataBase table by report. 
+    /*
+        The method is responsible to consult by amount reports the database table. This 
+        function have the idPlayer of the class GameData (to search the database table) as 
+        input parameter. It returns all the game data that are in the database table searched.
     */
     public function consultByAmountReports(GameData $amountReports){
         $sql = "SELECT * FROM dados WHERE relatorio = '{$amountReports}'";
@@ -157,7 +173,8 @@ class GameDataDAO{
     }
 
     /* 
-        The method responsibility is delete in dataBase table through of ID. 
+        The method is responsible to delete in database table through of id. This function have 
+        the id of the class GameData as input parameter. It doesn't have return.
     */
     public function deleteGameData(GameData $idGameData){
         $sql = "DELETE FROM dados WHERE id_dados= '{$idGameData}' ";
