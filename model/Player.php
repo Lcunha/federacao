@@ -27,6 +27,11 @@ class Player{
     */
     public function __constructOverload($idPlayer, $idTeam, $playerName, $birthDatePlayer,  
                                         $cpfPlayer, $playerNumber){
+        
+        /*
+            This defines that the new value that the program or the user put on the attribute will 
+            be now the value of the attribute.
+        */
     	$this->idPlayer = $idPlayer;
 	$this->idTeam = $idTeam;
 	$this->playerName = $playerName;
@@ -39,6 +44,10 @@ class Player{
         Method to verify the attribute 'idPlayer' of the class.
     */
     public function __getIdPlayer(){
+        
+        /* 
+            Return the value in the attribute 'idPlayer'.
+        */
 	return $this->idPlayer;
     }
         
@@ -46,6 +55,11 @@ class Player{
         Method to modify the attribute 'idPlayer' of the class.
     */
     public function __setIdPlayer($idPlayer){
+        
+        /*
+            This defines that the new value that the program or the user put on the attribute will 
+            be now the value of the attribute, in this case 'idPlayer'.
+        */
 	$this->idPlayer = $idPlayer;
     }
         
@@ -53,6 +67,10 @@ class Player{
         Method to verify the attribute 'playerName' of the class.
     */
     public function __getPlayerName(){
+        
+        /* 
+            Return the value in the attribute 'playerName'.
+        */
 	return $this->playerName;
     }
         
@@ -60,6 +78,11 @@ class Player{
         Method to modify the attribute 'playerName' of the class.
     */
     public function __setPlayerName($playerName){
+        
+        /*
+            This defines that the new value that the program or the user put on the attribute will 
+            be now the value of the attribute, in this case 'playerName'.
+        */
 	$this->playerName = $playerName;
     }
         
@@ -67,6 +90,10 @@ class Player{
         Method to verify the attribute 'birthDatePlayer' of the class.
     */
     public function __getBirthDatePlayer(){
+        
+        /* 
+            Return the value in the attribute 'bithDatePlayer'.
+        */
 	return $this->birthDatePlayer;
     }
         
@@ -74,6 +101,11 @@ class Player{
         Method to modify the attribute 'birthDatePlayer' of the class.
     */
     public function __setBirthDatePlayer($birthDatePlayer){
+        
+        /*
+            This defines that the new value that the program or the user put on the attribute will 
+            be now the value of the attribute, in this case 'birthDatePlayer'.
+        */
 	$this->birthDatePlayer = $birthDatePlayer;
     }
         
@@ -81,6 +113,10 @@ class Player{
         Method to verify the attribute 'cpfPlayer' of the class.
     */
     public function __getCpfPlayer(){
+        
+        /* 
+            Return the value in the attribute 'cpfPlayer'.
+        */
 	return $this->cpfPlayer;
     }
         
@@ -88,6 +124,11 @@ class Player{
         Method to modify the attribute 'cpfPlayer' of the class.
     */
     public function __setCpfPlayer($cpfPlayer){
+        
+        /*
+            This defines that the new value that the program or the user put on the attribute will 
+            be now the value of the attribute, in this case 'cpfPlayer'.
+        */
 	$this->cpfPlayer = $cpfPlayer;
     }
         
@@ -95,6 +136,10 @@ class Player{
         Method to verify the attribute 'idTeam' of the class.
     */
     public function __getIdTeam(){
+        
+        /* 
+            Return the value in the attribute 'idTeam'.
+        */
 	return $this->idTeam;
     }
         
@@ -102,6 +147,11 @@ class Player{
         Method to modify the attribute 'idTeam' of the class.
     */
     public function __setIdTeam($idTeam){
+        
+        /*
+            This defines that the new value that the program or the user put on the attribute will 
+            be now the value of the attribute, in this case 'idTeam'.
+        */
 	$this->idTeam = $idTeam;
     }
         
@@ -109,6 +159,10 @@ class Player{
         Method to verify the attribute 'playerNumber' of the class.
     */
     public function __getPlayerNumber(){
+        
+        /* 
+            Return the value in the attribute 'playerNumber'.
+        */
 	return $this->playerNumber;
     }
         
@@ -116,6 +170,11 @@ class Player{
         Method to modify the attribute 'playerNumber' of the class.
     */
     public function __setPlayerNumber($playerNumber){
+        
+        /*
+            This defines that the new value that the program or the user put on the attribute will 
+            be now the value of the attribute, in this case 'playerNumber'.
+        */
 	$this->playerNumber = $playerNumber;
     }
 }
