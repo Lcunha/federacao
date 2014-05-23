@@ -1,9 +1,9 @@
 <?php
 
 /*
-	Name: TeamDAO.php  
-	Description:Class data persistence with CRUD functions (create, read, 
-	update, delete) for handling the type Team, in the relevant table in mysql.
+    Name: TeamDAO.php  
+    Description:Class data persistence with CRUD functions (create, read, 
+    update, delete) for handling the type Team, in the relevant table in mysql.
 */
 
 include_once ('./model/Team.php');
