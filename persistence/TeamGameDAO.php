@@ -24,6 +24,7 @@ class TeamGameDAO{
 	
 	/*
             The method is responsibility by to list all records in database table.
+            It has no input parameter. And the query returns data for a team and a half of a game.
 	*/
 	public function listAllTeamGames(){
             $sql = "SELECT * FROM time_jogo";
@@ -49,6 +50,8 @@ class TeamGameDAO{
 
 	/*
             The method is responsibility by to update data in database table.
+            Receives as input parameter data of a team in a game. Isere all this data in the database,
+            having no return
 	*/
 	public function updateTeamGame(TeamGame $teamDataGame){
             $sql = "UPDATE jogo_time 
@@ -59,6 +62,7 @@ class TeamGameDAO{
 
 	/*
             The method is responsiblity by to consult in database table through of type Team.
+            .
 	*/
 	public function consultByIdTeam(TeamGame $idTeam){
             $sql = "SELECT * FROM time_jogo WHERE time_id_time = '{$idTeam}'";
@@ -72,6 +76,8 @@ class TeamGameDAO{
 	
 	/*
             The method is responsiblity by to consult in database table through Time.
+            Receives as input parameter the id of a team and performs a query to the data for 
+            that id in the database. Returns a string with each data relating to this query.
 	*/
 	public function consultByTime(TeamGame $idTimePlay){
             $sql = "SELECT * FROM time_jogo WHERE tempo_id_tempo = '{$idTimePlay}'";
@@ -85,7 +91,9 @@ class TeamGameDAO{
 
 	/*
             The method is responsibility by to delete data in database table.
-	*/
+            Receives as input parameter the id of a game and delete the data in the 
+            table that match. Have not return.
+         */
 	public function deleteTeamGame(TeamGame $idGame){
             $sql = "DELETE FROM jogo_time WHERE jogo_id_jogo = '{$idGame}' ";
             $result = $this->connection->dataBase->Execute($sql);
