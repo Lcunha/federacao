@@ -24,6 +24,11 @@ class Coach{
         Overload construct.
     */
     public function __constructOverload($idCoach, $coachName, $coachPhone, $coachCpf){
+        
+        /*
+            This defines that the new value that the program or the user put on the attribute will 
+            be now the value of the attribute.
+        */
     	$this->idCoach = $idCoach;
 	$this->coachName = $coachName;
 	$this->coachPhone = $coachPhone;
@@ -47,8 +52,8 @@ class Coach{
     public function __setIdCoach($idCoach){
         
         /*
-            This defines that the new value that the program put on the attribute will be now the
-            value of the attribute, in this case 'idCoach'.
+            This defines that the new value that the program or the user put on the attribute will 
+            be now the value of the attribute, in this case 'idCoach'.
         */
 	$this->idCoach = $idCoach;
     }
@@ -70,8 +75,8 @@ class Coach{
     public function __setCoachName($coachName){
         
         /*
-            This defines that the new value that the program put on the attribute will be now the
-            value of the attribute, in this case 'coachName'.
+            This defines that the new value that the program or the user put on the attribute will 
+            be now the value of the attribute, in this case 'coachName'.
         */
 	$this->coachName = $coachName;
     }
@@ -93,8 +98,8 @@ class Coach{
     public function __setCoachPhone($coachPhone){
         
         /*
-            This defines that the new value that the program put on the attribute will be now the
-            value of the attribute, in this case 'coachPhone'.
+            This defines that the new value that the program or the user put on the attribute will 
+            be now the value of the attribute, in this case 'coachPhone'.
         */
 	$this->coachPhone = $coachPhone;
     }
@@ -116,8 +121,8 @@ class Coach{
     public function __setCoachCpf($coachCpf){
         
         /*
-            This defines that the new value that the program put on the attribute will be now the
-            value of the attribute, in this case 'coachCpf'.
+            This defines that the new value that the program or the user put on the attribute will 
+            be now the value of the attribute, in this case 'coachCpf'.
         */
 	$this->coachCpf = $coachCpf;
     }
