@@ -40,6 +40,8 @@ class TeamGameDAO{
 
 	/*
             The method is responsiblity by to insert data in database table.
+            The function has as parameter the input data of a team in a game 
+            and conducts the insertion of the data received in the database. No has no return.
 	*/
 	public function insertTeamGame(TeamGame $teamDataGame){
             $sql = "INSERT INTO jogo_time (jogo_id_jogo, time_id_time) 
@@ -62,7 +64,8 @@ class TeamGameDAO{
 
 	/*
             The method is responsiblity by to consult in database table through of type Team.
-            .
+            The function has as input parameter the id of a team. And the query performs a 
+            given that team from the id. Returns a variable that stores the query data.
 	*/
 	public function consultByIdTeam(TeamGame $idTeam){
             $sql = "SELECT * FROM time_jogo WHERE time_id_time = '{$idTeam}'";
