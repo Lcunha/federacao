@@ -13,14 +13,14 @@ class GameDAO{
 	private $connection;
 	
 	/*
-            The method is responsable to instance the class.
+            The method is responsible to instance the class.
 	*/
 	public function __construct(){
             $this->connection = new Connection();
 	}
 	
 	/*
-            The method is responsable to list all records about the game in database table.
+            The method is responsible to list all records about the game in database table.
             This function doesn't have input parameters and returns a list with all the game 
             data that already are in the database table.
 	*/
@@ -39,7 +39,7 @@ class GameDAO{
 	}
 	
 	/*
-            The method is responsable to insert data in database table. This function have one
+            The method is responsible to insert data in database table. This function have one
             variable of the class Game (that capture the information with the getters method of 
             the class to insert the information) as input parameter. It doesn't have any return.
 	*/
@@ -54,7 +54,7 @@ class GameDAO{
             }
 	
 	/*
-            The method is responsable to update data in database table. This function have one
+            The method is responsible to update data in database table. This function have one
             variable of the class Game (that capture the information with the getters method of 
             the class to update the information) as input parameter. It returns all the game data
             that are in the database table updated.
@@ -72,7 +72,7 @@ class GameDAO{
 	}
 	
 	/*
-            The method is responsable to consult by id the database table. This function have the
+            The method is responsible to consult by id the database table. This function have the
             id of the class Game (to search the database table) as input parameter. It returns all 
             the game data that are in the database table searched.
 	*/
@@ -89,7 +89,7 @@ class GameDAO{
 	}
 	
 	/*
-            The method is responsable to consult by the date that happened or will happen the
+            The method is responsible to consult by the date that happened or will happen the
             game the database table. This function have the variable that represents the date that 
             happened or will happen the game of the class Game (to search the database table) as 
             input parameter. It returns all the game data that are in the database table searched.
@@ -107,7 +107,7 @@ class GameDAO{
 	}
 
 	/*
-            The method is responsable to delete in the database table. This function have the 
+            The method is responsible to delete in the database table. This function have the 
             id of the referee (the referee delete the information about the game when it's 
             finished) as input parameter. It doesn't have return.
 	*/
