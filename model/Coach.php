@@ -36,94 +36,70 @@ class Coach{
     }
         
     /*
-        Method to verify the attribute 'idCoach' of the class.
+        Method to verify the attribute 'idCoach' of the class. This function returns the value 
+        in the attribute.
     */
     public function __getIdCoach(){
-        
-        /* 
-            Return the value in the attribute 'idCoach'.
-        */
 	return $this->idCoach;
     }
         
     /*
-        Method to modify the attribute 'idCoach' of the class.
+        Method to modify the attribute 'idCoach' of the class. This function defines that the 
+        new value that the program or the user put on the attribute will be now the value of 
+        the attribute.
     */
     public function __setIdCoach($idCoach){
-        
-        /*
-            This defines that the new value that the program or the user put on the attribute will 
-            be now the value of the attribute, in this case 'idCoach'.
-        */
 	$this->idCoach = $idCoach;
     }
         
     /*
-        Method to verify the attribute 'coachName' of the class.
+        Method to verify the attribute 'coachName' of the class. This function returns the value 
+        in the attribute.
     */
     public function __getCoachName(){
-        
-        /* 
-            Return the value in the attribute 'coachName'.
-        */
 	return $this->coachName;
     }
         
     /*
-        Method to modify the attribute 'coachName' of the class.
+        Method to modify the attribute 'coachName' of the class. This function defines that the 
+        new value that the program or the user put on the attribute will be now the value of 
+        the attribute.
     */
     public function __setCoachName($coachName){
-        
-        /*
-            This defines that the new value that the program or the user put on the attribute will 
-            be now the value of the attribute, in this case 'coachName'.
-        */
 	$this->coachName = $coachName;
     }
         
     /*
-        Method to verify the attribute 'coachPhone' of the class.
+        Method to verify the attribute 'coachPhone' of the class. This function returns the value 
+        in the attribute.
     */
     public function __getCoachPhone(){
-        
-        /* 
-            Return the value in the attribute 'coachPhone'.
-        */
 	return $this->coachPhone;
     }
         
     /*
-        Method to modify the attribute 'coachPhone' of the class.
+        Method to modify the attribute 'coachPhone' of the class. This function defines that the 
+        new value that the program or the user put on the attribute will be now the value of 
+        the attribute.
     */
     public function __setCoachPhone($coachPhone){
-        
-        /*
-            This defines that the new value that the program or the user put on the attribute will 
-            be now the value of the attribute, in this case 'coachPhone'.
-        */
 	$this->coachPhone = $coachPhone;
     }
         
     /*
-        Method to verify the attribute 'coachCpf' of the class.
+        Method to verify the attribute 'coachCpf' of the class. This function returns the value 
+        in the attribute.
     */
     public function __getCoachCpf(){
-        
-        /* 
-            Return the value in the attribute 'coachCpf'.
-        */
 	return $this->coachCpf;
     }
         
     /*
-        Method to modify the attribute 'coachCpf' of the class.
+        Method to modify the attribute 'coachCpf' of the class. This function defines that the 
+        new value that the program or the user put on the attribute will be now the value of 
+        the attribute.
     */
     public function __setCoachCpf($coachCpf){
-        
-        /*
-            This defines that the new value that the program or the user put on the attribute will 
-            be now the value of the attribute, in this case 'coachCpf'.
-        */
 	$this->coachCpf = $coachCpf;
     }
 }
