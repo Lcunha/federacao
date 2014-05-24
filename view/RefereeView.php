@@ -2,7 +2,8 @@
 
 /*
     Name: RefereeView.php
-    Description: View of arbrito.
+    Description: This view allows you to save referee, update referee, delete 
+    referee, list all referees and consult referee by id.
 */
 include_once(__APP_PATH.'/controller/RefereeController.php');
 
@@ -26,6 +27,7 @@ class RefereeView{
 		echo "Dados inseridos com sucesso";
 	}
         /*
+            The function returns to the referee controller the function.
             This function is responsible to update the referee data.
         */
 	public function updateReferee($idReferee){
