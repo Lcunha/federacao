@@ -14,7 +14,7 @@ class DataTeamDAO{
 	private $connection;
 	
 	/*
-            The method is responsibility to instance the class.
+            The method is responsible to instance the class.
 	*/
 	public function __construct(){
             $this->connection = new Connection();
@@ -22,7 +22,7 @@ class DataTeamDAO{
 
 	/*
             The function returns the team data.
-            The method is responsibility by list all registers in dataBase table.
+            The method is responsible by list all registers in dataBase table.
 	*/
 	public function listAllDataTeam(){
             $sql = "SELECT * FROM dados_campeonato";
@@ -45,7 +45,7 @@ class DataTeamDAO{
 	/*
             The function receives as input parameter the data team data and 
             returns the sql execution.
-            The method is responsibility to insert data in dataBase table.
+            The method is responsible to insert data in dataBase table.
 	*/
 	public function insertDataTeam(DataTeam $dataDataTeam){
             $sql = "INSERT INTO dados_campeonato(pontos, jogos, vitorias, empates,
@@ -64,7 +64,7 @@ class DataTeamDAO{
 	/*
                 The function receives as input parameter the id of data team and 
                 returns the data of the data team.
-		The method is responsibility to consult in dataBase table through of ID.
+		The method is responsible to consult in dataBase table through of ID.
 	*/
 	public function consultByIdDataTeam(DataTeam $idDataTeam){
             $sql = "SELECT * FROM dados_campeonato WHERE id_dados_campeonato = '{$idDataTeam}' ";
@@ -81,7 +81,9 @@ class DataTeamDAO{
 	}
 
 	/*
-            The method is responsibility to consult in dataBase table through the ID of type Team.
+            The function receives as input parameter the id of team and 
+            returns the data of the data team.
+            The method is responsible to consult in dataBase table through the ID of type Team.
 	*/
 	public function consultByIdTeam(DataTeam $idTeam){
             $sql = "SELECT * FROM dados_campeonato WHERE time_id_time = '{$idTeam}' ";
@@ -97,7 +99,9 @@ class DataTeamDAO{
 	}
 
 	/*
-            The method is responsibility to update data in dataBase table.
+            The function receives as input parameter the data of the data team and 
+            returns the sql execution.
+            The method is responsible to update data in dataBase table.
 	*/
 	public function updateDataTeam(DataTeam $dataDataTeam){
             $sql = "UPDATE dados_campeonato 
@@ -113,7 +117,9 @@ class DataTeamDAO{
 	}
 
 	/*
-		The method is responsibility by to update of points and information data in 
+                The function receives as input parameter idTeam1, idTeam2, 
+                pointsTeam1, pointsTeam2, goalsTeam1 and goalsTeam2.
+		The method is responsible to update points and information data in 
                 dataBase table.
 	*/
 	public function updateDataPoint($idTeam1, $idTeam2, $pointsTeam1, $pointsTeam2, $goalsTeam1,
@@ -192,7 +198,8 @@ class DataTeamDAO{
 	}
 
 	/*
-            The method is responsibility by to delete data in dataBase table.
+            The function receives as input parameter the id of data team.
+            The method responsibility is to delete data in dataBase table.
 	*/
 	public function deleteDataTeam(DataTeam $idDataTeam){
             $sql = "DELETE FROM dados_campeonato WHERE id_dados_campeonato = '{$idDataTeam}' ";
