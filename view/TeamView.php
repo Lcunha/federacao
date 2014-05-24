@@ -2,8 +2,9 @@
 
 /*
     Name: TeamView.php
-    Description: This view shows the data of the teams. It can be used to change
-    or delete them too.
+    Description: This view shows the data of the teams. It allows you to save 
+    team, update team, delete team, list coaches for select, list all teams and 
+    consult by id team.
 */
 include_once (__APP_PATH.'/controller/TeamController.php');
 include_once (__APP_PATH.'/controller/CoachController.php');
