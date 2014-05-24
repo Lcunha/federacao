@@ -41,140 +41,104 @@ class Player{
     }
         
     /*
-        Method to verify the attribute 'idPlayer' of the class.
+        Method to verify the attribute 'idPlayer' of the class. This function returns the value 
+        in the attribute.
     */
     public function __getIdPlayer(){
-        
-        /* 
-            Return the value in the attribute 'idPlayer'.
-        */
 	return $this->idPlayer;
     }
         
     /*
-        Method to modify the attribute 'idPlayer' of the class.
+        Method to modify the attribute 'idPlayer' of the class. This function defines that the 
+        new value that the program or the user put on the attribute will be now the value of the
+        attribute.
     */
     public function __setIdPlayer($idPlayer){
-        
-        /*
-            This defines that the new value that the program or the user put on the attribute will 
-            be now the value of the attribute, in this case 'idPlayer'.
-        */
 	$this->idPlayer = $idPlayer;
     }
         
     /*
-        Method to verify the attribute 'playerName' of the class.
+        Method to verify the attribute 'playerName' of the class. This function returns the value 
+        in the attribute.
     */
     public function __getPlayerName(){
-        
-        /* 
-            Return the value in the attribute 'playerName'.
-        */
 	return $this->playerName;
     }
         
     /*
-        Method to modify the attribute 'playerName' of the class.
+        Method to modify the attribute 'playerName' of the class. his function defines that the 
+        new value that the program or the user put on the attribute will be now the value of the
+        attribute.
     */
     public function __setPlayerName($playerName){
-        
-        /*
-            This defines that the new value that the program or the user put on the attribute will 
-            be now the value of the attribute, in this case 'playerName'.
-        */
 	$this->playerName = $playerName;
     }
         
     /*
-        Method to verify the attribute 'birthDatePlayer' of the class.
+        Method to verify the attribute 'birthDatePlayer' of the class. This function returns the 
+        value in the attribute.
     */
     public function __getBirthDatePlayer(){
-        
-        /* 
-            Return the value in the attribute 'bithDatePlayer'.
-        */
 	return $this->birthDatePlayer;
     }
         
     /*
-        Method to modify the attribute 'birthDatePlayer' of the class.
+        Method to modify the attribute 'birthDatePlayer' of the class. his function defines that  
+        the new value that the program or the user put on the attribute will be now the value of
+        the attribute.
     */
     public function __setBirthDatePlayer($birthDatePlayer){
-        
-        /*
-            This defines that the new value that the program or the user put on the attribute will 
-            be now the value of the attribute, in this case 'birthDatePlayer'.
-        */
 	$this->birthDatePlayer = $birthDatePlayer;
     }
         
     /*
-        Method to verify the attribute 'cpfPlayer' of the class.
+        Method to verify the attribute 'cpfPlayer' of the class. This function returns the value 
+        in the attribute.
     */
     public function __getCpfPlayer(){
-        
-        /* 
-            Return the value in the attribute 'cpfPlayer'.
-        */
 	return $this->cpfPlayer;
     }
         
     /*
-        Method to modify the attribute 'cpfPlayer' of the class.
+        Method to modify the attribute 'cpfPlayer' of the class. his function defines that the 
+        new value that the program or the user put on the attribute will be now the value of the
+        attribute.
     */
     public function __setCpfPlayer($cpfPlayer){
-        
-        /*
-            This defines that the new value that the program or the user put on the attribute will 
-            be now the value of the attribute, in this case 'cpfPlayer'.
-        */
 	$this->cpfPlayer = $cpfPlayer;
     }
         
     /*
-        Method to verify the attribute 'idTeam' of the class.
+        Method to verify the attribute 'idTeam' of the class. This function returns the value 
+        in the attribute.
     */
     public function __getIdTeam(){
-        
-        /* 
-            Return the value in the attribute 'idTeam'.
-        */
 	return $this->idTeam;
     }
         
     /*
-        Method to modify the attribute 'idTeam' of the class.
+        Method to modify the attribute 'idTeam' of the class. his function defines that the 
+        new value that the program or the user put on the attribute will be now the value of the
+        attribute.
     */
     public function __setIdTeam($idTeam){
-        
-        /*
-            This defines that the new value that the program or the user put on the attribute will 
-            be now the value of the attribute, in this case 'idTeam'.
-        */
 	$this->idTeam = $idTeam;
     }
         
     /*
-        Method to verify the attribute 'playerNumber' of the class.
+        Method to verify the attribute 'playerNumber' of the class. This function returns the value 
+        in the attribute.
     */
     public function __getPlayerNumber(){
-        
-        /* 
-            Return the value in the attribute 'playerNumber'.
-        */
 	return $this->playerNumber;
     }
         
     /*
-        Method to modify the attribute 'playerNumber' of the class.
+        Method to modify the attribute 'playerNumber' of the class. his function defines that the 
+        new value that the program or the user put on the attribute will be now the value of the
+        attribute.
     */
     public function __setPlayerNumber($playerNumber){
-        
-        /*
-            This defines that the new value that the program or the user put on the attribute will 
-            be now the value of the attribute, in this case 'playerNumber'.
-        */
 	$this->playerNumber = $playerNumber;
     }
 }

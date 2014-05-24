@@ -32,48 +32,36 @@ class TeamGame{
     }
         
     /*
-        Method to verify the attribute 'idGame' of the class.
+        Method to verify the attribute 'idGame' of the class. This function returns the value 
+        in the attribute.
     */
     public function __getIdGame(){
-        
-        /* 
-            Return the value in the attribute 'idGame'.
-        */
 	return $this->idGame;
     }
         
     /*
-        Method to modify the attribute 'idGame' of the class.
+        Method to modify the attribute 'idGame' of the class. This function defines that the 
+        new value that the program or the user put on the attribute will be now the value of the
+        attribute.
     */
     public function __setIdGame($idGame){
-        
-        /*
-            This defines that the new value that the program or the user put on the attribute will 
-            be now the value of the attribute, in this case 'idGame'.
-        */
 	$this->idGame = $idGame;
     }
         
     /*
-        Method to verify the attribute 'idTeam' of the class.
+        Method to verify the attribute 'idTeam' of the class. This function returns the value 
+        in the attribute.
     */
     public function __getIdTeam(){
-        
-        /* 
-            Return the value in the attribute 'idTeam'.
-        */
 	return $this->idTeam;
     }
         
     /*
-        Method to modify the attribute 'idTeam' of the class.
+        Method to modify the attribute 'idTeam' of the class. This function defines that the 
+        new value that the program or the user put on the attribute will be now the value of the
+        attribute.
     */
     public function __setIdTeam($idTeam){
-        
-        /*
-            This defines that the new value that the program or the user put on the attribute will 
-            be now the value of the attribute, in this case 'idTeam'.
-        */
 	$this->idTeam = $idTeam;
     }
 }
