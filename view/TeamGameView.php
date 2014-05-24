@@ -2,7 +2,8 @@
 
 /*
     Name: TeamGameView.php
-    Description: This view shows the game of the team.
+    Description: This view shows the game of the team and allows to save team 
+    game.
 */
 include_once (__APP_PATH.'/controller/TeamGameController.php');
 
