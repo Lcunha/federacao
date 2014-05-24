@@ -27,7 +27,8 @@ class RefereeView{
 		echo "Dados inseridos com sucesso";
 	}
         /*
-            The function returns to the referee controller the function.
+            The function receives as input parameter the referee id and returns 
+            to the referee controller the function.
             This function is responsible to update the referee data.
         */
 	public function updateReferee($idReferee){
@@ -36,18 +37,23 @@ class RefereeView{
                 $formReferee['refereePhone'], $formReferee['refereeCpf']);
 	}
         /*
+            The function receives as input parameter the referee id and returns 
+            to the referee controller the function.
             This function is responsible to delete the referee.
         */
 	public function deleteReferee($idReferee){
 		return $this->refereeCO->_deleteReferee($idReferee);
 	}
         /*
+            The function returns to the referee controller the function.
             This function is responsible to list the referees in a table.
         */
 	public function listAllRefereesForTables(){
 		return $this->refereeCO->_listAllRefereesForTables();
 	}
         /*
+            The function receives as input parameter the referee id and returns 
+            to the referee controller the function.
             This function is responsible to consult an referee by the id.
         */
 	public function consultByIdReferee($idReferee){
