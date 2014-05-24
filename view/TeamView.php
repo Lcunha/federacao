@@ -28,6 +28,8 @@ class TeamView{
 		echo "Dados inseridos com sucesso";
 	}
         /*
+            The function receives as input parameter the id of the team 
+            and returns to the team controller the function.
             This function is responsible to update the team information from 
             the forms.
         */ 
@@ -39,12 +41,15 @@ class TeamView{
                 $formTeam['teamPresident'], $formTeam['teamPhone']);
 	}
         /*
+            The function receives as input parameter the id of the team 
+            and returns to the team controller the function.
             This function is responsible to delete a team.
         */ 
 	public function deleteTeam($idTeam){
 		return $this->teamCO->_deleteTeam($idTeam);
 	}
         /*
+            The function returns to the coach controller the function.
             This function is responsible to list the coachs by selecting them.
         */ 
 	public function listCoachsForSelect(){
@@ -52,12 +57,14 @@ class TeamView{
 		return $coachCO->_listCoachsForSelect();
 	}
         /*
+            The function returns to the team controller the function.
             This function is responsible to list teams to the table.
         */ 
 	public function listAllTeamsForTables(){
 		return $this->teamCO->_listAllTeamsForTables();
 	}
         /*
+            The function returns to the team controller the function.
             This function is responsible to consult teams by id.
         */ 
 	public function consultByIdTeam($idTeam){
