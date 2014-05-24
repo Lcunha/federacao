@@ -16,6 +16,8 @@ class TeamGameView{
 		$this->teamGameCO = new TeamGameController();
 	}
 	/*
+            The function receives as input parameter the id of the current game 
+            and the team id.
             This function is responsible to save the game.
         */ 
         public function saveTeamGame($idCurrentGame,$idTeam){
