@@ -21,6 +21,7 @@ class DataTeamDAO{
 	}
 
 	/*
+            The function returns the team data.
             The method is responsibility by list all registers in dataBase table.
 	*/
 	public function listAllDataTeam(){
