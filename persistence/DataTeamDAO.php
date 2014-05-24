@@ -43,6 +43,8 @@ class DataTeamDAO{
 	}
 
 	/*
+            The function receives as input parameter the data team data and 
+            returns the sql execution.
             The method is responsibility to insert data in dataBase table.
 	*/
 	public function insertDataTeam(DataTeam $dataDataTeam){
