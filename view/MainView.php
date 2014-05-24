@@ -2,7 +2,9 @@
 
 /*
     Name: MainView.php
-    Description: This is the main view. It shows the options that lead to the other views.
+    Description: This is the main view. It allows you to consult the amount of 
+    teams, players, coaches and referees records. It also allows you to list 
+    gunners, fear players and all teams for championship table.
 */
 include_once(__APP_PATH.'/controller/TeamController.php');
 include_once(__APP_PATH.'/controller/PlayerController.php');
