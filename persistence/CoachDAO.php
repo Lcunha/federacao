@@ -20,6 +20,7 @@ class CoachDAO{
     }
 	
     /*
+        The function returns the coach data.
         The method is responsibility to list all registers in dataBase table.
     */
     public function listAllCoaches(){
@@ -35,6 +36,7 @@ class CoachDAO{
     }
 	
     /*
+        The function receives as input parameter the coach data.
         The method is responsibility to insert data in dataBase table.
     */
     public function insertCoach(Coach $coachData){
@@ -45,6 +47,8 @@ class CoachDAO{
     }
 	
     /*
+        The function receives as input parameter the coach data and returns the 
+        coach data.
         The method is responsibility to update data in dataBase table.
     */
     public function updateCoach(Coach $coachData){
