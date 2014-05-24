@@ -62,6 +62,8 @@ class DataTeamDAO{
 	}
 
 	/*
+                The function receives as input parameter the id of data team and 
+                returns the data of the data team.
 		The method is responsibility to consult in dataBase table through of ID.
 	*/
 	public function consultByIdDataTeam(DataTeam $idDataTeam){
