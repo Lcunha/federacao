@@ -2,7 +2,10 @@
 
 /*
     Name: PlayerView.php
-    Description: This view shows the options of the players.
+    Description: This view allows you to save player, list teams for select, 
+    list all tems, list all players, list all players for docket team A, list 
+    all player for docket team B, update player, delete player and consult by
+    id player.
 */
 include_once(__APP_PATH.'/controller/PlayerController.php');
 include_once(__APP_PATH.'/controller/TeamController.php');
@@ -27,6 +30,7 @@ class PlayerView{
 		echo "Dados inseridos com sucesso";
 	}
         /*
+            The function returns to the team controller the function.
             This function is responsible to list the teams.
         */
 	public function listAllTeamsForSelect(){
@@ -34,6 +38,7 @@ class PlayerView{
 		return $teamCO->_listAllTeamsForSelect();
 	}
         /*
+            The function returns to the player controller the function.
             This function is responsible to list the player to the table.
         */
 	public function listAllPlayersAllTables(){
