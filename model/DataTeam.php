@@ -7,8 +7,7 @@
     'idDataTeam', 'idTeam', 'teamPoints', 'playerTeam', 'victoryTeam', 'drawTeam', 
     'lossTeam', 'amountGoals' and 'concededGoals'. 
 */
-class DataTeam{
-    
+class DataTeam {
     private $idDataTeam;
     private $idTeam;
     private $teamPoints;
@@ -33,6 +32,11 @@ class DataTeam{
     public function __constructOverload($idDataTeam, $idTeam, $teamPoints, $playerTeam, 
                                         $victoryTeam, $drawTeam, $lossTeam, $amountGoals, 
                                         $concededGoals){
+        
+        /*
+            This defines that the new value that the program or the user put on the attribute will 
+            be now the value of the attribute.
+        */
 	$this->idDataTeam = $idDataTeam;
 	$this->idTeam = $idTeam;
 	$this->teamPoints = $teamPoints ;
@@ -45,126 +49,153 @@ class DataTeam{
     }
         
     /*
-        Method to verify the attribute 'idDataTeam' of the class.
+        Method to verify the attribute 'idDataTeam' of the class. This function returns the value 
+        in the attribute.
     */
     public function __getIdDataTeam(){
 	return $this->idDataTeam;
     }
         
     /*
-        Method to modify the attribute 'idDataTeam' of the class.
+        Method to modify the attribute 'idDataTeam' of the class. This function defines that the 
+        new value that the program or the user put on the attribute will be now the value of 
+        the attribute.
     */
     public function __setIdDataTeam($idDataTeam){
     	$this->idDataTeam = $idDataTeam;
     }
         
     /*
-        Method to verify the attribute 'idTeam' of the class.
+        Method to verify the attribute 'idTeam' of the class. This function returns the value 
+        in the attribute.
     */
     public function __getIdTeam(){
 	return $this->idTeam;
     }
         
     /*
-        Method to modify the attribute 'idTeam' of the class.
+        Method to modify the attribute 'idTeam' of the class. This function defines that the 
+        new value that the program or the user put on the attribute will be now the value of 
+        the attribute.
     */
     public function __setIdTeam($idTeam){
     	$this->idTeam = $idTeam;
     }
         
     /*
-        Method to verify the attribute 'teamPoints' of the class.
+        Method to verify the attribute 'teamPoints' of the class. This function returns the value 
+        in the attribute.
     */
     public function __getTeamPoints(){
 	return $this->teamPoints;
     }
         
     /*
-        Method to modify the attribute 'teamPoints' of the class.
+        Method to modify the attribute 'teamPoints' of the class. This function defines that the 
+        new value that the program or the user put on the attribute will be now the value of 
+        the attribute.
     */
     public function __setTeamPoints($teamPoints){
 	$this->teamPoints = $teamPoints;
     }
         
     /*
-        Method to verify the attribute 'playerTeam' of the class.
+        Method to verify the attribute 'playerTeam' of the class. This function returns the value 
+        in the attribute.
     */
     public function __getPlayerTeam(){
 	return $this->playerTeam;
     }
        
     /*
-        Method to modify the attribute 'playerTeam' of the class.
+        Method to modify the attribute 'playerTeam' of the class. This function defines that the 
+        new value that the program or the user put on the attribute will be now the value of 
+        the attribute.
     */
     public function __setPlayerTeam($playerTeam){
     	$this->playerTeam = $playerTeam;
     }
         
     /*
-        Method to verify the attribute 'victoryTeam' of the class.
+        Method to verify the attribute 'victoryTeam' of the class. This function returns the value 
+        in the attribute.
     */
     public function __getVictoryTeam(){
 	return $this->victoryTeam;
 	}
         
     /*
-        Method to modify the attribute 'victoryTeam' of the class.
+        Method to modify the attribute 'victoryTeam' of the class. This function defines that the 
+        new value that the program or the user put on the attribute will be now the value of 
+        the attribute.
     */
     public function __setVictoryTeam($victoryTeam){
     	$this->victoryTeam = $victoryTeam;
     }
         
     /*
-        Method to verify the attribute 'drawTeam' of the class.
+        Method to verify the attribute 'drawTeam' of the class. This function returns the value 
+        in the attribute.
     */
     public function __getDrawTeam(){
     	return $this->drawTeam;
     }
         
     /*
-        Method to modify the attribute 'drawTeam' of the class.
+        Method to modify the attribute 'drawTeam' of the class. This function defines that the 
+        new value that the program or the user put on the attribute will be now the value of 
+        the attribute.
     */
     public function __setDrawTeam($drawTeam){
 	$this->drawTeam = $drawTeam;
     }
         
     /*
-        Method to verify the attribute 'lossTeam' of the class.
+        Method to verify the attribute 'lossTeam' of the class. This function returns the value 
+        in the attribute.
     */
     public function __getLossTeam(){
 	return $this->lossTeam;
     }
         
     /*
-        Method to modify the attribute 'lossTeam' of the class.
+        Method to modify the attribute 'lossTeam' of the class. This function defines that the 
+        new value that the program or the user put on the attribute will be now the value of 
+        the attribute.
     */
     public function __setLossTeam($lossTeam){
 	$this->lossTeam = $lossTeam;
     }
         
     /*
-        Method to verify the attribute 'amountGoals' of the class.
+        Method to verify the attribute 'amountGoals' of the class. This function returns the value 
+        in the attribute.
     */
     public function __getAmountGoals(){
 	return $this->amountGoals;
     }
         
     /*
-        Method to modify the attribute 'amountGoals' of the class.
+        Method to modify the attribute 'amountGoals' of the class. This function defines that the 
+        new value that the program or the user put on the attribute will be now the value of 
+        the attribute.
     */
     public function __setAmountGoals($amountGoals){
     	$this->amountGoals = $amountGoals;
     }
         
     /*
-        Method to verify the attribute 'concededGoals' of the class.
+        Method to verify the attribute 'concededGoals' of the class. This function returns the  
+        value in the attribute.
     */
     public function __getConcededGoals(){
 	return $this->concededGoals;
     }
         
     /*
-        Method to modify the attribute 'concededGoals' of the class.
+        Method to modify the attribute 'concededGoals' of the class. This function defines that the 
+        new value that the program or the user put on the attribute will be now the value of 
+        the attribute.
     */
     public function __setConcededGoals($concededGoals){
 	$this->concededGoals = $concededGoals;

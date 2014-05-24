@@ -1,8 +1,9 @@
 <?php
 
 /*
-  Name: GameView.php
-  Description: This view shows the data of each game.
+    Name: GameView.php
+    Description: This view allows to list all games, consult by game id, insert 
+    game, save game, delete game and insert time.
  */
 include_once('./controller/GameController.php');
 include_once('./controller/TimeController.php');
@@ -14,7 +15,7 @@ class GameView{
 
     /*
       This function is responsible to instantiate the JogoController and 
-      TempoController.
+      TimeController.
      */
     public function __construct(){
         $this->gameCO = new GameController();
@@ -22,6 +23,7 @@ class GameView{
     }
 
     /*
+      The function returns to the game controller the function.
       This function is responsible to list all the games.
      */
     public function listAllGames(){
@@ -29,6 +31,8 @@ class GameView{
     }
 
     /*
+      The function receives as input parameter the id of the game and 
+      returns to the game controller the function.
       This function is responsible to consult games by the idGame.
      */
     public function consultByGameId($idGame){
@@ -36,6 +40,7 @@ class GameView{
     }
 
     /*
+      The function returns to the game controller the function.
       This function is responsible to add a new game.
      */
     public function insertGame(){
@@ -44,6 +49,7 @@ class GameView{
     }
 
     /*
+      The function returns to the game controller the function.
       This function is responsible to save game information received by form.
      */
     public function saveGame(){
@@ -53,6 +59,8 @@ class GameView{
     }
 
     /*
+      The function receives as input parameter the id of the game and 
+      returns to the game controller the function.
       This function is responsible to delete a game.
      */
     public function deleteGame($idGame){
@@ -60,6 +68,8 @@ class GameView{
     }
 
     /*
+      The function receives as input parameter the id of the game and 
+      returns to the game controller the function.
       This function is responsible to add time to a game.
      */
     public function insertTime($idGame){
