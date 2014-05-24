@@ -62,6 +62,8 @@ class CoachDAO{
     }
 	
     /*
+        The function receives as input parameter the coach data and returns the 
+        coach data.
         The method is responsibility to consult in dataBase table through of ID.
     */
     public function consultByIdCoach(Coach $idCoach){
@@ -75,6 +77,8 @@ class CoachDAO{
     }
 	
     /*
+        The function receives as input parameter the coach name and returns the 
+        coach data.
         The method is responsibility to consult in dataBase table through of Name.
     */
     public function consultByCoachName(Coach $coachName){
@@ -88,6 +92,7 @@ class CoachDAO{
     }
 
     /*
+        The function receives as input parameter the coach id.
         The method is responsibility to delete data in dataBase table.
     */
     public function deleteCoach(Coach $idCoach){
@@ -96,6 +101,7 @@ class CoachDAO{
     }
 
     /*
+        The function returns the record.
         The method is responsibility to count registers of Coach in dataBase table. 
     */
     public function amountCoachesRecords(){
