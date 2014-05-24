@@ -45,6 +45,8 @@ class PlayerView{
 		return $this->playerCO->_listAllPlayersAllTables();
 	}
         /*
+            The function receives as input parameter the team and the id of time 
+            play and return to the player controller the function.
             This function is responsible to list the players of team A.
         */
 	public function listAllPlayersForDocketTeamA($team, $idTimePlay){
@@ -52,6 +54,8 @@ class PlayerView{
                 $idTimePlay);
 	}
         /*
+            The function receives as input parameter the team and the id of time 
+            play and return to the player controller the function.
             This function is responsible to list the player of team B.
         */
 	public function listAllPlayersForDocketTeamB($team, $idTimePlay){
@@ -59,6 +63,8 @@ class PlayerView{
                 $idTimePlay);
 	}
         /*
+            The function receives as input parameter the player id and return 
+            to the player controller the function.
             This function is responsible to update the player information.
         */
 	public function updatePlayer($idPlayer){
@@ -68,12 +74,16 @@ class PlayerView{
                 $formPlayer['cpfPlayer'], $formPlayer['playerNumber']);
 	}
         /*
+            The function receives as input parameter the player id and return 
+            to the player controller the function.
             This function is responsible to delete the player.
         */
 	public function deletePlayer($idPlayer){
 		return $this->playerCO->_deletePlayer($idPlayer);
 	}
         /*
+            The function receives as input parameter the player id and return 
+            to the player controller the function.
             This function is responsible to consult player by the id.
         */
 	public function consultByIdPlayer($idPlayer){
