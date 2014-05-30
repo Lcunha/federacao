@@ -28,7 +28,7 @@
                     		<li><a href="?pag=tecnico">Tecnicos</a></li>
                         	<li><a href="?pag=jogador">Jogadores</a></li>
                         	<li><a href="?pag=arbitro">Arbitro</a></li> 
-                        	<li><a href="?pag=time">Time</a></li>
+                        	<li><a href="?pag=team">Time</a></li>
                     	</ul>
                     </li>
                 	<li class="borda"><a href="?pag=campeonato">Dados do Campeonatos</a>
