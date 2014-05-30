@@ -139,7 +139,7 @@ background-color: #CC0000;
 </style>
 <center><h2>Arbitro</h2></center>
 <div id="medida2">
-<a href="?pag=EditarArbitro" class="but but-primary float">Incluir novo arbitro</a>
+<a href="?pag=cad-arbitro" class="but but-primary float">Incluir novo arbitro</a>
 <div id="clear"></div>
 </div>
     <form class="medida" style="margin: 0 auto" method="post" action="exemplo.html" id="frm-filtro">
