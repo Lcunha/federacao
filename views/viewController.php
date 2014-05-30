@@ -34,8 +34,8 @@ switch($page){
 		include(__APP_PATH.'/views/rud_Team.php');
 		include(__APP_PATH.'/views/var.php');
                 break;	
-        case 'team':
-		include(__APP_PATH.'/views/languages/english/rud_TeamEnglish.php');
+    case 'team':
+		include(__APP_PATH.'/views/rud_Team.php');
 		break;	    
 	case 'sumula':
 		include(__APP_PATH.'/views/docket.php');
