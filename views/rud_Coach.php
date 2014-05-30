@@ -146,7 +146,7 @@ background-color: #CC0000;
 
 <center><h2>Tecnicos</h2></center>
 <div id = "medida2">
-    <a href = "?pag = cad-tecnico" class = "but but-primary float">Incluir novo tecnico</a>
+    <a href = "?pag=cad-tecnico" class = "but but-primary float">Incluir novo tecnico</a>
     <div id = "clear"></div>
 </div>
 
