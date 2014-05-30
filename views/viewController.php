@@ -52,8 +52,7 @@ switch($page){
 		break;
 	case 'cad-tecnico':
 		include(__APP_PATH.'/views/cad_Coach.php');
-		include(__APP_PATH.'/views/var.php');
-                break;
+        break;
 	case 'cad-jogador':
 		include(__APP_PATH.'/views/cad_Player.php');
 		include(__APP_PATH.'/views/var.php');
