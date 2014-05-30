@@ -1,12 +1,7 @@
 <?php
 
-require_once "../../controller/TimeController.php";
-require_once "../../persistence/TimeDAO.php";
-require_once "../../model/Time.php";
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
+include_once("../../../federac/controller/TimeController.php");
+include_once("../../../federac/persistence/TimeDAO.php");
 
 class TimeControllerTest extends PHPUnit_Framework_TestCase{
 

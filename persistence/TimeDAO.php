@@ -5,9 +5,9 @@
     Description:Class data persistence with CRUD functions (create, read, update, delete) 
     for handling the type Time, in the relevant table in mysql.
 */
-include_once ('./model/Time.php');
-include_once ('./model/Game.php');
-include_once ('./persistence/Connection.php');
+include_once '/../model/Time.php';
+include_once '/../model/Game.php';
+include_once '/../persistence/Connection.php';
 
 class TimeDAO{
 	private $connection;
