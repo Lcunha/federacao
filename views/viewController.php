@@ -14,8 +14,7 @@ switch($page){
                 include(__APP_PATH.'/views/var.php');
                 break;
         case 'coach':
-                include (__APP_PATH.'/views/languages/english/rud_CoachEnglish.php');
-		include(__APP_PATH.'/views/var.php');
+			include(__APP_PATH.'/views/var.php');
                 break;    
 	case 'jogador':
 		include(__APP_PATH.'/views/rud_Player.php');
@@ -26,8 +25,7 @@ switch($page){
 		
                 break;    
 	case 'arbitro':
-		include(__APP_PATH.'/views/languages/english/rud_RefereeEnglish.php');
-		include(__APP_PATH.'/views/var.php');
+		include(__APP_PATH.'/views/rud_Referee.php');
                 break;	
         case 'referee':
 		include(__APP_PATH.'/views/rud_Referee.php');
@@ -47,7 +45,7 @@ switch($page){
 		break;
             
             
-	case 'EditarReferee':
+	case 'cad-arbitro':
 		include(__APP_PATH.'/views/cad_Referee.php');
 		break;
 	case 'cad-tecnico':
