@@ -40,9 +40,8 @@ switch($page){
 		include(__APP_PATH.'/views/languages/english/rud_TeamEnglish.php');
 		break;	    
 	case 'sumula':
-		include(__APP_PATH.'/views/languages/english/docketEnglish.php');
-		include(__APP_PATH.'/views/var.php');
-                break;
+		include(__APP_PATH.'/views/docket.php');
+            break;
        case 'emulates':
 		include(__APP_PATH.'/views/docket.php');
 		break;
