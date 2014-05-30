@@ -22,10 +22,10 @@ class Connection{
 	*/
 	public function __construct(){
             $this->dataBaseType    = "mysql";
-            $this->dataBaseServer      = "localhost";
-            $this->dataBaseUser       = "root";
-            $this->dataBasePass         = "";
-            $this->dataBaseName            = "federacao_handebol";
+            $this->dataBaseServer  = "localhost";
+            $this->dataBaseUser    = "root";
+            $this->dataBasePass    = "root";
+            $this->dataBaseName    = "federacao_handebol";
             $this->dataBase = NewADOConnection($this->dataBaseType);
             $this->dataBase->dialect = 3;
             $this->dataBase->debug = false;
