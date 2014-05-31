@@ -11,8 +11,6 @@ class TimeTest extends PHPUnit_Framework_TestCase{
 
     protected function setUp() {
         $this->timeTest = new Time();
-                //'idTimePlay', 'idPlayer', 'type', 'amountSevenMetersTotal', 
-                  //                      'timeCoach', 'scoreboardTeam1', 'scoreboardTeam2');
         $this->timeDAOTest = new TimeDAO();
     }
    
@@ -62,5 +60,31 @@ class TimeTest extends PHPUnit_Framework_TestCase{
         $result = $this->timeTest->__getAmountReports();
         $this->assertEquals(87, $result);
     }
+    
+    public function testSetAmountSevenMetersTotal(){
+        $this->timeTest->__setAmountSevenMetersTotal(6);
+        $result = $this->timeTest->__getAmountSevenMetersTotal();
+        $this->assertEquals(6, $result);
+    }
+    
+    public function testSetTimeCoach(){
+        $this->timeTest->__setTimeCoach(898);
+        $result = $this->timeTest->__getTimeCoach();
+        $this->assertEquals(898, $result);
+    }
+    
+    public function testeSetScoreboardTeam1(){
+        $this->timeTest->__setScoreboardTeam1(3);
+        $result = $this->timeTest->__getScoreboardTeam1();
+        $this->assertEquals(3, $result);
+    }
+    public function testSetScoreboardTeam2(){
+        $this->timeTest->__setScoreboardTeam2(2);
+        $result = $this->timeTest->__getScoreboardTeam2();
+        $this->assertEquals(2, $result);
+        
+    }
+    
+    
 }
 ?>
