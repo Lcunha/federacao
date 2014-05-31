@@ -48,7 +48,7 @@ class TimeTest extends PHPUnit_Framework_TestCase{
     public function testSetAmountPunishment(){
         $this->timeTest->__setAmountPunishment(1);
         $result = $this->timeTest->__getAmountPunishment();
-        $this->asserEquals(1,$result);
+        $this->assertEquals(1,$result);
     }
     
     public function testSetAmountDisqualification(){
@@ -60,8 +60,7 @@ class TimeTest extends PHPUnit_Framework_TestCase{
     public function testSetAmountReports(){
         $this->timeTest->__setAmountReports(87);
         $result = $this->timeTest->__getAmountReports();
-        $this->assertEquals(81,$result);
+        $this->assertEquals(87, $result);
     }
-
 }
 ?>
