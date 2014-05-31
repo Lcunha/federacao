@@ -27,6 +27,41 @@ class TimeTest extends PHPUnit_Framework_TestCase{
         $this->assertEquals(11,$result);
     }
 
+    public function testSetIdTimePlay(){
+        $this->timeTest->__setIdTimePlay(2);
+        $result = $this->timeTest->__getIdTimePlay();
+        $this->assertEquals(2,$result);
+    }
+    
+    public function testSetType(){
+        $this->timeTest->__setType('tempo');
+        $result = $this->timeTest->__getType();
+        $this->assertEquals('tempo', $result);
+    }
+    
+    public function testSetamountWarning(){
+        $this->timeTest->__setAmountWarning(7);
+        $result = $this->timeTest->__getAmountWarning();
+        $this->assertEquals(7,$result);
+    }
+    
+    public function testSetAmountPunishment(){
+        $this->timeTest->__setAmountPunishment(1);
+        $result = $this->timeTest->__getAmountPunishment();
+        $this->asserEquals(1,$result);
+    }
+    
+    public function testSetAmountDisqualification(){
+        $this->timeTest->__setAmountDisqualification(8);
+        $result = $this->timeTest->__getAmountDisqualification();
+        $this->assertEquals(8,$result);
+    }
+ 
+    public function testSetAmountReports(){
+        $this->timeTest->__setAmountReports(87);
+        $result = $this->timeTest->__getAmountReports();
+        $this->assertEquals(81,$result);
+    }
 
 }
 ?>
