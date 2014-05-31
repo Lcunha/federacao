@@ -9,8 +9,6 @@ class TimeControllerTest extends PHPUnit_Framework_TestCase{
      protected $time;
      protected $timeDAO;
     
-     
-
     protected function setUp() {
         $this->time = new Time();
         $this->timeControllerTest = new TimeController();
@@ -34,8 +32,7 @@ class TimeControllerTest extends PHPUnit_Framework_TestCase{
         $result = $this ->timeDAO->insertGoalsTeam1(5, 7, 6);
         $this->assertEquals($result, $return);
     }
-   
-    
+
     /*
       O teste falha pq fala que essa função deleTime nao existe na classe timeDAO E ESSA FUNÇAO E UTILIZADA 
       MAS REALMENTE NÃO EXITE NA CLASSE. O QUE FAZER?

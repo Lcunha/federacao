@@ -47,7 +47,9 @@ class TimeDAO{
             $sql = "INSERT INTO tempo (jogo_id_jogo, tiro_7metros, tempo_tecnico, placar_time1,
                                        placar_time2,tipo) 
                     VALUES ('{$idGame}',0,0,0,0,0)";
-            $this->connection->dataBase->Execute($sql);
+            
+            $return =   $this->connection->dataBase->Execute($sql);
+            return $return;
 	}
 	
 	/*
