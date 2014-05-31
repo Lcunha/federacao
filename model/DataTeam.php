@@ -1,5 +1,4 @@
 <?php
-
 /* 
     Name: DadosTime.php
     Description: This is the class that contains the attributes, accessor methods 
@@ -7,6 +6,7 @@
     'idDataTeam', 'idTeam', 'teamPoints', 'playerTeam', 'victoryTeam', 'drawTeam', 
     'lossTeam', 'amountGoals' and 'concededGoals'. 
 */
+
 class DataTeam {
     private $idDataTeam;
     private $idTeam;

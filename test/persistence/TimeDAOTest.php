@@ -18,13 +18,11 @@ class TimeControllerTest extends PHPUnit_Framework_TestCase{
         unset($this->timeDaoTest);
     }
 
-   /*
-    teste quebrando ainda vou analisar o que estou errando nele.
    public function testInsertGame(){
        $result = $this->timeDaoTest->insertGame(1);
        $this->assertTrue($result);
    }
-   */
+  
     
 }
 ?>

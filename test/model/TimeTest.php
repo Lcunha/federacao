@@ -1,22 +1,18 @@
 <?php
 
 include_once("../../../federac/model/Time.php");
-include_once("../../../federac/persistence/TimeDAO.php");
+
 
 class TimeTest extends PHPUnit_Framework_TestCase{
     
     protected $timeTest;
-    protected $timeDAOTest;
-    
 
     protected function setUp() {
         $this->timeTest = new Time();
-        $this->timeDAOTest = new TimeDAO();
     }
    
      protected function tearDown() {
         unset($this->timeTest);
-        unset($this->timeDAOTest);  
     }
     
       public function testSeIdTimePlay() {
