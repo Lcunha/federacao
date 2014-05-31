@@ -24,7 +24,7 @@ class Connection{
             $this->dataBaseType    = "mysql";
             $this->dataBaseServer  = "localhost";
             $this->dataBaseUser    = "root";
-            $this->dataBasePass    = "root";
+            $this->dataBasePass    = "";
             $this->dataBaseName    = "federacao_handebol";
             $this->dataBase = NewADOConnection($this->dataBaseType);
             $this->dataBase->dialect = 3;

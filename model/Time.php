@@ -31,15 +31,12 @@ class Time{
     }
         
     /*
-        Overload construct.
+        Overload construct. This defines that the new value that the program or the user put on the attribute will 
+       be now the value of the attribute.
     */
     public function __constructOverload($idTimePlay, $idPlayer, $type, $amountSevenMetersTotal, 
                                         $timeCoach, $scoreboardTeam1, $scoreboardTeam2){
-        
-        /*
-            This defines that the new value that the program or the user put on the attribute will 
-            be now the value of the attribute.
-        */
+    
 	$this->idTimePlay = $idTimePlay;
 	$this->idPlayer = $idPlayer;
 	$this->type = $type;
