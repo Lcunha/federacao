@@ -6,9 +6,9 @@
     update, delete) for handling the type Team, in the relevant table in mysql.
 */
 
-include_once ('./model/Team.php');
-include_once ('./model/Player.php');
-include_once ('./persistence/Connection.php');
+include_once ('/../model/Team.php');
+include_once ('/../model/Player.php');
+include_once ('/../persistence/Connection.php');
 
 class TeamDAO{
 	private $connection;

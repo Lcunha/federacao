@@ -4,8 +4,8 @@
     Name: DataTeamController.php
     Description: Updates the points earned by teams in each match held.
  */
-include_once('./persistence/DataTeamDAO.php');
-include_once('./model/DataTeam.php');
+include_once('/../persistence/DataTeamDAO.php');
+include_once('/../model/DataTeam.php');
 
 class DataTeamController {
 

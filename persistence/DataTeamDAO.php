@@ -6,9 +6,9 @@
     for handling the associative type Data_Team, in the relevant table (table associative) 
     in mysql.
  */
-include_once ('./model/Coach.php');
-include_once ('./persistence/Connection.php');
-include_once ('./persistence/TeamDAO.php');
+include_once ('/../model/Coach.php');
+include_once ('/../persistence/Connection.php');
+include_once ('/../persistence/TeamDAO.php');
 
 class DataTeamDAO{
 	private $connection;
