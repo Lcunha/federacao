@@ -201,7 +201,7 @@ class DataTeamDAO{
             The function receives as input parameter the id of data team.
             The method responsibility is to delete data in dataBase table.
 	*/
-	public function deleteDataTeam(DataTeam $idDataTeam){
+	public function deleteDataTeam($idDataTeam){
             $sql = "DELETE FROM dados_campeonato WHERE id_dados_campeonato = '{$idDataTeam}' ";
             $result = $this->connection->dataBase->Execute($sql);
 	}

@@ -28,6 +28,19 @@ class DataTeamControllerTest extends PHPUnit_Framework_TestCase{
         $this->assertEquals($result, $return);
     }
     
+    public function testDeleteDataTeam(){
+        $return = $this->dataTeamControllerTest->_deleteDataTeam(1);
+        $result = $this ->dataTeamDAOTest->deleteDataTeam(1);
+        $this->assertEquals($result, $return);
+    }
+    
+    /*
+     public function testInsertDataTeam(){
+        $return = $this->dataTeamControllerTest->_insertDataTeam(4);
+        $result = $this ->dataTeamDAOTest->insertDataTeam(4);
+        $this->assertEquals($result, $return);
+    }
+    */
     
 }
     
