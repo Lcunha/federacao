@@ -1,6 +1,6 @@
 <?php
 
-include_once("../../../federac/model/Time.php");
+include_once("../../model/Time.php");
 
 
 class TimeTest extends PHPUnit_Framework_TestCase{

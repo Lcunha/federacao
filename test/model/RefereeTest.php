@@ -1,7 +1,7 @@
 <?php
 
-include_once("../../../federac/model/Referee.php");
-include_once("../../../federac/persistence/RefereeDAO.php");
+include_once("../../model/Referee.php");
+include_once("../../persistence/RefereeDAO.php");
 
 class RefereeTest extends PHPUnit_Framework_TestCase {
 

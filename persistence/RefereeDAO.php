@@ -9,6 +9,9 @@
 include_once (__APP_PATH.'/model/Referee.php');
 include_once (__APP_PATH.'/persistence/Connection.php');
 
+//include_once("../model/Referee.php");
+//include_once("../persistence/Connection.php");
+
 class RefereeDAO{
 	private $connection;
 	
