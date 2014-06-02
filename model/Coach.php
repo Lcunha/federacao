@@ -21,14 +21,11 @@ class Coach{
     }
         
     /*
-        Overload construct.
+        Overload construct.This defines that the new value that the program or the user put on the attribute will 
+            be now the value of the attribute.
     */
     public function __constructOverload($idCoach, $coachName, $coachPhone, $coachCpf){
         
-        /*
-            This defines that the new value that the program or the user put on the attribute will 
-            be now the value of the attribute.
-        */
     	$this->idCoach = $idCoach;
 	$this->coachName = $coachName;
 	$this->coachPhone = $coachPhone;
