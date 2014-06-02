@@ -20,10 +20,14 @@ class RefereeTest extends PHPUnit_Framework_TestCase {
         $result = $this->refereeTest->setIdReferee();
         $this->assertEquals(2,$result);
     }
-    /*    
+        
     public function setRefereeName($refereeName){
-	$this->refereeName = $refereeName;
+	$this->refereeTest->setRefereeName('Nome');
+        $result = $this->refereeTest->setRefereeName();
+        $this->assertEquals('Nome',$result);
     }
+    
+    /*
     public function setRefereePhone($refereePhone){
 	$this->refereePhone = $refereePhone;
     }
