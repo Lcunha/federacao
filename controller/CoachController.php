@@ -5,8 +5,8 @@
     Description: Class responsible for inserting, deleting, changing a manager in addition 
     to making an appointment for a coach already registered.
 */
-include_once(__APP_PATH . '/persistence/CoachDAO.php');
-include_once(__APP_PATH . '/model/Coach.php');
+include_once( '/../Persistence/CoachDAO.php');
+include_once( '/../model/Coach.php');
 
 class CoachController {
 

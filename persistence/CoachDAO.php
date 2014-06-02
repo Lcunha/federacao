@@ -6,8 +6,8 @@
     for handling the type Coach, in the relevant table in mysql.
 */
 
-include_once (__APP_PATH.'/model/Coach.php');
-include_once (__APP_PATH.'/persistence/Connection.php');
+include_once ('/../model/Coach.php');
+include_once ('/../persistence/Connection.php');
 
 class CoachDAO{
     private $connection;
@@ -95,7 +95,7 @@ class CoachDAO{
         The function receives as input parameter the coach id.
         The method is responsibility to delete data in dataBase table.
     */
-    public function deleteCoach(Coach $idCoach){
+    public function deleteCoach($idCoach){
         $sql = "DELETE FROM tecnico WHERE id_tecnico = '{$idCoach}' ";
         $result = $this->connection->dataBase->Execute($sql);
     }
