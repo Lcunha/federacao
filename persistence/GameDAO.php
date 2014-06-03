@@ -6,8 +6,9 @@
     for handling the type Game, in the relevant table in mysql.
 */
 
-include_once (__APP_PATH.'/model/Game.php');
-include_once (__APP_PATH.'/persistence/Connection.php');
+include_once("/../model/Game.php");
+include_once("/../persistence/Connection.php");
+
 
 class GameDAO{
 	private $connection;
