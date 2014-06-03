@@ -2,15 +2,18 @@
 
 include_once("../../../federac/controller/CoachController.php");
 include_once("../../../federac/persistence/CoachDAO.php");
+include_once("../../../federac/model/Coach.php");
 
 class CoachControllerTest extends PHPUnit_Framework_TestCase{
 
      protected $coachControllerTest;
      protected $coachDAOTest;
+     protected $coachTest;
     
     protected function setUp() {
         $this->coachControllerTest = new CoachController();
         $this->coachDAOTest = new CoachDAO();
+        $this->coachTest = new Coach();
     }
     
     protected function tearDown() {   
@@ -23,8 +26,21 @@ class CoachControllerTest extends PHPUnit_Framework_TestCase{
         $result = $this->coachDAOTest->deleteCoach(1);
         $this->assertEquals($result, $return);
     }
-    
+      public function testAmountCoachesRecords(){
+        $return = $this->coachControllerTest->_amountCoachesRecords();
+        $result = $this->coachDAOTest->amountCoachesRecords();
+        $this->assertEquals($result, $return);
+    }
+    /*
+        public function testConsultByCoachName(){
+        $return = $this->coachControllerTest->_consultByCoachName('Fernando');
+        $result = $this->coachDAOTest->consultByCoachName('Fernando');
+        $this->assertEquals($result, $return);
+    }
 
+    } */
+    
+    
 }
 
 ?>
