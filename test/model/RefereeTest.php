@@ -16,26 +16,26 @@ class RefereeTest extends PHPUnit_Framework_TestCase {
     }
    
     public function testSetIdReferee(){
-	$this->refereeTest->setIdReferee(2);
-        $result = $this->refereeTest->setIdReferee();
+	$this->refereeTest->__setIdReferee(2);
+        $result = $this->refereeTest->__getIdReferee();
         $this->assertEquals(2,$result);
     }
         
     public function testSetRefereeName(){
-	$this->refereeTest->setRefereeName('Joao');
-        $result = $this->refereeTest->setRefereeName();
+	$this->refereeTest->__setRefereeName('Joao');
+        $result = $this->refereeTest->__getRefereeName();
         $this->assertEquals('Joao',$result);
     }
     
    
     public function testSetRefereePhone(){
-	$this->refereeTest->setRefereePhone('33330000');
-        $result = $this->refereeTest->setRefereePhone();
+	$this->refereeTest->__setRefereePhone('33330000');
+        $result = $this->refereeTest->__getRefereePhone();
         $this->assertEquals('33330000',$result);
     }
     public function testSetRefereeCpf(){
-    	$this->refereeTest->setRefereeCpf('93784-2');
-        $result = $this->refereeTest->setRefereeCpf();
+    	$this->refereeTest->__setRefereeCpf('93784-2');
+        $result = $this->refereeTest->__getRefereeCpf();
         $this->assertEquals('93784-2',$result);
     }
     
