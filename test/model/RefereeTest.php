@@ -22,17 +22,21 @@ class RefereeTest extends PHPUnit_Framework_TestCase {
     }
         
     public function setRefereeName($refereeName){
-	$this->refereeTest->setRefereeName('Nome');
+	$this->refereeTest->setRefereeName('Joao');
         $result = $this->refereeTest->setRefereeName();
-        $this->assertEquals('Nome',$result);
+        $this->assertEquals('Joao',$result);
     }
     
-    /*
+   
     public function setRefereePhone($refereePhone){
-	$this->refereePhone = $refereePhone;
+	$this->refereeTest->setRefereePhone('33330000');
+        $result = $this->refereeTest->setRefereePhone();
+        $this->assertEquals('33330000',$result);
     }
     public function setRefereeCpf($refereeCpf){
-    	$this->refereeCpf = $refereeCpf;
+    	$this->refereeTest->setRefereeCpf('93784-2');
+        $result = $this->refereeTest->setRefereeCpf();
+        $this->assertEquals('93784-2',$result);
     }
-    */
+    
 }
