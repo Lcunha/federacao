@@ -5,11 +5,11 @@
     Description: Class that performs the listing of teams and games already registered in 
     the system in a table may exluir, edit, update and save.
 */
-include_once('./persistence/GameDataDAO.php');
-include_once('./model/GameData.php');
-include_once('./model/Player.php');
-include_once('./controller/PlayerController.php');
-include_once('./controller/TeamController.php');
+include_once('/../persistence/GameDataDAO.php');
+include_once('/../model/GameData.php');
+include_once('/../model/Player.php');
+include_once('/../controller/PlayerController.php');
+include_once('/../controller/TeamController.php');
 
 class GameDataController {
     private $gameDataDAO;

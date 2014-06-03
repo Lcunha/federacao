@@ -11,9 +11,9 @@ class GameDataControllerTest extends PHPUnit_Framework_TestCase{
      protected $gameDataDAOTest;
     
     protected function setUp() {
-        $this->gameDataTest = new DataTeam();
-        $this->gameDataControllerTest = new DataTeamController();
-        $this->gameDataDAOTest = new DataTeamDAO();
+        $this->gameDataTest = new GameData();
+        $this->gameDataControllerTest = new GameDataController();
+        $this->gameDataDAOTest = new GameDataDAO();
     }
     
     protected function tearDown() {
@@ -22,9 +22,9 @@ class GameDataControllerTest extends PHPUnit_Framework_TestCase{
         unset($this->gameDataTest);
     }
 /*
-     public function testListAllData(){
-        $return = $this->dataTeamControllerTest->_listAllData();
-        $result = $this ->dataTeamDAOTest->listAllDataTeam();
+     public function testListAllGames(){
+        $return = $this->gameDataControllerTest->_listAllGame();
+        $result = $this ->dataTeamDAOTest->listAllGame();
         $this->assertEquals($result, $return);
     } */
 

@@ -4,8 +4,8 @@ F<?php
     Description: Inserts players already registered in the table, organizes the players to form a team.
     Query performs inserts, updates, and deletes saved data from players.
  */
-include_once(__APP_PATH . '/persistence/PlayerDAO.php');
-include_once(__APP_PATH . '/model/Player.php');
+include_once('/../persistence/PlayerDAO.php');
+include_once('/../model/Player.php');
 
 class PlayerController {
 

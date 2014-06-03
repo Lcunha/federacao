@@ -5,8 +5,8 @@
     Description: Class data persistence with CRUD functions (create, read, update, delete) 
     for handling the type Data, in the relevant table in mysql.
 */
-include_once ('./model/GameData.php');
-include_once ('./persistence/Connection.php');
+include_once ('/../model/GameData.php');
+include_once ('/../persistence/Connection.php');
 
 class GameDataDAO{
     private $connection;

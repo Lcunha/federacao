@@ -6,9 +6,9 @@
     for handling the type Player, in the relevant table in mysql.
  */
 
-include_once (__APP_PATH.'/model/Player.php');
-include_once (__APP_PATH.'/model/Team.php');
-include_once (__APP_PATH.'/persistence/Connection.php');
+include_once ('/../model/Player.php');
+include_once ('/../model/Team.php');
+include_once ('/../persistence/Connection.php');
 
 class PlayerDAO{
 	private $connection;

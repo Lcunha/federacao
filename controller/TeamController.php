@@ -5,10 +5,10 @@
     Description:Classe responsavel por inserir os dados do team e dos
     jogadores na tabela, realiza, consulta, exclui, e atualiza a tabela.
  */
-include_once(__APP_PATH . '/persistence/TeamDAO.php');
-include_once(__APP_PATH . '/persistence/DataTeamDAO.php');
-include_once(__APP_PATH . '/model/Team.php');
-include_once(__APP_PATH . '/model/DataTeam.php');
+include_once ('/../persistence/TeamDAO.php');
+include_once('/../persistence/DataTeamDAO.php');
+include_once('/../model/Team.php');
+include_once('/../model/DataTeam.php');
 
 class TeamController {
 
