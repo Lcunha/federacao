@@ -1,7 +1,7 @@
 <?php
 
-include_once("../../../federac/persistence/DataTeamDAO.php");
-include_once("../../../federac/model/DataTeam.php");
+include_once("/../../persistence/DataTeamDAO.php");
+include_once("/../../model/DataTeam.php");
 
 class DataTeamDAOTest extends PHPUnit_Framework_TestCase{
   
@@ -21,7 +21,11 @@ class DataTeamDAOTest extends PHPUnit_Framework_TestCase{
          $result = $this->dataTeamDAOTest->deleteDataTeam(2);
          $this->assertNull($result);  
     }
-  
+    
+     public function testInsertDataTeam() {
+        $retorno = $this->dataTeamDAOTest->insertDataTeam($this->dataTeamTest);
+        $this->assertTrue($retorno);
+    }    
     /*
      public function testInsertDataTeam(){
         $result = $this->dataTeamDAOTest->insertDataTeam(null);
