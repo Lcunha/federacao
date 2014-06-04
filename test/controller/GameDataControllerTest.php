@@ -21,12 +21,17 @@ class GameDataControllerTest extends PHPUnit_Framework_TestCase{
         unset($this->gameDataDAOTest);
         unset($this->gameDataTest);
     }
-/*
-     public function testListAllGames(){
-        $return = $this->gameDataControllerTest->_listAllGame();
-        $result = $this ->dataTeamDAOTest->listAllGame();
-        $this->assertEquals($result, $return);
-    } */
 
+     public function testListAllGameData(){
+        $return = $this->gameDataControllerTest->_listAllGameData();
+        $result = $this ->gameDataDAOTest->listAllGameData();
+        $this->assertEquals($result, $return);
+    } 
+   
+       public function testDeleteGameData(){
+        $return = $this->gameDataControllerTest->_deleteGameData(1);
+        $result = $this ->gameDataDAOTest->deleteGameData(1);
+        $this->assertEquals($result, $return);
+    } 
 }
 ?>

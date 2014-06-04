@@ -22,11 +22,15 @@ class DataTeamDAOTest extends PHPUnit_Framework_TestCase{
          $this->assertNull($result);  
     }
   
-    
+    /*
      public function testInsertDataTeam(){
         $result = $this->dataTeamDAOTest->insertDataTeam(null);
-        $this->assertFalse($result);
-        
-     }
-     
+        $this->assertFalse($result);  
+     }  
+     */
+
+    
+    
+    
+    
 }

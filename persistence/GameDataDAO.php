@@ -176,7 +176,7 @@ class GameDataDAO{
         The method is responsible to delete in database table through of id. This function have 
         the id of the class GameData as input parameter. It doesn't have return.
     */
-    public function deleteGameData(GameData $idGameData){
+    public function deleteGameData( $idGameData){
         $sql = "DELETE FROM dados WHERE id_dados= '{$idGameData}' ";
         $result = $this->connection->dataBase->Execute($sql);
     }

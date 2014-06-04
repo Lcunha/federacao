@@ -17,12 +17,12 @@ class TimeControllerTest extends PHPUnit_Framework_TestCase{
         unset($this->timeTest);
         unset($this->timeDaoTest);
     }
-
+/*
    public function testInsertGame(){
        $result = $this->timeDaoTest->insertGame(-2);
        $this->assertFalse($result);
    }
-  
+  */
     
 }
 ?>
