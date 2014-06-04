@@ -52,6 +52,8 @@ class RefereeDAO{
                     '{$dataReferee->__getRefereePhone()}',
                     '{$dataReferee->__getRefereeCpf()}')";
             $this->connection->dataBase->Execute($sql);
+            $dataReferee = mysql_query($sql);
+            return $dataReferee;
 	}
 
 	/* 
