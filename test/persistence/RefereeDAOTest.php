@@ -1,13 +1,4 @@
 <?php
-/*
-require_once "../../Modelo/Livro.php";
-require_once "../../Dao/LivroDao.php";
-require_once "../../Utilidades/ValidaDados.php";
-require_once "../../Utilidades/ExcessaoNomeInvalido.php";
-require_once "../../Utilidades/ExcessaoTituloInvalido.php";
-require_once "../../Utilidades/ExcessaoEditoraInvalida.php";
-require_once "../../Utilidades/ConexaoComBanco.php";
-*/
 
 include_once("/../../model/Referee.php");
 include_once("/../../persistence/RefereeDAO.php");
@@ -26,10 +17,34 @@ class RefereeDAOTest extends PHPUnit_Framework_TestCase {
         
     }
 
+    public function testListAllReferees(){
+        $retorno = $this->refereeDaoTest->listAllReferees();
+        $this->assertNotNull($retorno);    
+    }
+        
     public function testInsertReferee() {
         $retorno = $this->refereeDaoTest->insertReferee($this->refereeTest);
         $this->assertTrue($retorno);
-    }
-    
-    
+    }    
+    /*    
+    public function updateReferee(Referee $dataReferee){
+            
+	}
+
+    public function consultByIdReferee(Referee $idReferee){
+            
+	}
+	
+    public function consultByRefereeName(Referee $refereeName){
+            
+	}
+
+    public function deleteReferee(Referee $idReferee){
+            
+	}
+
+    public function amountRefereesRecords(){
+        
+	}
+    */
 }
