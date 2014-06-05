@@ -18,23 +18,25 @@ class RefereeDAOTest extends PHPUnit_Framework_TestCase {
     }
 
     public function testListAllReferees(){
-        $retorno = $this->refereeDaoTest->listAllReferees();
-        $this->assertNotNull($retorno);    
+        $return = $this->refereeDaoTest->listAllReferees();
+        $this->assertNotNull($return);    
     }
         
     public function testInsertReferee() {
-        $retorno = $this->refereeDaoTest->insertReferee($this->refereeTest);
-        $this->assertTrue($retorno);
+        $return = $this->refereeDaoTest->insertReferee($this->refereeTest);
+        $this->assertTrue($return);
     }    
-    /*    
-    public function updateReferee(Referee $dataReferee){
-            
-	}
+       
+    public function testUpdateReferee(){
+        $return = $this->refereeDaoTest->updateReferee($this->refereeTest);
+        $this->assertTrue($return);
+    }
 
-    public function consultByIdReferee(Referee $idReferee){
-            
-	}
-	
+    public function testConsultByIdReferee(){
+        $return = $this->refereeDaoTest->consultByIdReferee(1);
+        $this->assertFalse($return);
+    }
+/* 	
     public function consultByRefereeName(Referee $refereeName){
             
 	}

@@ -65,6 +65,8 @@ class RefereeDAO{
                            cpf ='{$dataReferee->__getRefereeCpf()}'
                     WHERE id_arbitro ='{$dataReferee->__getIdReferee()}' ";
             $this->connection->dataBase->Execute($sql);
+            $dataReferee = mysql_query($sql);
+            return $dataReferee;
 	}
 
 	/* 
