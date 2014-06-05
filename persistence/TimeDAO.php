@@ -46,9 +46,9 @@ class TimeDAO{
 	public function insertGame(Time $idGame){
             $sql = "INSERT INTO tempo (jogo_id_jogo, tiro_7metros, tempo_tecnico, placar_time1,
                                        placar_time2,tipo) 
-                    VALUES ('{$idGame}',0,0,0,0,0)";
-            
-            $return =   $this->connection->dataBase->Execute($sql);
+                    VALUES ('{$idGame->__getIdTimePlay()}',0,0,0,0,0)";
+          
+          $return = mysql_query($sql);
             return $return;
 	}
 	
@@ -66,8 +66,9 @@ class TimeDAO{
                         placar_time1='{$dataTime->__getScoreboardTeam1()}', 
                         placar_time2='{$dataTime->__getScoreboardTeam1()}'  
                     WHERE id_tempo='{$dataTime->__getIdTimePlay()}' ";
-            $this->connection->dataBase->Execute($sql);
-            return $dataTime;
+         
+            $result = mysql_query($sql);
+            return $result;
 	}
 	
 	/*
@@ -111,7 +112,9 @@ class TimeDAO{
          */
 	public function deletePlayer(Time $idPlayer){
             $sql = "DELETE FROM jogador WHERE id_jogador = '{$idPlayer}' ";
-            $result = $this->connection->dataBase->Execute($sql);
+           // $this->connection->dataBase->Execute($sql);
+            $result = mysql_query($sql);
+            return $result;
 	}
 
 	/*
@@ -123,7 +126,8 @@ class TimeDAO{
             $sql = "UPDATE tempo 
                     SET placar_time1 = '{$scoreboardTeam1}', tiro_7metros = '{$amountSevenMetersTotal}' 
                     WHERE id_tempo = '{$idTimePlay}'";
-            $result = $this->connection->dataBase->Execute($sql);
+            $result = mysql_query($sql);
+            return $result;
 	}
 
 	/*
@@ -135,7 +139,8 @@ class TimeDAO{
             $sql = "UPDATE tempo 
                     SET placar_time2 = '{$scoreboardTeam2}'  
                     WHERE id_tempo = '{$idTimePlay}'";
-            $result = $this->connection->dataBase->Execute($sql);
+            $result = mysql_query($sql);
+            return $result;
 	}
 
 	/*
