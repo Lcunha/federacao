@@ -42,6 +42,11 @@ class TimeControllerTest extends PHPUnit_Framework_TestCase{
        $result = $this->timeDaoTest->insertGame($this->timeTest);
        $this->assertTrue($result);
    }
+   /*
+     public function testLastQueryRegistry(){
+       $result = $this->timeDaoTest->lastQueryRegistry();
+       $this->assertFalse($result);
+    } */
    
   
     

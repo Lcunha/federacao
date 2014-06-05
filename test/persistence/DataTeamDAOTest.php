@@ -34,9 +34,4 @@ class DataTeamDAOTest extends PHPUnit_Framework_TestCase{
         $retorno = $this->dataTeamDAOTest->updateDataTeam($this->dataTeamTest);
         $this->assertTrue($retorno);
     }    
-
-    
-    
-    
-    
 }
