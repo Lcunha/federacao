@@ -2,6 +2,8 @@
 
 include_once("/../../persistence/DataTeamDAO.php");
 include_once("/../../model/DataTeam.php");
+include_once("/../../persistence/Connection.php");
+
 
 class DataTeamDAOTest extends PHPUnit_Framework_TestCase{
   
@@ -10,28 +12,28 @@ class DataTeamDAOTest extends PHPUnit_Framework_TestCase{
     
     protected function setUp() {
         $this->dataTeamDAOTest = new DataTeamDAO();
-        $this->dataTeamTest = new DataTeam(10, 9, 8, 'time', 8, 1, 1, 1, 6);
+        $this->dataTeamTest = new DataTeam(15, 1, 4, 13, 10, 1, 2, 10, 1);
     }
     
     protected function tearDown() {
-        unset($this->dataTeamDAOTest);    
+        unset($this->dataTeamDAOTest);  
+        unset($this->dataTeamTest);
     }
 
     public function testDeleteDataTeam(){
-         $result = $this->dataTeamDAOTest->deleteDataTeam(2);
-         $this->assertNull($result);  
+         $result = $this->dataTeamDAOTest->deleteDataTeam(14);
+         $this->assertTrue($result);  
     }
-    
+  
      public function testInsertDataTeam() {
         $retorno = $this->dataTeamDAOTest->insertDataTeam($this->dataTeamTest);
         $this->assertTrue($retorno);
     }    
-    /*
-     public function testInsertDataTeam(){
-        $result = $this->dataTeamDAOTest->insertDataTeam(null);
-        $this->assertFalse($result);  
-     }  
-     */
+    
+     public function testUpdateDataTeam() {
+        $retorno = $this->dataTeamDAOTest->updateDataTeam($this->dataTeamTest);
+        $this->assertTrue($retorno);
+    }    
 
     
     

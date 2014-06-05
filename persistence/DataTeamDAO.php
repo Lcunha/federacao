@@ -58,7 +58,9 @@ class DataTeamDAO{
                             '{$dataDataTeam->__getAmountGoals()}',
                             '{$dataDataTeam->__getConcededGoals()}',
                             '{$dataDataTeam->__getIdDataTeam()}')";
-            return $this->connection->dataBase->Execute($sql);
+            //return $this->connection->dataBase->Execute($sql);
+            $dataDataTeam = mysql_query($sql);
+            return $dataDataTeam;
 	}
 
 	/*
@@ -113,7 +115,9 @@ class DataTeamDAO{
                         gols = '{$dataDataTeam->__getAmountGoals()}', 
                         gols_levados = '{$dataDataTeam->__getConcededGoals()}' 
                     WHERE time_id_time = '{$dataDataTeam->__getIdDataTeam()}' ";
-            $this->connection->dataBase->Execute($sql);
+         //   $this->connection->dataBase->Execute($sql);
+            $result = mysql_query($sql);
+            return $result;
 	}
 
 	/*
@@ -203,6 +207,7 @@ class DataTeamDAO{
 	*/
 	public function deleteDataTeam($idDataTeam){
             $sql = "DELETE FROM dados_campeonato WHERE id_dados_campeonato = '{$idDataTeam}' ";
-            $result = $this->connection->dataBase->Execute($sql);
+            $result  = mysql_query($sql);
+            return $result;
 	}
 }
