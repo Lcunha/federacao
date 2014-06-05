@@ -43,7 +43,9 @@ class CoachDAO{
         $sql = "INSERT INTO tecnico (nome , telefone, cpf) 
                 VALUES ('{$coachData->__getCoachName()}', '{$coachData->__getCoachPhone()}',
                         '{$coachData->__getCoachCpf()}')";
-        $this->connection->dataBase->Execute($sql);
+       // $this->connection->dataBase->Execute($sql);
+         $result = mysql_query($sql);
+         return $result;
     }
 	
     /*
@@ -57,8 +59,9 @@ class CoachDAO{
                     telefone = '{$coachData->__getCoachPhone()}', 
                     cpf = '{$coachData->__getCoachCpf()}' 
                 WHERE id_tecnico = '{$coachData->__getIdCoach()}' ";
-        $this->connection->dataBase->Execute($sql);
-        return $coachData;
+          $result = mysql_query($sql);
+          return $result;
+        
     }
 	
     /*
@@ -97,7 +100,8 @@ class CoachDAO{
     */
     public function deleteCoach($idCoach){
         $sql = "DELETE FROM tecnico WHERE id_tecnico = '{$idCoach}' ";
-        $result = $this->connection->dataBase->Execute($sql);
+        $result  = mysql_query($sql);
+        return $result;
     }
 
     /*
