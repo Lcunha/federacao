@@ -36,11 +36,12 @@ class RefereeDAOTest extends PHPUnit_Framework_TestCase {
         $return = $this->refereeDaoTest->consultByIdReferee(1);
         $this->assertFalse($return);
     }
-/* 	
-    public function consultByRefereeName(Referee $refereeName){
-            
+	
+    public function testConsultByRefereeName(){
+        $return = $this->refereeDaoTest->consultByRefereeName('JoÃ£o de Barro');
+        $this->assertFalse($return);     
 	}
-
+/* 
     public function deleteReferee(Referee $idReferee){
             
 	}
