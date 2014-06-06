@@ -157,7 +157,7 @@ $playerVW = new PlayerView();
 
 
 
-<?php include_once ('/cronometro/cronometro.php');?>
+<?php include_once ("./cronometro/cronometro.php");?>
 
 
 
