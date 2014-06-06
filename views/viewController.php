@@ -65,7 +65,7 @@ switch($page){
 		include(__APP_PATH.'/views/var.php');
                 break;
             
-	case 'duranteJogo':
+	case 'duringGame':
 		include(__APP_PATH.'/views/duringGame.php');
 		break;
         case 'ingles':
