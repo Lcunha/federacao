@@ -17,6 +17,14 @@ class TimeControllerTest extends PHPUnit_Framework_TestCase{
         unset($this->timeTest);
         unset($this->timeDaoTest);
     }
+    
+      public function testGetInstanceTimeTestNotNull() {
+        $this->assertNotNull($this->timeTest);
+    }
+    
+      public function testGetInstanceTimeDaoTestNotNull() {
+        $this->assertNotNull($this->timeDaoTest);
+    }
 
    public function testInsertGame(){
        $result = $this->timeDaoTest->insertGame($this->timeTest);
