@@ -15,6 +15,10 @@ class TimeTest extends PHPUnit_Framework_TestCase{
         unset($this->timeTest);
     }
     
+     public function testGetInstanceTimeTestNotNull() {
+        $this->assertNotNull($this->timeTest);
+    }
+    
       public function testSeIdTimePlay() {
         $this->timeTest->__setIdPlayer(11);
         $result = $this->timeTest->__getIdPlayer();

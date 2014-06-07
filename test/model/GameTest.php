@@ -15,6 +15,10 @@ class GameTest extends PHPUnit_Framework_TestCase {
         unset($this->gameTest); 
     }
    
+      public function testGetInstanceGameTestNotNull() {
+        $this->assertNotNull($this->gameTest);
+    }
+    
     public function testSetIdGame(){
         $this->gameTest->__setIdGame(2);
         $result = $this->gameTest->__getIdGame();

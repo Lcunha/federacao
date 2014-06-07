@@ -13,15 +13,11 @@ class CoachTest extends PHPUnit_Framework_TestCase{
      protected function tearDown() {
         unset($this->coachTest);
     }
-    
-      public function testGetInstanceCoachTestNotNull() {
-        $this->assertNotNull($this->coachTest);
-    }
  
       public function testSetIdCoach(){
         $this->coachTest->__setIdCoach(4);
         $result = $this->coachTest->__getIdCoach();
-        $this->assertEquals(4,$result);
+        $this->assertEquals(3,$result);
     }
     
      public function testSetCoachName(){

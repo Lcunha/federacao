@@ -14,6 +14,10 @@ class TeamGameTest extends PHPUnit_Framework_TestCase {
      protected function tearDown() {
         unset($this->teamGameTest); 
      }
+     
+     public function testGetInstanceTeamGameTestNotNull() {
+        $this->assertNotNull($this->teamGameTest);
+    }
     
     public function testSetIdGame(){
 	$this->teamGameTest->__setIdGame(5);
