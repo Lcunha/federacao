@@ -21,6 +21,14 @@ class CoachControllerTest extends PHPUnit_Framework_TestCase{
         unset($this->coachDAOTest);
     }
     
+    public function testGetCoachaControllerTesNotNull() {
+        $this->assertNotNull($this->coachControllerTest);
+    }
+    
+    public function testGetCoachaDAOTesNotNull() {
+        $this->assertNotNull($this->coachDAOTest);
+    }
+    
     public function testDeleteCoach(){
         $return = $this->coachControllerTest->_deleteCoach(1);
         $result = $this->coachDAOTest->deleteCoach(1);
