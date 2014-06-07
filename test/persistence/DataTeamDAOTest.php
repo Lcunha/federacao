@@ -1,7 +1,6 @@
 <?php
 
 include_once("/../../persistence/DataTeamDAO.php");
-include_once("/../../model/DataTeam.php");
 include_once("/../../persistence/Connection.php");
 
 
@@ -18,6 +17,14 @@ class DataTeamDAOTest extends PHPUnit_Framework_TestCase{
     protected function tearDown() {
         unset($this->dataTeamDAOTest);  
         unset($this->dataTeamTest);
+    }
+    
+     public function testGetInstanceDataTeamDaoTestTestNotNull() {
+        $this->assertNotNull($this->dataTeamDAOTest);
+    }
+    
+      public function testGetInstanceDataTeamTestNotNull() {
+        $this->assertNotNull($this->dataTeamTest);
     }
 
     public function testDeleteDataTeam(){

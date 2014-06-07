@@ -21,6 +21,14 @@ class TimeControllerTest extends PHPUnit_Framework_TestCase{
         unset($this->timeDAO);
     }
     
+    public function testGetTimeDaoTesNotNull() {
+        $this->assertNotNull($this->timeDAO);
+    }
+    
+     public function testGetTimeControllerTesNotNull() {
+        $this->assertNotNull($this->timeControllerTest);
+    }
+    
     public function testInsertGoalsTeam1(){
         $return = $this->timeControllerTest->_insertGoalsTeam1(3, 6, 5);
         $result = $this ->timeDAO->insertGoalsTeam1(3, 6, 5);
