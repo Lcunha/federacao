@@ -8,13 +8,13 @@ class GameDAOTest extends PHPUnit_Framework_TestCase {
 
    
     protected function setUp() {
-        $this->refereeTest = new Game(/*parametros*/);
-        $this->refereeDaoTest = new GameDAO();
+        $this->gameTest = new Game(/*parametros*/);
+        $this->gameDaoTest = new GameDAO();
     }
 
     protected function tearDown() {
-        unset($this->refereeDaoTest);
-        unset($this->refereeTest);
+        unset($this->gameDaoTest);
+        unset($this->gameTest);
         
     }
     
