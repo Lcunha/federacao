@@ -1,7 +1,7 @@
 <?php
 
-include_once("../../../federac/controller/GameDataController.php");
-include_once("../../../federac/persistence/GameDataDAO.php");
+include_once("../../controller/GameDataController.php");
+include_once("../../persistence/GameDataDAO.php");
 
 class GameDataControllerTest extends PHPUnit_Framework_TestCase{
   
