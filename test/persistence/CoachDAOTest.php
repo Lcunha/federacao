@@ -18,6 +18,14 @@ class CoachDAOTest extends PHPUnit_Framework_TestCase{
         unset($this->coachTest);
     }
     
+     public function testGetInstanceCoachDaoTestTestNotNull() {
+        $this->assertNotNull($this->coachDAOTest);
+    }
+    
+      public function testGetInstanceCoachTestNotNull() {
+        $this->assertNotNull($this->coachTest);
+    }
+    
      public function testInsertCoach(){
        $result = $this->coachDAOTest->insertCoach($this->coachTest);
        $this->assertTrue($result);

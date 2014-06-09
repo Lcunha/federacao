@@ -14,6 +14,11 @@ class RefereeTest extends PHPUnit_Framework_TestCase {
      protected function tearDown() {
         unset($this->refereeTest); 
     }
+    
+     public function testGetInstanceRefereeTestNotNull() {
+        $this->assertNotNull($this->refereeTest);
+    }
+   
    
     public function testSetIdReferee(){
 	$this->refereeTest->__setIdReferee(2);

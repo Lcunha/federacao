@@ -1,6 +1,6 @@
 <?php
 
-include_once("../../../federac/model/Coach.php");
+include_once("../../model/Coach.php");
 
 class CoachTest extends PHPUnit_Framework_TestCase{
     
@@ -12,6 +12,10 @@ class CoachTest extends PHPUnit_Framework_TestCase{
    
      protected function tearDown() {
         unset($this->coachTest);
+    }
+    
+      public function testGetInstanceCoachTestNotNull() {
+        $this->assertNotNull($this->coachTest);
     }
  
       public function testSetIdCoach(){

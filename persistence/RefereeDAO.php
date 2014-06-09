@@ -6,8 +6,6 @@
     for handling the type Arbitrator, in the relevant table in mysql.
  */
 
-//include_once (__APP_PATH.'/model/Referee.php');
-//include_once (__APP_PATH.'/persistence/Connection.php');
 
 include_once("/../model/Referee.php");
 include_once("/../persistence/Connection.php");
@@ -75,7 +73,7 @@ class RefereeDAO{
             the class to update the information) as input parameter. It returns all the referee 
             data that are in the database table updated.
         */
-	public function consultByIdReferee(Referee $idReferee){
+	public function consultByIdReferee($idReferee){
             $sql = "SELECT * FROM arbitro WHERE id_arbitro = '{$idReferee}'";
             $result = $this->connection->dataBase->Execute($sql);
             $record = $result->FetchNextObject();
@@ -91,11 +89,11 @@ class RefereeDAO{
             as input parameter. It returns all the referee data that are in the database table 
             searched.
         */
-	public function consultByRefereeName(Referee $refereeName){
+	public function consultByRefereeName($refereeName){
             $sql = "SELECT * FROM arbitro WHERE nome= '{$refereeName}'";
             $result = $this->connection->dataBase->Execute($sql);
             $record = $result->FetchNextObject();
-            $dataDataTeam = new TeamData();
+            $dataDataTeam = new DataTeam();
             $dataDataTeam->__constructOverload($record->ID_ARBITRO, $record->NOME, 
                                                  $record->CPF);
             return $dataDataTeam;

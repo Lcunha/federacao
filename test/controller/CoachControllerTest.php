@@ -1,8 +1,8 @@
 <?php
 
-include_once("../../../federac/controller/CoachController.php");
-include_once("../../../federac/persistence/CoachDAO.php");
-include_once("../../../federac/model/Coach.php");
+include_once("../../controller/CoachController.php");
+include_once("../../persistence/CoachDAO.php");
+include_once("../../model/Coach.php");
 
 class CoachControllerTest extends PHPUnit_Framework_TestCase{
 
@@ -19,6 +19,14 @@ class CoachControllerTest extends PHPUnit_Framework_TestCase{
     protected function tearDown() {   
         unset($this->coachControllerTest);
         unset($this->coachDAOTest);
+    }
+    
+    public function testGetCoachaControllerTesNotNull() {
+        $this->assertNotNull($this->coachControllerTest);
+    }
+    
+    public function testGetCoachaDAOTesNotNull() {
+        $this->assertNotNull($this->coachDAOTest);
     }
     
     public function testDeleteCoach(){

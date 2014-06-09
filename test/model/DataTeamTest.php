@@ -14,6 +14,10 @@ class DataTeamTest extends PHPUnit_Framework_TestCase{
      protected function tearDown() {
         unset($this->dataTeamTest); 
     }
+    
+     public function testGetInstanceDataTeamTestNotNull() {
+        $this->assertNotNull($this->dataTeamTest);
+    }
  
      public function testSetIdDataTeam() {
         $this->dataTeamTest->__setIdDataTeam(2);
