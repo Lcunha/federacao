@@ -9,7 +9,7 @@ class TeamControllerTest extends PHPUnit_Framework_TestCase{
      protected $teamDAOTest;
     
     protected function setUp() {
-        $this->teamControllerTest = new TeamControllerTest();
+        $this->teamControllerTest = new TeamController();
         $this->teamDAOTest = new TeamDAO();
     }
     
@@ -25,5 +25,30 @@ class TeamControllerTest extends PHPUnit_Framework_TestCase{
      public function testGetTeamDAOTesNotNull() {
         $this->assertNotNull($this->teamDAOTest);
     }
+    
+     public function testListAllPlayersTeam(){
+        $return = $this->teamControllerTest->_listAllPlayersTeam(2);
+        $result = $this ->teamDAOTest->listAllPlayersTeam(2);
+        $this->assertEquals($result, $return);
+    }
+    
+    public function testListAllTeams(){
+        $return = $this->teamControllerTest->_listAllTeams();
+        $result = $this ->teamDAOTest->listAllTeams();
+        $this->assertEquals($result, $return);
+    }
+    
+      public function testAmountTeamsRecords(){
+        $return = $this->teamControllerTest->_amountTeamsRecords();
+        $result = $this ->teamDAOTest->amountTeamsRecords();
+        $this->assertEquals($result, $return);
+    }
+    /*
+      public function testListAllTeamsByPoints(){
+        $return = $this->teamControllerTest->_listAllTeamsByPoints();
+        $result = $this ->teamDAOTest->listAllTeamsByPoints();
+        $this->assertEquals($result, $return);
+    }
+    */
 }
 ?>
