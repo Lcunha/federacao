@@ -27,18 +27,18 @@ class TeamGameDAOTest extends PHPUnit_Framework_TestCase {
         $this->assertTrue($return);
     }
 
-    /*
-    public function updateTeamGame(TeamGame $teamDataGame){
-            $return = $this->refereeDaoTest->updateReferee($this->refereeTest);
+    
+    public function testUpdateTeamGame(){
+        $return = $this->teamGameDaoTest->updateTeamGame($this->teamGameTest);
         $this->assertTrue($return);
     }
 
 	
-    public function consultByIdTeam(TeamGame $idTeam){
-           $return = $this->refereeDaoTest->consultByIdReferee(1);
+    public function testConsultByIdTeam(){
+        $return = $this->teamGameDaoTest->consultByIdTeam(1);
         $this->assertFalse($return);
-    }
-	
+    }   
+    /*
     public function consultByTime(TeamGame $idTimePlay){
            $return = $this->refereeDaoTest->consultByRefereeName('JoÃ£o de Barro');
         $this->assertFalse($return);     
