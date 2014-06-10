@@ -1,6 +1,6 @@
 <?php
 
-include_once (__APP_PATH.'/controller/TeamController.php');
+include_once ('../../../controller/TeamController.php');
 
 class AjaxViewTest extends PHPUnit_Framework_TestCase{
 	
@@ -17,6 +17,15 @@ class AjaxViewTest extends PHPUnit_Framework_TestCase{
 	protected function testGetTeamControllerTestNotNull() {
 		$this->assertNotNull($this->teamControllerTest);
 	}
+
+	protected function testArrayTimeData() {
+		return true;
+	}
+
+	protected function testIdActualTimeData() {
+		return true;
+	}
+
 }
 
 ?>
