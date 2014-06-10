@@ -1,6 +1,6 @@
 <?php
 
-include_once (__APP_PATH.'/controller/DataTeamController.php');
+include_once ('../../../controller/DataTeamController.php');
 
 class AjaxDataChampionshipTest extends PHPUnit_Framework_TestCase{
 
