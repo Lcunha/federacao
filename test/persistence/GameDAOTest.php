@@ -18,17 +18,17 @@ class GameDAOTest extends PHPUnit_Framework_TestCase {
         
     }
     
-    /*
-    public function listAllGames(){
-            $return = $this->refereeDaoTest->listAllReferees();
+    
+    public function testListAllGames(){
+        $return = $this->gameDaoTest->listAllGames();
         $this->assertNotNull($return); 
     }
 	
-    public function insertGame(Game $gameData){
-            $return = $this->refereeDaoTest->insertReferee($this->refereeTest);
+    public function testInsertGame(){
+        $return = $this->gameDaoTest->insertGame($this->gameTest);
         $this->assertTrue($return);
     }
-	
+    /*
     public function updateGame(Game $gameData){
             $return = $this->refereeDaoTest->updateReferee($this->refereeTest);
         $this->assertTrue($return);
