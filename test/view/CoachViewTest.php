@@ -1,6 +1,7 @@
 <?php
 
 include_once ('../../../controller/CoachController.php');
+include_once ('../../../view/CoachView.php');
 
 class CoachViewTest extends PHPUnit_Framework_TestCase{
 
