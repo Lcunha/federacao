@@ -49,7 +49,7 @@ class GameDAOTest extends PHPUnit_Framework_TestCase {
 	
     public function testDeleteGame(){
         $return = $this->gameDaoTest->deleteGame(1);
-        $this->assertTrue($retorno);  
+        $this->assertTrue($return);  
     }
     
 }
