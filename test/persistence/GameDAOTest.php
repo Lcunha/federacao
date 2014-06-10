@@ -40,16 +40,16 @@ class GameDAOTest extends PHPUnit_Framework_TestCase {
         $this->assertFalse($return);
     }
 	
-	/*
-    public function consultByGameDate(Game $gameDate){
-            $return = $this->refereeDaoTest->consultByRefereeName('JoÃ£o de Barro');
+	
+    public function testConsultByGameDate(){
+        $return = $this->gameDaoTest->consultByGameDate('2013-10-04');
         $this->assertFalse($return);     
     }
 
 	
-    public function deleteGame(Game $idReferee){
-           $retorno = $this->refereeDaoTest->deleteReferee(15);
+    public function testDeleteGame(){
+        $return = $this->gameDaoTest->deleteGame(1);
         $this->assertTrue($retorno);  
     }
-    */
+    
 }
