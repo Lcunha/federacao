@@ -28,19 +28,19 @@ class GameDAOTest extends PHPUnit_Framework_TestCase {
         $return = $this->gameDaoTest->insertGame($this->gameTest);
         $this->assertTrue($return);
     }
-    /*
-    public function updateGame(Game $gameData){
-            $return = $this->refereeDaoTest->updateReferee($this->refereeTest);
+    
+    public function testUpdateGame(){
+        $return = $this->gameDaoTest->updateGame($this->gameTest);
         $this->assertTrue($return);
     }
 	
 	
-    public function consultByIdGame(Game $idGame){
-            $return = $this->refereeDaoTest->consultByIdReferee(1);
+    public function testConsultByIdGame(){
+        $return = $this->gameDaoTest->consultByIdGame(1);
         $this->assertFalse($return);
     }
 	
-	
+	/*
     public function consultByGameDate(Game $gameDate){
             $return = $this->refereeDaoTest->consultByRefereeName('JoÃ£o de Barro');
         $this->assertFalse($return);     
