@@ -1,6 +1,6 @@
 <?php
 
-include_once (__APP_PATH.'/controller/GameDataController.php');
+include_once ('../../../controller/GameDataController.php');
 
 class AjaxGameDataViewTest extends PHPUnit_Framework_TestCase{
 	
@@ -17,6 +17,7 @@ class AjaxGameDataViewTest extends PHPUnit_Framework_TestCase{
 	protected function testGetGameDataControllerTestNotNull() {
 		$this->assertNotNull($this->gameDataControllerTest);
 	}
+
 }
 
 ?>
